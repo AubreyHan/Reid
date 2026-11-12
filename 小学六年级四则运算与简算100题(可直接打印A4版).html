@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>小学六年级四则运算与简算阶梯通关100题（难度递进可打印版）</title>
+<style>
+  @page {
+    size: A4;
+    margin: 14mm 14mm 14mm 14mm;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: #222;
+    background: #fff;
+    margin: 0;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .no-print-banner {
+    background: #f0f7ff;
+    border: 1px solid #c8e1ff;
+    padding: 14px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .print-btn {
+    background: #1a73e8;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .print-btn:hover { background: #1557b0; }
+  
+  .set-container {
+    page-break-inside: avoid;
+    margin-bottom: 28px;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+  .header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #24292f;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+  .set-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #111;
+  }
+  .diff-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 8px;
+  }
+  .diff-1 { background: #dafbe1; color: #1a7f37; }
+  .diff-2 { background: #ddf4ff; color: #0969da; }
+  .diff-3 { background: #fff8c5; color: #9a6700; }
+  .diff-4 { background: #ffebe9; color: #cf222e; }
+  .diff-5 { background: #fbefff; color: #8250df; }
+
+  .student-meta {
+    font-size: 13px;
+    color: #555;
+  }
+  .student-meta span {
+    margin-left: 12px;
+    display: inline-block;
+    border-bottom: 1px solid #666;
+    min-width: 55px;
+    text-align: center;
+  }
+  .rule-tips {
+    font-size: 12px;
+    color: #57606a;
+    background: #f6f8fa;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    border-left: 3px solid #0969da;
+  }
+  .grid-problems {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 22px;
+    row-gap: 15px;
+  }
+  .problem-item {
+    min-height: 82px;
+    border-bottom: 1px dashed #e1e4e8;
+    padding-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .problem-text {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  .frac {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.9em;
+    padding: 0 2px;
+  }
+  .frac-top {
+    display: block;
+    border-bottom: 1px solid #333;
+    padding: 0 1px;
+    line-height: 1.1;
+  }
+  .frac-bot {
+    display: block;
+    line-height: 1.1;
+    padding: 0 1px;
+  }
+  .work-line {
+    color: #aaa;
+    font-size: 12px;
+    align-self: flex-end;
+  }
+
+  .answer-sheet {
+    page-break-before: always;
+    padding: 15px 0;
+  }
+  .answer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .answer-block {
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 10px 12px;
+    background: #fafbfc;
+    font-size: 12px;
+  }
+  .answer-block h4 {
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    color: #0969da;
+    border-bottom: 1px solid #e1e4e8;
+    padding-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .ans-item {
+    margin-bottom: 3px;
+    line-height: 1.4;
+  }
+  .tag-jian {
+    color: #0969da;
+    font-weight: bold;
+    font-size: 11px;
+    background: #ddf4ff;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+  .tag-chang {
+    color: #57606a;
+    font-size: 11px;
+    background: #f6f8fa;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+
+  @media print {
+    body { padding: 0; }
+    .no-print-banner { display: none; }
+    .set-container {
+      border: 1px solid #ccc;
+      margin-bottom: 0;
+      page-break-after: always;
+      height: 95vh;
+      box-sizing: border-box;
+    }
+    .answer-sheet {
+      page-break-after: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="no-print-banner">
+  <div>
+    <strong>🎯 小学六年级四则运算与简算·阶梯通关100题（难度逐级递增）</strong>
+    <div style="font-size: 12px; color: #555; margin-top: 4px;">从基础定律到小升初压轴巧算（裂项相消、错位提取），每组难度递增。含5道巧算+5道避坑常规题。</div>
+  </div>
+  <button class="print-btn" onclick="window.print()">立即打印 (Ctrl+P / ⌘+P)</button>
+</div>
+
+<!-- 练习一 -->
+<div class="set-container">
+  <div class="header-info">
+    <div class="set-title">练习一：基础法则认知与去括号 <span class="diff-badge diff-1">难度 ★☆☆☆☆</span></div>
+    <div class="student-meta">姓名: <span></span> 班级: <span></span> 得分: <span></span> 用时: <span></span></div>
+  </div>
+  <div class="rule-tips">本组重点：基础四则顺序优先原则、加减法去括号变号、乘法分配律基础形式。</div>
+  <div class="grid-problems">
+    <div class="problem-item">
+      <div class="problem-text">1. 3.8 × 99 + 3.8</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">2. 25.4 − 15.6 ÷ 3 + 4.2</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">3. 16.8 − (6.8 − 4.5)</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">4. 45 ÷ (5 + 4) × 2</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">5. 14.36 + 7.85 + 5.64 + 2.15</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">6. 12.5 × 0.4 + 6.3 ÷ 0.7</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">7. 102 × 3.5</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">8. 36 − 16 ÷ 4 + 3 × 2</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">9. 7.5 × 4.3 + 7.5 × 5.7</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">10. 0.8 × (4.5 − 2.5 ÷ 5)</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+  </div>
+</div>
+
+<!-- 练习二 -->
+<div class="set-container">
+  <div class="header-info">
+    <div class="set-title">练习二：因数拆分凑整与减除性质 <span class="diff-badge diff-1">难度 ★☆☆☆☆</span></div>
+    <div class="student-meta">姓名: <span></span> 班级: <span></span> 得分: <span></span> 用时: <span></span></div>
+  </div>
+  <div class="rule-tips">本组重点：识别“125找8、25找4”、连减去括号、连除性质与同级除乘从左往右原则。</div>
+  <div class="grid-problems">
+    <div class="problem-item">
+      <div class="problem-text">1. 125 × 32 × 25</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">2. 18.6 − 2.4 × 5 + 3.8</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">3. 45.6 − 18.7 − 11.3</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">4. 6.4 ÷ (0.8 + 2.4)</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">5. 18.75 − (8.75 − 3.4)</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">6. <span class="frac"><span class="frac-top">3</span><span class="frac-bot">5</span></span> ÷ <span class="frac"><span class="frac-top">3</span><span class="frac-bot">5</span></span> × <span class="frac"><span class="frac-top">4</span><span class="frac-bot">7</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">7. 4800 ÷ 25 ÷ 4</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">8. 7.2 ÷ 0.8 × 1.5 − 4.5</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">9. 12.5 × 8.8</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">10. (<span class="frac"><span class="frac-top">3</span><span class="frac-bot">4</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">2</span></span>) ÷ <span class="frac"><span class="frac-top">5</span><span class="frac-bot">8</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+  </div>
+</div>
+
+<!-- 练习三 -->
+<div class="set-container">
+  <div class="header-info">
+    <div class="set-title">练习三：分数分配律展开与避坑陷阱 <span class="diff-badge diff-2">难度 ★★☆☆☆</span></div>
+    <div class="student-meta">姓名: <span></span> 班级: <span></span> 得分: <span></span> 用时: <span></span></div>
+  </div>
+  <div class="rule-tips">本组重点：利用乘法分配律展开消分母；谨防“除法分配律”严重错误，除数是和必须先算和。</div>
+  <div class="grid-problems">
+    <div class="problem-item">
+      <div class="problem-text">1. (<span class="frac"><span class="frac-top">3</span><span class="frac-bot">4</span></span> − <span class="frac"><span class="frac-top">5</span><span class="frac-bot">6</span></span> + <span class="frac"><span class="frac-top">7</span><span class="frac-bot">12</span></span>) × 24</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">2. <span class="frac"><span class="frac-top">4</span><span class="frac-bot">5</span></span> ÷ (<span class="frac"><span class="frac-top">2</span><span class="frac-bot">3</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">2</span></span>)</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">3. 17.65 − 6.4 + 2.35 − 3.6</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">4. [1 − (<span class="frac"><span class="frac-top">1</span><span class="frac-bot">4</span></span> + <span class="frac"><span class="frac-top">3</span><span class="frac-bot">8</span></span>)] ÷ <span class="frac"><span class="frac-top">3</span><span class="frac-bot">4</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">5. 6.7 × 101 − 6.7</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">6. 28.4 − 14.4 ÷ 0.6 + 1.6</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">7. 7200 ÷ (72 × 25)</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">8. <span class="frac"><span class="frac-top">5</span><span class="frac-bot">9</span></span> × <span class="frac"><span class="frac-top">3</span><span class="frac-bot">10</span></span> + <span class="frac"><span class="frac-top">2</span><span class="frac-bot">5</span></span> ÷ <span class="frac"><span class="frac-top">4</span><span class="frac-bot">3</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">9. 3.8 × 4.7 + 3.8 × 6.3 − 3.8</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">10. <span class="frac"><span class="frac-top">2</span><span class="frac-bot">3</span></span> ÷ <span class="frac"><span class="frac-top">2</span><span class="frac-bot">3</span></span> × <span class="frac"><span class="frac-top">5</span><span class="frac-bot">6</span></span> ÷ <span class="frac"><span class="frac-top">5</span><span class="frac-bot">6</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+  </div>
+</div>
+
+<!-- 练习四 -->
+<div class="set-container">
+  <div class="header-info">
+    <div class="set-title">练习四：带符号搬家与分数小数互化 <span class="diff-badge diff-2">难度 ★★☆☆☆</span></div>
+    <div class="student-meta">姓名: <span></span> 班级: <span></span> 得分: <span></span> 用时: <span></span></div>
+  </div>
+  <div class="rule-tips">本组重点：数带着前面的符号移动、分数与小数结合凑整、隐形因数“1”与结合拆分。</div>
+  <div class="grid-problems">
+    <div class="problem-item">
+      <div class="problem-text">1. 15<span class="frac"><span class="frac-top">3</span><span class="frac-bot">8</span></span> − 4.75 − 5.25 + 2<span class="frac"><span class="frac-top">5</span><span class="frac-bot">8</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">2. 4.8 + 5.2 × 0.5 − 1.4</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">3. 4.8 × 7.5 + 48 × 0.25</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">4. <span class="frac"><span class="frac-top">3</span><span class="frac-bot">7</span></span> ÷ (<span class="frac"><span class="frac-top">5</span><span class="frac-bot">14</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">2</span></span>)</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">5. 36 × (<span class="frac"><span class="frac-top">5</span><span class="frac-bot">12</span></span> + <span class="frac"><span class="frac-top">7</span><span class="frac-bot">18</span></span> − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">6</span></span>)</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">6. [<span class="frac"><span class="frac-top">4</span><span class="frac-bot">5</span></span> − (<span class="frac"><span class="frac-top">1</span><span class="frac-bot">2</span></span> − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">3</span></span>)] ÷ <span class="frac"><span class="frac-top">19</span><span class="frac-bot">30</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">7. 7.8 × 10.1 − 0.78</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">8. 5.4 ÷ 0.9 × 2.5 − 3.5</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">9. 2.5 × 1.25 × 3.2</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">10. <span class="frac"><span class="frac-top">5</span><span class="frac-bot">6</span></span> − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">6</span></span> ÷ <span class="frac"><span class="frac-top">1</span><span class="frac-bot">3</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">2</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+  </div>
+</div>
+
+<!-- 练习五 -->
+<div class="set-container">
+  <div class="header-info">
+    <div class="set-title">练习五：除转倒数提公因数与商不变 <span class="diff-badge diff-3">难度 ★★★☆☆</span></div>
+    <div class="student-meta">姓名: <span></span> 班级: <span></span> 得分: <span></span> 用时: <span></span></div>
+  </div>
+  <div class="rule-tips">本组重点：把除以分数转化为乘倒数以露出隐藏公因数；商不变性质与除法去括号变号。</div>
+  <div class="grid-problems">
+    <div class="problem-item">
+      <div class="problem-text">1. <span class="frac"><span class="frac-top">5</span><span class="frac-bot">9</span></span> × <span class="frac"><span class="frac-top">3</span><span class="frac-bot">7</span></span> + <span class="frac"><span class="frac-top">4</span><span class="frac-bot">9</span></span> ÷ <span class="frac"><span class="frac-top">7</span><span class="frac-bot">3</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">2. 32.4 − 16.8 ÷ 4 + 5.2</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">3. (4.8 × 7.2) ÷ (2.4 × 1.8)</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">4. <span class="frac"><span class="frac-top">5</span><span class="frac-bot">8</span></span> ÷ (<span class="frac"><span class="frac-top">3</span><span class="frac-bot">4</span></span> − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">8</span></span>)</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">5. 999 × 7.2 + 7.2</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">6. (3.6 × 0.5 + 4.2) ÷ 1.5</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">7. 5600 ÷ (56 ÷ 4)</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">8. <span class="frac"><span class="frac-top">7</span><span class="frac-bot">10</span></span> ÷ <span class="frac"><span class="frac-top">7</span><span class="frac-bot">10</span></span> × <span class="frac"><span class="frac-top">4</span><span class="frac-bot">5</span></span> ÷ <span class="frac"><span class="frac-top">4</span><span class="frac-bot">5</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">9. 48 × (<span class="frac"><span class="frac-top">7</span><span class="frac-bot">12</span></span> − <span class="frac"><span class="frac-top">5</span><span class="frac-bot">8</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">6</span></span>)</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">10. 1.5 × 2.4 + 3.6 ÷ 1.2</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+  </div>
+</div>
+
+<!-- 练习六 -->
+<div class="set-container">
+  <div class="header-info">
+    <div class="set-title">练习六：拆数代换与多层嵌套变号 <span class="diff-badge diff-3">难度 ★★★☆☆</span></div>
+    <div class="student-meta">姓名: <span></span> 班级: <span></span> 得分: <span></span> 用时: <span></span></div>
+  </div>
+  <div class="rule-tips">本组重点：接近分母的大数拆分（如2024=2023+1）、双层去括号连续变号、中括号严格顺序。</div>
+  <div class="grid-problems">
+    <div class="problem-item">
+      <div class="problem-text">1. 2024 × <span class="frac"><span class="frac-top">2022</span><span class="frac-bot">2023</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">2. [1 − (<span class="frac"><span class="frac-top">5</span><span class="frac-bot">9</span></span> − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">6</span></span>)] ÷ <span class="frac"><span class="frac-top">11</span><span class="frac-bot">18</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">3. 4.6 × 3.7 + 4.6 × 5.3 + 4.6</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">4. <span class="frac"><span class="frac-top">2</span><span class="frac-bot">3</span></span> ÷ (<span class="frac"><span class="frac-top">4</span><span class="frac-bot">9</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">3</span></span>) × <span class="frac"><span class="frac-top">7</span><span class="frac-bot">12</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">5. 85.4 − (25.4 − 13.8) − 3.8</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">6. 24 ÷ (4 + 2) × 3 − 5</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">7. <span class="frac"><span class="frac-top">8</span><span class="frac-bot">15</span></span> × <span class="frac"><span class="frac-top">4</span><span class="frac-bot">9</span></span> + <span class="frac"><span class="frac-top">7</span><span class="frac-bot">15</span></span> ÷ <span class="frac"><span class="frac-top">9</span><span class="frac-bot">4</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">8. (<span class="frac"><span class="frac-top">5</span><span class="frac-bot">8</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">4</span></span>) ÷ <span class="frac"><span class="frac-top">7</span><span class="frac-bot">16</span></span> − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">2</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">9. 0.25 × 1.25 × 0.64</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">10. 18 − 8 ÷ 0.4 × 0.5</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+  </div>
+</div>
+
+<!-- 练习七 -->
+<div class="set-container">
+  <div class="header-info">
+    <div class="set-title">练习七：倍数公因数提炼与多重凑整 <span class="diff-badge diff-4">难度 ★★★★☆</span></div>
+    <div class="student-meta">姓名: <span></span> 班级: <span></span> 得分: <span></span> 用时: <span></span></div>
+  </div>
+  <div class="rule-tips">本组重点：公因数隐藏在倍数之中（如7=3.5×2）、连续9补数相加法、混合多步避坑。</div>
+  <div class="grid-problems">
+    <div class="problem-item">
+      <div class="problem-text">1. 3.5 × 1.4 + 7 × 0.8 + 0.35 × 60</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">2. [(<span class="frac"><span class="frac-top">2</span><span class="frac-bot">3</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">5</span></span>) × 15] ÷ <span class="frac"><span class="frac-top">13</span><span class="frac-bot">2</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">3. 9999 + 999 + 99 + 9</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">4. <span class="frac"><span class="frac-top">3</span><span class="frac-bot">5</span></span> ÷ (<span class="frac"><span class="frac-top">3</span><span class="frac-bot">4</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">2</span></span>) × <span class="frac"><span class="frac-top">5</span><span class="frac-bot">8</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">5. (<span class="frac"><span class="frac-top">5</span><span class="frac-bot">7</span></span> − <span class="frac"><span class="frac-top">3</span><span class="frac-bot">8</span></span>) × 56 + (<span class="frac"><span class="frac-top">3</span><span class="frac-bot">8</span></span> − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">4</span></span>) × 56</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">6. 15.6 − 3.6 × 2.5 + 4.2 ÷ 0.7</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">7. 6400 ÷ (64 × 25)</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">8. [2.4 × (5.5 − 3.5)] ÷ 1.2 − 1.5</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">9. 6.8 × 10.1 − 0.68</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">10. <span class="frac"><span class="frac-top">5</span><span class="frac-bot">6</span></span> ÷ <span class="frac"><span class="frac-top">5</span><span class="frac-bot">6</span></span> × <span class="frac"><span class="frac-top">1</span><span class="frac-bot">4</span></span> ÷ <span class="frac"><span class="frac-top">1</span><span class="frac-bot">4</span></span> × <span class="frac"><span class="frac-top">2</span><span class="frac-bot">3</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+  </div>
+</div>
+
+<!-- 练习八 -->
+<div class="set-container">
+  <div class="header-info">
+    <div class="set-title">练习八：整体代换与综合算理深化 <span class="diff-badge diff-4">难度 ★★★★☆</span></div>
+    <div class="student-meta">姓名: <span></span> 班级: <span></span> 得分: <span></span> 用时: <span></span></div>
+  </div>
+  <div class="rule-tips">本组重点：三项小数同化公因数（移动小数点）、分数拆数补偿法、多重混合运算顺序。</div>
+  <div class="grid-problems">
+    <div class="problem-item">
+      <div class="problem-text">1. 12.5 × 0.64 × 2.5</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">2. <span class="frac"><span class="frac-top">7</span><span class="frac-bot">12</span></span> ÷ (<span class="frac"><span class="frac-top">1</span><span class="frac-bot">3</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">4</span></span>) × <span class="frac"><span class="frac-top">3</span><span class="frac-bot">5</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">3. 47 × <span class="frac"><span class="frac-top">45</span><span class="frac-bot">46</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">4. [1 − (<span class="frac"><span class="frac-top">3</span><span class="frac-bot">5</span></span> − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">4</span></span>)] × <span class="frac"><span class="frac-top">20</span><span class="frac-bot">13</span></span> ÷ 2</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">5. 54.32 − (14.32 − 8.68) − 1.68</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">6. 42.5 − 25.5 ÷ 5 × 0.4 + 4.8</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">7. 2.3 × 6.8 + 0.23 × 42 − 0.23 × 10</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">8. <span class="frac"><span class="frac-top">4</span><span class="frac-bot">9</span></span> ÷ (<span class="frac"><span class="frac-top">5</span><span class="frac-bot">6</span></span> − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">3</span></span>) + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">9</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">9. 60 × (<span class="frac"><span class="frac-top">3</span><span class="frac-bot">4</span></span> − <span class="frac"><span class="frac-top">2</span><span class="frac-bot">5</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">6</span></span>)</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">10. 28.4 − 16.8 ÷ 4 + 3.2 × 2</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+  </div>
+</div>
+
+<!-- 练习九 -->
+<div class="set-container">
+  <div class="header-info">
+    <div class="set-title">练习九：分数裂项雏形与多项提取 <span class="diff-badge diff-5">难度 ★★★★★</span></div>
+    <div class="student-meta">姓名: <span></span> 班级: <span></span> 得分: <span></span> 用时: <span></span></div>
+  </div>
+  <div class="rule-tips">本组重点：初探分数裂项相消（1/(n×(n+1))=1/n - 1/(n+1)）、带分数乘法巧算、综合防掉坑。</div>
+  <div class="grid-problems">
+    <div class="problem-item">
+      <div class="problem-text">1. <span class="frac"><span class="frac-top">1</span><span class="frac-bot">1×2</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">2×3</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">3×4</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">4×5</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">5×6</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">2. [(<span class="frac"><span class="frac-top">5</span><span class="frac-bot">6</span></span> − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">4</span></span>) ÷ <span class="frac"><span class="frac-top">7</span><span class="frac-bot">12</span></span> + <span class="frac"><span class="frac-top">2</span><span class="frac-bot">3</span></span>] × <span class="frac"><span class="frac-top">3</span><span class="frac-bot">5</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">3. 99<span class="frac"><span class="frac-top">4</span><span class="frac-bot">5</span></span> × 9</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">4. 5.4 ÷ [0.9 × (3.2 − 2.2)] + 2.5</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">5. <span class="frac"><span class="frac-top">7</span><span class="frac-bot">12</span></span> × <span class="frac"><span class="frac-top">3</span><span class="frac-bot">8</span></span> + <span class="frac"><span class="frac-top">5</span><span class="frac-bot">12</span></span> ÷ <span class="frac"><span class="frac-top">8</span><span class="frac-bot">3</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">6. <span class="frac"><span class="frac-top">3</span><span class="frac-bot">8</span></span> ÷ <span class="frac"><span class="frac-top">3</span><span class="frac-bot">8</span></span> × <span class="frac"><span class="frac-top">5</span><span class="frac-bot">7</span></span> ÷ <span class="frac"><span class="frac-top">5</span><span class="frac-bot">7</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">7. 1.25 × 2.5 × 0.5 × 64</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">8. <span class="frac"><span class="frac-top">6</span><span class="frac-bot">7</span></span> ÷ (<span class="frac"><span class="frac-top">3</span><span class="frac-bot">4</span></span> − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">2</span></span>) × <span class="frac"><span class="frac-top">7</span><span class="frac-bot">16</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">9. 73.5 × 4.8 + 26.5 × 4.8</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">10. 50 − 12.5 × 0.8 ÷ 2 + 3.5</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+  </div>
+</div>
+
+<!-- 练习十 -->
+<div class="set-container">
+  <div class="header-info">
+    <div class="set-title">练习十：小升初压轴·综合巧算与巅峰避坑 <span class="diff-badge diff-5">难度 ★★★★★</span></div>
+    <div class="student-meta">姓名: <span></span> 班级: <span></span> 得分: <span></span> 用时: <span></span></div>
+  </div>
+  <div class="rule-tips">本组重点：多项裂项与连乘对角约分巧算、三项小数公因数、终极复合顺序审题考验。</div>
+  <div class="grid-problems">
+    <div class="problem-item">
+      <div class="problem-text">1. <span class="frac"><span class="frac-top">1</span><span class="frac-bot">2×3</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">3×4</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">4×5</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">5×6</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">6×7</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">2. [1 − (<span class="frac"><span class="frac-top">1</span><span class="frac-bot">2</span></span> + <span class="frac"><span class="frac-top">3</span><span class="frac-bot">8</span></span>)] × <span class="frac"><span class="frac-top">16</span><span class="frac-bot">3</span></span> ÷ <span class="frac"><span class="frac-top">2</span><span class="frac-bot">3</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">3. 2025 × <span class="frac"><span class="frac-top">2023</span><span class="frac-bot">2024</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">4. <span class="frac"><span class="frac-top">5</span><span class="frac-bot">7</span></span> ÷ (<span class="frac"><span class="frac-top">5</span><span class="frac-bot">14</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">2</span></span>) × <span class="frac"><span class="frac-top">6</span><span class="frac-bot">5</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">5. 3.75 × 4.8 + 37.5 × 0.42 + 0.375 × 10</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">6. 27.6 − 8.4 ÷ 0.7 × 1.5 + 2.5</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">7. (1 − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">2</span></span>) × (1 − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">3</span></span>) × (1 − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">4</span></span>) × (1 − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">5</span></span>) × (1 − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">6</span></span>)</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">8. [(<span class="frac"><span class="frac-top">4</span><span class="frac-bot">9</span></span> + <span class="frac"><span class="frac-top">1</span><span class="frac-bot">3</span></span>) ÷ <span class="frac"><span class="frac-top">7</span><span class="frac-bot">6</span></span>] × <span class="frac"><span class="frac-top">3</span><span class="frac-bot">4</span></span> − <span class="frac"><span class="frac-top">1</span><span class="frac-bot">8</span></span></div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">9. 999 × 888 ÷ 222</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-text">10. 36 − 16 ÷ 4 × 2 + 5</div>
+      <div class="work-line">计算过程/答案：_________________</div>
+    </div>
+  </div>
+</div>
+
+<!-- 答案页 -->
+<div class="answer-sheet">
+  <h2 style="text-align: center; margin-top: 0; margin-bottom: 18px;">难度阶梯100题·答案与核心算理解析</h2>
+  <div class="answer-grid">
+
+    <div class="answer-block">
+      <h4>练习一（难度 ★☆☆☆☆）</h4>
+      <div class="ans-item">1. <span class="tag-jian">简</span> 3.8×(99+1) = <strong>380</strong></div>
+      <div class="ans-item">2. <span class="tag-chang">常</span> 25.4 − 5.2 + 4.2 = <strong>24.4</strong></div>
+      <div class="ans-item">3. <span class="tag-jian">简</span> 16.8 − 6.8 + 4.5 = <strong>14.5</strong></div>
+      <div class="ans-item">4. <span class="tag-chang">常</span> 45 ÷ 9 × 2 = <strong>10</strong></div>
+      <div class="ans-item">5. <span class="tag-jian">简</span> (14.36+5.64) + (7.85+2.15) = <strong>30</strong></div>
+      <div class="ans-item">6. <span class="tag-chang">常</span> 5 + 9 = <strong>14</strong></div>
+      <div class="ans-item">7. <span class="tag-jian">简</span> (100+2)×3.5 = 350+7 = <strong>357</strong></div>
+      <div class="ans-item">8. <span class="tag-chang">常</span> 36 − 4 + 6 = <strong>38</strong></div>
+      <div class="ans-item">9. <span class="tag-jian">简</span> 7.5×(4.3+5.7) = <strong>75</strong></div>
+      <div class="ans-item">10. <span class="tag-chang">常</span> 0.8×(4.5−0.5) = <strong>3.2</strong></div>
+    </div>
+
+    <div class="answer-block">
+      <h4>练习二（难度 ★☆☆☆☆）</h4>
+      <div class="ans-item">1. <span class="tag-jian">简</span> (125×8)×(25×4) = <strong>100000</strong></div>
+      <div class="ans-item">2. <span class="tag-chang">常</span> 18.6 − 12 + 3.8 = <strong>10.4</strong></div>
+      <div class="ans-item">3. <span class="tag-jian">简</span> 45.6 − (18.7+11.3) = <strong>15.6</strong></div>
+      <div class="ans-item">4. <span class="tag-chang">常</span> 6.4 ÷ 3.2 = <strong>2</strong></div>
+      <div class="ans-item">5. <span class="tag-jian">简</span> 18.75 − 8.75 + 3.4 = <strong>13.4</strong></div>
+      <div class="ans-item">6. <span class="tag-chang">常</span> 从左往右算: 1 × 4/7 = <strong>4/7</strong></div>
+      <div class="ans-item">7. <span class="tag-jian">简</span> 4800 ÷ (25×4) = <strong>48</strong></div>
+      <div class="ans-item">8. <span class="tag-chang">常</span> 9 × 1.5 − 4.5 = <strong>9</strong></div>
+      <div class="ans-item">9. <span class="tag-jian">简</span> 12.5×8 + 12.5×0.8 = <strong>110</strong></div>
+      <div class="ans-item">10. <span class="tag-chang">常</span> 5/4 × 8/5 = <strong>2</strong></div>
+    </div>
+
+    <div class="answer-block">
+      <h4>练习三（难度 ★★☆☆☆）</h4>
+      <div class="ans-item">1. <span class="tag-jian">简</span> 18 − 20 + 14 = <strong>12</strong></div>
+      <div class="ans-item">2. <span class="tag-chang">常</span> [严禁分配] 4/5 ÷ 7/6 = <strong>24/35</strong></div>
+      <div class="ans-item">3. <span class="tag-jian">简</span> (17.65+2.35) − (6.4+3.6) = <strong>10</strong></div>
+      <div class="ans-item">4. <span class="tag-chang">常</span> (1 − 5/8) ÷ 3/4 = <strong>1/2</strong></div>
+      <div class="ans-item">5. <span class="tag-jian">简</span> 6.7×(101−1) = <strong>670</strong></div>
+      <div class="ans-item">6. <span class="tag-chang">常</span> 28.4 − 24 + 1.6 = <strong>6</strong></div>
+      <div class="ans-item">7. <span class="tag-jian">简</span> 7200 ÷ 72 ÷ 25 = <strong>4</strong></div>
+      <div class="ans-item">8. <span class="tag-chang">常</span> 1/6 + 3/10 = <strong>7/15</strong></div>
+      <div class="ans-item">9. <span class="tag-jian">简</span> 3.8×(4.7+6.3−1) = <strong>38</strong></div>
+      <div class="ans-item">10. <span class="tag-chang">常</span> 严格从左往右 = <strong>1</strong></div>
+    </div>
+
+    <div class="answer-block">
+      <h4>练习四（难度 ★★☆☆☆）</h4>
+      <div class="ans-item">1. <span class="tag-jian">简</span> (15.375+2.625) − 10 = <strong>8</strong></div>
+      <div class="ans-item">2. <span class="tag-chang">常</span> 4.8 + 2.6 − 1.4 = <strong>6</strong></div>
+      <div class="ans-item">3. <span class="tag-jian">简</span> 4.8×7.5 + 4.8×2.5 = <strong>48</strong></div>
+      <div class="ans-item">4. <span class="tag-chang">常</span> 3/7 ÷ 6/7 = <strong>1/2</strong></div>
+      <div class="ans-item">5. <span class="tag-jian">简</span> 15 + 14 − 6 = <strong>23</strong></div>
+      <div class="ans-item">6. <span class="tag-chang">常</span> (4/5 − 1/6) ÷ 19/30 = <strong>1</strong></div>
+      <div class="ans-item">7. <span class="tag-jian">简</span> 7.8×(10.1−0.1) = <strong>78</strong></div>
+      <div class="ans-item">8. <span class="tag-chang">常</span> 6 × 2.5 − 3.5 = <strong>11.5</strong></div>
+      <div class="ans-item">9. <span class="tag-jian">简</span> (2.5×0.4)×(1.25×8) = <strong>10</strong></div>
+      <div class="ans-item">10. <span class="tag-chang">常</span> 5/6 − 1/2 + 1/2 = <strong>5/6</strong></div>
+    </div>
+
+    <div class="answer-block">
+      <h4>练习五（难度 ★★★☆☆）</h4>
+      <div class="ans-item">1. <span class="tag-jian">简</span> (5/9+4/9) × 3/7 = <strong>3/7</strong></div>
+      <div class="ans-item">2. <span class="tag-chang">常</span> 32.4 − 4.2 + 5.2 = <strong>33.4</strong></div>
+      <div class="ans-item">3. <span class="tag-jian">简</span> (4.8÷2.4)×(7.2÷1.8) = <strong>8</strong></div>
+      <div class="ans-item">4. <span class="tag-chang">常</span> 5/8 ÷ 5/8 = <strong>1</strong></div>
+      <div class="ans-item">5. <span class="tag-jian">简</span> 7.2×(999+1) = <strong>7200</strong></div>
+      <div class="ans-item">6. <span class="tag-chang">常</span> 6 ÷ 1.5 = <strong>4</strong></div>
+      <div class="ans-item">7. <span class="tag-jian">简</span> 5600 ÷ 56 × 4 = <strong>400</strong></div>
+      <div class="ans-item">8. <span class="tag-chang">常</span> 严格从左往右 = <strong>1</strong></div>
+      <div class="ans-item">9. <span class="tag-jian">简</span> 28 − 30 + 8 = <strong>6</strong></div>
+      <div class="ans-item">10. <span class="tag-chang">常</span> 3.6 + 3 = <strong>6.6</strong></div>
+    </div>
+
+    <div class="answer-block">
+      <h4>练习六（难度 ★★★☆☆）</h4>
+      <div class="ans-item">1. <span class="tag-jian">简</span> (2023+1)×2022/2023 = <strong>2022又2022/2023</strong></div>
+      <div class="ans-item">2. <span class="tag-chang">常</span> (1 − 7/18) ÷ 11/18 = <strong>1</strong></div>
+      <div class="ans-item">3. <span class="tag-jian">简</span> 4.6×(3.7+5.3+1) = <strong>46</strong></div>
+      <div class="ans-item">4. <span class="tag-chang">常</span> 2/3 ÷ 7/9 × 7/12 = <strong>1/2</strong></div>
+      <div class="ans-item">5. <span class="tag-jian">简</span> 85.4 − 25.4 + 13.8 − 3.8 = <strong>70</strong></div>
+      <div class="ans-item">6. <span class="tag-chang">常</span> 24 ÷ 6 × 3 − 5 = <strong>7</strong></div>
+      <div class="ans-item">7. <span class="tag-jian">简</span> (8/15+7/15) × 4/9 = <strong>4/9</strong></div>
+      <div class="ans-item">8. <span class="tag-chang">常</span> 7/8 × 16/7 − 1/2 = <strong>1.5</strong></div>
+      <div class="ans-item">9. <span class="tag-jian">简</span> (0.25×0.4)×(1.25×1.6) = <strong>0.2</strong></div>
+      <div class="ans-item">10. <span class="tag-chang">常</span> 18 − 20 × 0.5 = <strong>8</strong></div>
+    </div>
+
+    <div class="answer-block">
+      <h4>练习七（难度 ★★★★☆）</h4>
+      <div class="ans-item">1. <span class="tag-jian">简</span> 3.5×(1.4 + 1.6 + 6) = <strong>31.5</strong></div>
+      <div class="ans-item">2. <span class="tag-chang">常</span> 13 ÷ 6.5 = <strong>2</strong></div>
+      <div class="ans-item">3. <span class="tag-jian">简</span> 11110 − 4 = <strong>11106</strong></div>
+      <div class="ans-item">4. <span class="tag-chang">常</span> 3/5 ÷ 5/4 × 5/8 = <strong>3/10</strong></div>
+      <div class="ans-item">5. <span class="tag-jian">简</span> (5/7 − 1/4) × 56 = <strong>26</strong></div>
+      <div class="ans-item">6. <span class="tag-chang">常</span> 15.6 − 9 + 6 = <strong>12.6</strong></div>
+      <div class="ans-item">7. <span class="tag-jian">简</span> 6400 ÷ 64 ÷ 25 = <strong>4</strong></div>
+      <div class="ans-item">8. <span class="tag-chang">常</span> 4.8 ÷ 1.2 − 1.5 = <strong>2.5</strong></div>
+      <div class="ans-item">9. <span class="tag-jian">简</span> 6.8×(10.1−0.1) = <strong>68</strong></div>
+      <div class="ans-item">10. <span class="tag-chang">常</span> 严格从左往右 = <strong>2/3</strong></div>
+    </div>
+
+    <div class="answer-block">
+      <h4>练习八（难度 ★★★★☆）</h4>
+      <div class="ans-item">1. <span class="tag-jian">简</span> (12.5×0.8)×(2.5×0.8) = <strong>20</strong></div>
+      <div class="ans-item">2. <span class="tag-chang">常</span> 1 × 3/5 = <strong>3/5</strong></div>
+      <div class="ans-item">3. <span class="tag-jian">简</span> (46+1)×45/46 = <strong>45又45/46</strong></div>
+      <div class="ans-item">4. <span class="tag-chang">常</span> 1 ÷ 2 = <strong>0.5</strong></div>
+      <div class="ans-item">5. <span class="tag-jian">简</span> 54.32−14.32 + 8.68−1.68 = <strong>47</strong></div>
+      <div class="ans-item">6. <span class="tag-chang">常</span> 42.5 − 2.04 + 4.8 = <strong>45.26</strong></div>
+      <div class="ans-item">7. <span class="tag-jian">简</span> 0.23×(68+42−10) = <strong>23</strong></div>
+      <div class="ans-item">8. <span class="tag-chang">常</span> 8/9 + 1/9 = <strong>1</strong></div>
+      <div class="ans-item">9. <span class="tag-jian">简</span> 45 − 24 + 10 = <strong>31</strong></div>
+      <div class="ans-item">10. <span class="tag-chang">常</span> 28.4 − 4.2 + 6.4 = <strong>30.6</strong></div>
+    </div>
+
+    <div class="answer-block">
+      <h4>练习九（难度 ★★★★★）</h4>
+      <div class="ans-item">1. <span class="tag-jian">简</span> 裂项相消: 1 − 1/6 = <strong>5/6</strong></div>
+      <div class="ans-item">2. <span class="tag-chang">常</span> (1 + 2/3) × 3/5 = <strong>1</strong></div>
+      <div class="ans-item">3. <span class="tag-jian">简</span> (100−1/5)×9 = <strong>898.2</strong> (898又1/5)</div>
+      <div class="ans-item">4. <span class="tag-chang">常</span> 5.4 ÷ 0.9 + 2.5 = <strong>8.5</strong></div>
+      <div class="ans-item">5. <span class="tag-jian">简</span> (7/12+5/12) × 3/8 = <strong>3/8</strong></div>
+      <div class="ans-item">6. <span class="tag-chang">常</span> 严格从左往右 = <strong>1</strong></div>
+      <div class="ans-item">7. <span class="tag-jian">简</span> (1.25×8)×(2.5×4)×(0.5×2) = <strong>100</strong></div>
+      <div class="ans-item">8. <span class="tag-chang">常</span> 24/7 × 7/16 = <strong>1.5</strong></div>
+      <div class="ans-item">9. <span class="tag-jian">简</span> (73.5+26.5) × 4.8 = <strong>480</strong></div>
+      <div class="ans-item">10. <span class="tag-chang">常</span> 50 − 5 + 3.5 = <strong>48.5</strong></div>
+    </div>
+
+    <div class="answer-block">
+      <h4>练习十（难度 ★★★★★）</h4>
+      <div class="ans-item">1. <span class="tag-jian">简</span> 裂项相消: 1/2 − 1/7 = <strong>5/14</strong></div>
+      <div class="ans-item">2. <span class="tag-chang">常</span> 1/8 × 16/3 × 3/2 = <strong>1</strong></div>
+      <div class="ans-item">3. <span class="tag-jian">简</span> (2024+1)×2023/2024 = <strong>2023又2023/2024</strong></div>
+      <div class="ans-item">4. <span class="tag-chang">常</span> 5/6 × 6/5 = <strong>1</strong></div>
+      <div class="ans-item">5. <span class="tag-jian">简</span> 3.75×(4.8 + 4.2 + 1) = <strong>37.5</strong></div>
+      <div class="ans-item">6. <span class="tag-chang">常</span> 27.6 − 18 + 2.5 = <strong>12.1</strong></div>
+      <div class="ans-item">7. <span class="tag-jian">简</span> 1/2 × 2/3 × ... × 5/6 = <strong>1/6</strong></div>
+      <div class="ans-item">8. <span class="tag-chang">常</span> 2/3 × 3/4 − 1/8 = <strong>3/8</strong></div>
+      <div class="ans-item">9. <span class="tag-jian">简</span> 999 × (888÷222) = <strong>3996</strong></div>
+      <div class="ans-item">10. <span class="tag-chang">常</span> [避坑: 先除后乘] 36 − 8 + 5 = <strong>33</strong></div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
