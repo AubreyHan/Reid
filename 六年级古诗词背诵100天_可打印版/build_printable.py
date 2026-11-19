@@ -1240,8 +1240,8 @@ def build_tracker_and_quiz_html(poems: list[dict[str, Any]]) -> str:
     background: #fff;
     border: 1px solid #cfd6df;
     border-radius: 6px;
-    padding: 8mm 10mm;
-    min-height: 268mm;
+    padding: 7mm 10mm;
+    min-height: 262mm;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1257,8 +1257,8 @@ def build_tracker_and_quiz_html(poems: list[dict[str, Any]]) -> str:
   }}
   .page-head {{
     border-bottom: 2px solid #1f3a52;
-    padding-bottom: 5px;
-    margin-bottom: 8px;
+    padding-bottom: 4px;
+    margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -1266,28 +1266,28 @@ def build_tracker_and_quiz_html(poems: list[dict[str, Any]]) -> str:
   }}
   .page-head h2 {{
     margin: 0;
-    font-size: 16.5px;
+    font-size: 16px;
     color: #1f3a52;
   }}
   .page-head .sub {{
     margin: 2px 0 0 0;
-    font-size: 11px;
+    font-size: 10.5px;
     color: #6e7781;
   }}
   .student-meta {{
-    font-size: 11.5px;
+    font-size: 11px;
     color: #4a5562;
     white-space: nowrap;
   }}
   .tracker-table {{
     width: 100%;
     border-collapse: collapse;
-    font-size: 9.8px;
-    line-height: 1.25;
+    font-size: 9.3px;
+    line-height: 1.16;
   }}
   .tracker-table th, .tracker-table td {{
     border: 1px solid #d0d7de;
-    padding: 1.6px 5px;
+    padding: 1px 4px;
     text-align: left;
     white-space: nowrap;
   }}
@@ -1298,13 +1298,13 @@ def build_tracker_and_quiz_html(poems: list[dict[str, Any]]) -> str:
     text-align: center;
   }}
   .tracker-table tbody tr:nth-child(even) {{ background: #fafbfc; }}
-  .col-day {{ width: 58px; font-weight: 700; color: #1f3a52; text-align: center !important; }}
+  .col-day {{ width: 56px; font-weight: 700; color: #1f3a52; text-align: center !important; }}
   .col-title {{ font-weight: 600; }}
-  .col-author {{ width: 112px; color: #4a5562; }}
-  .col-cat {{ width: 78px; text-align: center !important; }}
-  .col-chk {{ width: 40px; text-align: center !important; font-size: 12px; }}
+  .col-author {{ width: 108px; color: #4a5562; }}
+  .col-cat {{ width: 76px; text-align: center !important; }}
+  .col-chk {{ width: 38px; text-align: center !important; font-size: 10px; }}
   .col-sign {{ width: 88px; }}
-  .cat-badge {{ font-size: 9.5px; padding: 0.5px 5px; border-radius: 3px; font-weight: 600; }}
+  .cat-badge {{ font-size: 9px; padding: 0 4px; border-radius: 3px; font-weight: 600; }}
   .cat-core {{ background: #e8f3ee; color: #166534; }}
   .cat-upper {{ background: #e6f2fa; color: #0c548a; }}
   .cat-junior {{ background: #fdf3e1; color: #92400e; }}
@@ -1315,58 +1315,58 @@ def build_tracker_and_quiz_html(poems: list[dict[str, Any]]) -> str:
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 6px;
+    gap: 3px;
   }}
   .quiz-item {{
     border-bottom: 1px dashed #d8dee6;
-    padding-bottom: 6px;
+    padding-bottom: 3.5px;
   }}
   .quiz-q {{
-    font-size: 12.2px;
-    line-height: 1.5;
+    font-size: 11.2px;
+    line-height: 1.36;
     color: #1e242b;
   }}
   .q-idx {{ font-weight: 700; color: #1f3a52; }}
-  .q-src {{ font-size: 10.5px; color: #8c959f; }}
+  .q-src {{ font-size: 10px; color: #8c959f; }}
   .quiz-write-line {{
-    margin-top: 13px;
+    margin-top: 8px;
     border-bottom: 1px solid #9aa7b4;
-    height: 4px;
+    height: 3px;
   }}
 
   .ans-grid {{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: 12px;
     flex: 1 1 auto;
     align-content: start;
   }}
   .ans-col {{
     border: 1px solid #d8dee6;
     border-radius: 6px;
-    padding: 8px 10px;
+    padding: 6px 9px;
     background: #fafbfd;
   }}
   .ans-col h3 {{
-    margin: 0 0 6px 0;
-    font-size: 13px;
+    margin: 0 0 5px 0;
+    font-size: 12.5px;
     color: #1f3a52;
     border-bottom: 1px solid #d8dee6;
-    padding-bottom: 4px;
+    padding-bottom: 3px;
   }}
   .ans-row {{
-    font-size: 11.4px;
-    line-height: 1.55;
-    padding: 2.5px 0;
+    font-size: 10.8px;
+    line-height: 1.4;
+    padding: 1.6px 0;
     border-bottom: 1px dashed #e6ebf1;
   }}
   .ans-row:last-child {{ border-bottom: none; }}
 
   .page-foot {{
     border-top: 1px solid #d8dee6;
-    padding-top: 5px;
-    margin-top: 6px;
-    font-size: 10.5px;
+    padding-top: 4px;
+    margin-top: 4px;
+    font-size: 10px;
     color: #6e7781;
     display: flex;
     justify-content: space-between;
@@ -1380,7 +1380,7 @@ def build_tracker_and_quiz_html(poems: list[dict[str, Any]]) -> str:
       border: none !important;
       box-shadow: none !important;
       padding: 0 !important;
-      min-height: 268mm;
+      min-height: 262mm;
       margin: 0 !important;
     }}
   }}
