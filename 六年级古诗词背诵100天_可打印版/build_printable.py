@@ -240,7 +240,7 @@ def render_poem_sheet(poem: dict[str, Any]) -> str:
     tip_html = format_tagged_blocks(poem["application_tip"])
 
     return f"""
-<article class="poem-sheet {len_cls}" id="day-{day}" data-day="{day}">
+<article class="poem-sheet {len_cls}" id="day-{day}" data-day="{day}" data-volume="{poem["volume"]}">
   <!-- 顶部页眉 -->
   <header class="sheet-header">
     <div class="header-left">
