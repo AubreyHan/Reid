@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>百日背诵打卡总表与理解性默写过关卷（可打印A4版）</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 9mm 11mm 9mm 11mm;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f6f4ef;
+    color: #1e242b;
+    margin: 0;
+    padding: 18px 14px 36px 14px;
+    font-size: 12px;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print-bar {
+    max-width: 210mm;
+    margin: 0 auto 16px auto;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 3px 12px rgba(24, 39, 75, 0.06);
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #d0d7de;
+    background: #fff;
+    color: #1e242b;
+    cursor: pointer;
+  }
+  .btn-print { background: #9e2a2b; color: #fff; border-color: #9e2a2b; }
+  .pages-wrap {
+    max-width: 210mm;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .a4-page {
+    background: #fff;
+    border: 1px solid #cfd6df;
+    border-radius: 6px;
+    padding: 8mm 10mm;
+    min-height: 268mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 14px rgba(20, 30, 45, 0.07);
+    page-break-inside: avoid;
+    break-inside: avoid;
+    page-break-after: always;
+    break-after: page;
+  }
+  .a4-page.last-page {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  .page-head {
+    border-bottom: 2px solid #1f3a52;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 8px;
+  }
+  .page-head h2 {
+    margin: 0;
+    font-size: 16.5px;
+    color: #1f3a52;
+  }
+  .page-head .sub {
+    margin: 2px 0 0 0;
+    font-size: 11px;
+    color: #6e7781;
+  }
+  .student-meta {
+    font-size: 11.5px;
+    color: #4a5562;
+    white-space: nowrap;
+  }
+  .tracker-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.8px;
+    line-height: 1.25;
+  }
+  .tracker-table th, .tracker-table td {
+    border: 1px solid #d0d7de;
+    padding: 1.6px 5px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .tracker-table th {
+    background: #f0f4f8;
+    color: #1f3a52;
+    font-weight: 700;
+    text-align: center;
+  }
+  .tracker-table tbody tr:nth-child(even) { background: #fafbfc; }
+  .col-day { width: 58px; font-weight: 700; color: #1f3a52; text-align: center !important; }
+  .col-title { font-weight: 600; }
+  .col-author { width: 112px; color: #4a5562; }
+  .col-cat { width: 78px; text-align: center !important; }
+  .col-chk { width: 40px; text-align: center !important; font-size: 12px; }
+  .col-sign { width: 88px; }
+  .cat-badge { font-size: 9.5px; padding: 0.5px 5px; border-radius: 3px; font-weight: 600; }
+  .cat-core { background: #e8f3ee; color: #166534; }
+  .cat-upper { background: #e6f2fa; color: #0c548a; }
+  .cat-junior { background: #fdf3e1; color: #92400e; }
+  .cat-extra { background: #f4effa; color: #6b21a8; }
+
+  .quiz-list {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .quiz-item {
+    border-bottom: 1px dashed #d8dee6;
+    padding-bottom: 6px;
+  }
+  .quiz-q {
+    font-size: 12.2px;
+    line-height: 1.5;
+    color: #1e242b;
+  }
+  .q-idx { font-weight: 700; color: #1f3a52; }
+  .q-src { font-size: 10.5px; color: #8c959f; }
+  .quiz-write-line {
+    margin-top: 13px;
+    border-bottom: 1px solid #9aa7b4;
+    height: 4px;
+  }
+
+  .ans-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    flex: 1 1 auto;
+    align-content: start;
+  }
+  .ans-col {
+    border: 1px solid #d8dee6;
+    border-radius: 6px;
+    padding: 8px 10px;
+    background: #fafbfd;
+  }
+  .ans-col h3 {
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    color: #1f3a52;
+    border-bottom: 1px solid #d8dee6;
+    padding-bottom: 4px;
+  }
+  .ans-row {
+    font-size: 11.4px;
+    line-height: 1.55;
+    padding: 2.5px 0;
+    border-bottom: 1px dashed #e6ebf1;
+  }
+  .ans-row:last-child { border-bottom: none; }
+
+  .page-foot {
+    border-top: 1px solid #d8dee6;
+    padding-top: 5px;
+    margin-top: 6px;
+    font-size: 10.5px;
+    color: #6e7781;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media print {
+    body { background: #fff !important; padding: 0 !important; }
+    .no-print-bar { display: none !important; }
+    .pages-wrap { max-width: 100% !important; gap: 0 !important; display: block !important; }
+    .a4-page {
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      min-height: 268mm;
+      margin: 0 !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="no-print-bar">
+  <div>
+    <strong style="font-size:15px; color:#1f3a52;">📋 百日背诵墙贴打卡总表 &amp; 小升初 50 题默写通关卷</strong>
+    <div style="font-size:12px; color:#6e7781;">第1-2页：100天墙贴打卡表 ｜ 第3-6页：50题理解性默写卷 ｜ 第7页：参考答案</div>
+  </div>
+  <div style="display:flex; gap:8px;">
+    <a href="index.html" class="btn">← 返回总目录</a>
+    <a href="全套100天合集打印版.html" class="btn">📚 100天合集</a>
+    <button class="btn btn-print" onclick="window.print()">🖨️ 打印打卡表与默写卷 (7页A4)</button>
+  </div>
+</div>
+
+<main class="pages-wrap">
+  <!-- 第 1 页：Day 01-50 打卡表 -->
+  <section class="a4-page">
+    <div>
+      <header class="page-head">
+        <div>
+          <h2>小学六年级古诗词背诵 100 天 · 进度打卡墙贴表（上篇：Day 01 – 50）</h2>
+          <p class="sub">建议贴在书桌前，每天完成“朗读 → 精讲理解 → 脱口背诵 → 零错字默写”后打钩签字</p>
+        </div>
+        <div class="student-meta">姓名：________ &nbsp; 目标：100 天通关</div>
+      </header>
+      <table class="tracker-table">
+        <thead>
+          <tr><th>天数</th><th>诗词篇目</th><th>朝代 · 作者</th><th>板块定位</th><th>背诵</th><th>默写</th><th>日期 / 签字</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+                  <td class="col-day">Day 01</td>
+                  <td class="col-title">《宿建德江》</td>
+                  <td class="col-author">〔唐〕孟浩然</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 02</td>
+                  <td class="col-title">《六月二十七日望湖楼醉书（其一）》</td>
+                  <td class="col-author">〔宋〕苏轼</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 03</td>
+                  <td class="col-title">《西江月·夜行黄沙道中》</td>
+                  <td class="col-author">〔宋〕辛弃疾</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 04</td>
+                  <td class="col-title">《江南春》</td>
+                  <td class="col-author">〔唐〕杜牧</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 05</td>
+                  <td class="col-title">《书湖阴先生壁（其一）》</td>
+                  <td class="col-author">〔宋〕王安石</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 06</td>
+                  <td class="col-title">《山居秋暝》</td>
+                  <td class="col-author">〔唐〕王维</td>
+                  <td class="col-cat"><span class="cat-badge cat-upper">高段核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 07</td>
+                  <td class="col-title">《钱塘湖春行》</td>
+                  <td class="col-author">〔唐〕白居易</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 08</td>
+                  <td class="col-title">《早春呈水部张十八员外》</td>
+                  <td class="col-author">〔唐〕韩愈</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 09</td>
+                  <td class="col-title">《兰溪棹歌》</td>
+                  <td class="col-author">〔唐〕戴叔伦</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 10</td>
+                  <td class="col-title">《苏幕遮·燎沉香》</td>
+                  <td class="col-author">〔宋〕周邦彦</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 11</td>
+                  <td class="col-title">《过故人庄》</td>
+                  <td class="col-author">〔唐〕孟浩然</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 12</td>
+                  <td class="col-title">《游山西村》</td>
+                  <td class="col-author">〔宋〕陆游</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 13</td>
+                  <td class="col-title">《约客》</td>
+                  <td class="col-author">〔宋〕赵师秀</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 14</td>
+                  <td class="col-title">《饮酒（其五）》</td>
+                  <td class="col-author">〔东晋〕陶渊明</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 15</td>
+                  <td class="col-title">《归园田居（其三）》</td>
+                  <td class="col-author">〔东晋〕陶渊明</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 16</td>
+                  <td class="col-title">《江上渔者》</td>
+                  <td class="col-author">〔宋〕范仲淹</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 17</td>
+                  <td class="col-title">《清平乐·村居》</td>
+                  <td class="col-author">〔宋〕辛弃疾</td>
+                  <td class="col-cat"><span class="cat-badge cat-upper">高段核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 18</td>
+                  <td class="col-title">《如梦令·常记溪亭日暮》</td>
+                  <td class="col-author">〔宋〕李清照</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 19</td>
+                  <td class="col-title">《过松源晨炊漆公店（其五）》</td>
+                  <td class="col-author">〔宋〕杨万里</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 20</td>
+                  <td class="col-title">《观书有感（其二）》</td>
+                  <td class="col-author">〔宋〕朱熹</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 21</td>
+                  <td class="col-title">《马诗（其五）》</td>
+                  <td class="col-author">〔唐〕李贺</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 22</td>
+                  <td class="col-title">《石灰吟》</td>
+                  <td class="col-author">〔明〕于谦</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 23</td>
+                  <td class="col-title">《竹石》</td>
+                  <td class="col-author">〔清〕郑燮</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 24</td>
+                  <td class="col-title">《卜算子·咏梅》</td>
+                  <td class="col-author">〔宋〕陆游</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 25</td>
+                  <td class="col-title">《墨梅》</td>
+                  <td class="col-author">〔元〕王冕</td>
+                  <td class="col-cat"><span class="cat-badge cat-upper">高段核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 26</td>
+                  <td class="col-title">《山园小梅（其一）》</td>
+                  <td class="col-author">〔宋〕林逋</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 27</td>
+                  <td class="col-title">《蝉》</td>
+                  <td class="col-author">〔唐〕虞世南</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 28</td>
+                  <td class="col-title">《赠从弟（其二）》</td>
+                  <td class="col-author">〔东汉〕刘桢</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 29</td>
+                  <td class="col-title">《菊花》</td>
+                  <td class="col-author">〔唐〕元稹</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 30</td>
+                  <td class="col-title">《定风波·莫听穿林打叶声》</td>
+                  <td class="col-author">〔宋〕苏轼</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 31</td>
+                  <td class="col-title">《送元二使安西》</td>
+                  <td class="col-author">〔唐〕王维</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 32</td>
+                  <td class="col-title">《卜算子·送鲍浩然之浙东》</td>
+                  <td class="col-author">〔宋〕王观</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 33</td>
+                  <td class="col-title">《芙蓉楼送辛渐》</td>
+                  <td class="col-author">〔唐〕王昌龄</td>
+                  <td class="col-cat"><span class="cat-badge cat-upper">高段核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 34</td>
+                  <td class="col-title">《别董大（其一）》</td>
+                  <td class="col-author">〔唐〕高适</td>
+                  <td class="col-cat"><span class="cat-badge cat-upper">高段核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 35</td>
+                  <td class="col-title">《送杜少府之任蜀州》</td>
+                  <td class="col-author">〔唐〕王勃</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 36</td>
+                  <td class="col-title">《闻王昌龄左迁龙标遥有此寄》</td>
+                  <td class="col-author">〔唐〕李白</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 37</td>
+                  <td class="col-title">《渡荆门送别》</td>
+                  <td class="col-author">〔唐〕李白</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 38</td>
+                  <td class="col-title">《淮上与友人别》</td>
+                  <td class="col-author">〔唐〕郑谷</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 39</td>
+                  <td class="col-title">《夜雨寄北》</td>
+                  <td class="col-author">〔唐〕李商隐</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 40</td>
+                  <td class="col-title">《水调歌头·明月几时有》</td>
+                  <td class="col-author">〔宋〕苏轼</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 41</td>
+                  <td class="col-title">《出塞（其一）》</td>
+                  <td class="col-author">〔唐〕王昌龄</td>
+                  <td class="col-cat"><span class="cat-badge cat-upper">高段核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 42</td>
+                  <td class="col-title">《从军行（其四）》</td>
+                  <td class="col-author">〔唐〕王昌龄</td>
+                  <td class="col-cat"><span class="cat-badge cat-upper">高段核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 43</td>
+                  <td class="col-title">《凉州词（其一·葡萄美酒夜光杯）》</td>
+                  <td class="col-author">〔唐〕王翰</td>
+                  <td class="col-cat"><span class="cat-badge cat-upper">高段核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 44</td>
+                  <td class="col-title">《使至塞上》</td>
+                  <td class="col-author">〔唐〕王维</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 45</td>
+                  <td class="col-title">《雁门太守行》</td>
+                  <td class="col-author">〔唐〕李贺</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 46</td>
+                  <td class="col-title">《白雪歌送武判官归京》</td>
+                  <td class="col-author">〔唐〕岑参</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 47</td>
+                  <td class="col-title">《渔家傲·秋思》</td>
+                  <td class="col-author">〔宋〕范仲淹</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 48</td>
+                  <td class="col-title">《江城子·密州出猎》</td>
+                  <td class="col-author">〔宋〕苏轼</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 49</td>
+                  <td class="col-title">《破阵子·为陈同甫赋壮词以寄之》</td>
+                  <td class="col-author">〔宋〕辛弃疾</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 50</td>
+                  <td class="col-title">《满江红·写怀》</td>
+                  <td class="col-author">〔宋〕岳飞</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="page-foot">
+      <span>卷一至卷五（山川 · 田园 · 托物 · 送别 · 边塞）</span>
+      <span>第 1 / 2 页（打卡总表）</span>
+    </footer>
+  </section>
+
+  <!-- 第 2 页：Day 51-100 打卡表 -->
+  <section class="a4-page">
+    <div>
+      <header class="page-head">
+        <div>
+          <h2>小学六年级古诗词背诵 100 天 · 进度打卡墙贴表（下篇：Day 51 – 100）</h2>
+          <p class="sub">坚持到第 100 天，你将完整积累 100 篇中华经典诗词与小升初高频名句库</p>
+        </div>
+        <div class="student-meta">阶段奖励：____________________</div>
+      </header>
+      <table class="tracker-table">
+        <thead>
+          <tr><th>天数</th><th>诗词篇目</th><th>朝代 · 作者</th><th>板块定位</th><th>背诵</th><th>默写</th><th>日期 / 签字</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+                  <td class="col-day">Day 51</td>
+                  <td class="col-title">《寒食》</td>
+                  <td class="col-author">〔唐〕韩翃</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 52</td>
+                  <td class="col-title">《迢迢牵牛星》</td>
+                  <td class="col-author">〔东汉〕佚名</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 53</td>
+                  <td class="col-title">《十五夜望月》</td>
+                  <td class="col-author">〔唐〕王建</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 54</td>
+                  <td class="col-title">《泊船瓜洲》</td>
+                  <td class="col-author">〔宋〕王安石</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 55</td>
+                  <td class="col-title">《次北固山下》</td>
+                  <td class="col-author">〔唐〕王湾</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 56</td>
+                  <td class="col-title">《商山早行》</td>
+                  <td class="col-author">〔唐〕温庭筠</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 57</td>
+                  <td class="col-title">《生查子·元夕》</td>
+                  <td class="col-author">〔宋〕欧阳修</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 58</td>
+                  <td class="col-title">《鹊桥仙·纤云弄巧》</td>
+                  <td class="col-author">〔宋〕秦观</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 59</td>
+                  <td class="col-title">《长相思·山一程》</td>
+                  <td class="col-author">〔清〕纳兰性德</td>
+                  <td class="col-cat"><span class="cat-badge cat-upper">高段核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 60</td>
+                  <td class="col-title">《天净沙·秋思》</td>
+                  <td class="col-author">〔元〕马致远</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 61</td>
+                  <td class="col-title">《浪淘沙（其一·九曲黄河万里沙）》</td>
+                  <td class="col-author">〔唐〕刘禹锡</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 62</td>
+                  <td class="col-title">《观沧海》</td>
+                  <td class="col-author">〔东汉〕曹操</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 63</td>
+                  <td class="col-title">《登幽州台歌》</td>
+                  <td class="col-author">〔唐〕陈子昂</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 64</td>
+                  <td class="col-title">《望岳》</td>
+                  <td class="col-author">〔唐〕杜甫</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 65</td>
+                  <td class="col-title">《登飞来峰》</td>
+                  <td class="col-author">〔宋〕王安石</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 66</td>
+                  <td class="col-title">《黄鹤楼》</td>
+                  <td class="col-author">〔唐〕崔颢</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 67</td>
+                  <td class="col-title">《赤壁》</td>
+                  <td class="col-author">〔唐〕杜牧</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 68</td>
+                  <td class="col-title">《泊秦淮》</td>
+                  <td class="col-author">〔唐〕杜牧</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 69</td>
+                  <td class="col-title">《南乡子·登京口北固亭有怀》</td>
+                  <td class="col-author">〔宋〕辛弃疾</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 70</td>
+                  <td class="col-title">《山坡羊·潼关怀古》</td>
+                  <td class="col-author">〔元〕张养浩</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 71</td>
+                  <td class="col-title">《长歌行》</td>
+                  <td class="col-author">〔汉〕汉乐府</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 72</td>
+                  <td class="col-title">《龟虽寿》</td>
+                  <td class="col-author">〔东汉〕曹操</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 73</td>
+                  <td class="col-title">《行路难（其一）》</td>
+                  <td class="col-author">〔唐〕李白</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 74</td>
+                  <td class="col-title">《酬乐天扬州初逢席上见赠》</td>
+                  <td class="col-author">〔唐〕刘禹锡</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 75</td>
+                  <td class="col-title">《秋词（其一）》</td>
+                  <td class="col-author">〔唐〕刘禹锡</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 76</td>
+                  <td class="col-title">《浣溪沙·游蕲水清泉寺》</td>
+                  <td class="col-author">〔宋〕苏轼</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 77</td>
+                  <td class="col-title">《过零丁洋》</td>
+                  <td class="col-author">〔宋〕文天祥</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 78</td>
+                  <td class="col-title">《十一月四日风雨大作（其二）》</td>
+                  <td class="col-author">〔宋〕陆游</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 79</td>
+                  <td class="col-title">《己亥杂诗（九州生气恃风雷）》</td>
+                  <td class="col-author">〔清〕龚自珍</td>
+                  <td class="col-cat"><span class="cat-badge cat-upper">高段核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 80</td>
+                  <td class="col-title">《己亥杂诗（浩荡离愁白日斜）》</td>
+                  <td class="col-author">〔清〕龚自珍</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 81</td>
+                  <td class="col-title">《春夜喜雨》</td>
+                  <td class="col-author">〔唐〕杜甫</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 82</td>
+                  <td class="col-title">《春望》</td>
+                  <td class="col-author">〔唐〕杜甫</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 83</td>
+                  <td class="col-title">《闻官军收河南河北》</td>
+                  <td class="col-author">〔唐〕杜甫</td>
+                  <td class="col-cat"><span class="cat-badge cat-upper">高段核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 84</td>
+                  <td class="col-title">《望月怀远》</td>
+                  <td class="col-author">〔唐〕张九龄</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 85</td>
+                  <td class="col-title">《题破山寺后禅院》</td>
+                  <td class="col-author">〔唐〕常建</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 86</td>
+                  <td class="col-title">《滁州西涧》</td>
+                  <td class="col-author">〔唐〕韦应物</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 87</td>
+                  <td class="col-title">《无题（相见时难别亦难）》</td>
+                  <td class="col-author">〔唐〕李商隐</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 88</td>
+                  <td class="col-title">《浣溪沙·一曲新词酒一杯》</td>
+                  <td class="col-author">〔宋〕晏殊</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 89</td>
+                  <td class="col-title">《渔家傲·天接云涛连晓雾》</td>
+                  <td class="col-author">〔宋〕李清照</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 90</td>
+                  <td class="col-title">《临江仙·夜登小阁忆洛中旧游》</td>
+                  <td class="col-author">〔宋〕陈与义</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 91</td>
+                  <td class="col-title">《关雎》</td>
+                  <td class="col-author">〔先秦〕《诗经·周南》</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 92</td>
+                  <td class="col-title">《蒹葭》</td>
+                  <td class="col-author">〔先秦〕《诗经·秦风》</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 93</td>
+                  <td class="col-title">《采薇（节选）》</td>
+                  <td class="col-author">〔先秦〕《诗经·小雅》</td>
+                  <td class="col-cat"><span class="cat-badge cat-core">六年级核心</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 94</td>
+                  <td class="col-title">《望洞庭湖赠张丞相》</td>
+                  <td class="col-author">〔唐〕孟浩然</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 95</td>
+                  <td class="col-title">《左迁至蓝关示侄孙湘》</td>
+                  <td class="col-author">〔唐〕韩愈</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 96</td>
+                  <td class="col-title">《锦瑟》</td>
+                  <td class="col-author">〔唐〕李商隐</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 97</td>
+                  <td class="col-title">《虞美人·春花秋月何时了》</td>
+                  <td class="col-author">〔南唐〕李煜</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 98</td>
+                  <td class="col-title">《青玉案·元夕》</td>
+                  <td class="col-author">〔宋〕辛弃疾</td>
+                  <td class="col-cat"><span class="cat-badge cat-extra">课外拓展</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 99</td>
+                  <td class="col-title">《丑奴儿·书博山道中壁》</td>
+                  <td class="col-author">〔宋〕辛弃疾</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+<tr>
+                  <td class="col-day">Day 100</td>
+                  <td class="col-title">《沁园春·雪》</td>
+                  <td class="col-author">〔现代〕毛泽东</td>
+                  <td class="col-cat"><span class="cat-badge cat-junior">初中衔接</span></td>
+                  <td class="col-chk">□</td>
+                  <td class="col-chk">□</td>
+                  <td class="col-sign"></td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="page-foot">
+      <span>卷六至卷十（乡愁 · 怀古 · 昂扬 · 唐宋 · 风雅）</span>
+      <span>第 2 / 2 页（打卡总表）</span>
+    </footer>
+  </section>
+
+  <section class="a4-page">
+              <header class="page-head">
+                <div>
+                  <h2>小升初古诗词理解性默写通关卷（一）：第 1 – 13 题</h2>
+                  <p class="sub">满分 100 分（每题 2 分，共 50 题）· 要求：字迹工整，不错字、不漏字、不添字</p>
+                </div>
+                <div class="student-meta">姓名：________ &nbsp; 用时：____分 &nbsp; 得分：____</div>
+              </header>
+              <div class="quiz-list">
+                <div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">01.</span> 《宿建德江》中描写原野空旷、清江映月的名句是：________________，________________。 <span class="q-src">（Day 01）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">02.</span> 《西江月·夜行黄沙道中》中通过嗅觉和听觉展现丰收喜悦的两句是：________________，________________。 <span class="q-src">（Day 03）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">03.</span> 《书湖阴先生壁（其一）》中运用拟人手法写山水主动亲近人居的名句是：________________，________________。 <span class="q-src">（Day 05）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">04.</span> 《钱塘湖春行》中通过花草初生状态细腻刻画早春风貌的颈联是：________________，________________。 <span class="q-src">（Day 07）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">05.</span> 《兰溪棹歌》中写春雨过后江水上涨、群鱼跃滩这一生动野趣的两句是：________________，________________。 <span class="q-src">（Day 09）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">06.</span> 《过故人庄》中描绘农庄外围绿树环抱、青山斜映的经典写景联是：________________，________________。 <span class="q-src">（Day 11）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">07.</span> 《约客》中通过细腻动作描写侧面表现久候友人不至、孤寂焦灼心境的诗句是：________________，________________。 <span class="q-src">（Day 13）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">08.</span> 《归园田居（其三）》中以如画笔墨定格诗人月夜归来身影的千古名句是：________________，________________。 <span class="q-src">（Day 15）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">09.</span> 《清平乐·村居》中最生动展现幼童天真顽皮、憨态可掬情状的句子是：________________，________________。 <span class="q-src">（Day 17）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">10.</span> 《过松源晨炊漆公店（其五）》中以群山相连比喻克服一个困难后往往还有新挑战的哲理名句是：________________，________________。 <span class="q-src">（Day 19）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">11.</span> 在李贺的《马诗（其五）》中，诗人以骏马自喻，表达自己渴望得到赏识重用、驰骋沙场报效国家的名句是：________________，________________。 <span class="q-src">（Day 21）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">12.</span> 在《竹石》一诗中，郑燮以竹喻人，写竹子历尽艰难打击依然刚强不屈、无惧四方风浪的名句是：________________，________________。 <span class="q-src">（Day 23）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">13.</span> 元代诗人王冕在《墨梅》中，借墨梅不求世俗赞誉、只愿向天地间播撒高洁气息来表达自身志趣的两句是：________________，________________。 <span class="q-src">（Day 25）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div>
+              </div>
+              <footer class="page-foot">
+                <span>小学六年级古诗词背诵 100 天 · 阶段过关检测卷</span>
+                <span>请对照本套卷末《参考答案页》批改订正</span>
+              </footer>
+            </section><section class="a4-page">
+              <header class="page-head">
+                <div>
+                  <h2>小升初古诗词理解性默写通关卷（一）：第 14 – 25 题</h2>
+                  <p class="sub">满分 100 分（每题 2 分，共 50 题）· 要求：字迹工整，不错字、不漏字、不添字</p>
+                </div>
+                <div class="student-meta">姓名：________ &nbsp; 用时：____分 &nbsp; 得分：____</div>
+              </header>
+              <div class="quiz-list">
+                <div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">14.</span> 唐代虞世南在《蝉》中，阐明品格高洁、自身立得高远者自然声名远扬，无需依赖外力权势的哲理名句是：________________，________________。 <span class="q-src">（Day 27）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">15.</span> 唐代元稹在《菊花》中，不直接夸赞菊花姿色，而是巧妙揭示自己偏爱菊花的深层原因的千古名句是：________________，________________。 <span class="q-src">（Day 29）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">16.</span> 在王维的《送元二使安西》中，诗人借劝酒表达对好友远赴边塞、前路孤寂的深切依恋与担忧的名句是：________________，________________。 <span class="q-src">（Day 31）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">17.</span> 在《芙蓉楼送辛渐》中，王昌龄请友人向洛阳亲友转告自己坚守清廉纯洁、表里如一的高尚志节的名句是：________________，________________。 <span class="q-src">（Day 33）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">18.</span> 王勃在《送杜少府之任蜀州》中，奇峰突起、高度赞美真挚的友情能够突破千山万水的空间阻隔的名句是：________________，________________。 <span class="q-src">（Day 35）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">19.</span> 李白《渡荆门送别》中，不直接倾诉思乡之愁，而是运用拟人手法写故乡流水深情护送远行游子的尾联是：________________，________________。 <span class="q-src">（Day 37）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">20.</span> 李商隐在《夜雨寄北》中，跨越时空想象未来重逢聚首时再回首诉说此刻孤寂思念情景的名句是：________________，________________。 <span class="q-src">（Day 39）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">21.</span> 王昌龄《出塞（其一）》中借汉代名将卫青、李广典故，抒发渴望英勇统帅守边御敌之志的名句是：________________ <span class="q-src">（Day 41）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">22.</span> 王翰《凉州词》中以将士出征前在战场酣饮的豁达口吻，道出战事残酷与生死坦然的名句是：________________ <span class="q-src">（Day 43）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">23.</span> 李贺《雁门太守行》中运用夸张和比喻手法，生动渲染敌军兵临城下、守军严阵以待的紧张气氛的名句是：________________ <span class="q-src">（Day 45）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">24.</span> 范仲淹《渔家傲·秋思》中用典故揭示戍边将士既思念故乡又因功业未建、外敌未平而无法归家的矛盾心理的名句是：________________ <span class="q-src">（Day 47）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">25.</span> 辛弃疾《破阵子·为陈同甫赋壮词以寄之》中直接表达词人渴望收复失地、建功立业的毕生理想，却紧接“可怜白发生”之叹的名句是：________________ <span class="q-src">（Day 49）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div>
+              </div>
+              <footer class="page-foot">
+                <span>小学六年级古诗词背诵 100 天 · 阶段过关检测卷</span>
+                <span>请对照本套卷末《参考答案页》批改订正</span>
+              </footer>
+            </section><section class="a4-page">
+              <header class="page-head">
+                <div>
+                  <h2>小升初古诗词理解性默写通关卷（二）：第 26 – 38 题</h2>
+                  <p class="sub">满分 100 分（每题 2 分，共 50 题）· 要求：字迹工整，不错字、不漏字、不添字</p>
+                </div>
+                <div class="student-meta">姓名：________ &nbsp; 用时：____分 &nbsp; 得分：____</div>
+              </header>
+              <div class="quiz-list">
+                <div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">26.</span> 韩翃《寒食》中用双重否定凸显长安暮春落花飘飞之盛，又借春风斜柳勾勒京城春色的名句是：________________ <span class="q-src">（Day 51）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">27.</span> 王建《十五夜望月》中不直抒己怀，而是推己及人地写出中秋佳节普天同赏清辉、共怀远人之情的名句是：________________ <span class="q-src">（Day 53）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">28.</span> 王湾《次北固山下》中运用拟人手法描写时序交替，蕴含新事物必将取代旧事物的自然哲理的名句是：________________ <span class="q-src">（Day 55）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">29.</span> 欧阳修《生查子·元夕》中勾勒出去年元宵夜初月挂枝头、相约暮色共度佳节的温馨画面的名句是：________________ <span class="q-src">（Day 57）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">30.</span> 纳兰性德《长相思·山一程》中描写塞外寒夜气候恶劣、杂声惊扰了游子美梦，并与安宁家乡作对比的名句是：________________ <span class="q-src">（Day 59）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">31.</span> 在刘禹锡《浪淘沙（其一）》中，以浪漫奇幻的想象表达向往美好境界、逆流而上豪情的诗句是：“________________，________________。” <span class="q-src">（Day 61）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">32.</span> 陈子昂《登幽州台歌》中，将个人置于茫茫时空之中，抒发怀才不遇、孤寂悲愤之情的诗句是：“________________，________________！” <span class="q-src">（Day 63）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">33.</span> 王安石《登飞来峰》中，蕴含“站得高才能看得远”的哲理，表现诗人不惧奸邪阻挠、锐意革新的大无畏气概的诗句是：“________________，________________。” <span class="q-src">（Day 65）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">34.</span> 杜牧《赤壁》中，以假设语气议论赤壁之战的胜负，含蓄表达机遇对英雄成败重要作用的诗句是：“________________，________________。” <span class="q-src">（Day 67）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">35.</span> 辛弃疾《南乡子·登京口北固亭有怀》中，借曹操之口盛赞孙权英武有为，实则表达对南宋朝廷无人抗金之忧愤的句子是：“________________？________________。________________。” <span class="q-src">（Day 69）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">36.</span> 《长歌行》中，用江河奔流不复返作比，直接告诫青少年应当珍惜青春时光、趁早奋发图强的警句是：“________________，________________！” <span class="q-src">（Day 71）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">37.</span> 李白《行路难（其一）》中，历经茫然与苦闷后重新燃起希望，表现诗人坚信理想终能实现的千古名句是：“________________，________________。” <span class="q-src">（Day 73）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">38.</span> 刘禹锡《秋词（其一）》中，一反历代文人“悲秋”传统，以明朗雄健的意象把高远诗情推向极致的诗句是：“________________，________________。” <span class="q-src">（Day 75）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div>
+              </div>
+              <footer class="page-foot">
+                <span>小学六年级古诗词背诵 100 天 · 阶段过关检测卷</span>
+                <span>请对照本套卷末《参考答案页》批改订正</span>
+              </footer>
+            </section><section class="a4-page">
+              <header class="page-head">
+                <div>
+                  <h2>小升初古诗词理解性默写通关卷（二）：第 39 – 50 题</h2>
+                  <p class="sub">满分 100 分（每题 2 分，共 50 题）· 要求：字迹工整，不错字、不漏字、不添字</p>
+                </div>
+                <div class="student-meta">姓名：________ &nbsp; 用时：____分 &nbsp; 得分：____</div>
+              </header>
+              <div class="quiz-list">
+                <div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">39.</span> 文天祥《过零丁洋》中，直抒胸臆、表达舍生取义与忠诚爱国之凛然正气的千古绝唱是：“________________？________________。” <span class="q-src">（Day 77）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">40.</span> 龚自珍《己亥杂诗（九州生气恃风雷）》中，呼唤打破陈规旧制、广泛选拔和重用各类杰出人才，以挽救国家危局的诗句是：“________________，________________。” <span class="q-src">（Day 79）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">41.</span> 杜甫《春夜喜雨》中，常被用来比喻老师潜移默化、无私滋润学生心田的诗句是：“________________。” <span class="q-src">（Day 81）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">42.</span> 杜甫在《闻官军收河南河北》中，用一连串地名和迅疾动作表现归心似箭、恨不得立刻飞回故乡的诗句是：“________________。” <span class="q-src">（Day 83）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">43.</span> 常建《题破山寺后禅院》中，运用以声衬静手法、写万籁俱寂唯留佛寺清音袅袅的尾联是：“________________。” <span class="q-src">（Day 85）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">44.</span> 李商隐《无题（相见时难别亦难）》中，运用双关与对偶写出忠贞执着之情，今常用来礼赞教师无私奉献精神的名句是：“________________。” <span class="q-src">（Day 87）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">45.</span> 李清照《渔家傲·天接云涛连晓雾》中，化用大鹏典故、以豪迈气概抒发冲破束缚与追寻理想之志的句子是：“________________！” <span class="q-src">（Day 89）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">46.</span> 《诗经·周南·关雎》中，因思慕美好姑娘求而不得、以致夜里翻来覆去难以入睡的句子是：“________________。” <span class="q-src">（Day 91）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">47.</span> 《采薇（节选）》中，以春柳轻拂与冬雪纷飞形成鲜明对比、写尽戍卒出征与归来无限感伤的千古名句是：“________________。” <span class="q-src">（Day 93）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">48.</span> 韩愈《左迁至蓝关示侄孙湘》中，实写风雪阻路之景、道尽前途渺茫与回望长安无处寻家的悲慨诗句是：“________________。” <span class="q-src">（Day 95）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">49.</span> 李煜《虞美人·春花秋月何时了》中，采用设问和比喻把抽象的亡国哀愁写得浩荡无穷的千古名句是：“________________！” <span class="q-src">（Day 97）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div><div class="quiz-item">
+                  <div class="quiz-q"><span class="q-idx">50.</span> 辛弃疾《丑奴儿·书博山道中壁》中，表现词人历尽沧桑、胸中积郁深重却难以言说、只好顾左右而言他的句子是：________________！ <span class="q-src">（Day 99）</span></div>
+                  <div class="quiz-write-line"></div>
+                </div>
+              </div>
+              <footer class="page-foot">
+                <span>小学六年级古诗词背诵 100 天 · 阶段过关检测卷</span>
+                <span>请对照本套卷末《参考答案页》批改订正</span>
+              </footer>
+            </section>
+
+  <!-- 第 7 页：50 题参考答案 -->
+  <section class="a4-page last-page">
+    <div style="display:flex; flex-direction:column; height:100%;">
+      <header class="page-head">
+        <div>
+          <h2>小升初古诗词理解性默写通关卷（50 题）· 参考答案</h2>
+          <p class="sub">批改提示：重点核查通假字（见/亡/政/曾）、形近字（汗青/蜡象/喑/摧）及字序（粉骨碎身）</p>
+        </div>
+        <div class="student-meta">家长批改参考专用</div>
+      </header>
+      <div class="ans-grid">
+        <div class="ans-col">
+          <h3>第 01 – 25 题答案</h3>
+          <div class="ans-row"><strong>01.</strong> 《宿建德江》：野旷天低树，江清月近人</div><div class="ans-row"><strong>02.</strong> 《西江月·夜行黄沙道中》：稻花香里说丰年，听取蛙声一片</div><div class="ans-row"><strong>03.</strong> 《书湖阴先生壁（其一）》：一水护田将绿绕，两山排闼送青来</div><div class="ans-row"><strong>04.</strong> 《钱塘湖春行》：乱花渐欲迷人眼，浅草才能没马蹄</div><div class="ans-row"><strong>05.</strong> 《兰溪棹歌》：兰溪三日桃花雨，半夜鲤鱼来上滩</div><div class="ans-row"><strong>06.</strong> 《过故人庄》：绿树村边合，青山郭外斜</div><div class="ans-row"><strong>07.</strong> 《约客》：有约不来过夜半，闲敲棋子落灯花</div><div class="ans-row"><strong>08.</strong> 《归园田居（其三）》：晨兴理荒秽，带月荷锄归</div><div class="ans-row"><strong>09.</strong> 《清平乐·村居》：最喜小儿亡赖，溪头卧剥莲蓬</div><div class="ans-row"><strong>10.</strong> 《过松源晨炊漆公店（其五）》：政入万山围子里，一山放出一山拦</div><div class="ans-row"><strong>11.</strong> 《马诗（其五）》：何当金络脑，快走踏清秋</div><div class="ans-row"><strong>12.</strong> 《竹石》：千磨万击还坚劲，任尔东西南北风</div><div class="ans-row"><strong>13.</strong> 《墨梅》：不要人夸好颜色，只留清气满乾坤</div><div class="ans-row"><strong>14.</strong> 《蝉》：居高声自远，非是藉秋风</div><div class="ans-row"><strong>15.</strong> 《菊花》：不是花中偏爱菊，此花开尽更无花</div><div class="ans-row"><strong>16.</strong> 《送元二使安西》：劝君更尽一杯酒，西出阳关无故人</div><div class="ans-row"><strong>17.</strong> 《芙蓉楼送辛渐》：洛阳亲友如相问，一片冰心在玉壶</div><div class="ans-row"><strong>18.</strong> 《送杜少府之任蜀州》：海内存知己，天涯若比邻</div><div class="ans-row"><strong>19.</strong> 《渡荆门送别》：仍怜故乡水，万里送行舟</div><div class="ans-row"><strong>20.</strong> 《夜雨寄北》：何当共剪西窗烛，却话巴山夜雨时</div><div class="ans-row"><strong>21.</strong> 《出塞（其一）》：但使龙城飞将在，不教胡马度阴山。</div><div class="ans-row"><strong>22.</strong> 《凉州词（其一·葡萄美酒夜光杯）》：醉卧沙场君莫笑，古来征战几人回？</div><div class="ans-row"><strong>23.</strong> 《雁门太守行》：黑云压城城欲摧，甲光向日金鳞开。</div><div class="ans-row"><strong>24.</strong> 《渔家傲·秋思》：浊酒一杯家万里，燕然未勒归无计。</div><div class="ans-row"><strong>25.</strong> 《破阵子·为陈同甫赋壮词以寄之》：了却君王天下事，赢得生前身后名。</div>
+        </div>
+        <div class="ans-col">
+          <h3>第 26 – 50 题答案</h3>
+          <div class="ans-row"><strong>26.</strong> 《寒食》：春城无处不飞花，寒食东风御柳斜。</div><div class="ans-row"><strong>27.</strong> 《十五夜望月》：今夜月明人尽望，不知秋思落谁家。</div><div class="ans-row"><strong>28.</strong> 《次北固山下》：海日生残夜，江春入旧年。</div><div class="ans-row"><strong>29.</strong> 《生查子·元夕》：月上柳梢头，人约黄昏后。</div><div class="ans-row"><strong>30.</strong> 《长相思·山一程》：风一更，雪一更，聒碎乡心梦不成，故园无此声。</div><div class="ans-row"><strong>31.</strong> 《浪淘沙（其一·九曲黄河万里沙）》：如今直上银河去，同到牵牛织女家。</div><div class="ans-row"><strong>32.</strong> 《登幽州台歌》：念天地之悠悠，独怆然而涕下！</div><div class="ans-row"><strong>33.</strong> 《登飞来峰》：不畏浮云遮望眼，自缘身在最高层。</div><div class="ans-row"><strong>34.</strong> 《赤壁》：东风不与周郎便，铜雀春深锁二乔。</div><div class="ans-row"><strong>35.</strong> 《南乡子·登京口北固亭有怀》：天下英雄谁敌手？曹刘。生子当如孙仲谋。</div><div class="ans-row"><strong>36.</strong> 《长歌行》：少壮不努力，老大徒伤悲！</div><div class="ans-row"><strong>37.</strong> 《行路难（其一）》：长风破浪会有时，直挂云帆济沧海。</div><div class="ans-row"><strong>38.</strong> 《秋词（其一）》：晴空一鹤排云上，便引诗情到碧霄。</div><div class="ans-row"><strong>39.</strong> 《过零丁洋》：人生自古谁无死？留取丹心照汗青。</div><div class="ans-row"><strong>40.</strong> 《己亥杂诗（九州生气恃风雷）》：我劝天公重抖擞，不拘一格降人材。</div><div class="ans-row"><strong>41.</strong> 《春夜喜雨》：随风潜入夜，润物细无声</div><div class="ans-row"><strong>42.</strong> 《闻官军收河南河北》：即从巴峡穿巫峡，便下襄阳向洛阳</div><div class="ans-row"><strong>43.</strong> 《题破山寺后禅院》：万籁此都寂，但余钟磬音</div><div class="ans-row"><strong>44.</strong> 《无题（相见时难别亦难）》：春蚕到死丝方尽，蜡炬成灰泪始干</div><div class="ans-row"><strong>45.</strong> 《渔家傲·天接云涛连晓雾》：九万里风鹏正举。风休住，蓬舟吹取三山去</div><div class="ans-row"><strong>46.</strong> 《关雎》：悠哉悠哉，辗转反侧</div><div class="ans-row"><strong>47.</strong> 《采薇（节选）》：昔我往矣，杨柳依依。今我来思，雨雪霏霏</div><div class="ans-row"><strong>48.</strong> 《左迁至蓝关示侄孙湘》：云横秦岭家何在？雪拥蓝关马不前</div><div class="ans-row"><strong>49.</strong> 《虞美人·春花秋月何时了》：问君能有几多愁？恰似一江春水向东流</div><div class="ans-row"><strong>50.</strong> 《丑奴儿·书博山道中壁》：欲说还休，却道“天凉好个秋”</div>
+        </div>
+      </div>
+    </div>
+    <footer class="page-foot">
+      <span>错题请回到对应“第 XX 天”精讲单页重新巩固字词与背景</span>
+      <span>全卷完</span>
+    </footer>
+  </section>
+</main>
+
+</body>
+</html>

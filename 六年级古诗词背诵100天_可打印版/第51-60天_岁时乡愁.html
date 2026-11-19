@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>卷六 · 岁时乡愁（Day 51 – 60）| 小学六年级古诗词背诵100天</title>
+<style>
+@page {
+    size: A4 portrait;
+    margin: 9mm 11mm 9mm 11mm;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  :root {
+    --ink: #1e242b;
+    --ink-soft: #4a5562;
+    --ink-muted: #6e7781;
+    --brand: #1f3a52;
+    --accent: #9e2a2b;
+    --gold: #8c6218;
+    --paper-bg: #f6f4ef;
+    --card-bg: #ffffff;
+    --soft-tint: #f8f9fb;
+    --warm-tint: #fcf9f2;
+    --border: #d8dee6;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: var(--ink);
+    background: var(--paper-bg);
+    margin: 0;
+    padding: 18px 14px 40px 14px;
+    font-size: 13px;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 顶部控制栏（不打印） */
+  .no-print-bar {
+    max-width: 210mm;
+    margin: 0 auto 16px auto;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 10px;
+    padding: 12px 16px;
+    box-shadow: 0 3px 12px rgba(24, 39, 75, 0.06);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    position: sticky;
+    top: 10px;
+    z-index: 100;
+  }
+  .bar-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .bar-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+  }
+  .bar-subtitle {
+    font-size: 12px;
+    color: var(--ink-muted);
+  }
+  .bar-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid #d0d7de;
+    background: #fff;
+    color: var(--ink);
+    transition: all 0.15s ease;
+  }
+  .btn:hover {
+    background: #f3f6f9;
+    border-color: #9aa7b4;
+  }
+  .btn.active {
+    background: var(--brand);
+    color: #fff;
+    border-color: var(--brand);
+  }
+  .btn-print {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    padding: 6px 15px;
+  }
+  .btn-print:hover {
+    background: #7f2021;
+    border-color: #7f2021;
+  }
+  .day-select {
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #d0d7de;
+    font-size: 12.5px;
+    color: var(--ink);
+    background: #fff;
+  }
+  .toggle-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    cursor: pointer;
+    user-select: none;
+    padding: 4px 8px;
+    border: 1px solid #e2e7ed;
+    border-radius: 6px;
+    background: #fafbfc;
+  }
+
+  /* 印刷卡片：屏幕端 A4 纸张模拟 */
+  .sheets-wrap {
+    max-width: 210mm;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .poem-sheet {
+    width: 100%;
+    background: var(--card-bg);
+    border: 1px solid #cfd6df;
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(20, 30, 45, 0.07);
+    padding: 10mm 11mm 8mm 11mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 268mm;
+  }
+  .poem-sheet.hidden-by-filter {
+    display: none !important;
+  }
+
+  /* 页眉 */
+  .sheet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--brand);
+    padding-bottom: 6px;
+  }
+  .header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .day-pill {
+    background: var(--brand);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+  .vol-label {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+  .genre-badge {
+    font-size: 11.5px;
+    padding: 1.5px 8px;
+    border-radius: 4px;
+    background: #f0f3f7;
+    color: var(--ink-soft);
+    border: 1px solid #d5dce4;
+  }
+  .cat-badge {
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 1.5px 8px;
+    border-radius: 4px;
+  }
+  .cat-core { background: #e8f3ee; color: #166534; border: 1px solid #b7dfc9; }
+  .cat-upper { background: #e6f2fa; color: #0c548a; border: 1px solid #b8daf2; }
+  .cat-junior { background: #fdf3e1; color: #92400e; border: 1px solid #f2d59c; }
+  .cat-extra { background: #f4effa; color: #6b21a8; border: 1px solid #d8c2f0; }
+
+  .compact-mini-check {
+    display: none;
+    font-size: 10px;
+    color: var(--ink-soft);
+    gap: 6px;
+    margin-left: 4px;
+  }
+
+  /* 主体 */
+  .sheet-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1 1 auto;
+  }
+
+  /* 原文核心区 */
+  .poem-core-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .poem-title-block {
+    text-align: center;
+    padding-top: 2px;
+  }
+  .poem-title {
+    margin: 0;
+    font-family: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: 1.5px;
+  }
+  .poem-author {
+    margin-top: 4px;
+    font-family: "Songti SC", "STSong", "KaiTi", serif;
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .poem-preface {
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin: -2px auto 0 auto;
+    max-width: 92%;
+  }
+  .poem-verses {
+    background: var(--warm-tint);
+    border: 1px solid #e6decb;
+    border-left: 4px solid var(--accent);
+    border-radius: 6px;
+    padding: 12px 16px;
+    text-align: center;
+    font-family: "Songti SC", "STSong", "STKaiti", "Kaiti SC", serif;
+    font-size: 19px;
+    line-height: 1.85;
+    color: #14171a;
+    letter-spacing: 1px;
+  }
+  .poem-line {
+    white-space: normal;
+  }
+
+  /* 字音字词条 */
+  .notes-card {
+    background: #f7f9fb;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12.2px;
+    line-height: 1.55;
+  }
+  .note-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .note-label {
+    flex-shrink: 0;
+    font-weight: 700;
+    color: var(--brand);
+    background: #e6eef5;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+  }
+  .note-text {
+    color: var(--ink);
+  }
+
+  /* 讲解各卡片 */
+  .poem-study-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .study-box {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    background: #fff;
+  }
+  .box-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--brand);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .box-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+  .box-content {
+    font-size: 12.6px;
+    line-height: 1.62;
+    color: #24292f;
+    text-align: justify;
+  }
+  .inline-tag {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .study-grid-bottom {
+    display: grid;
+    grid-template-columns: 36% 1fr;
+    gap: 8px;
+  }
+  .quote-box {
+    background: #fdfaf3;
+    border-color: #e6d8b5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .quote-text {
+    font-family: "Songti SC", "STSong", "KaiTi", serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.55;
+    text-align: center;
+    padding: 2px 0;
+  }
+  .tip-box {
+    background: #f8fafc;
+  }
+
+  /* 理解性默写条 */
+  .dictation-strip {
+    border: 1px dashed #8b9bb0;
+    border-radius: 6px;
+    padding: 7px 12px;
+    background: #fafbfd;
+  }
+  body.hide-dictation .dictation-strip {
+    display: none !important;
+  }
+  .dictation-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+  }
+  .dictation-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--brand);
+  }
+  .dictation-ans-ref {
+    font-size: 10.5px;
+    color: #8c959f;
+  }
+  .dictation-q {
+    font-size: 12.2px;
+    color: #1f2328;
+    line-height: 1.55;
+  }
+
+  /* 底部打卡签章 */
+  .sheet-footer {
+    border-top: 1.5px solid #c9d2dc;
+    padding-top: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    gap: 8px;
+  }
+  .check-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+  }
+  .step-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+  }
+  .print-box {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border: 1.3px solid var(--brand);
+    border-radius: 2px;
+    background: #fff;
+  }
+  .step-item.checked .print-box {
+    background: var(--brand);
+    box-shadow: inset 0 0 0 2px #fff;
+  }
+  .sign-fields {
+    display: flex;
+    gap: 10px;
+    white-space: nowrap;
+  }
+  .sign-line {
+    display: inline-block;
+    width: 58px;
+    border-bottom: 1px solid #6e7781;
+    height: 12px;
+  }
+
+  /* 长诗微调（保证单页 A4 绝对不溢出） */
+  .poem-sheet--long {
+    gap: 7px;
+    padding: 8mm 10mm 7mm 10mm;
+  }
+  .poem-sheet--long .poem-title { font-size: 21px; }
+  .poem-sheet--long .poem-verses {
+    font-size: 16.5px;
+    line-height: 1.62;
+    padding: 9px 12px;
+  }
+  .poem-sheet--long .notes-card { padding: 6px 10px; font-size: 11.6px; }
+  .poem-sheet--long .study-box { padding: 6px 10px; }
+  .poem-sheet--long .box-content { font-size: 12px; line-height: 1.54; }
+  .poem-sheet--long .dictation-strip { padding: 5px 10px; }
+
+  .poem-sheet--xlong {
+    gap: 5px;
+    padding: 6.5mm 10mm 6mm 10mm;
+  }
+  .poem-sheet--xlong .poem-title { font-size: 19.5px; }
+  .poem-sheet--xlong .poem-author { font-size: 13px; margin-top: 2px; }
+  .poem-sheet--xlong .poem-verses {
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 7px 10px;
+  }
+  .poem-sheet--xlong .notes-card { padding: 5px 10px; font-size: 11.2px; line-height: 1.45; }
+  .poem-sheet--xlong .study-box { padding: 5px 10px; }
+  .poem-sheet--xlong .box-title { font-size: 11.8px; margin-bottom: 2px; }
+  .poem-sheet--xlong .box-content { font-size: 11.5px; line-height: 1.48; }
+  .poem-sheet--xlong .quote-text { font-size: 13px; }
+  .poem-sheet--xlong .dictation-strip { padding: 4px 10px; }
+  .poem-sheet--xlong .dictation-q { font-size: 11.5px; }
+  .poem-sheet--xlong .sheet-footer { padding-top: 5px; font-size: 11px; }
+
+  /* =========================================================
+     省纸双拼版（1 页 A4 = 2 天，左右双栏卡片）
+     ========================================================= */
+  body.mode-compact .sheets-wrap {
+    gap: 10px;
+  }
+  body.mode-compact .poem-sheet {
+    min-height: 128mm;
+    padding: 4.5mm 6mm 4.5mm 6mm;
+    gap: 6px;
+    border: 1px solid #b9c3cf;
+  }
+  body.mode-compact .sheet-header {
+    padding-bottom: 4px;
+    border-bottom-width: 1.5px;
+  }
+  body.mode-compact .day-pill { font-size: 11px; padding: 1px 7px; }
+  body.mode-compact .vol-label { font-size: 11px; }
+  body.mode-compact .genre-badge,
+  body.mode-compact .cat-badge { font-size: 10.5px; padding: 1px 6px; }
+  body.mode-compact .compact-mini-check { display: inline-flex; }
+  body.mode-compact .sheet-footer { display: none; }
+
+  body.mode-compact .sheet-body {
+    display: grid;
+    grid-template-columns: 39% 1fr;
+    gap: 8px;
+    align-items: stretch;
+  }
+  body.mode-compact .poem-core-panel {
+    gap: 5px;
+    justify-content: space-between;
+  }
+  body.mode-compact .poem-title-block { padding-top: 0; }
+  body.mode-compact .poem-title { font-size: 16.5px; letter-spacing: 0.5px; }
+  body.mode-compact .poem-author { font-size: 11.5px; margin-top: 1px; }
+  body.mode-compact .poem-preface { font-size: 10.2px; }
+  body.mode-compact .poem-verses {
+    font-size: 13px;
+    line-height: 1.48;
+    padding: 6px 8px;
+    letter-spacing: 0.3px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  body.mode-compact .poem-sheet--xlong .poem-verses {
+    font-size: 11.4px;
+    line-height: 1.38;
+    padding: 5px 6px;
+  }
+  body.mode-compact .notes-card {
+    padding: 4.5px 7px;
+    font-size: 10px;
+    line-height: 1.38;
+    gap: 2px;
+  }
+  body.mode-compact .note-label { font-size: 9.5px; padding: 0 4px; }
+
+  body.mode-compact .poem-study-panel {
+    gap: 5px;
+    justify-content: space-between;
+  }
+  body.mode-compact .study-box {
+    padding: 4.5px 8px;
+  }
+  body.mode-compact .box-title {
+    font-size: 10.8px;
+    margin-bottom: 2px;
+  }
+  body.mode-compact .box-content {
+    font-size: 10.4px;
+    line-height: 1.4;
+  }
+  body.mode-compact .poem-sheet--xlong .box-content {
+    font-size: 9.8px;
+    line-height: 1.35;
+  }
+  body.mode-compact .study-grid-bottom {
+    grid-template-columns: 35% 1fr;
+    gap: 5px;
+  }
+  body.mode-compact .quote-text {
+    font-size: 11.2px;
+    line-height: 1.35;
+  }
+  body.mode-compact .dictation-strip {
+    padding: 3px 8px;
+  }
+  body.mode-compact .dictation-badge,
+  body.mode-compact .dictation-ans-ref { font-size: 9.5px; }
+  body.mode-compact .dictation-q { font-size: 10.2px; line-height: 1.35; }
+
+  /* 打印专用样式 */
+  @media print {
+    body {
+      background: #fff !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    .no-print-bar {
+      display: none !important;
+    }
+    .sheets-wrap {
+      max-width: 100% !important;
+      width: 100% !important;
+      gap: 0 !important;
+      display: block !important;
+    }
+    .poem-sheet {
+      border: 1px solid #bcc6d1 !important;
+      box-shadow: none !important;
+      border-radius: 4px !important;
+      width: 100% !important;
+      min-height: 266mm;
+      margin: 0 !important;
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+    }
+    body.mode-compact .poem-sheet {
+      min-height: 129mm !important;
+      margin-bottom: 4.5mm !important;
+      border: 1px solid #adb7c2 !important;
+    }
+    body.mode-compact .poem-sheet.compact-row-end {
+      margin-bottom: 0 !important;
+    }
+    .poem-sheet.break-after-page {
+      page-break-after: always !important;
+      break-after: page !important;
+    }
+    .poem-sheet:not(.break-after-page) {
+      page-break-after: auto !important;
+      break-after: auto !important;
+    }
+    /* 打印时清除屏幕上点击的蓝色勾选，保持干净方框让孩子用笔手写打卡 */
+    .step-item.checked .print-box {
+      background: #fff !important;
+      box-shadow: none !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="no-print-bar">
+  <div class="bar-title-group">
+    <div class="bar-title">卷六 · 岁时乡愁（Day 51 – 60 · 羁旅乡愁与节俗雅韵）</div>
+    <div class="bar-subtitle">每天 1 篇 · 含原文、字词、译文、深度精讲、背诵与作文运用及理解性默写</div>
+  </div>
+  <div class="bar-controls">
+    <a href="index.html" class="btn">← 返回总目录</a>
+    <a href="百日背诵打卡总表与名句默写卷.html" class="btn">📋 打卡总表</a>
+    <button type="button" id="btn-mode-standard" class="btn active" title="每天独占1张A4纸，大字精讲">📄 1页1篇·精讲版</button>
+    <button type="button" id="btn-mode-compact" class="btn" title="每页2篇双栏排版，节省一半纸张">📑 1页2篇·省纸版</button>
+    <select id="day-filter-select" class="day-select" aria-label="按天筛选">
+      <option value="all">全部篇目（共 10 天）</option><option value="51">第 51 天 · 《寒食》</option><option value="52">第 52 天 · 《迢迢牵牛星》</option><option value="53">第 53 天 · 《十五夜望月》</option><option value="54">第 54 天 · 《泊船瓜洲》</option><option value="55">第 55 天 · 《次北固山下》</option><option value="56">第 56 天 · 《商山早行》</option><option value="57">第 57 天 · 《生查子·元夕》</option><option value="58">第 58 天 · 《鹊桥仙·纤云弄巧》</option><option value="59">第 59 天 · 《长相思·山一程》</option><option value="60">第 60 天 · 《天净沙·秋思》</option>
+    </select>
+    <label class="toggle-check">
+      <input type="checkbox" id="toggle-dictation" checked> 显示默写微测
+    </label>
+    <button type="button" class="btn btn-print" onclick="window.print()">🖨️ 立即打印</button>
+  </div>
+</div>
+
+<main class="sheets-wrap">
+<article class="poem-sheet " id="day-51" data-day="51">
+  <!-- 顶部页眉 -->
+  <header class="sheet-header">
+    <div class="header-left">
+      <span class="day-pill">第 51 天 / 100</span>
+      <span class="vol-label">卷六 · 岁时乡愁</span>
+    </div>
+    <div class="header-right">
+      <span class="genre-badge">七言绝句</span>
+      <span class="cat-badge cat-core">六年级核心</span>
+      <div class="compact-mini-check" aria-hidden="true">
+        <span>□读</span><span>□解</span><span>□背</span><span>□默</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体内容区（精讲模式纵向流动；省纸双拼模式自动转为左右双栏） -->
+  <div class="sheet-body">
+    <!-- 左/上核心原文区 -->
+    <section class="poem-core-panel">
+      <div class="poem-title-block">
+        <h2 class="poem-title">寒食</h2>
+        <div class="poem-author">〔唐〕韩翃</div>
+      </div>
+      
+      <div class="poem-verses">
+          <div class="poem-line">春城无处不飞花，</div>
+          <div class="poem-line">寒食东风御柳斜。</div>
+          <div class="poem-line">日暮汉宫传蜡烛，</div>
+          <div class="poem-line">轻烟散入五侯家。</div>
+      </div>
+      <div class="notes-card">
+        <div class="note-row"><span class="note-label">字音点拨</span><span class="note-text">御(yù) · 斜(xié) · 蜡(là) · 侯(hóu)</span></div>
+        <div class="note-row"><span class="note-label">重点字词</span><span class="note-text">①寒食：传统节日，在清明节前一两天，古俗此日禁火冷食。 ②春城：春意盎然的京城长安。 ③御柳：皇城御苑里的柳树。 ④五侯：汉代外戚五人同日封侯，此借指唐代受宠的权贵。</span></div>
+      </div>
+    </section>
+
+    <!-- 右/下深度讲解区 -->
+    <section class="poem-study-panel">
+      <div class="study-box translation-box">
+        <div class="box-title"><span class="box-dot"></span>白话译文 · 画面还原</div>
+        <div class="box-content">春天的京城到处飘飞着落花，寒食节的东风轻轻吹拂，把皇宫御苑的柳枝吹斜。黄昏时分皇宫里传来御赐的蜡烛，缕缕轻烟缓缓飘散进权贵豪门之家。</div>
+      </div>
+
+      <div class="study-box analysis-box">
+        <div class="box-title"><span class="box-dot"></span>内容精讲与赏析</div>
+        <div class="box-content"><strong class="inline-tag">【背景点拨】</strong>唐代寒食节须依古制全城禁火，但朝廷却特许把火烛赐给近臣权贵，韩翃借汉代典故委婉讽刺这一特权现象。<br><strong class="inline-tag">【意境赏析】</strong>前两句“飞”“斜”二字炼字极佳，把长安暮春花飞柳曳的明丽画卷写活，“无处不”更显春色浓烈。后两句由昼入暮，以“汉宫”“五侯”映照唐室，看似写宫廷恩宠，实则于清丽景语中含蓄讽喻皇室宠幸权贵、有禁不止的腐败风气。</div>
+      </div>
+
+      <div class="study-grid-bottom">
+        <div class="study-box quote-box">
+          <div class="box-title"><span class="box-dot"></span>千古名句点睛</div>
+          <div class="quote-text">“春城无处不飞花，寒食东风御柳斜。”</div>
+        </div>
+        <div class="study-box tip-box">
+          <div class="box-title"><span class="box-dot"></span>背诵抓手与写作运用</div>
+          <div class="box-content"><strong class="inline-tag">【背诵脉络】</strong>白昼飞花斜柳（1-2句）→日暮赐烛五侯（3-4句）。<br><strong class="inline-tag">【写作运用】</strong>描写暮春百花飞舞、柳枝摇曳的城市春景，或介绍清明寒食传统习俗时可引用。</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 理解性默写微测（可通过顶部开关控制，省纸模式默认隐藏） -->
+  <section class="dictation-strip">
+    <div class="dictation-head">
+      <span class="dictation-badge">小升初 · 理解性默写微测</span>
+      <span class="dictation-ans-ref">参考答案：春城无处不飞花，寒食东风御柳斜。</span>
+    </div>
+    <div class="dictation-q">韩翃《寒食》中用双重否定凸显长安暮春落花飘飞之盛，又借春风斜柳勾勒京城春色的名句是：________________</div>
+  </section>
+
+  <!-- 底部每日四步打卡栏 -->
+  <footer class="sheet-footer">
+    <div class="check-steps">
+      <label class="step-item"><span class="print-box"></span> 朗读三遍（正音停顿）</label>
+      <label class="step-item"><span class="print-box"></span> 理解释义（画面复述）</label>
+      <label class="step-item"><span class="print-box"></span> 脱口背诵（流利无误）</label>
+      <label class="step-item"><span class="print-box"></span> 过关默写（零错别字）</label>
+    </div>
+    <div class="sign-fields">
+      <span>日期：<i class="sign-line"></i></span>
+      <span>家长签字：<i class="sign-line"></i></span>
+    </div>
+  </footer>
+</article>
+
+<article class="poem-sheet poem-sheet--long" id="day-52" data-day="52">
+  <!-- 顶部页眉 -->
+  <header class="sheet-header">
+    <div class="header-left">
+      <span class="day-pill">第 52 天 / 100</span>
+      <span class="vol-label">卷六 · 岁时乡愁</span>
+    </div>
+    <div class="header-right">
+      <span class="genre-badge">古诗十九首</span>
+      <span class="cat-badge cat-core">六年级核心</span>
+      <div class="compact-mini-check" aria-hidden="true">
+        <span>□读</span><span>□解</span><span>□背</span><span>□默</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体内容区（精讲模式纵向流动；省纸双拼模式自动转为左右双栏） -->
+  <div class="sheet-body">
+    <!-- 左/上核心原文区 -->
+    <section class="poem-core-panel">
+      <div class="poem-title-block">
+        <h2 class="poem-title">迢迢牵牛星</h2>
+        <div class="poem-author">〔东汉〕佚名</div>
+      </div>
+      
+      <div class="poem-verses">
+          <div class="poem-line">迢迢牵牛星，皎皎河汉女。</div>
+          <div class="poem-line">纤纤擢素手，札札弄机杼。</div>
+          <div class="poem-line">终日不成章，泣涕零如雨。</div>
+          <div class="poem-line">河汉清且浅，相去复几许？</div>
+          <div class="poem-line">盈盈一水间，脉脉不得语。</div>
+      </div>
+      <div class="notes-card">
+        <div class="note-row"><span class="note-label">字音点拨</span><span class="note-text">擢(zhuó) · 札(zhá) · 杼(zhù) · 间(jiàn) · 脉(mò)</span></div>
+        <div class="note-row"><span class="note-label">重点字词</span><span class="note-text">①迢迢：遥远的样子。皎皎：明亮洁白的样子。 ②擢：伸出，抽出。素手：洁白的手。 ③札札：织布机发出的响声；机杼：织布机。 ④章：指织成带有花纹的布匹。 ⑤盈盈：水清澈晶莹的样子。 ⑥脉脉：相视含情默默不语的样子。</span></div>
+      </div>
+    </section>
+
+    <!-- 右/下深度讲解区 -->
+    <section class="poem-study-panel">
+      <div class="study-box translation-box">
+        <div class="box-title"><span class="box-dot"></span>白话译文 · 画面还原</div>
+        <div class="box-content">银河畔遥远的是牵牛星，明亮洁白的是织女星。织女伸出纤细白皙的双手，在织机前札札忙碌。可她整日也织不成整匹布，思念的泪水如雨滴落。银河又清澈又浅，他们相距能有多远呢？只隔着一道清浅水流，却只能含情默默凝望而不能倾诉。</div>
+      </div>
+
+      <div class="study-box analysis-box">
+        <div class="box-title"><span class="box-dot"></span>内容精讲与赏析</div>
+        <div class="box-content"><strong class="inline-tag">【背景点拨】</strong>此诗选自东汉《古诗十九首》，借民间牛郎织女隔河相望的神话传说，抒发人世间有情人两地分离的相思之苦。<br><strong class="inline-tag">【意境赏析】</strong>全诗精妙运用“迢迢”“皎皎”“纤纤”“札札”“盈盈”“脉脉”六组叠词，声律缠绵动听。“不成章”“零如雨”由劳作神情写到哀伤泪落；末尾点出河汉明明“清且浅”，却偏偏“不得语”，以水浅情深、咫尺天涯的反差，把无言的哀愁推到极致。</div>
+      </div>
+
+      <div class="study-grid-bottom">
+        <div class="study-box quote-box">
+          <div class="box-title"><span class="box-dot"></span>千古名句点睛</div>
+          <div class="quote-text">“盈盈一水间，脉脉不得语。”</div>
+        </div>
+        <div class="study-box tip-box">
+          <div class="box-title"><span class="box-dot"></span>背诵抓手与写作运用</div>
+          <div class="box-content"><strong class="inline-tag">【背诵脉络】</strong>遥望双星→织布落泪→叹水清浅→隔水凝望。<br><strong class="inline-tag">【写作运用】</strong>体会叠词音乐美与以神话寄深情的写法；写思念亲友、咫尺不能相见时可化用末句。</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 理解性默写微测（可通过顶部开关控制，省纸模式默认隐藏） -->
+  <section class="dictation-strip">
+    <div class="dictation-head">
+      <span class="dictation-badge">小升初 · 理解性默写微测</span>
+      <span class="dictation-ans-ref">参考答案：盈盈一水间，脉脉不得语。</span>
+    </div>
+    <div class="dictation-q">《迢迢牵牛星》中用叠词细致刻画织女与牛郎隔着清浅银河只能含情凝望却无法倾诉衷肠的名句是：________________</div>
+  </section>
+
+  <!-- 底部每日四步打卡栏 -->
+  <footer class="sheet-footer">
+    <div class="check-steps">
+      <label class="step-item"><span class="print-box"></span> 朗读三遍（正音停顿）</label>
+      <label class="step-item"><span class="print-box"></span> 理解释义（画面复述）</label>
+      <label class="step-item"><span class="print-box"></span> 脱口背诵（流利无误）</label>
+      <label class="step-item"><span class="print-box"></span> 过关默写（零错别字）</label>
+    </div>
+    <div class="sign-fields">
+      <span>日期：<i class="sign-line"></i></span>
+      <span>家长签字：<i class="sign-line"></i></span>
+    </div>
+  </footer>
+</article>
+
+<article class="poem-sheet " id="day-53" data-day="53">
+  <!-- 顶部页眉 -->
+  <header class="sheet-header">
+    <div class="header-left">
+      <span class="day-pill">第 53 天 / 100</span>
+      <span class="vol-label">卷六 · 岁时乡愁</span>
+    </div>
+    <div class="header-right">
+      <span class="genre-badge">七言绝句</span>
+      <span class="cat-badge cat-core">六年级核心</span>
+      <div class="compact-mini-check" aria-hidden="true">
+        <span>□读</span><span>□解</span><span>□背</span><span>□默</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体内容区（精讲模式纵向流动；省纸双拼模式自动转为左右双栏） -->
+  <div class="sheet-body">
+    <!-- 左/上核心原文区 -->
+    <section class="poem-core-panel">
+      <div class="poem-title-block">
+        <h2 class="poem-title">十五夜望月</h2>
+        <div class="poem-author">〔唐〕王建</div>
+      </div>
+      
+      <div class="poem-verses">
+          <div class="poem-line">中庭地白树栖鸦，</div>
+          <div class="poem-line">冷露无声湿桂花。</div>
+          <div class="poem-line">今夜月明人尽望，</div>
+          <div class="poem-line">不知秋思落谁家。</div>
+      </div>
+      <div class="notes-card">
+        <div class="note-row"><span class="note-label">字音点拨</span><span class="note-text">栖(qī) · 露(lù) · 思(sī)</span></div>
+        <div class="note-row"><span class="note-label">重点字词</span><span class="note-text">①十五夜：指农历八月十五中秋节之夜。 ②地白：月光照在庭院地面上，显得像铺了一层白霜。 ③栖：鸟儿停息在树上。 ④秋思：秋天的情思，这里特指中秋怀人思乡之情。</span></div>
+      </div>
+    </section>
+
+    <!-- 右/下深度讲解区 -->
+    <section class="poem-study-panel">
+      <div class="study-box translation-box">
+        <div class="box-title"><span class="box-dot"></span>白话译文 · 画面还原</div>
+        <div class="box-content">中秋夜皎洁的月光照得庭院地面洁白如霜，树枝上静静栖息着乌鸦，冰凉的秋露悄无声息打湿了桂花。今夜明月当空，天下人都在仰望，只是不知道这绵绵秋思会落到谁的家中。</div>
+      </div>
+
+      <div class="study-box analysis-box">
+        <div class="box-title"><span class="box-dot"></span>内容精讲与赏析</div>
+        <div class="box-content"><strong class="inline-tag">【背景点拨】</strong>此诗写于唐代中秋赏月之夜，诗人面对清冷月色，不由勾起对远方亲友的深切怀念。<br><strong class="inline-tag">【意境赏析】</strong>前两句不直接写月，而以“地白”写月光如霜，“树栖鸦”以静衬静，“无声湿桂花”更把视觉、听觉与触觉融为一体，既有院中桂香，又暗连月宫桂树传说。末句不说自己思乡，反问“不知秋思落谁家”，一“落”字化无形思念为月华飘洒，含蓄隽永、余韵悠长。</div>
+      </div>
+
+      <div class="study-grid-bottom">
+        <div class="study-box quote-box">
+          <div class="box-title"><span class="box-dot"></span>千古名句点睛</div>
+          <div class="quote-text">“今夜月明人尽望，不知秋思落谁家。”</div>
+        </div>
+        <div class="study-box tip-box">
+          <div class="box-title"><span class="box-dot"></span>背诵抓手与写作运用</div>
+          <div class="box-content"><strong class="inline-tag">【背诵脉络】</strong>庭院白月栖鸦→冷露湿桂花→普天共望月→秋思落谁家。<br><strong class="inline-tag">【写作运用】</strong>写中秋佳节、月夜怀人或“化无形情绪为具体动态”的写法时极适合引用。</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 理解性默写微测（可通过顶部开关控制，省纸模式默认隐藏） -->
+  <section class="dictation-strip">
+    <div class="dictation-head">
+      <span class="dictation-badge">小升初 · 理解性默写微测</span>
+      <span class="dictation-ans-ref">参考答案：今夜月明人尽望，不知秋思落谁家。</span>
+    </div>
+    <div class="dictation-q">王建《十五夜望月》中不直抒己怀，而是推己及人地写出中秋佳节普天同赏清辉、共怀远人之情的名句是：________________</div>
+  </section>
+
+  <!-- 底部每日四步打卡栏 -->
+  <footer class="sheet-footer">
+    <div class="check-steps">
+      <label class="step-item"><span class="print-box"></span> 朗读三遍（正音停顿）</label>
+      <label class="step-item"><span class="print-box"></span> 理解释义（画面复述）</label>
+      <label class="step-item"><span class="print-box"></span> 脱口背诵（流利无误）</label>
+      <label class="step-item"><span class="print-box"></span> 过关默写（零错别字）</label>
+    </div>
+    <div class="sign-fields">
+      <span>日期：<i class="sign-line"></i></span>
+      <span>家长签字：<i class="sign-line"></i></span>
+    </div>
+  </footer>
+</article>
+
+<article class="poem-sheet " id="day-54" data-day="54">
+  <!-- 顶部页眉 -->
+  <header class="sheet-header">
+    <div class="header-left">
+      <span class="day-pill">第 54 天 / 100</span>
+      <span class="vol-label">卷六 · 岁时乡愁</span>
+    </div>
+    <div class="header-right">
+      <span class="genre-badge">七言绝句</span>
+      <span class="cat-badge cat-core">六年级核心</span>
+      <div class="compact-mini-check" aria-hidden="true">
+        <span>□读</span><span>□解</span><span>□背</span><span>□默</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体内容区（精讲模式纵向流动；省纸双拼模式自动转为左右双栏） -->
+  <div class="sheet-body">
+    <!-- 左/上核心原文区 -->
+    <section class="poem-core-panel">
+      <div class="poem-title-block">
+        <h2 class="poem-title">泊船瓜洲</h2>
+        <div class="poem-author">〔宋〕王安石</div>
+      </div>
+      
+      <div class="poem-verses">
+          <div class="poem-line">京口瓜洲一水间，</div>
+          <div class="poem-line">钟山只隔数重山。</div>
+          <div class="poem-line">春风又绿江南岸，</div>
+          <div class="poem-line">明月何时照我还？</div>
+      </div>
+      <div class="notes-card">
+        <div class="note-row"><span class="note-label">字音点拨</span><span class="note-text">间(jiān) · 重(chóng) · 还(huán)</span></div>
+        <div class="note-row"><span class="note-label">重点字词</span><span class="note-text">①泊船：把船停靠在岸边。瓜洲，在今江苏扬州南面长江北岸。 ②一水间：只隔着一条长江水。 ③钟山：在今江苏南京，诗人曾久居于此，视作第二故乡。 ④绿：吹绿，动词。</span></div>
+      </div>
+    </section>
+
+    <!-- 右/下深度讲解区 -->
+    <section class="poem-study-panel">
+      <div class="study-box translation-box">
+        <div class="box-title"><span class="box-dot"></span>白话译文 · 画面还原</div>
+        <div class="box-content">京口和瓜洲不过隔着一条长江，从这里到钟山也只隔着几座山峦。和煦的春风又一次把江南岸吹得一片翠绿，明月啊，你什么时候才能照着我回到家乡呢？</div>
+      </div>
+
+      <div class="study-box analysis-box">
+        <div class="box-title"><span class="box-dot"></span>内容精讲与赏析</div>
+        <div class="box-content"><strong class="inline-tag">【背景点拨】</strong>北宋神宗年间，王安石再次奉诏入京变法，船泊长江北岸瓜洲渡口，回望南岸近在咫尺的故居钟山，遂生归思。<br><strong class="inline-tag">【意境赏析】</strong>首两句“一水间”“只隔”连写路途之近，为下文思归蓄势。第三句“绿”字堪称炼字典范，据传诗人反复改易“到”“过”“入”“满”十余字始定“绿”字，瞬间唤醒春回大地的生机与色彩。末句以明月反问作结，思乡之情切而不露，真挚感人。</div>
+      </div>
+
+      <div class="study-grid-bottom">
+        <div class="study-box quote-box">
+          <div class="box-title"><span class="box-dot"></span>千古名句点睛</div>
+          <div class="quote-text">“春风又绿江南岸，明月何时照我还？”</div>
+        </div>
+        <div class="study-box tip-box">
+          <div class="box-title"><span class="box-dot"></span>背诵抓手与写作运用</div>
+          <div class="box-content"><strong class="inline-tag">【背诵脉络】</strong>地理之近（1-2句）→江南春绿（3句）→望月思归（4句）。<br><strong class="inline-tag">【写作运用】</strong>写春天来临的勃勃生机、海外游子思归，或作文讲“炼字推敲”时必用典范。</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 理解性默写微测（可通过顶部开关控制，省纸模式默认隐藏） -->
+  <section class="dictation-strip">
+    <div class="dictation-head">
+      <span class="dictation-badge">小升初 · 理解性默写微测</span>
+      <span class="dictation-ans-ref">参考答案：春风又绿江南岸，明月何时照我还？</span>
+    </div>
+    <div class="dictation-q">王安石《泊船瓜洲》中用精妙炼字描绘大江两岸春意重归，并反问何时能返乡的名句是：________________</div>
+  </section>
+
+  <!-- 底部每日四步打卡栏 -->
+  <footer class="sheet-footer">
+    <div class="check-steps">
+      <label class="step-item"><span class="print-box"></span> 朗读三遍（正音停顿）</label>
+      <label class="step-item"><span class="print-box"></span> 理解释义（画面复述）</label>
+      <label class="step-item"><span class="print-box"></span> 脱口背诵（流利无误）</label>
+      <label class="step-item"><span class="print-box"></span> 过关默写（零错别字）</label>
+    </div>
+    <div class="sign-fields">
+      <span>日期：<i class="sign-line"></i></span>
+      <span>家长签字：<i class="sign-line"></i></span>
+    </div>
+  </footer>
+</article>
+
+<article class="poem-sheet poem-sheet--long" id="day-55" data-day="55">
+  <!-- 顶部页眉 -->
+  <header class="sheet-header">
+    <div class="header-left">
+      <span class="day-pill">第 55 天 / 100</span>
+      <span class="vol-label">卷六 · 岁时乡愁</span>
+    </div>
+    <div class="header-right">
+      <span class="genre-badge">五言律诗</span>
+      <span class="cat-badge cat-junior">初中衔接</span>
+      <div class="compact-mini-check" aria-hidden="true">
+        <span>□读</span><span>□解</span><span>□背</span><span>□默</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体内容区（精讲模式纵向流动；省纸双拼模式自动转为左右双栏） -->
+  <div class="sheet-body">
+    <!-- 左/上核心原文区 -->
+    <section class="poem-core-panel">
+      <div class="poem-title-block">
+        <h2 class="poem-title">次北固山下</h2>
+        <div class="poem-author">〔唐〕王湾</div>
+      </div>
+      
+      <div class="poem-verses">
+          <div class="poem-line">客路青山外，行舟绿水前。</div>
+          <div class="poem-line">潮平两岸阔，风正一帆悬。</div>
+          <div class="poem-line">海日生残夜，江春入旧年。</div>
+          <div class="poem-line">乡书何处达？归雁洛阳边。</div>
+      </div>
+      <div class="notes-card">
+        <div class="note-row"><span class="note-label">字音点拨</span><span class="note-text">次(cì) · 阔(kuò) · 悬(xuán) · 残(cán)</span></div>
+        <div class="note-row"><span class="note-label">重点字词</span><span class="note-text">①次：停宿，指旅途中船只停靠。 ②客路：旅人前行的路。 ③风正：风势和顺。悬：高挂，端正悬挂。 ④海日生残夜：夜将尽时太阳从海上冉冉升起。 ⑤归雁：北归的大雁，古有“鸿雁传书”之说。</span></div>
+      </div>
+    </section>
+
+    <!-- 右/下深度讲解区 -->
+    <section class="poem-study-panel">
+      <div class="study-box translation-box">
+        <div class="box-title"><span class="box-dot"></span>白话译文 · 画面还原</div>
+        <div class="box-content">旅途延伸在青山之外，小船行驶在碧绿江水之前。潮水涨满，江面与两岸齐平显得无比开阔，顺风吹来，白帆端端正正地高悬。残夜未尽时海上红日已然升起，旧年未过时江面上早已有了春意。寄往家乡的书信该送到哪里呢？托付给北飞的大雁带回洛阳吧。</div>
+      </div>
+
+      <div class="study-box analysis-box">
+        <div class="box-title"><span class="box-dot"></span>内容精讲与赏析</div>
+        <div class="box-content"><strong class="inline-tag">【背景点拨】</strong>王湾漫游江南、冬末春初停泊镇江北固山江畔时作此诗，借羁旅江景表达新春感怀与思乡之情。<br><strong class="inline-tag">【意境赏析】</strong>颔联“平”“阔”“正”“悬”写尽大江行舟的开阔恢宏；颈联“海日生残夜，江春入旧年”中“生”“入”二字将红日与春意拟人化，写出时序交替、新事物必将取代旧事物的蓬勃生机与乐观精神。尾联借“鸿雁传书”典故收束，于开朗格局中融入淡淡乡愁。</div>
+      </div>
+
+      <div class="study-grid-bottom">
+        <div class="study-box quote-box">
+          <div class="box-title"><span class="box-dot"></span>千古名句点睛</div>
+          <div class="quote-text">“海日生残夜，江春入旧年。”</div>
+        </div>
+        <div class="study-box tip-box">
+          <div class="box-title"><span class="box-dot"></span>背诵抓手与写作运用</div>
+          <div class="box-content"><strong class="inline-tag">【背诵脉络】</strong>青山行舟（首）→江阔帆悬（颔）→日生春入（颈）→归雁寄书（尾）。<br><strong class="inline-tag">【写作运用】</strong>写新旧交替、充满希望的时代新气象或新年展望时，颈联哲理最出彩。</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 理解性默写微测（可通过顶部开关控制，省纸模式默认隐藏） -->
+  <section class="dictation-strip">
+    <div class="dictation-head">
+      <span class="dictation-badge">小升初 · 理解性默写微测</span>
+      <span class="dictation-ans-ref">参考答案：海日生残夜，江春入旧年。</span>
+    </div>
+    <div class="dictation-q">王湾《次北固山下》中运用拟人手法描写时序交替，蕴含新事物必将取代旧事物的自然哲理的名句是：________________</div>
+  </section>
+
+  <!-- 底部每日四步打卡栏 -->
+  <footer class="sheet-footer">
+    <div class="check-steps">
+      <label class="step-item"><span class="print-box"></span> 朗读三遍（正音停顿）</label>
+      <label class="step-item"><span class="print-box"></span> 理解释义（画面复述）</label>
+      <label class="step-item"><span class="print-box"></span> 脱口背诵（流利无误）</label>
+      <label class="step-item"><span class="print-box"></span> 过关默写（零错别字）</label>
+    </div>
+    <div class="sign-fields">
+      <span>日期：<i class="sign-line"></i></span>
+      <span>家长签字：<i class="sign-line"></i></span>
+    </div>
+  </footer>
+</article>
+
+<article class="poem-sheet poem-sheet--long" id="day-56" data-day="56">
+  <!-- 顶部页眉 -->
+  <header class="sheet-header">
+    <div class="header-left">
+      <span class="day-pill">第 56 天 / 100</span>
+      <span class="vol-label">卷六 · 岁时乡愁</span>
+    </div>
+    <div class="header-right">
+      <span class="genre-badge">五言律诗</span>
+      <span class="cat-badge cat-junior">初中衔接</span>
+      <div class="compact-mini-check" aria-hidden="true">
+        <span>□读</span><span>□解</span><span>□背</span><span>□默</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体内容区（精讲模式纵向流动；省纸双拼模式自动转为左右双栏） -->
+  <div class="sheet-body">
+    <!-- 左/上核心原文区 -->
+    <section class="poem-core-panel">
+      <div class="poem-title-block">
+        <h2 class="poem-title">商山早行</h2>
+        <div class="poem-author">〔唐〕温庭筠</div>
+      </div>
+      
+      <div class="poem-verses">
+          <div class="poem-line">晨起动征铎，客行悲故乡。</div>
+          <div class="poem-line">鸡声茅店月，人迹板桥霜。</div>
+          <div class="poem-line">槲叶落山路，枳花明驿墙。</div>
+          <div class="poem-line">因思杜陵梦，凫雁满回塘。</div>
+      </div>
+      <div class="notes-card">
+        <div class="note-row"><span class="note-label">字音点拨</span><span class="note-text">铎(duó) · 槲(hú) · 枳(zhǐ) · 凫(fú)</span></div>
+        <div class="note-row"><span class="note-label">重点字词</span><span class="note-text">①征铎：远行车马所系的铃铛。 ②槲：一种落叶乔木。枳：落叶灌木，春季开白花。 ③驿墙：驿站的墙壁。明：使……明亮，动词。 ④杜陵：在长安城南，此借指诗人思念的家乡京城。 ⑤凫雁：野鸭与大雁。回塘：曲折的水塘。</span></div>
+      </div>
+    </section>
+
+    <!-- 右/下深度讲解区 -->
+    <section class="poem-study-panel">
+      <div class="study-box translation-box">
+        <div class="box-title"><span class="box-dot"></span>白话译文 · 画面还原</div>
+        <div class="box-content">清晨起身车马铃声作响，旅途奔波让人更加思念故乡。荒山茅店上方冷月犹悬、鸡啼阵阵，木板小桥覆满寒霜、早行人迹隐约可见。枯落的槲叶铺满山路，雪白枳花映亮驿站土墙。我不禁回想起昨夜故乡的梦，野鸭大雁正嬉戏在曲折水塘中。</div>
+      </div>
+
+      <div class="study-box analysis-box">
+        <div class="box-title"><span class="box-dot"></span>内容精讲与赏析</div>
+        <div class="box-content"><strong class="inline-tag">【背景点拨】</strong>温庭筠仕途失意离京南下，破晓途经陕西商山时写下这首羁旅“早行”名篇。<br><strong class="inline-tag">【意境赏析】</strong>全诗紧扣“早行”与“思乡”展开。颔联“鸡声茅店月，人迹板桥霜”纯用六组名词意象并列，不用一字动词却声色兼备、寒意透骨，把旅人黎明启程的清冷寂寥写到绝处。颈联以“明”字写白花映照微明驿墙，尾联以故园暖梦反衬眼前景孤寂，愁思更深一层。</div>
+      </div>
+
+      <div class="study-grid-bottom">
+        <div class="study-box quote-box">
+          <div class="box-title"><span class="box-dot"></span>千古名句点睛</div>
+          <div class="quote-text">“鸡声茅店月，人迹板桥霜。”</div>
+        </div>
+        <div class="study-box tip-box">
+          <div class="box-title"><span class="box-dot"></span>背诵抓手与写作运用</div>
+          <div class="box-content"><strong class="inline-tag">【背诵脉络】</strong>铃响动身→鸡声板桥写早→槲叶枳花渐明→忆故园梦境。<br><strong class="inline-tag">【写作运用】</strong>学习“纯名词意象并置”手法，写清晨赶路、游子艰辛或冬春晨景时可引用颔联。</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 理解性默写微测（可通过顶部开关控制，省纸模式默认隐藏） -->
+  <section class="dictation-strip">
+    <div class="dictation-head">
+      <span class="dictation-badge">小升初 · 理解性默写微测</span>
+      <span class="dictation-ans-ref">参考答案：鸡声茅店月，人迹板桥霜。</span>
+    </div>
+    <div class="dictation-q">温庭筠《商山早行》中历来被誉为“早行”绝唱，纯用六个名词意象高度凝练地勾勒出黎明旅途清冷画面的名句是：________________</div>
+  </section>
+
+  <!-- 底部每日四步打卡栏 -->
+  <footer class="sheet-footer">
+    <div class="check-steps">
+      <label class="step-item"><span class="print-box"></span> 朗读三遍（正音停顿）</label>
+      <label class="step-item"><span class="print-box"></span> 理解释义（画面复述）</label>
+      <label class="step-item"><span class="print-box"></span> 脱口背诵（流利无误）</label>
+      <label class="step-item"><span class="print-box"></span> 过关默写（零错别字）</label>
+    </div>
+    <div class="sign-fields">
+      <span>日期：<i class="sign-line"></i></span>
+      <span>家长签字：<i class="sign-line"></i></span>
+    </div>
+  </footer>
+</article>
+
+<article class="poem-sheet " id="day-57" data-day="57">
+  <!-- 顶部页眉 -->
+  <header class="sheet-header">
+    <div class="header-left">
+      <span class="day-pill">第 57 天 / 100</span>
+      <span class="vol-label">卷六 · 岁时乡愁</span>
+    </div>
+    <div class="header-right">
+      <span class="genre-badge">宋词</span>
+      <span class="cat-badge cat-extra">课外拓展</span>
+      <div class="compact-mini-check" aria-hidden="true">
+        <span>□读</span><span>□解</span><span>□背</span><span>□默</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体内容区（精讲模式纵向流动；省纸双拼模式自动转为左右双栏） -->
+  <div class="sheet-body">
+    <!-- 左/上核心原文区 -->
+    <section class="poem-core-panel">
+      <div class="poem-title-block">
+        <h2 class="poem-title">生查子·元夕</h2>
+        <div class="poem-author">〔宋〕欧阳修</div>
+      </div>
+      
+      <div class="poem-verses">
+          <div class="poem-line">去年元夜时，花市灯如昼。</div>
+          <div class="poem-line">月上柳梢头，人约黄昏后。</div>
+          <div class="poem-line">今年元夜时，月与灯依旧。</div>
+          <div class="poem-line">不见去年人，泪湿春衫袖。</div>
+      </div>
+      <div class="notes-card">
+        <div class="note-row"><span class="note-label">字音点拨</span><span class="note-text">查(zhā) · 昼(zhòu) · 梢(shāo) · 衫(shān)</span></div>
+        <div class="note-row"><span class="note-label">重点字词</span><span class="note-text">①元夕、元夜：均指农历正月十五元宵节之夜。 ②花市：繁华闹市。灯如昼：彩灯辉煌，亮如白昼。 ③柳梢头：柳树枝梢之上，点明月亮初升时的高度。 ④春衫：春天穿的单衣。</span></div>
+      </div>
+    </section>
+
+    <!-- 右/下深度讲解区 -->
+    <section class="poem-study-panel">
+      <div class="study-box translation-box">
+        <div class="box-title"><span class="box-dot"></span>白话译文 · 画面还原</div>
+        <div class="box-content">去年元宵节夜晚，繁华街市彩灯齐放亮如白昼。明月缓缓升上柳树枝头，恋人相约在黄昏之后相聚。今年元宵节夜晚，天上明月与街边花灯依然如旧。却再也见不到去年同游的那个人，思念的泪水打湿了春衫衣袖。</div>
+      </div>
+
+      <div class="study-box analysis-box">
+        <div class="box-title"><span class="box-dot"></span>内容精讲与赏析</div>
+        <div class="box-content"><strong class="inline-tag">【背景点拨】</strong>元宵节（上元节）是古代最热闹的灯节之一，词人借两年元夕赏灯对比，书写“物是人非”的深沉怅惘。<br><strong class="inline-tag">【意境赏析】</strong>全词巧用回环对比：上下两片首句仅将“去年”换成“今年”，以“月与灯依旧”反衬“不见去年人”，景同情异，反差倍增。“月上柳梢头，人约黄昏后”画面清丽温柔，充满良辰美景的甜蜜；结尾“泪湿春衫袖”却以今之寂寞悲凉收束，语言浅白如话而情味隽永。</div>
+      </div>
+
+      <div class="study-grid-bottom">
+        <div class="study-box quote-box">
+          <div class="box-title"><span class="box-dot"></span>千古名句点睛</div>
+          <div class="quote-text">“月上柳梢头，人约黄昏后。”</div>
+        </div>
+        <div class="study-box tip-box">
+          <div class="box-title"><span class="box-dot"></span>背诵抓手与写作运用</div>
+          <div class="box-content"><strong class="inline-tag">【背诵脉络】</strong>去年灯昼相约（上片）→今年灯月依旧人不在（下片）。<br><strong class="inline-tag">【写作运用】</strong>写元宵灯火节俗，或写“景物依旧而故人不在”的物是人非之感时可巧妙引用。</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 理解性默写微测（可通过顶部开关控制，省纸模式默认隐藏） -->
+  <section class="dictation-strip">
+    <div class="dictation-head">
+      <span class="dictation-badge">小升初 · 理解性默写微测</span>
+      <span class="dictation-ans-ref">参考答案：月上柳梢头，人约黄昏后。</span>
+    </div>
+    <div class="dictation-q">欧阳修《生查子·元夕》中勾勒出去年元宵夜初月挂枝头、相约暮色共度佳节的温馨画面的名句是：________________</div>
+  </section>
+
+  <!-- 底部每日四步打卡栏 -->
+  <footer class="sheet-footer">
+    <div class="check-steps">
+      <label class="step-item"><span class="print-box"></span> 朗读三遍（正音停顿）</label>
+      <label class="step-item"><span class="print-box"></span> 理解释义（画面复述）</label>
+      <label class="step-item"><span class="print-box"></span> 脱口背诵（流利无误）</label>
+      <label class="step-item"><span class="print-box"></span> 过关默写（零错别字）</label>
+    </div>
+    <div class="sign-fields">
+      <span>日期：<i class="sign-line"></i></span>
+      <span>家长签字：<i class="sign-line"></i></span>
+    </div>
+  </footer>
+</article>
+
+<article class="poem-sheet poem-sheet--long" id="day-58" data-day="58">
+  <!-- 顶部页眉 -->
+  <header class="sheet-header">
+    <div class="header-left">
+      <span class="day-pill">第 58 天 / 100</span>
+      <span class="vol-label">卷六 · 岁时乡愁</span>
+    </div>
+    <div class="header-right">
+      <span class="genre-badge">宋词</span>
+      <span class="cat-badge cat-extra">课外拓展</span>
+      <div class="compact-mini-check" aria-hidden="true">
+        <span>□读</span><span>□解</span><span>□背</span><span>□默</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体内容区（精讲模式纵向流动；省纸双拼模式自动转为左右双栏） -->
+  <div class="sheet-body">
+    <!-- 左/上核心原文区 -->
+    <section class="poem-core-panel">
+      <div class="poem-title-block">
+        <h2 class="poem-title">鹊桥仙·纤云弄巧</h2>
+        <div class="poem-author">〔宋〕秦观</div>
+      </div>
+      
+      <div class="poem-verses">
+          <div class="poem-line">纤云弄巧，飞星传恨，银汉迢迢暗度。</div>
+          <div class="poem-line">金风玉露一相逢，便胜却人间无数。</div>
+          <div class="poem-line">柔情似水，佳期如梦，忍顾鹊桥归路！</div>
+          <div class="poem-line">两情若是久长时，又岂在朝朝暮暮！</div>
+      </div>
+      <div class="notes-card">
+        <div class="note-row"><span class="note-label">字音点拨</span><span class="note-text">纤(xiān) · 迢(tiáo) · 鹊(què) · 朝(zhāo)</span></div>
+        <div class="note-row"><span class="note-label">重点字词</span><span class="note-text">①纤云弄巧：轻柔的云彩变幻出精巧的图案，呼应七夕“乞巧”节俗。 ②飞星：流星。 ③银汉：银河；暗度：悄悄渡过。 ④金风玉露：秋风与白露，点明七夕秋令。 ⑤忍顾：哪忍心回头看。</span></div>
+      </div>
+    </section>
+
+    <!-- 右/下深度讲解区 -->
+    <section class="poem-study-panel">
+      <div class="study-box translation-box">
+        <div class="box-title"><span class="box-dot"></span>白话译文 · 画面还原</div>
+        <div class="box-content">轻柔的彩云变幻出精巧花样，流星传递着离别愁绪，牛郎织女悄悄渡过遥远银河。秋风白露之夜这短暂一相逢，就胜过世间无数次寻常欢聚。缠绵柔情像流水般绵长，美好佳期如同梦境，怎忍心回头望向归去的鹊桥之路！只要彼此情意真心长久，又何必在意朝夕相守呢！</div>
+      </div>
+
+      <div class="study-box analysis-box">
+        <div class="box-title"><span class="box-dot"></span>内容精讲与赏析</div>
+        <div class="box-content"><strong class="inline-tag">【背景点拨】</strong>此词写于七夕牛郎织女鹊桥相会之夜，秦观一洗古人悲叹七夕聚少离多的旧调，翻出旷达高远的爱情哲理。<br><strong class="inline-tag">【意境赏析】</strong>上片“弄”“传”“度”三字动态十足，“金风玉露”喻高洁情谊，“便胜却人间无数”高度肯定精神契合之可贵。下片“忍顾”曲折写不舍离别，末句“两情若是久长时，又岂在朝朝暮暮”以议论入词，振聋发聩，展现出超越时空阻隔的坚定深情。</div>
+      </div>
+
+      <div class="study-grid-bottom">
+        <div class="study-box quote-box">
+          <div class="box-title"><span class="box-dot"></span>千古名句点睛</div>
+          <div class="quote-text">“两情若是久长时，又岂在朝朝暮暮！”</div>
+        </div>
+        <div class="study-box tip-box">
+          <div class="box-title"><span class="box-dot"></span>背诵抓手与写作运用</div>
+          <div class="box-content"><strong class="inline-tag">【背诵脉络】</strong>云星暗度胜人间（上片）→忍顾归路重久长（下片）。<br><strong class="inline-tag">【写作运用】</strong>写亲友虽分隔两地却心意相通、真情不因距离而褪色时，末句哲理最有说服力。</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 理解性默写微测（可通过顶部开关控制，省纸模式默认隐藏） -->
+  <section class="dictation-strip">
+    <div class="dictation-head">
+      <span class="dictation-badge">小升初 · 理解性默写微测</span>
+      <span class="dictation-ans-ref">参考答案：两情若是久长时，又岂在朝朝暮暮！</span>
+    </div>
+    <div class="dictation-q">秦观《鹊桥仙·纤云弄巧》中打破传统七夕悲叹离别的格调，指出只要心意恒久便不必拘泥于朝夕相守的千古名句是：________________</div>
+  </section>
+
+  <!-- 底部每日四步打卡栏 -->
+  <footer class="sheet-footer">
+    <div class="check-steps">
+      <label class="step-item"><span class="print-box"></span> 朗读三遍（正音停顿）</label>
+      <label class="step-item"><span class="print-box"></span> 理解释义（画面复述）</label>
+      <label class="step-item"><span class="print-box"></span> 脱口背诵（流利无误）</label>
+      <label class="step-item"><span class="print-box"></span> 过关默写（零错别字）</label>
+    </div>
+    <div class="sign-fields">
+      <span>日期：<i class="sign-line"></i></span>
+      <span>家长签字：<i class="sign-line"></i></span>
+    </div>
+  </footer>
+</article>
+
+<article class="poem-sheet " id="day-59" data-day="59">
+  <!-- 顶部页眉 -->
+  <header class="sheet-header">
+    <div class="header-left">
+      <span class="day-pill">第 59 天 / 100</span>
+      <span class="vol-label">卷六 · 岁时乡愁</span>
+    </div>
+    <div class="header-right">
+      <span class="genre-badge">清词</span>
+      <span class="cat-badge cat-upper">高段核心</span>
+      <div class="compact-mini-check" aria-hidden="true">
+        <span>□读</span><span>□解</span><span>□背</span><span>□默</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体内容区（精讲模式纵向流动；省纸双拼模式自动转为左右双栏） -->
+  <div class="sheet-body">
+    <!-- 左/上核心原文区 -->
+    <section class="poem-core-panel">
+      <div class="poem-title-block">
+        <h2 class="poem-title">长相思·山一程</h2>
+        <div class="poem-author">〔清〕纳兰性德</div>
+      </div>
+      
+      <div class="poem-verses">
+          <div class="poem-line">山一程，水一程，</div>
+          <div class="poem-line">身向榆关那畔行，夜深千帐灯。</div>
+          <div class="poem-line">风一更，雪一更，</div>
+          <div class="poem-line">聒碎乡心梦不成，故园无此声。</div>
+      </div>
+      <div class="notes-card">
+        <div class="note-row"><span class="note-label">字音点拨</span><span class="note-text">榆(yú) · 畔(pàn) · 更(gēng) · 聒(guō)</span></div>
+        <div class="note-row"><span class="note-label">重点字词</span><span class="note-text">①榆关：山海关。那畔：那边，指关外。 ②千帐灯：形容出巡军队宿营时帐篷众多、灯火点点。 ③更：古代夜间的计时单位，一夜分五更。 ④聒碎：声音嘈杂使人烦躁，此处指风雪声惊碎思乡梦。 ⑤故园：家乡。</span></div>
+      </div>
+    </section>
+
+    <!-- 右/下深度讲解区 -->
+    <section class="poem-study-panel">
+      <div class="study-box translation-box">
+        <div class="box-title"><span class="box-dot"></span>白话译文 · 画面还原</div>
+        <div class="box-content">翻过一座座山，涉过一道道水，将士们朝着山海关外一路前行，入夜后千座军帐亮起点点灯火。狂风呼啸过一更，大雪纷飞又一更，风雪杂声吵碎了思乡的心，让人整夜难成美梦，温柔安宁的故乡绝没有这样凄厉的声响。</div>
+      </div>
+
+      <div class="study-box analysis-box">
+        <div class="box-title"><span class="box-dot"></span>内容精讲与赏析</div>
+        <div class="box-content"><strong class="inline-tag">【背景点拨】</strong>清康熙二十一年，纳兰性德随康熙帝出巡山海关外盛京，途中行役艰苦、寒风暴雪，遂赋此思乡名作。<br><strong class="inline-tag">【意境赏析】</strong>词作上下片巧用“山一程，水一程”与“风一更，雪一更”复叠，既写跋涉之漫长，又写长夜之难熬。“夜深千帐灯”宏大而清寂，以众衬孤；下片“聒碎”二字化无形“乡心”为可碎之物，结尾“故园无此声”将关外苦寒与故乡温馨对比，凄婉动人。</div>
+      </div>
+
+      <div class="study-grid-bottom">
+        <div class="study-box quote-box">
+          <div class="box-title"><span class="box-dot"></span>千古名句点睛</div>
+          <div class="quote-text">“风一更，雪一更，聒碎乡心梦不成，故园无此声。”</div>
+        </div>
+        <div class="study-box tip-box">
+          <div class="box-title"><span class="box-dot"></span>背诵抓手与写作运用</div>
+          <div class="box-content"><strong class="inline-tag">【背诵脉络】</strong>跋涉山海关夜宿（上片）→风雪扰梦忆故园（下片）。<br><strong class="inline-tag">【写作运用】</strong>写行旅奔波之苦、深夜思念故乡时可引用，学习复叠句与对比手法极佳。</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 理解性默写微测（可通过顶部开关控制，省纸模式默认隐藏） -->
+  <section class="dictation-strip">
+    <div class="dictation-head">
+      <span class="dictation-badge">小升初 · 理解性默写微测</span>
+      <span class="dictation-ans-ref">参考答案：风一更，雪一更，聒碎乡心梦不成，故园无此声。</span>
+    </div>
+    <div class="dictation-q">纳兰性德《长相思·山一程》中描写塞外寒夜气候恶劣、杂声惊扰了游子美梦，并与安宁家乡作对比的名句是：________________</div>
+  </section>
+
+  <!-- 底部每日四步打卡栏 -->
+  <footer class="sheet-footer">
+    <div class="check-steps">
+      <label class="step-item"><span class="print-box"></span> 朗读三遍（正音停顿）</label>
+      <label class="step-item"><span class="print-box"></span> 理解释义（画面复述）</label>
+      <label class="step-item"><span class="print-box"></span> 脱口背诵（流利无误）</label>
+      <label class="step-item"><span class="print-box"></span> 过关默写（零错别字）</label>
+    </div>
+    <div class="sign-fields">
+      <span>日期：<i class="sign-line"></i></span>
+      <span>家长签字：<i class="sign-line"></i></span>
+    </div>
+  </footer>
+</article>
+
+<article class="poem-sheet " id="day-60" data-day="60">
+  <!-- 顶部页眉 -->
+  <header class="sheet-header">
+    <div class="header-left">
+      <span class="day-pill">第 60 天 / 100</span>
+      <span class="vol-label">卷六 · 岁时乡愁</span>
+    </div>
+    <div class="header-right">
+      <span class="genre-badge">元曲</span>
+      <span class="cat-badge cat-junior">初中衔接</span>
+      <div class="compact-mini-check" aria-hidden="true">
+        <span>□读</span><span>□解</span><span>□背</span><span>□默</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体内容区（精讲模式纵向流动；省纸双拼模式自动转为左右双栏） -->
+  <div class="sheet-body">
+    <!-- 左/上核心原文区 -->
+    <section class="poem-core-panel">
+      <div class="poem-title-block">
+        <h2 class="poem-title">天净沙·秋思</h2>
+        <div class="poem-author">〔元〕马致远</div>
+      </div>
+      
+      <div class="poem-verses">
+          <div class="poem-line">枯藤老树昏鸦，</div>
+          <div class="poem-line">小桥流水人家，</div>
+          <div class="poem-line">古道西风瘦马。</div>
+          <div class="poem-line">夕阳西下，</div>
+          <div class="poem-line">断肠人在天涯。</div>
+      </div>
+      <div class="notes-card">
+        <div class="note-row"><span class="note-label">字音点拨</span><span class="note-text">藤(téng) · 鸦(yā) · 瘦(shòu) · 涯(yá)</span></div>
+        <div class="note-row"><span class="note-label">重点字词</span><span class="note-text">①天净沙：元曲曲牌名；秋思：题目。 ②昏鸦：黄昏时归巢的乌鸦。 ③人家：农家住户。 ④古道：荒凉古老的道路。 ⑤断肠人：形容极度悲伤思乡的漂泊游子。</span></div>
+      </div>
+    </section>
+
+    <!-- 右/下深度讲解区 -->
+    <section class="poem-study-panel">
+      <div class="study-box translation-box">
+        <div class="box-title"><span class="box-dot"></span>白话译文 · 画面还原</div>
+        <div class="box-content">枯萎的藤蔓缠绕老树，树梢落着黄昏归巢的乌鸦；小桥下流水潺潺，桥边错落着几户农家；荒凉古道上吹来萧瑟西风，游子骑着一匹瘦弱老马缓缓前行。太阳渐渐从西边落下，极度悲伤的游子独自漂泊在天涯。</div>
+      </div>
+
+      <div class="study-box analysis-box">
+        <div class="box-title"><span class="box-dot"></span>内容精讲与赏析</div>
+        <div class="box-content"><strong class="inline-tag">【背景点拨】</strong>此曲是元代散曲小令的巅峰之作，被誉为“秋思之祖”，仅用二十八字便绘出一幅感人至深的秋日游子思乡图。<br><strong class="inline-tag">【意境赏析】</strong>前三句连缀九种景物，不着一字议论却意象密度极高：“枯藤老树昏鸦”与“古道西风瘦马”荒凉凄清，中间偏插入“小桥流水人家”的安适暖景，以乐景反衬哀情，更添游子无家可归之痛；最后“夕阳西下，断肠人在天涯”画龙点睛，愁思如潮。</div>
+      </div>
+
+      <div class="study-grid-bottom">
+        <div class="study-box quote-box">
+          <div class="box-title"><span class="box-dot"></span>千古名句点睛</div>
+          <div class="quote-text">“夕阳西下，断肠人在天涯。”</div>
+        </div>
+        <div class="study-box tip-box">
+          <div class="box-title"><span class="box-dot"></span>背诵抓手与写作运用</div>
+          <div class="box-content"><strong class="inline-tag">【背诵脉络】</strong>枯藤栖鸦→小桥人家→古道瘦马→夕阳断肠。<br><strong class="inline-tag">【写作运用】</strong>作文中写秋天萧瑟景象、远行思乡或运用“以乐景衬哀情”技巧时，皆为必背范本。</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 理解性默写微测（可通过顶部开关控制，省纸模式默认隐藏） -->
+  <section class="dictation-strip">
+    <div class="dictation-head">
+      <span class="dictation-badge">小升初 · 理解性默写微测</span>
+      <span class="dictation-ans-ref">参考答案：夕阳西下，断肠人在天涯。</span>
+    </div>
+    <div class="dictation-q">马致远《天净沙·秋思》中在铺排九种秋景意象之后，在暮色沉沉中直接点明全曲主旨、倾诉游子极度悲痛之情的收束句是：________________</div>
+  </section>
+
+  <!-- 底部每日四步打卡栏 -->
+  <footer class="sheet-footer">
+    <div class="check-steps">
+      <label class="step-item"><span class="print-box"></span> 朗读三遍（正音停顿）</label>
+      <label class="step-item"><span class="print-box"></span> 理解释义（画面复述）</label>
+      <label class="step-item"><span class="print-box"></span> 脱口背诵（流利无误）</label>
+      <label class="step-item"><span class="print-box"></span> 过关默写（零错别字）</label>
+    </div>
+    <div class="sign-fields">
+      <span>日期：<i class="sign-line"></i></span>
+      <span>家长签字：<i class="sign-line"></i></span>
+    </div>
+  </footer>
+</article>
+</main>
+
+<script>
+(function() {
+  const body = document.body;
+  const btnStandard = document.getElementById('btn-mode-standard');
+  const btnCompact = document.getElementById('btn-mode-compact');
+  const daySelect = document.getElementById('day-filter-select');
+  const chkDictation = document.getElementById('toggle-dictation');
+  const sheets = Array.from(document.querySelectorAll('.poem-sheet'));
+
+  function refreshPagination() {
+    const isCompact = body.classList.contains('mode-compact');
+    const visibleSheets = sheets.filter(el => !el.classList.contains('hidden-by-filter'));
+    sheets.forEach(el => {
+      el.classList.remove('break-after-page', 'compact-row-end');
+    });
+
+    visibleSheets.forEach((el, idx) => {
+      const isLast = idx === visibleSheets.length - 1;
+      if (isCompact) {
+        if (idx % 2 === 1) {
+          el.classList.add('compact-row-end');
+          if (!isLast) el.classList.add('break-after-page');
+        }
+      } else {
+        if (!isLast) {
+          el.classList.add('break-after-page');
+        }
+      }
+    });
+  }
+
+  function setMode(mode) {
+    if (mode === 'compact') {
+      body.classList.add('mode-compact');
+      btnCompact.classList.add('active');
+      btnStandard.classList.remove('active');
+      if (chkDictation && !chkDictation.dataset.userTouched) {
+        chkDictation.checked = false;
+        body.classList.add('hide-dictation');
+      }
+    } else {
+      body.classList.remove('mode-compact');
+      btnStandard.classList.add('active');
+      btnCompact.classList.remove('active');
+      if (chkDictation && !chkDictation.dataset.userTouched) {
+        chkDictation.checked = true;
+        body.classList.remove('hide-dictation');
+      }
+    }
+    refreshPagination();
+  }
+
+  function setDayFilter(val) {
+    sheets.forEach(el => {
+      if (val === 'all' || el.dataset.day === val) {
+        el.classList.remove('hidden-by-filter');
+      } else {
+        el.classList.add('hidden-by-filter');
+      }
+    });
+    refreshPagination();
+  }
+
+  if (btnStandard) {
+    btnStandard.addEventListener('click', () => setMode('standard'));
+  }
+  if (btnCompact) {
+    btnCompact.addEventListener('click', () => setMode('compact'));
+  }
+  if (daySelect) {
+    daySelect.addEventListener('change', (e) => setDayFilter(e.target.value));
+  }
+  if (chkDictation) {
+    chkDictation.addEventListener('change', (e) => {
+      chkDictation.dataset.userTouched = '1';
+      if (e.target.checked) {
+        body.classList.remove('hide-dictation');
+      } else {
+        body.classList.add('hide-dictation');
+      }
+    });
+  }
+
+  // 屏幕端点击打卡记录互动
+  document.querySelectorAll('.step-item').forEach(label => {
+    label.addEventListener('click', () => label.classList.toggle('checked'));
+  });
+
+  // 支持 URL 查询参数: ?mode=compact & ?day=5 & ?autoprint=1
+  const params = new URLSearchParams(window.location.search);
+  const qDay = params.get('day');
+  const qMode = params.get('mode');
+  if (qDay && daySelect) {
+    const optExists = Array.from(daySelect.options).some(o => o.value === qDay);
+    if (optExists) {
+      daySelect.value = qDay;
+      setDayFilter(qDay);
+    }
+  }
+  if (qMode === 'compact') {
+    setMode('compact');
+  } else {
+    setMode('standard');
+  }
+
+  if (params.get('autoprint') === '1') {
+    setTimeout(() => window.print(), 250);
+  }
+})();
+</script>
+</body>
+</html>
