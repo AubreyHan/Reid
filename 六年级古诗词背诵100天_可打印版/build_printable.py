@@ -1287,12 +1287,14 @@ def build_tracker_and_quiz_html(poems: list[dict[str, Any]]) -> str:
   .tracker-table {{
     width: 100%;
     border-collapse: collapse;
-    font-size: 10.7px;
+    font-size: 9.8px;
+    line-height: 1.25;
   }}
   .tracker-table th, .tracker-table td {{
     border: 1px solid #d0d7de;
-    padding: 2.8px 5px;
+    padding: 1.6px 5px;
     text-align: left;
+    white-space: nowrap;
   }}
   .tracker-table th {{
     background: #f0f4f8;
