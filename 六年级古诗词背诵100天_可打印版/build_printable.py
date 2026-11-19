@@ -1133,11 +1133,6 @@ def build_tracker_and_quiz_html(poems: list[dict[str, Any]]) -> str:
     quiz_poems = [poems[i] for i in range(0, 100, 2)]
     assert len(quiz_poems) == 50
 
-    quiz_groups = [
-        ("第一关：第 01 – 25 题（山川·田园·托物·送别）", quiz_poems[:25], 1),
-        ("第二关：第 26 – 50 题（边塞·乡愁·怀古·昂扬·风雅）", quiz_poems[25:], 26),
-    ]
-
     quiz_pages_html = []
     # 每页约 12~13 题，50 题共占 4 页 A4（第 1-13, 14-25, 26-38, 39-50）
     slices = [
