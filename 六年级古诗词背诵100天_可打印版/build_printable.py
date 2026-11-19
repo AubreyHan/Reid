@@ -235,7 +235,7 @@ def render_poem_sheet(poem: dict[str, Any]) -> str:
         if poem.get("preface", "").strip()
         else ""
     )
-    author_line = f'〔{esc(poem["dynasty"])}〕{esc(poem["author"])}' if poem["dynasty"] != "先秦" or "诗经" not in poem["author"] else f'〔{esc(poem["dynasty"])}〕{esc(poem["author"])}'
+    author_line = f'〔{esc(poem["dynasty"])}〕{esc(poem["author"])}'
     analysis_html = format_tagged_blocks(poem["analysis"])
     tip_html = format_tagged_blocks(poem["application_tip"])
 
@@ -1103,7 +1103,7 @@ def build_poem_collection_html(
 </main>
 
 <script>
-{SHARED_SHEET_CSS and SHARED_SHEET_JS}
+{SHARED_SHEET_JS}
 </script>
 </body>
 </html>
