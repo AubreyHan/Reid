@@ -48,6 +48,11 @@
     cursor: pointer;
   }
   .btn-print { background: #9e2a2b; color: #fff; border-color: #9e2a2b; }
+  .cat-badge { font-size: 9px; padding: 0 4px; border-radius: 3px; font-weight: 600; }
+  .cat-core { background: #e8f3ee; color: #166534; }
+  .cat-upper { background: #e6f2fa; color: #0c548a; }
+  .cat-junior { background: #fdf3e1; color: #92400e; }
+  .cat-extra { background: #f4effa; color: #6b21a8; }
   .pages-wrap {
     max-width: 210mm;
     margin: 0 auto;
@@ -61,6 +66,8 @@
     border-radius: 6px;
     padding: 7mm 10mm;
     min-height: 262mm;
+    font-size: 12px;
+    line-height: 1.45;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -123,11 +130,6 @@
   .col-cat { width: 76px; text-align: center !important; }
   .col-chk { width: 38px; text-align: center !important; font-size: 10px; }
   .col-sign { width: 88px; }
-  .cat-badge { font-size: 9px; padding: 0 4px; border-radius: 3px; font-weight: 600; }
-  .cat-core { background: #e8f3ee; color: #166534; }
-  .cat-upper { background: #e6f2fa; color: #0c548a; }
-  .cat-junior { background: #fdf3e1; color: #92400e; }
-  .cat-extra { background: #f4effa; color: #6b21a8; }
 
   .quiz-list {
     flex: 1 1 auto;
@@ -192,8 +194,6 @@
   }
 
   @media print {
-    body { background: #fff !important; padding: 0 !important; }
-    .no-print-bar { display: none !important; }
     .pages-wrap { max-width: 100% !important; gap: 0 !important; display: block !important; }
     .a4-page {
       border: none !important;
@@ -202,6 +202,10 @@
       min-height: 262mm;
       margin: 0 !important;
     }
+  }
+  @media print {
+    body { background: #fff !important; padding: 0 !important; }
+    .no-print-bar { display: none !important; }
   }
 </style>
 </head>
@@ -220,7 +224,7 @@
 </div>
 
 <main class="pages-wrap">
-  <!-- 第 1 页：Day 01-50 打卡表 -->
+<!-- 第 1 页：Day 01-50 打卡表 -->
   <section class="a4-page">
     <div>
       <header class="page-head">
@@ -1167,8 +1171,7 @@
       <span>第 2 / 2 页（打卡总表）</span>
     </footer>
   </section>
-
-  <section class="a4-page">
+<section class="a4-page">
               <header class="page-head">
                 <div>
                   <h2>小升初古诗词理解性默写通关卷（一）：第 1 – 13 题</h2>
@@ -1380,7 +1383,7 @@
               </footer>
             </section>
 
-  <!-- 第 7 页：50 题参考答案 -->
+  <!-- 第 5 页：50 题参考答案 -->
   <section class="a4-page last-page">
     <div style="display:flex; flex-direction:column; height:100%;">
       <header class="page-head">
