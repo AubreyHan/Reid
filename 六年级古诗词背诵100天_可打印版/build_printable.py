@@ -1881,6 +1881,693 @@ def build_index_html(poems: list[dict[str, Any]]) -> str:
 """
 
 
+PORTABLE_EXTRA_CSS = r"""
+  .portable-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .portable-top-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .tab-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }
+  .tab-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #d0d7de;
+    background: #f6f8fa;
+    color: #24292f;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .tab-btn:hover { background: #eaeef2; }
+  .tab-btn.active {
+    background: #1f3a52;
+    color: #fff;
+    border-color: #1f3a52;
+  }
+  .poems-subbar {
+    border-top: 1px dashed #d8dee6;
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .poems-subbar.subbar-hidden { display: none; }
+  .vol-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .vol-pill-btn {
+    padding: 3.5px 9px;
+    border-radius: 14px;
+    border: 1px solid #cfd6df;
+    background: #fff;
+    color: #4a5562;
+    font-size: 11.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .vol-pill-btn:hover { border-color: #1f3a52; color: #1f3a52; }
+  .vol-pill-btn.active {
+    background: #9e2a2b;
+    color: #fff;
+    border-color: #9e2a2b;
+  }
+  .poems-action-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-pager {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+  .view-panel.view-hidden { display: none !important; }
+
+  /* 目录检索视图（单文件内置） */
+  .idx-wrap {
+    max-width: 210mm;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .idx-hero {
+    background: linear-gradient(135deg, #1f3a52 0%, #2c4e6b 100%);
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px 24px;
+  }
+  .idx-hero h1 {
+    margin: 0 0 6px 0;
+    font-family: "Songti SC", "STSong", "Noto Serif SC", serif;
+    font-size: 22px;
+  }
+  .idx-hero p {
+    margin: 0 0 10px 0;
+    font-size: 13px;
+    color: #e2eaf1;
+  }
+  .stats-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .stat-pill {
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 3px 10px;
+    border-radius: 16px;
+    font-size: 12px;
+    color: #fff;
+  }
+  .idx-vol-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .idx-vol-card {
+    background: #fff;
+    border: 1px solid #d5dce4;
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .idx-vol-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .idx-vol-days {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #9e2a2b;
+    background: #fdf2f2;
+    padding: 1px 7px;
+    border-radius: 4px;
+    margin-bottom: 3px;
+  }
+  .idx-vol-head h3 { margin: 0; font-size: 15px; color: #1e242b; }
+  .idx-vol-sub { font-size: 11.5px; color: #6e7781; }
+  .idx-vol-desc { margin: 0; font-size: 12px; color: #4a5562; }
+  .idx-vol-preview {
+    font-size: 11.2px;
+    color: #6e7781;
+    background: #f8f9fb;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  .idx-panel {
+    background: #fff;
+    border: 1px solid #d5dce4;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .filter-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .search-input {
+    flex: 1 1 240px;
+    padding: 7px 12px;
+    border: 1px solid #cfd6df;
+    border-radius: 6px;
+    font-size: 13px;
+  }
+  .cat-filters { display: flex; flex-wrap: wrap; gap: 6px; }
+  .filter-btn {
+    padding: 4px 10px;
+    border-radius: 14px;
+    border: 1px solid #d0d7de;
+    background: #f8f9fa;
+    color: #4a5562;
+    font-size: 11.5px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .filter-btn.active { background: #1f3a52; color: #fff; border-color: #1f3a52; }
+  .poem-table { width: 100%; border-collapse: collapse; font-size: 12.2px; }
+  .poem-table th, .poem-table td {
+    border-bottom: 1px solid #eaeef2;
+    padding: 7px 6px;
+    text-align: left;
+  }
+  .poem-table th { background: #f6f8fa; color: #4a5562; font-weight: 700; }
+  .poem-table tbody tr:hover { background: #fafbfd; }
+  .td-day { font-weight: 700; color: #1f3a52; white-space: nowrap; }
+  .td-title { font-weight: 600; color: #111; }
+  .td-author { color: #4a5562; white-space: nowrap; }
+  .td-genre { color: #6e7781; white-space: nowrap; font-size: 11.5px; }
+  .td-quote { color: #57606a; font-family: "Songti SC", "STSong", serif; }
+  .td-done { text-align: center !important; width: 46px; }
+  .jump-btn {
+    background: transparent;
+    border: 1px solid #9e2a2b;
+    color: #9e2a2b;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 11.5px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .jump-btn:hover { background: #9e2a2b; color: #fff; }
+  .done-chk { width: 15px; height: 15px; cursor: pointer; accent-color: #166534; }
+  .portable-foot-note {
+    max-width: 210mm;
+    margin: 20px auto 0 auto;
+    text-align: center;
+    font-size: 12px;
+    color: #6e7781;
+  }
+
+  @media screen and (max-width: 768px) {
+    body { padding: 10px 8px 30px 8px; }
+    .no-print-bar { position: static; padding: 10px 12px; }
+    .poem-sheet { min-height: auto; padding: 14px 12px; }
+    .poem-title { font-size: 20px; }
+    .poem-verses { font-size: 16.5px; line-height: 1.7; padding: 10px; }
+    .study-grid-bottom, .idx-vol-grid, .ans-grid { grid-template-columns: 1fr; }
+    .td-genre, .td-quote { display: none; }
+    .a4-page { min-height: auto; padding: 12px 10px; }
+    .tracker-table { font-size: 10.5px; }
+    .tracker-table th, .tracker-table td { white-space: normal; padding: 3px 4px; }
+  }
+  @media print {
+    .no-print { display: none !important; }
+    .view-panel.view-hidden { display: none !important; }
+  }
+""".strip()
+
+
+PORTABLE_JS = r"""
+(function() {
+  const body = document.body;
+  const tabBtns = Array.from(document.querySelectorAll('.tab-btn'));
+  const viewPanels = {
+    poems: document.getElementById('view-poems'),
+    index: document.getElementById('view-index'),
+    tracker: document.getElementById('view-tracker'),
+    quiz: document.getElementById('view-quiz'),
+  };
+  const poemsSubbar = document.getElementById('poems-subbar');
+  const btnPrintMain = document.getElementById('btn-print-main');
+
+  const btnStandard = document.getElementById('btn-mode-standard');
+  const btnCompact = document.getElementById('btn-mode-compact');
+  const daySelect = document.getElementById('day-filter-select');
+  const btnPrevDay = document.getElementById('btn-prev-day');
+  const btnNextDay = document.getElementById('btn-next-day');
+  const btnShowAll = document.getElementById('btn-show-all');
+  const chkDictation = document.getElementById('toggle-dictation');
+  const volBtns = Array.from(document.querySelectorAll('.vol-pill-btn'));
+  const sheets = Array.from(document.querySelectorAll('.poem-sheet'));
+
+  let activeTab = 'poems';
+  let currentVol = 'ALL';
+  let currentDay = 'all';
+
+  function updatePrintBtnLabel(visibleCount) {
+    if (!btnPrintMain) return;
+    if (activeTab === 'poems') {
+      btnPrintMain.textContent = '🖨️ 打印诗词 (' + visibleCount + '篇)';
+    } else if (activeTab === 'tracker') {
+      btnPrintMain.textContent = '🖨️ 打印打卡表 (2页A4)';
+    } else if (activeTab === 'quiz') {
+      btnPrintMain.textContent = '🖨️ 打印默写卷与答案 (5页A4)';
+    } else {
+      btnPrintMain.textContent = '🖨️ 打印目录表';
+    }
+  }
+
+  function applyPoemsFilter() {
+    let visibleCount = 0;
+    sheets.forEach(el => {
+      const matchDay = currentDay === 'all' || el.dataset.day === currentDay;
+      const matchVol = currentDay !== 'all' || currentVol === 'ALL' || el.dataset.volume === currentVol;
+      if (matchDay && matchVol) {
+        el.classList.remove('hidden-by-filter');
+        visibleCount++;
+      } else {
+        el.classList.add('hidden-by-filter');
+      }
+    });
+
+    const isCompact = body.classList.contains('mode-compact');
+    const visibleSheets = sheets.filter(el => !el.classList.contains('hidden-by-filter'));
+    sheets.forEach(el => el.classList.remove('break-after-page', 'compact-row-end'));
+    visibleSheets.forEach((el, idx) => {
+      const isLast = idx === visibleSheets.length - 1;
+      if (isCompact) {
+        if (idx % 2 === 1) {
+          el.classList.add('compact-row-end');
+          if (!isLast) el.classList.add('break-after-page');
+        }
+      } else if (!isLast) {
+        el.classList.add('break-after-page');
+      }
+    });
+    updatePrintBtnLabel(visibleCount);
+  }
+
+  function switchTab(tab) {
+    activeTab = viewPanels[tab] ? tab : 'poems';
+    tabBtns.forEach(b => b.classList.toggle('active', b.dataset.tab === activeTab));
+    Object.keys(viewPanels).forEach(k => {
+      if (viewPanels[k]) viewPanels[k].classList.toggle('view-hidden', k !== activeTab);
+    });
+    if (poemsSubbar) {
+      poemsSubbar.classList.toggle('subbar-hidden', activeTab !== 'poems');
+    }
+    const visibleCount = sheets.filter(el => !el.classList.contains('hidden-by-filter')).length;
+    updatePrintBtnLabel(visibleCount);
+  }
+
+  function setMode(mode) {
+    if (mode === 'compact') {
+      body.classList.add('mode-compact');
+      btnCompact.classList.add('active');
+      btnStandard.classList.remove('active');
+      if (chkDictation && !chkDictation.dataset.userTouched) {
+        chkDictation.checked = false;
+        body.classList.add('hide-dictation');
+      }
+    } else {
+      body.classList.remove('mode-compact');
+      btnStandard.classList.add('active');
+      btnCompact.classList.remove('active');
+      if (chkDictation && !chkDictation.dataset.userTouched) {
+        chkDictation.checked = true;
+        body.classList.remove('hide-dictation');
+      }
+    }
+    applyPoemsFilter();
+  }
+
+  function setVolume(vol) {
+    currentVol = String(vol || 'ALL');
+    currentDay = 'all';
+    if (daySelect) daySelect.value = 'all';
+    volBtns.forEach(b => b.classList.toggle('active', b.dataset.vol === currentVol));
+    applyPoemsFilter();
+  }
+
+  function setDay(dayVal) {
+    currentDay = String(dayVal || 'all');
+    if (daySelect) daySelect.value = currentDay;
+    if (currentDay !== 'all') {
+      volBtns.forEach(b => b.classList.remove('active'));
+    } else {
+      volBtns.forEach(b => b.classList.toggle('active', b.dataset.vol === currentVol));
+    }
+    applyPoemsFilter();
+  }
+
+  tabBtns.forEach(b => b.addEventListener('click', () => {
+    switchTab(b.dataset.tab);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }));
+
+  volBtns.forEach(b => b.addEventListener('click', () => setVolume(b.dataset.vol)));
+  if (daySelect) daySelect.addEventListener('change', (e) => setDay(e.target.value));
+  if (btnPrevDay) {
+    btnPrevDay.addEventListener('click', () => {
+      const cur = currentDay === 'all' ? 1 : Math.max(1, parseInt(currentDay, 10) - 1);
+      setDay(String(cur));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+  if (btnNextDay) {
+    btnNextDay.addEventListener('click', () => {
+      const cur = currentDay === 'all' ? 1 : Math.min(100, parseInt(currentDay, 10) + 1);
+      setDay(String(cur));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+  if (btnShowAll) {
+    btnShowAll.addEventListener('click', () => {
+      setVolume('ALL');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  if (btnStandard) btnStandard.addEventListener('click', () => setMode('standard'));
+  if (btnCompact) btnCompact.addEventListener('click', () => setMode('compact'));
+  if (chkDictation) {
+    chkDictation.addEventListener('change', (e) => {
+      chkDictation.dataset.userTouched = '1';
+      body.classList.toggle('hide-dictation', !e.target.checked);
+    });
+  }
+  if (btnPrintMain) btnPrintMain.addEventListener('click', () => window.print());
+
+  // 打卡步点击
+  document.querySelectorAll('.step-item').forEach(label => {
+    label.addEventListener('click', () => label.classList.toggle('checked'));
+  });
+
+  // 目录检索视图：搜索、分类与页内跳转
+  const searchInput = document.getElementById('poem-search');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const rows = document.querySelectorAll('.poem-row');
+  let activeCat = 'ALL';
+
+  function applyIndexSearch() {
+    const kw = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    rows.forEach(tr => {
+      const matchCat = activeCat === 'ALL' || tr.dataset.cat === activeCat;
+      const matchKw = !kw || tr.dataset.search.includes(kw);
+      tr.style.display = (matchCat && matchKw) ? '' : 'none';
+    });
+  }
+  if (searchInput) searchInput.addEventListener('input', applyIndexSearch);
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.dataset.cat;
+      applyIndexSearch();
+    });
+  });
+
+  document.querySelectorAll('[data-jump-day]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      switchTab('poems');
+      setDay(btn.dataset.jumpDay);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+  document.querySelectorAll('[data-jump-vol]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      switchTab('poems');
+      setVolume(btn.dataset.jumpVol);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // 电子进度记忆（localStorage，隐私模式失败自动忽略）
+  const STORAGE_KEY = 'reid_poetry_100_done_v1';
+  let doneMap = {};
+  try {
+    doneMap = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}') || {};
+  } catch (e) { doneMap = {}; }
+
+  const progressText = document.getElementById('done-progress-text');
+  function updateDoneSummary() {
+    const count = Object.values(doneMap).filter(Boolean).length;
+    if (progressText) progressText.textContent = '已完成背诵 ' + count + ' / 100 篇';
+  }
+  document.querySelectorAll('.done-chk').forEach(chk => {
+    const d = chk.dataset.day;
+    chk.checked = !!doneMap[d];
+    chk.addEventListener('change', () => {
+      doneMap[d] = chk.checked;
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(doneMap)); } catch (e) {}
+      updateDoneSummary();
+    });
+  });
+  updateDoneSummary();
+
+  // 解析 URL 参数: ?tab=poems|index|tracker|quiz & ?vol=1..10 & ?day=1..100 & ?mode=compact & ?autoprint=1
+  const params = new URLSearchParams(window.location.search);
+  const qVol = params.get('vol');
+  const qDay = params.get('day');
+  const qMode = params.get('mode');
+  const qTab = params.get('tab');
+
+  if (qVol && volBtns.some(b => b.dataset.vol === qVol)) {
+    setVolume(qVol);
+  }
+  if (qDay && daySelect && Array.from(daySelect.options).some(o => o.value === qDay)) {
+    setDay(qDay);
+  }
+  setMode(qMode === 'compact' ? 'compact' : 'standard');
+  switchTab(qTab || 'poems');
+
+  if (params.get('autoprint') === '1') {
+    setTimeout(() => window.print(), 250);
+  }
+})();
+""".strip()
+
+
+def build_single_portable_html(poems: list[dict[str, Any]]) -> str:
+    vol_pills = ['<button type="button" class="vol-pill-btn active" data-vol="ALL">全部 (100天)</button>']
+    for v in VOLUMES:
+        short_label = v["name"].split(" · ")[0]
+        title_label = v["name"].split(" · ")[1]
+        vol_pills.append(
+            f'<button type="button" class="vol-pill-btn" data-vol="{v["volume"]}">{esc(short_label)} · {esc(title_label)}</button>'
+        )
+
+    day_options = ['<option value="all">查看当前所选全部篇目</option>']
+    for p in poems:
+        day_options.append(f'<option value="{p["day"]}">第 {p["day"]:02d} 天 · 《{esc(p["title"])}》</option>')
+
+    sheets_html = "\n\n".join(render_poem_sheet(p) for p in poems)
+
+    cat_counts = {cat: sum(1 for p in poems if p["category"] == cat) for cat in ["六年级核心", "高段核心", "初中衔接", "课外拓展"]}
+    idx_vol_cards = []
+    for v in VOLUMES:
+        v_poems = [p for p in poems if p["volume"] == v["volume"]]
+        preview = "、".join(f"《{p['title']}》" for p in v_poems[:4]) + " 等 10 篇"
+        idx_vol_cards.append(
+            f"""<div class="idx-vol-card">
+              <div class="idx-vol-head">
+                <div>
+                  <span class="idx-vol-days">{esc(v["days"])}</span>
+                  <h3>{esc(v["name"])}</h3>
+                </div>
+                <span class="idx-vol-sub">{esc(v["subtitle"])}</span>
+              </div>
+              <p class="idx-vol-desc">{esc(v["desc"])}</p>
+              <div class="idx-vol-preview">代表篇目：{esc(preview)}</div>
+              <div style="margin-top:4px; display:flex; gap:8px;">
+                <button type="button" class="btn active" data-jump-vol="{v["volume"]}">📖 阅读 / 打印本卷 (10篇)</button>
+                <button type="button" class="btn" data-jump-day="{v_poems[0]["day"]}">从第 {v_poems[0]["day"]:02d} 天开始 →</button>
+              </div>
+            </div>"""
+        )
+
+    idx_rows = []
+    for p in poems:
+        cat_cls = category_badge_class(p["category"])
+        search_blob = f"{p['day']} {p['title']} {p['author']} {p['dynasty']} {p['category']} {p['golden_quote']} {p['volume_name']}"
+        idx_rows.append(
+            f"""<tr class="poem-row" data-cat="{esc(p['category'])}" data-search="{esc(search_blob.lower())}">
+              <td class="td-done"><input type="checkbox" class="done-chk" data-day="{p['day']}" aria-label="已背标记"></td>
+              <td class="td-day">Day {p["day"]:02d}</td>
+              <td class="td-title">《{esc(p["title"])}》</td>
+              <td class="td-author">〔{esc(p["dynasty"])}〕{esc(p["author"])}</td>
+              <td class="td-genre">{esc(p["genre"])}</td>
+              <td><span class="cat-badge {cat_cls}">{esc(p["category"])}</span></td>
+              <td class="td-quote">{esc(p["golden_quote"])}</td>
+              <td><button type="button" class="jump-btn" data-jump-day="{p['day']}">阅读 / 打印 →</button></td>
+            </tr>"""
+        )
+
+    tracker_only_pages = render_tracker_pages_html(poems, mark_second_last=True)
+    quiz_only_pages = render_quiz_and_answer_pages_html(poems)
+
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小学六年级古诗词背诵 100 天（单文件便携全能可打印版）</title>
+<style>
+{SHARED_SHEET_CSS}
+{TRACKER_QUIZ_CSS}
+{PORTABLE_EXTRA_CSS}
+</style>
+</head>
+<body>
+
+<div class="no-print-bar portable-bar">
+  <div class="portable-top-row">
+    <div class="bar-title-group">
+      <div class="bar-title">📜 小学六年级古诗词背诵 100 天 · 单文件便携全能版</div>
+      <div class="bar-subtitle">零外部依赖，可任意拷贝至手机/平板/U盘随时离线阅读或 A4 打印 · <span id="done-progress-text">已完成背诵 0 / 100 篇</span></div>
+    </div>
+    <div class="tab-nav">
+      <button type="button" class="tab-btn active" data-tab="poems">📖 每日精讲 (100篇)</button>
+      <button type="button" class="tab-btn" data-tab="index">🔍 目录检索</button>
+      <button type="button" class="tab-btn" data-tab="tracker">📋 打卡总表 (2页)</button>
+      <button type="button" class="tab-btn" data-tab="quiz">✍️ 50题默写卷 (5页)</button>
+      <button type="button" id="btn-print-main" class="btn btn-print">🖨️ 打印诗词 (100篇)</button>
+    </div>
+  </div>
+
+  <div id="poems-subbar" class="poems-subbar">
+    <div class="vol-pills">
+      {"".join(vol_pills)}
+    </div>
+    <div class="poems-action-row">
+      <div class="nav-pager">
+        <button type="button" id="btn-prev-day" class="btn">◀ 上一天</button>
+        <select id="day-filter-select" class="day-select" aria-label="按天选择">
+          {"".join(day_options)}
+        </select>
+        <button type="button" id="btn-next-day" class="btn">下一天 ▶</button>
+        <button type="button" id="btn-show-all" class="btn">显示全部</button>
+      </div>
+      <div class="bar-controls">
+        <button type="button" id="btn-mode-standard" class="btn active">📄 1页1篇·精讲版</button>
+        <button type="button" id="btn-mode-compact" class="btn">📑 1页2篇·省纸版</button>
+        <label class="toggle-check">
+          <input type="checkbox" id="toggle-dictation" checked> 显示默写微测
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 视图1：每日诗词精讲（100篇） -->
+<section id="view-poems" class="view-panel">
+  <main class="sheets-wrap">
+{sheets_html}
+  </main>
+</section>
+
+<!-- 视图2：总目录与即时搜索检索 -->
+<section id="view-index" class="view-panel view-hidden">
+  <div class="idx-wrap">
+    <div class="idx-hero">
+      <h1>📜 百日古诗词全篇目导航与进度管理</h1>
+      <p>点击下方分卷卡片可整卷阅读/打印；点击目录表任意篇目可立即跳转至该天单篇精讲页；左侧复选框自动在本机浏览器记录已背进度。</p>
+      <div class="stats-row">
+        <span class="stat-pill">📚 共 100 天 · 10 大主题分卷</span>
+        <span class="stat-pill">🟢 六年级核心 {cat_counts["六年级核心"]} 篇</span>
+        <span class="stat-pill">🔵 高段核心 {cat_counts["高段核心"]} 篇</span>
+        <span class="stat-pill">🟠 初中衔接 {cat_counts["初中衔接"]} 篇</span>
+        <span class="stat-pill">🟣 课外拓展 {cat_counts["课外拓展"]} 篇</span>
+      </div>
+    </div>
+
+    <div class="idx-vol-grid">
+      {"".join(idx_vol_cards)}
+    </div>
+
+    <div class="idx-panel">
+      <div class="filter-toolbar">
+        <input type="text" id="poem-search" class="search-input" placeholder="输入诗名、作者、名句或天数搜索（如：苏轼 / 辛弃疾 / 托物 / 明月）...">
+        <div class="cat-filters">
+          <button type="button" class="filter-btn active" data-cat="ALL">全部 (100)</button>
+          <button type="button" class="filter-btn" data-cat="六年级核心">六年级核心 ({cat_counts["六年级核心"]})</button>
+          <button type="button" class="filter-btn" data-cat="高段核心">高段核心 ({cat_counts["高段核心"]})</button>
+          <button type="button" class="filter-btn" data-cat="初中衔接">初中衔接 ({cat_counts["初中衔接"]})</button>
+          <button type="button" class="filter-btn" data-cat="课外拓展">课外拓展 ({cat_counts["课外拓展"]})</button>
+        </div>
+      </div>
+      <table class="poem-table">
+        <thead>
+          <tr>
+            <th class="td-done">已背</th>
+            <th>天数</th>
+            <th>诗词题目</th>
+            <th>朝代 · 作者</th>
+            <th>体裁</th>
+            <th>定位</th>
+            <th>核心千古名句</th>
+            <th>直达</th>
+          </tr>
+        </thead>
+        <tbody>
+          {"".join(idx_rows)}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 视图3：100天墙贴打卡总表（2页A4） -->
+<section id="view-tracker" class="view-panel view-hidden">
+  <div class="pages-wrap">
+{tracker_only_pages}
+  </div>
+</section>
+
+<!-- 视图4：50题理解性默写通关卷 + 答案（5页A4） -->
+<section id="view-quiz" class="view-panel view-hidden">
+  <div class="pages-wrap">
+{quiz_only_pages}
+  </div>
+</section>
+
+<div class="portable-foot-note no-print">
+  💡 使用提示：本文件为独立单文件网页，可直接复制到手机、iPad、U盘或任意文件夹离线打开；在浏览器点击右上角红色打印按钮即可按当前选中的视图/分卷精准分页打印 A4 纸张。
+</div>
+
+<script>
+{PORTABLE_JS}
+</script>
+</body>
+</html>
+"""
+
+
 def main() -> None:
     poems = load_and_validate()
     print(f"[OK] 成功加载并校验全部 {len(poems)} 篇古诗词数据（Day 01..100 连续且篇名 100% 唯一）。")
@@ -1918,7 +2605,12 @@ def main() -> None:
     index_path = BASE_DIR / "index.html"
     index_path.write_text(build_index_html(poems), encoding="utf-8")
     print(f"  -> 生成总导航主页: {index_path.name}")
-    print("[DONE] 全部 13 个 HTML 文件构建完成！")
+
+    # 5. 生成独立单文件便携全能版（放置于 Reid 根目录，便于直接移动分享）
+    portable_path = BASE_DIR.parent / "小学六年级古诗词背诵100天(单文件便携可打印版).html"
+    portable_path.write_text(build_single_portable_html(poems), encoding="utf-8")
+    print(f"  -> 生成单文件便携全能版: {portable_path}")
+    print("[DONE] 全部 14 个 HTML 文件构建完成！")
 
 
 if __name__ == "__main__":
