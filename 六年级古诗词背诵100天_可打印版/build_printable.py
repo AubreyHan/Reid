@@ -1110,7 +1110,161 @@ def build_poem_collection_html(
 """
 
 
-def build_tracker_and_quiz_html(poems: list[dict[str, Any]]) -> str:
+TRACKER_QUIZ_CSS = r"""
+  .pages-wrap {
+    max-width: 210mm;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .a4-page {
+    background: #fff;
+    border: 1px solid #cfd6df;
+    border-radius: 6px;
+    padding: 7mm 10mm;
+    min-height: 262mm;
+    font-size: 12px;
+    line-height: 1.45;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 14px rgba(20, 30, 45, 0.07);
+    page-break-inside: avoid;
+    break-inside: avoid;
+    page-break-after: always;
+    break-after: page;
+  }
+  .a4-page.last-page {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  .page-head {
+    border-bottom: 2px solid #1f3a52;
+    padding-bottom: 4px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 8px;
+  }
+  .page-head h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #1f3a52;
+  }
+  .page-head .sub {
+    margin: 2px 0 0 0;
+    font-size: 10.5px;
+    color: #6e7781;
+  }
+  .student-meta {
+    font-size: 11px;
+    color: #4a5562;
+    white-space: nowrap;
+  }
+  .tracker-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.3px;
+    line-height: 1.16;
+  }
+  .tracker-table th, .tracker-table td {
+    border: 1px solid #d0d7de;
+    padding: 1px 4px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .tracker-table th {
+    background: #f0f4f8;
+    color: #1f3a52;
+    font-weight: 700;
+    text-align: center;
+  }
+  .tracker-table tbody tr:nth-child(even) { background: #fafbfc; }
+  .col-day { width: 56px; font-weight: 700; color: #1f3a52; text-align: center !important; }
+  .col-title { font-weight: 600; }
+  .col-author { width: 108px; color: #4a5562; }
+  .col-cat { width: 76px; text-align: center !important; }
+  .col-chk { width: 38px; text-align: center !important; font-size: 10px; }
+  .col-sign { width: 88px; }
+
+  .quiz-list {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3px;
+  }
+  .quiz-item {
+    border-bottom: 1px dashed #d8dee6;
+    padding-bottom: 3.5px;
+  }
+  .quiz-q {
+    font-size: 11.2px;
+    line-height: 1.36;
+    color: #1e242b;
+  }
+  .q-idx { font-weight: 700; color: #1f3a52; }
+  .q-src { font-size: 10px; color: #8c959f; }
+  .quiz-write-line {
+    margin-top: 8px;
+    border-bottom: 1px solid #9aa7b4;
+    height: 3px;
+  }
+
+  .ans-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    flex: 1 1 auto;
+    align-content: start;
+  }
+  .ans-col {
+    border: 1px solid #d8dee6;
+    border-radius: 6px;
+    padding: 6px 9px;
+    background: #fafbfd;
+  }
+  .ans-col h3 {
+    margin: 0 0 5px 0;
+    font-size: 12.5px;
+    color: #1f3a52;
+    border-bottom: 1px solid #d8dee6;
+    padding-bottom: 3px;
+  }
+  .ans-row {
+    font-size: 10.8px;
+    line-height: 1.4;
+    padding: 1.6px 0;
+    border-bottom: 1px dashed #e6ebf1;
+  }
+  .ans-row:last-child { border-bottom: none; }
+
+  .page-foot {
+    border-top: 1px solid #d8dee6;
+    padding-top: 4px;
+    margin-top: 4px;
+    font-size: 10px;
+    color: #6e7781;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media print {
+    .pages-wrap { max-width: 100% !important; gap: 0 !important; display: block !important; }
+    .a4-page {
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      min-height: 262mm;
+      margin: 0 !important;
+    }
+  }
+""".strip()
+
+
+def render_tracker_pages_html(poems: list[dict[str, Any]], mark_second_last: bool = False) -> str:
     def render_table_rows(subset: list[dict[str, Any]]) -> str:
         rows = []
         for p in subset:
@@ -1129,12 +1283,66 @@ def build_tracker_and_quiz_html(poems: list[dict[str, Any]]) -> str:
             )
         return "\n".join(rows)
 
+    second_cls = "a4-page last-page" if mark_second_last else "a4-page"
+    return f"""
+  <!-- 第 1 页：Day 01-50 打卡表 -->
+  <section class="a4-page">
+    <div>
+      <header class="page-head">
+        <div>
+          <h2>小学六年级古诗词背诵 100 天 · 进度打卡墙贴表（上篇：Day 01 – 50）</h2>
+          <p class="sub">建议贴在书桌前，每天完成“朗读 → 精讲理解 → 脱口背诵 → 零错字默写”后打钩签字</p>
+        </div>
+        <div class="student-meta">姓名：________ &nbsp; 目标：100 天通关</div>
+      </header>
+      <table class="tracker-table">
+        <thead>
+          <tr><th>天数</th><th>诗词篇目</th><th>朝代 · 作者</th><th>板块定位</th><th>背诵</th><th>默写</th><th>日期 / 签字</th></tr>
+        </thead>
+        <tbody>
+          {render_table_rows(poems[:50])}
+        </tbody>
+      </table>
+    </div>
+    <footer class="page-foot">
+      <span>卷一至卷五（山川 · 田园 · 托物 · 送别 · 边塞）</span>
+      <span>第 1 / 2 页（打卡总表）</span>
+    </footer>
+  </section>
+
+  <!-- 第 2 页：Day 51-100 打卡表 -->
+  <section class="{second_cls}">
+    <div>
+      <header class="page-head">
+        <div>
+          <h2>小学六年级古诗词背诵 100 天 · 进度打卡墙贴表（下篇：Day 51 – 100）</h2>
+          <p class="sub">坚持到第 100 天，你将完整积累 100 篇中华经典诗词与小升初高频名句库</p>
+        </div>
+        <div class="student-meta">阶段奖励：____________________</div>
+      </header>
+      <table class="tracker-table">
+        <thead>
+          <tr><th>天数</th><th>诗词篇目</th><th>朝代 · 作者</th><th>板块定位</th><th>背诵</th><th>默写</th><th>日期 / 签字</th></tr>
+        </thead>
+        <tbody>
+          {render_table_rows(poems[50:])}
+        </tbody>
+      </table>
+    </div>
+    <footer class="page-foot">
+      <span>卷六至卷十（乡愁 · 怀古 · 昂扬 · 唐宋 · 风雅）</span>
+      <span>第 2 / 2 页（打卡总表）</span>
+    </footer>
+  </section>
+""".strip()
+
+
+def render_quiz_and_answer_pages_html(poems: list[dict[str, Any]]) -> str:
     # 精选 50 道理解性默写题（每 2 天抽 1 道，完整覆盖 1..100 天各主题）
     quiz_poems = [poems[i] for i in range(0, 100, 2)]
     assert len(quiz_poems) == 50
 
     quiz_pages_html = []
-    # 每页约 12~13 题，50 题共占 4 页 A4（第 1-13, 14-25, 26-38, 39-50）
     slices = [
         ("小升初古诗词理解性默写通关卷（一）：第 1 – 13 题", quiz_poems[0:13], 1),
         ("小升初古诗词理解性默写通关卷（一）：第 14 – 25 题", quiz_poems[13:25], 14),
@@ -1178,6 +1386,42 @@ def build_tracker_and_quiz_html(poems: list[dict[str, Any]]) -> str:
             ans_items_left.append(row)
         else:
             ans_items_right.append(row)
+
+    return f"""
+  {"".join(quiz_pages_html)}
+
+  <!-- 第 5 页：50 题参考答案 -->
+  <section class="a4-page last-page">
+    <div style="display:flex; flex-direction:column; height:100%;">
+      <header class="page-head">
+        <div>
+          <h2>小升初古诗词理解性默写通关卷（50 题）· 参考答案</h2>
+          <p class="sub">批改提示：重点核查通假字（见/亡/政/曾）、形近字（汗青/蜡象/喑/摧）及字序（粉骨碎身）</p>
+        </div>
+        <div class="student-meta">家长批改参考专用</div>
+      </header>
+      <div class="ans-grid">
+        <div class="ans-col">
+          <h3>第 01 – 25 题答案</h3>
+          {"".join(ans_items_left)}
+        </div>
+        <div class="ans-col">
+          <h3>第 26 – 50 题答案</h3>
+          {"".join(ans_items_right)}
+        </div>
+      </div>
+    </div>
+    <footer class="page-foot">
+      <span>错题请回到对应“第 XX 天”精讲单页重新巩固字词与背景</span>
+      <span>全卷完</span>
+    </footer>
+  </section>
+""".strip()
+
+
+def build_tracker_and_quiz_html(poems: list[dict[str, Any]]) -> str:
+    tracker_pages = render_tracker_pages_html(poems, mark_second_last=False)
+    quiz_pages = render_quiz_and_answer_pages_html(poems)
 
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -1229,160 +1473,15 @@ def build_tracker_and_quiz_html(poems: list[dict[str, Any]]) -> str:
     cursor: pointer;
   }}
   .btn-print {{ background: #9e2a2b; color: #fff; border-color: #9e2a2b; }}
-  .pages-wrap {{
-    max-width: 210mm;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }}
-  .a4-page {{
-    background: #fff;
-    border: 1px solid #cfd6df;
-    border-radius: 6px;
-    padding: 7mm 10mm;
-    min-height: 262mm;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 14px rgba(20, 30, 45, 0.07);
-    page-break-inside: avoid;
-    break-inside: avoid;
-    page-break-after: always;
-    break-after: page;
-  }}
-  .a4-page.last-page {{
-    page-break-after: auto;
-    break-after: auto;
-  }}
-  .page-head {{
-    border-bottom: 2px solid #1f3a52;
-    padding-bottom: 4px;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 8px;
-  }}
-  .page-head h2 {{
-    margin: 0;
-    font-size: 16px;
-    color: #1f3a52;
-  }}
-  .page-head .sub {{
-    margin: 2px 0 0 0;
-    font-size: 10.5px;
-    color: #6e7781;
-  }}
-  .student-meta {{
-    font-size: 11px;
-    color: #4a5562;
-    white-space: nowrap;
-  }}
-  .tracker-table {{
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 9.3px;
-    line-height: 1.16;
-  }}
-  .tracker-table th, .tracker-table td {{
-    border: 1px solid #d0d7de;
-    padding: 1px 4px;
-    text-align: left;
-    white-space: nowrap;
-  }}
-  .tracker-table th {{
-    background: #f0f4f8;
-    color: #1f3a52;
-    font-weight: 700;
-    text-align: center;
-  }}
-  .tracker-table tbody tr:nth-child(even) {{ background: #fafbfc; }}
-  .col-day {{ width: 56px; font-weight: 700; color: #1f3a52; text-align: center !important; }}
-  .col-title {{ font-weight: 600; }}
-  .col-author {{ width: 108px; color: #4a5562; }}
-  .col-cat {{ width: 76px; text-align: center !important; }}
-  .col-chk {{ width: 38px; text-align: center !important; font-size: 10px; }}
-  .col-sign {{ width: 88px; }}
   .cat-badge {{ font-size: 9px; padding: 0 4px; border-radius: 3px; font-weight: 600; }}
   .cat-core {{ background: #e8f3ee; color: #166534; }}
   .cat-upper {{ background: #e6f2fa; color: #0c548a; }}
   .cat-junior {{ background: #fdf3e1; color: #92400e; }}
   .cat-extra {{ background: #f4effa; color: #6b21a8; }}
-
-  .quiz-list {{
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 3px;
-  }}
-  .quiz-item {{
-    border-bottom: 1px dashed #d8dee6;
-    padding-bottom: 3.5px;
-  }}
-  .quiz-q {{
-    font-size: 11.2px;
-    line-height: 1.36;
-    color: #1e242b;
-  }}
-  .q-idx {{ font-weight: 700; color: #1f3a52; }}
-  .q-src {{ font-size: 10px; color: #8c959f; }}
-  .quiz-write-line {{
-    margin-top: 8px;
-    border-bottom: 1px solid #9aa7b4;
-    height: 3px;
-  }}
-
-  .ans-grid {{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    flex: 1 1 auto;
-    align-content: start;
-  }}
-  .ans-col {{
-    border: 1px solid #d8dee6;
-    border-radius: 6px;
-    padding: 6px 9px;
-    background: #fafbfd;
-  }}
-  .ans-col h3 {{
-    margin: 0 0 5px 0;
-    font-size: 12.5px;
-    color: #1f3a52;
-    border-bottom: 1px solid #d8dee6;
-    padding-bottom: 3px;
-  }}
-  .ans-row {{
-    font-size: 10.8px;
-    line-height: 1.4;
-    padding: 1.6px 0;
-    border-bottom: 1px dashed #e6ebf1;
-  }}
-  .ans-row:last-child {{ border-bottom: none; }}
-
-  .page-foot {{
-    border-top: 1px solid #d8dee6;
-    padding-top: 4px;
-    margin-top: 4px;
-    font-size: 10px;
-    color: #6e7781;
-    display: flex;
-    justify-content: space-between;
-  }}
-
+  {TRACKER_QUIZ_CSS}
   @media print {{
     body {{ background: #fff !important; padding: 0 !important; }}
     .no-print-bar {{ display: none !important; }}
-    .pages-wrap {{ max-width: 100% !important; gap: 0 !important; display: block !important; }}
-    .a4-page {{
-      border: none !important;
-      box-shadow: none !important;
-      padding: 0 !important;
-      min-height: 262mm;
-      margin: 0 !important;
-    }}
   }}
 </style>
 </head>
@@ -1401,84 +1500,8 @@ def build_tracker_and_quiz_html(poems: list[dict[str, Any]]) -> str:
 </div>
 
 <main class="pages-wrap">
-  <!-- 第 1 页：Day 01-50 打卡表 -->
-  <section class="a4-page">
-    <div>
-      <header class="page-head">
-        <div>
-          <h2>小学六年级古诗词背诵 100 天 · 进度打卡墙贴表（上篇：Day 01 – 50）</h2>
-          <p class="sub">建议贴在书桌前，每天完成“朗读 → 精讲理解 → 脱口背诵 → 零错字默写”后打钩签字</p>
-        </div>
-        <div class="student-meta">姓名：________ &nbsp; 目标：100 天通关</div>
-      </header>
-      <table class="tracker-table">
-        <thead>
-          <tr><th>天数</th><th>诗词篇目</th><th>朝代 · 作者</th><th>板块定位</th><th>背诵</th><th>默写</th><th>日期 / 签字</th></tr>
-        </thead>
-        <tbody>
-          {render_table_rows(poems[:50])}
-        </tbody>
-      </table>
-    </div>
-    <footer class="page-foot">
-      <span>卷一至卷五（山川 · 田园 · 托物 · 送别 · 边塞）</span>
-      <span>第 1 / 2 页（打卡总表）</span>
-    </footer>
-  </section>
-
-  <!-- 第 2 页：Day 51-100 打卡表 -->
-  <section class="a4-page">
-    <div>
-      <header class="page-head">
-        <div>
-          <h2>小学六年级古诗词背诵 100 天 · 进度打卡墙贴表（下篇：Day 51 – 100）</h2>
-          <p class="sub">坚持到第 100 天，你将完整积累 100 篇中华经典诗词与小升初高频名句库</p>
-        </div>
-        <div class="student-meta">阶段奖励：____________________</div>
-      </header>
-      <table class="tracker-table">
-        <thead>
-          <tr><th>天数</th><th>诗词篇目</th><th>朝代 · 作者</th><th>板块定位</th><th>背诵</th><th>默写</th><th>日期 / 签字</th></tr>
-        </thead>
-        <tbody>
-          {render_table_rows(poems[50:])}
-        </tbody>
-      </table>
-    </div>
-    <footer class="page-foot">
-      <span>卷六至卷十（乡愁 · 怀古 · 昂扬 · 唐宋 · 风雅）</span>
-      <span>第 2 / 2 页（打卡总表）</span>
-    </footer>
-  </section>
-
-  {"".join(quiz_pages_html)}
-
-  <!-- 第 7 页：50 题参考答案 -->
-  <section class="a4-page last-page">
-    <div style="display:flex; flex-direction:column; height:100%;">
-      <header class="page-head">
-        <div>
-          <h2>小升初古诗词理解性默写通关卷（50 题）· 参考答案</h2>
-          <p class="sub">批改提示：重点核查通假字（见/亡/政/曾）、形近字（汗青/蜡象/喑/摧）及字序（粉骨碎身）</p>
-        </div>
-        <div class="student-meta">家长批改参考专用</div>
-      </header>
-      <div class="ans-grid">
-        <div class="ans-col">
-          <h3>第 01 – 25 题答案</h3>
-          {"".join(ans_items_left)}
-        </div>
-        <div class="ans-col">
-          <h3>第 26 – 50 题答案</h3>
-          {"".join(ans_items_right)}
-        </div>
-      </div>
-    </div>
-    <footer class="page-foot">
-      <span>错题请回到对应“第 XX 天”精讲单页重新巩固字词与背景</span>
-      <span>全卷完</span>
-    </footer>
-  </section>
+{tracker_pages}
+{quiz_pages}
 </main>
 
 </body>
