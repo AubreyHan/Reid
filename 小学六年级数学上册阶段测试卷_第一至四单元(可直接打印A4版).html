@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>小学六年级数学上册阶段性综合测试卷（第一至四单元 · 可直接打印A4版）</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 13mm 12mm 13mm;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Songti SC", "STSong", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+    color: #1a1a1a;
+    background: #eef1f5;
+    margin: 0;
+    padding: 18px 0 40px 0;
+    font-size: 13.5px;
+    line-height: 1.65;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 顶部打印工具栏（打印时自动隐藏） */
+  .no-print-banner {
+    width: 210mm;
+    margin: 0 auto 16px auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #1d4ed8;
+    border-radius: 8px;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .banner-info {
+    font-size: 13px;
+    color: #334155;
+  }
+  .banner-info strong {
+    color: #0f172a;
+    font-size: 14px;
+  }
+  .banner-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .btn {
+    border: none;
+    padding: 7px 14px;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .btn-primary {
+    background: #1d4ed8;
+    color: #fff;
+  }
+  .btn-primary:hover { background: #1e40af; }
+  .btn-secondary {
+    background: #f1f5f9;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+  }
+  .btn-secondary:hover { background: #e2e8f0; }
+
+  /* A4纸张模拟容器 */
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 18px auto;
+    background: #ffffff;
+    padding: 12mm 13mm 11mm 13mm;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sheet-content {
+    flex: 1;
+  }
+
+  .page-footer {
+    margin-top: auto;
+    padding-top: 6px;
+    border-top: 1px solid #d4d4d8;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #666;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  /* 试卷大标题与考生信息 */
+  .exam-header {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .exam-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin: 0 0 3px 0;
+    color: #000;
+  }
+  .exam-subtitle {
+    font-size: 12px;
+    color: #444;
+    margin: 0 0 8px 0;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .student-info {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    font-size: 13px;
+    margin-bottom: 8px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .student-info .field-line {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 78px;
+    height: 15px;
+    vertical-align: bottom;
+  }
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .score-table th, .score-table td {
+    border: 1px solid #333;
+    text-align: center;
+    padding: 3px 4px;
+  }
+  .score-table th {
+    background: #f5f5f5;
+    font-weight: 600;
+  }
+  .score-table td {
+    height: 22px;
+  }
+
+  /* 大题标题 */
+  .section-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #000;
+    margin: 10px 0 6px 0;
+    padding-bottom: 2px;
+    border-bottom: 1.2px solid #333;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .section-title .pts {
+    font-size: 12px;
+    font-weight: 400;
+    color: #333;
+    margin-left: 4px;
+  }
+  .sub-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    margin: 8px 0 5px 0;
+    color: #111;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  /* 分数排版 */
+  .frac {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 2px;
+    line-height: 1.05;
+    font-size: 0.88em;
+    font-family: "Times New Roman", "Songti SC", serif;
+  }
+  .frac .num {
+    border-bottom: 1px solid #1a1a1a;
+    padding: 0 2.5px 1px 2.5px;
+    text-align: center;
+  }
+  .frac .den {
+    padding: 1px 2.5px 0 2.5px;
+    text-align: center;
+  }
+
+  /* 填空横线与括号 */
+  .blank {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 44px;
+    text-align: center;
+    margin: 0 2px;
+    height: 14px;
+    vertical-align: baseline;
+  }
+  .blank-sm { min-width: 30px; }
+  .blank-lg { min-width: 68px; }
+  .paren {
+    display: inline-block;
+    min-width: 46px;
+    text-align: center;
+  }
+  .circle-cmp {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #222;
+    border-radius: 50%;
+    vertical-align: -3px;
+    margin: 0 5px;
+  }
+
+  /* 题目列表 */
+  .q-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .q-list > li {
+    margin-bottom: 5.5px;
+    text-align: justify;
+  }
+  .q-num {
+    font-weight: 600;
+    margin-right: 2px;
+  }
+
+  /* 判断题 */
+  .judge-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4.5px;
+  }
+  .judge-box {
+    flex-shrink: 0;
+    margin-left: 12px;
+    white-space: nowrap;
+  }
+
+  /* 选择题 */
+  .choice-item {
+    margin-bottom: 7px;
+  }
+  .choice-stem {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .choice-opts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    padding-left: 20px;
+    margin-top: 2px;
+    font-size: 13px;
+  }
+
+  /* 计算题网格 */
+  .oral-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 11px;
+    column-gap: 10px;
+    margin: 6px 0 10px 0;
+    font-size: 13.5px;
+  }
+  .calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 10px;
+    margin: 6px 0 8px 0;
+  }
+  .calc-box {
+    border: 1px dashed #cbd5e1;
+    border-radius: 5px;
+    padding: 8px 10px;
+    min-height: 112px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .calc-box.eq-box {
+    min-height: 98px;
+  }
+  .calc-expr {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  /* 操作与图形题 */
+  .op-block {
+    margin-bottom: 10px;
+  }
+  .svg-center {
+    text-align: center;
+    margin: 4px 0;
+  }
+  .pos-layout {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 4px;
+  }
+  .pos-svg-wrap {
+    flex-shrink: 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 4px;
+    background: #fff;
+  }
+  .pos-qs {
+    flex: 1;
+    font-size: 13.5px;
+    line-height: 1.85;
+  }
+  .geo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+  }
+  .geo-card {
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 196px;
+    display: flex;
+    flex-direction: column;
+  }
+  .geo-card-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  /* 应用题 */
+  .app-item {
+    border-bottom: 1px dashed #d4d4d8;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+    min-height: 118px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .app-item:last-child {
+    border-bottom: none;
+  }
+  .app-stem {
+    text-align: justify;
+  }
+  .app-ans-line {
+    font-size: 12.5px;
+    color: #555;
+    text-align: right;
+    padding-top: 4px;
+  }
+
+  /* 参考答案页 */
+  .ans-header {
+    text-align: center;
+    border-bottom: 2px solid #1e293b;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+  .ans-header h2 {
+    margin: 0;
+    font-size: 17px;
+    color: #0f172a;
+  }
+  .ans-header p {
+    margin: 2px 0 0 0;
+    font-size: 11.5px;
+    color: #475569;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .ans-sec {
+    margin-bottom: 9px;
+    font-size: 12.2px;
+    line-height: 1.55;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .ans-sec h3 {
+    font-size: 13px;
+    margin: 0 0 4px 0;
+    padding: 2px 7px;
+    background: #f1f5f9;
+    border-left: 3px solid #1d4ed8;
+    color: #0f172a;
+  }
+  .ans-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 3px;
+  }
+  .ans-p {
+    margin: 2px 0;
+  }
+  .tip-note {
+    font-size: 11.2px;
+    color: #475569;
+  }
+
+  /* 打印控制模式 */
+  body.print-exam-only .answer-page { display: none !important; }
+  body.print-ans-only .exam-page { display: none !important; }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      margin: 0;
+    }
+    .no-print-banner {
+      display: none !important;
+    }
+    .sheet {
+      width: auto;
+      min-height: 271mm;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      page-break-after: always;
+      break-after: page;
+    }
+    .sheet:last-of-type {
+      page-break-after: auto;
+      break-after: auto;
+    }
+    body.print-exam-only .exam-page:last-of-type {
+      page-break-after: auto;
+      break-after: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- 顶部打印操作栏 -->
+<div class="no-print-banner">
+  <div class="banner-info">
+    <strong>六年级数学上册阶段性综合测试卷（一至四单元）</strong><br>
+    涵盖：确定位置 · 分数乘法 · 分数除法 · 生活中的负数 · 圆 ｜ A4标准排版（试卷3页 + 参考答案1页）
+  </div>
+  <div class="banner-actions">
+    <button class="btn btn-primary" onclick="printMode('all')">🖨️ 打印全套（含答案）</button>
+    <button class="btn btn-secondary" onclick="printMode('exam')">📄 仅打印试卷（1-3页）</button>
+    <button class="btn btn-secondary" onclick="printMode('ans')">✅ 仅打印答案（第4页）</button>
+  </div>
+</div>
+
+<!-- ==================== 第 1 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="exam-header">
+      <h1 class="exam-title">六年级数学上册阶段性综合测试卷</h1>
+      <p class="exam-subtitle">考查范围：一、确定位置 &nbsp;·&nbsp; 二、分数乘法 &nbsp;·&nbsp; 三、分数除法 &nbsp;·&nbsp; 生活中的负数 &nbsp;·&nbsp; 四、圆 &nbsp;｜&nbsp; 时间：90分钟 &nbsp;·&nbsp; 满分：100分（本卷 π 均取 3.14）</p>
+      <div class="student-info">
+        <div>班级：<span class="field-line"></span></div>
+        <div>姓名：<span class="field-line"></span></div>
+        <div>学号：<span class="field-line" style="min-width:60px;"></span></div>
+        <div>得分：<span class="field-line" style="min-width:60px;"></span></div>
+      </div>
+      <table class="score-table">
+        <tr>
+          <th style="width:12%;">题号</th>
+          <th>一（22分）</th>
+          <th>二（5分）</th>
+          <th>三（10分）</th>
+          <th>四（28分）</th>
+          <th>五（13分）</th>
+          <th>六（22分）</th>
+          <th style="width:13%;">总分（100分）</th>
+        </tr>
+        <tr>
+          <th>得分</th>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 一、填空题 -->
+    <div class="section-title">一、填空题<span class="pts">（每空1分，共22分）</span></div>
+    <ol class="q-list">
+      <li><span class="q-num">1.</span>
+        <span class="frac"><span class="num">3</span><span class="den">4</span></span> 时 ＝ <span class="blank"></span> 分；
+        <span class="frac"><span class="num">5</span><span class="den">8</span></span> 吨 ＝ <span class="blank"></span> 千克；
+        比 24 米多 <span class="frac"><span class="num">1</span><span class="den">3</span></span> 是 <span class="blank"></span> 米。
+      </li>
+      <li><span class="q-num">2.</span>
+        <span class="frac"><span class="num">7</span><span class="den">9</span></span> 的倒数是 <span class="blank"></span>；
+        <span class="blank"></span> 与 0.25 互为倒数。
+      </li>
+      <li><span class="q-num">3.</span>
+        在 ○ 里填上“＞”“＜”或“＝”。<br>
+        <span style="display:inline-block; padding-left:18px; margin-top:2px;">
+          <span class="frac"><span class="num">5</span><span class="den">6</span></span> × <span class="frac"><span class="num">3</span><span class="den">4</span></span> <span class="circle-cmp"></span> <span class="frac"><span class="num">5</span><span class="den">6</span></span>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="frac"><span class="num">7</span><span class="den">9</span></span> ÷ <span class="frac"><span class="num">2</span><span class="den">3</span></span> <span class="circle-cmp"></span> <span class="frac"><span class="num">7</span><span class="den">9</span></span>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="frac"><span class="num">4</span><span class="den">5</span></span> ÷ 2 <span class="circle-cmp"></span> <span class="frac"><span class="num">4</span><span class="den">5</span></span> × <span class="frac"><span class="num">1</span><span class="den">2</span></span>
+        </span>
+      </li>
+      <li><span class="q-num">4.</span>
+        如果把海平面高度记作 0 m，吐鲁番盆地某处低于海平面 155 m，记作 <span class="blank"></span> m；某天北京最高气温是 ＋4 ℃，最低气温是 －6 ℃，这一天的温差是 <span class="blank blank-sm"></span> ℃；在 －3.5、0、＋2、－8 这四个数中，最小的数是 <span class="blank blank-sm"></span>。
+      </li>
+      <li><span class="q-num">5.</span>
+        小明家在学校的北偏东 35° 方向 500 米处，那么学校在小明家的 <span class="blank blank-sm"></span> 偏 <span class="blank blank-sm"></span> 35° 方向 500 米处。
+      </li>
+      <li><span class="q-num">6.</span>
+        把一根 <span class="frac"><span class="num">4</span><span class="den">5</span></span> 米长的彩带平均剪成 4 段，每段长 <span class="blank"></span> 米，每段占全长的 <span class="blank"></span>。
+      </li>
+      <li><span class="q-num">7.</span>
+        用圆规画一个周长是 18.84 cm 的圆，圆规两脚之间的距离应是 <span class="blank blank-sm"></span> cm，画出的这个圆的面积是 <span class="blank"></span> cm²。
+      </li>
+      <li><span class="q-num">8.</span>
+        一个圆的半径扩大到原来的 3 倍，它的周长扩大到原来的 <span class="blank blank-sm"></span> 倍，面积扩大到原来的 <span class="blank blank-sm"></span> 倍。
+      </li>
+      <li><span class="q-num">9.</span>
+        把一个圆平均分成若干等份，剪开后拼成一个近似的长方形，测得这个近似长方形的长是 12.56 cm，那么原来这个圆的半径是 <span class="blank blank-sm"></span> cm，面积是 <span class="blank"></span> cm²。
+      </li>
+      <li><span class="q-num">10.</span>
+        一只挂钟的分针长 10 cm，经过 30 分钟后，分针的尖端所走的路程是 <span class="blank"></span> cm。
+      </li>
+    </ol>
+
+    <!-- 二、判断题 -->
+    <div class="section-title">二、判断题<span class="pts">（对的画“√”，错的画“×”。每题1分，共5分）</span></div>
+    <ol class="q-list judge-list">
+      <li>
+        <span><span class="q-num">1.</span> 0 既不是正数，也不是负数。</span>
+        <span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span>
+      </li>
+      <li>
+        <span><span class="q-num">2.</span> 因为 <span class="frac"><span class="num">3</span><span class="den">4</span></span> × <span class="frac"><span class="num">4</span><span class="den">3</span></span> ＝ 1，所以 <span class="frac"><span class="num">3</span><span class="den">4</span></span> 是倒数，<span class="frac"><span class="num">4</span><span class="den">3</span></span> 也是倒数。</span>
+        <span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span>
+      </li>
+      <li>
+        <span><span class="q-num">3.</span> 半径是 2 cm 的圆，它的周长和面积相等。</span>
+        <span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span>
+      </li>
+      <li>
+        <span><span class="q-num">4.</span> 甲数比乙数多 <span class="frac"><span class="num">1</span><span class="den">5</span></span>，那么乙数就比甲数少 <span class="frac"><span class="num">1</span><span class="den">5</span></span>。</span>
+        <span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span>
+      </li>
+      <li>
+        <span><span class="q-num">5.</span> 圆有无数条对称轴，半圆只有 1 条对称轴。</span>
+        <span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span>
+      </li>
+    </ol>
+
+    <!-- 三、选择题 -->
+    <div class="section-title">三、选择题<span class="pts">（把正确答案的序号填在括号里。每题2分，共10分）</span></div>
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span><span class="q-num">1.</span> 已知 <i>a</i> × <span class="frac"><span class="num">5</span><span class="den">6</span></span> ＝ <i>b</i> ÷ <span class="frac"><span class="num">5</span><span class="den">6</span></span> ＝ <i>c</i> × 1（<i>a</i>、<i>b</i>、<i>c</i> 均不为 0），那么 <i>a</i>、<i>b</i>、<i>c</i> 中最大的数是（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。</span>
+      </div>
+      <div class="choice-opts">
+        <div>A. <i>a</i></div>
+        <div>B. <i>b</i></div>
+        <div>C. <i>c</i></div>
+        <div>D. 无法确定</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span><span class="q-num">2.</span> 某种面粉包装袋上标有“净重：25 kg ± 0.2 kg”，质检员抽查了 4 袋面粉，下面（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）袋<strong>不合格</strong>。</span>
+      </div>
+      <div class="choice-opts">
+        <div>A. 25.15 kg</div>
+        <div>B. 24.85 kg</div>
+        <div>C. 25.2 kg</div>
+        <div>D. 24.75 kg</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span><span class="q-num">3.</span> 小丽从家出发，向东偏北 30° 方向走 300 米到超市；买完东西按原路返回家，应向（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）方向走 300 米。</span>
+      </div>
+      <div class="choice-opts">
+        <div>A. 东偏南 30°</div>
+        <div>B. 西偏南 30°</div>
+        <div>C. 西偏北 30°</div>
+        <div>D. 南偏西 30°</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span><span class="q-num">4.</span> 一根铁丝剪成两段，第一段长 <span class="frac"><span class="num">3</span><span class="den">7</span></span> 米，第二段占全长的 <span class="frac"><span class="num">3</span><span class="den">7</span></span>，两段相比，（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。</span>
+      </div>
+      <div class="choice-opts">
+        <div>A. 第一段长</div>
+        <div>B. 第二段长</div>
+        <div>C. 一样长</div>
+        <div>D. 无法比较</div>
+      </div>
+    </div>
+
+    <div class="choice-item" style="margin-bottom:0;">
+      <div class="choice-stem">
+        <span><span class="q-num">5.</span> 在一张长 10 cm、宽 6 cm 的长方形纸上，最多能剪出（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）个半径是 1.5 cm 的圆。</span>
+      </div>
+      <div class="choice-opts">
+        <div>A. 4</div>
+        <div>B. 6</div>
+        <div>C. 8</div>
+        <div>D. 9</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册阶段性综合测试卷（一至四单元）</span>
+    <span>第 1 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 2 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <!-- 四、计算题 -->
+    <div class="section-title" style="margin-top:0;">四、计算题<span class="pts">（共28分）</span></div>
+
+    <div class="sub-title">1. 直接写出得数。（每题1分，共8分）</div>
+    <div class="oral-grid">
+      <div>① <span class="frac"><span class="num">3</span><span class="den">8</span></span> × 4 ＝ <span class="blank blank-sm"></span></div>
+      <div>② <span class="frac"><span class="num">5</span><span class="den">9</span></span> × <span class="frac"><span class="num">3</span><span class="den">10</span></span> ＝ <span class="blank blank-sm"></span></div>
+      <div>③ <span class="frac"><span class="num">4</span><span class="den">7</span></span> ÷ 2 ＝ <span class="blank blank-sm"></span></div>
+      <div>④ 6 ÷ <span class="frac"><span class="num">3</span><span class="den">5</span></span> ＝ <span class="blank blank-sm"></span></div>
+      <div>⑤ <span class="frac"><span class="num">5</span><span class="den">12</span></span> ÷ <span class="frac"><span class="num">5</span><span class="den">6</span></span> ＝ <span class="blank blank-sm"></span></div>
+      <div>⑥ 2.4 × <span class="frac"><span class="num">5</span><span class="den">8</span></span> ＝ <span class="blank blank-sm"></span></div>
+      <div>⑦ <span class="frac"><span class="num">1</span><span class="den">3</span></span> ＋ <span class="frac"><span class="num">1</span><span class="den">4</span></span> ＝ <span class="blank blank-sm"></span></div>
+      <div>⑧ <span class="frac"><span class="num">3</span><span class="den">5</span></span> × <span class="frac"><span class="num">2</span><span class="den">7</span></span> ÷ <span class="frac"><span class="num">3</span><span class="den">5</span></span> × <span class="frac"><span class="num">2</span><span class="den">7</span></span> ＝ <span class="blank blank-sm"></span></div>
+    </div>
+
+    <div class="sub-title">2. 计算下面各题，能简算的要简算。（每题3分，共12分）</div>
+    <div class="calc-grid">
+      <div class="calc-box">
+        <div class="calc-expr">（1）(<span class="frac"><span class="num">3</span><span class="den">4</span></span> － <span class="frac"><span class="num">2</span><span class="den">5</span></span>) × 20</div>
+      </div>
+      <div class="calc-box">
+        <div class="calc-expr">（2）<span class="frac"><span class="num">7</span><span class="den">12</span></span> ÷ 9 ＋ <span class="frac"><span class="num">5</span><span class="den">12</span></span> × <span class="frac"><span class="num">1</span><span class="den">9</span></span></div>
+      </div>
+      <div class="calc-box">
+        <div class="calc-expr">（3）25 × <span class="frac"><span class="num">7</span><span class="den">24</span></span></div>
+      </div>
+      <div class="calc-box">
+        <div class="calc-expr">（4）<span class="frac"><span class="num">4</span><span class="den">5</span></span> ÷ [(<span class="frac"><span class="num">1</span><span class="den">3</span></span> ＋ <span class="frac"><span class="num">1</span><span class="den">5</span></span>) × <span class="frac"><span class="num">3</span><span class="den">4</span></span>]</div>
+      </div>
+    </div>
+
+    <div class="sub-title">3. 解方程。（每题4分，共8分）</div>
+    <div class="calc-grid">
+      <div class="calc-box eq-box">
+        <div class="calc-expr">（1）<i>x</i> － <span class="frac"><span class="num">2</span><span class="den">5</span></span><i>x</i> ＝ 18</div>
+      </div>
+      <div class="calc-box eq-box">
+        <div class="calc-expr">（2）<span class="frac"><span class="num">3</span><span class="den">4</span></span><i>x</i> ＋ <span class="frac"><span class="num">1</span><span class="den">2</span></span> ＝ <span class="frac"><span class="num">11</span><span class="den">8</span></span></div>
+      </div>
+    </div>
+
+    <!-- 五、操作与图形题 -->
+    <div class="section-title" style="margin-top:12px;">五、操作与图形题<span class="pts">（共13分）</span></div>
+
+    <div class="op-block">
+      <div class="sub-title" style="margin-top:4px;">1. 在直线上用“•”标出 －2.5、＋<span class="frac"><span class="num">3</span><span class="den">2</span></span>、－1 并写上对应的数，再按从小到大的顺序排列。（3分）</div>
+      <div class="svg-center">
+        <svg width="620" height="70" viewBox="0 0 620 70" xmlns="http://www.w3.org/2000/svg">
+          <!-- 主轴线 -->
+          <line x1="25" y1="36" x2="592" y2="36" stroke="#1a1a1a" stroke-width="1.6"/>
+          <!-- 右侧箭头 -->
+          <polygon points="592,31 604,36 592,41" fill="#1a1a1a"/>
+          <!-- 刻度：x(v) = 310 + v * 65，从 -4 到 4 -->
+          <!-- 0.5 单位小刻度 -->
+          <g stroke="#555" stroke-width="1">
+            <line x1="82.5" y1="32" x2="82.5" y2="40"/>
+            <line x1="147.5" y1="32" x2="147.5" y2="40"/>
+            <line x1="212.5" y1="32" x2="212.5" y2="40"/>
+            <line x1="277.5" y1="32" x2="277.5" y2="40"/>
+            <line x1="342.5" y1="32" x2="342.5" y2="40"/>
+            <line x1="407.5" y1="32" x2="407.5" y2="40"/>
+            <line x1="472.5" y1="32" x2="472.5" y2="40"/>
+            <line x1="537.5" y1="32" x2="537.5" y2="40"/>
+          </g>
+          <!-- 整数大刻度 -->
+          <g stroke="#1a1a1a" stroke-width="1.5">
+            <line x1="50" y1="28" x2="50" y2="44"/>
+            <line x1="115" y1="28" x2="115" y2="44"/>
+            <line x1="180" y1="28" x2="180" y2="44"/>
+            <line x1="245" y1="28" x2="245" y2="44"/>
+            <line x1="310" y1="26" x2="310" y2="46" stroke-width="2.2"/>
+            <line x1="375" y1="28" x2="375" y2="44"/>
+            <line x1="440" y1="28" x2="440" y2="44"/>
+            <line x1="505" y1="28" x2="505" y2="44"/>
+            <line x1="570" y1="28" x2="570" y2="44"/>
+          </g>
+          <!-- 数字标签 -->
+          <g font-family="Times New Roman, Songti SC, serif" font-size="13" fill="#1a1a1a" text-anchor="middle">
+            <text x="50" y="61">-4</text>
+            <text x="115" y="61">-3</text>
+            <text x="180" y="61">-2</text>
+            <text x="245" y="61">-1</text>
+            <text x="310" y="62" font-weight="bold">0</text>
+            <text x="375" y="61">1</text>
+            <text x="440" y="61">2</text>
+            <text x="505" y="61">3</text>
+            <text x="570" y="61">4</text>
+          </g>
+        </svg>
+      </div>
+      <div style="text-align:center; margin-top:2px;">
+        从小到大排列：<span class="blank blank-lg"></span> ＜ <span class="blank blank-lg"></span> ＜ <span class="blank blank-lg"></span>
+      </div>
+    </div>
+
+    <div class="op-block" style="margin-bottom:0;">
+      <div class="sub-title">2. 根据下面的平面图填一填、画一画。（每小题2分，共4分）</div>
+      <div class="pos-layout">
+        <div class="pos-svg-wrap">
+          <svg width="266" height="252" viewBox="0 0 266 252" xmlns="http://www.w3.org/2000/svg">
+            <!-- 同心圆：中心 (133, 126)，半径 24, 48, 72, 96 (每圈200米) -->
+            <g fill="none" stroke="#94a3b8" stroke-width="0.9" stroke-dasharray="3,3">
+              <circle cx="133" cy="126" r="24"/>
+              <circle cx="133" cy="126" r="48"/>
+              <circle cx="133" cy="126" r="72"/>
+              <circle cx="133" cy="126" r="96"/>
+            </g>
+            <!-- 30度辅助虚线 -->
+            <g stroke="#cbd5e1" stroke-width="0.85" stroke-dasharray="3,3">
+              <!-- 30° / 210° -->
+              <line x1="181" y1="42.9" x2="85" y2="209.1"/>
+              <!-- 60° / 240° -->
+              <line x1="216.1" y1="78" x2="49.9" y2="174"/>
+              <!-- 120° / 300° -->
+              <line x1="216.1" y1="174" x2="49.9" y2="78"/>
+              <!-- 150° / 330° -->
+              <line x1="181" y1="209.1" x2="85" y2="42.9"/>
+            </g>
+            <!-- 东西南北主轴 -->
+            <g stroke="#334155" stroke-width="1.2">
+              <line x1="133" y1="228" x2="133" y2="24"/>
+              <line x1="31" y1="126" x2="235" y2="126"/>
+            </g>
+            <!-- 箭头 -->
+            <polygon points="133,18 129,27 137,27" fill="#334155"/>
+            <polygon points="241,126 232,122 232,130" fill="#334155"/>
+            <!-- 方向文字 -->
+            <g font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">
+              <text x="133" y="13">北</text>
+              <text x="133" y="244">南</text>
+              <text x="19" y="130">西</text>
+              <text x="250" y="130">东</text>
+            </g>
+            <!-- 图书馆：北偏东 30°，第3圈 r=72 -> x=133+36=169, y=126-62.35=63.65 -->
+            <line x1="133" y1="126" x2="169" y2="63.65" stroke="#111" stroke-width="1.8"/>
+            <circle cx="169" cy="63.65" r="3.6" fill="#111"/>
+            <text x="175" y="61" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11.5" font-weight="bold" fill="#111">图书馆</text>
+            <!-- 30° 角度弧线 (r=28) -->
+            <path d="M 133 98 A 28 28 0 0 1 147 101.75" fill="none" stroke="#111" stroke-width="1.1"/>
+            <text x="145" y="93" font-family="Times New Roman, sans-serif" font-size="10.5" fill="#111">30°</text>
+            <!-- 观测点：学校 -->
+            <circle cx="133" cy="126" r="3.5" fill="#fff" stroke="#111" stroke-width="1.8"/>
+            <text x="115" y="140" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11.5" font-weight="bold" fill="#111">学校</text>
+            <!-- 比例尺标注 -->
+            <g transform="translate(188, 232)">
+              <line x1="0" y1="8" x2="24" y2="8" stroke="#111" stroke-width="1.4"/>
+              <line x1="0" y1="4" x2="0" y2="8" stroke="#111" stroke-width="1.4"/>
+              <line x1="24" y1="4" x2="24" y2="8" stroke="#111" stroke-width="1.4"/>
+              <text x="29" y="11" font-family="PingFang SC, sans-serif" font-size="10.5" fill="#333">200米</text>
+            </g>
+          </svg>
+        </div>
+        <div class="pos-qs">
+          <div style="font-size:12px; color:#555; margin-bottom:8px;">（注：以学校为观测点，相邻两圈间隔为 200 米，相邻两条虚线夹角均为 30°）</div>
+          <div style="margin-bottom:14px;">
+            （1）图书馆在学校的 <span class="blank blank-sm"></span> 偏 <span class="blank blank-sm"></span> <span class="blank blank-sm"></span>° 方向 <span class="blank"></span> 米处。
+          </div>
+          <div>
+            （2）体育馆在学校的<strong>南偏西 60° 方向 400 米</strong>处，请在左图中画点并标出“体育馆”的位置。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册阶段性综合测试卷（一至四单元）</span>
+    <span>第 2 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 3 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="sub-title" style="margin-top:0;">3. 按要求计算下面各图形的周长或面积。（单位：cm）（每小题3分，共6分）</div>
+    <div class="geo-grid">
+      <!-- 图1：半圆周长 -->
+      <div class="geo-card">
+        <div class="geo-card-title">（1）求下面半圆的<strong>周长</strong>。</div>
+        <div class="svg-center">
+          <svg width="210" height="96" viewBox="0 0 210 96" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 45 72 A 60 60 0 0 1 165 72 Z" fill="#f1f5f9" stroke="#1a1a1a" stroke-width="1.7"/>
+            <circle cx="105" cy="72" r="2.6" fill="#1a1a1a"/>
+            <text x="105" y="65" font-family="Times New Roman, serif" font-size="12" font-style="italic" text-anchor="middle" fill="#1a1a1a">O</text>
+            <!-- 尺寸标注 -->
+            <line x1="45" y1="84" x2="165" y2="84" stroke="#555" stroke-width="1"/>
+            <line x1="45" y1="80" x2="45" y2="88" stroke="#555" stroke-width="1"/>
+            <line x1="165" y1="80" x2="165" y2="88" stroke="#555" stroke-width="1"/>
+            <rect x="83" y="76" width="44" height="15" fill="#fff"/>
+            <text x="105" y="88" font-family="Times New Roman, serif" font-size="12.5" text-anchor="middle" fill="#1a1a1a">d = 8</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 图2：外方内圆阴影面积 -->
+      <div class="geo-card">
+        <div class="geo-card-title">（2）求下面<strong>阴影部分</strong>的面积。</div>
+        <div class="svg-center">
+          <svg width="210" height="96" viewBox="0 0 210 96" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="hatch" width="6" height="6" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="0" x2="0" y2="6" stroke="#64748b" stroke-width="1.4"/>
+              </pattern>
+            </defs>
+            <!-- 正方形 74x74 -->
+            <rect x="68" y="6" width="74" height="74" fill="url(#hatch)" stroke="#1a1a1a" stroke-width="1.6"/>
+            <!-- 内接圆 r=37 -->
+            <circle cx="105" cy="43" r="37" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.5"/>
+            <circle cx="105" cy="43" r="2.2" fill="#1a1a1a"/>
+            <!-- 边长标注 -->
+            <text x="105" y="93" font-family="Times New Roman, serif" font-size="12.5" text-anchor="middle" fill="#1a1a1a">10</text>
+            <text x="152" y="47" font-family="Times New Roman, serif" font-size="12.5" text-anchor="middle" fill="#1a1a1a">10</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- 六、解决问题 -->
+    <div class="section-title" style="margin-top:8px;">六、解决问题<span class="pts">（第1～3题每题4分，第4～5题每题5分，共22分）</span></div>
+
+    <div class="app-item">
+      <div class="app-stem">
+        <span class="q-num">1.</span> 学校图书室新购进故事书 360 本，购进的科技书是故事书的 <span class="frac"><span class="num">5</span><span class="den">6</span></span>，购进的绘本是科技书的 <span class="frac"><span class="num">3</span><span class="den">5</span></span>。学校购进绘本多少本？（4分）
+      </div>
+      <div class="app-ans-line">答：学校购进绘本 <span class="blank"></span> 本。</div>
+    </div>
+
+    <div class="app-item">
+      <div class="app-stem">
+        <span class="q-num">2.</span> 果园里今年收获苹果 420 千克，比去年增产了 <span class="frac"><span class="num">1</span><span class="den">6</span></span>。去年收获苹果多少千克？（4分）
+      </div>
+      <div class="app-ans-line">答：去年收获苹果 <span class="blank"></span> 千克。</div>
+    </div>
+
+    <div class="app-item">
+      <div class="app-stem">
+        <span class="q-num">3.</span> 某社区要进行老旧管道改造，甲工程队单独施工需要 10 天完成，乙工程队单独施工需要 15 天完成。如果甲、乙两队合作，多少天能完成这项工程的 <span class="frac"><span class="num">5</span><span class="den">6</span></span>？（4分）
+      </div>
+      <div class="app-ans-line">答：两队合作 <span class="blank"></span> 天能完成这项工程的 <span class="frac"><span class="num">5</span><span class="den">6</span></span>。</div>
+    </div>
+
+    <div class="app-item">
+      <div class="app-stem">
+        <span class="q-num">4.</span> 一辆自行车的车轮外直径是 60 cm，车轮平均每分钟转动 100 圈。小明骑这辆自行车通过一座长 1884 m 的大桥，大约需要多少分钟？（5分）
+      </div>
+      <div class="app-ans-line">答：大约需要 <span class="blank"></span> 分钟。</div>
+    </div>
+
+    <div class="app-item" style="min-height:132px; margin-bottom:0;">
+      <div class="app-stem">
+        <span class="q-num">5.</span> 公园里有一个圆形花坛，量得它的周长是 37.68 米。为了方便游人观赏，园林工人在花坛周围铺设了一条宽 1 米的环形鹅卵石小路。这条环形小路的面积是多少平方米？（5分）
+      </div>
+      <div class="app-ans-line">答：这条环形小路的面积是 <span class="blank"></span> 平方米。</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册阶段性综合测试卷（一至四单元）</span>
+    <span>第 3 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 4 页：参考答案与评分标准 ==================== -->
+<div class="sheet answer-page">
+  <div class="sheet-content">
+    <div class="ans-header">
+      <h2>参考答案与评分标准</h2>
+      <p>六年级数学上册阶段性综合测试卷（一、确定位置 ～ 四、圆） ｜ 供教师与家长批阅核对</p>
+    </div>
+
+    <div class="ans-sec">
+      <h3>一、填空题（每空1分，共22分）</h3>
+      <div class="ans-grid-2">
+        <div><strong>1.</strong> 45；625；32</div>
+        <div><strong>2.</strong> <span class="frac"><span class="num">9</span><span class="den">7</span></span>；4</div>
+        <div><strong>3.</strong> ＜；＞；＝</div>
+        <div><strong>4.</strong> －155；10；－8</div>
+        <div><strong>5.</strong> 南；西</div>
+        <div><strong>6.</strong> <span class="frac"><span class="num">1</span><span class="den">5</span></span>；<span class="frac"><span class="num">1</span><span class="den">4</span></span></div>
+        <div><strong>7.</strong> 3；28.26</div>
+        <div><strong>8.</strong> 3；9</div>
+        <div><strong>9.</strong> 4；50.24 <span class="tip-note">（长＝πr＝12.56 ⇒ r＝4）</span></div>
+        <div><strong>10.</strong> 31.4 <span class="tip-note">（30分钟走半圆：3.14×10）</span></div>
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>二、判断题（每题1分，共5分）</h3>
+      <div class="ans-p">
+        <strong>1.</strong> √ &nbsp;&nbsp;&nbsp;
+        <strong>2.</strong> × <span class="tip-note">（倒数相互依存）</span> &nbsp;&nbsp;&nbsp;
+        <strong>3.</strong> × <span class="tip-note">（单位不同，无法比较）</span> &nbsp;&nbsp;&nbsp;
+        <strong>4.</strong> × <span class="tip-note">（乙比甲少 1/6）</span> &nbsp;&nbsp;&nbsp;
+        <strong>5.</strong> √
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>三、选择题（每题2分，共10分）</h3>
+      <div class="ans-p">
+        <strong>1.</strong> A <span class="tip-note">（设结果为1，a＝6/5，b＝5/6，c＝1）</span> &nbsp;&nbsp;
+        <strong>2.</strong> D <span class="tip-note">（合格范围24.8～25.2 kg）</span> &nbsp;&nbsp;
+        <strong>3.</strong> B &nbsp;&nbsp;
+        <strong>4.</strong> A <span class="tip-note">（第一段占全长的4/7）</span> &nbsp;&nbsp;
+        <strong>5.</strong> B <span class="tip-note">（d＝3 cm，(10÷3)取整×(6÷3)＝3×2＝6）</span>
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>四、计算题（共28分）</h3>
+      <div class="ans-p"><strong>1. 直接写出得数（每题1分，共8分）：</strong>
+        ① <span class="frac"><span class="num">3</span><span class="den">2</span></span>（或 1.5） &nbsp;
+        ② <span class="frac"><span class="num">1</span><span class="den">6</span></span> &nbsp;
+        ③ <span class="frac"><span class="num">2</span><span class="den">7</span></span> &nbsp;
+        ④ 10 &nbsp;
+        ⑤ <span class="frac"><span class="num">1</span><span class="den">2</span></span> &nbsp;
+        ⑥ 1.5（或 <span class="frac"><span class="num">3</span><span class="den">2</span></span>） &nbsp;
+        ⑦ <span class="frac"><span class="num">7</span><span class="den">12</span></span> &nbsp;
+        ⑧ <span class="frac"><span class="num">4</span><span class="den">49</span></span>
+      </div>
+      <div class="ans-p"><strong>2. 脱式计算（每题3分，过程2分，结果1分，共12分）：</strong></div>
+      <div class="ans-grid-2">
+        <div>（1）原式 ＝ <span class="frac"><span class="num">3</span><span class="den">4</span></span>×20 － <span class="frac"><span class="num">2</span><span class="den">5</span></span>×20 ＝ 15 － 8 ＝ <strong>7</strong></div>
+        <div>（2）原式 ＝ (<span class="frac"><span class="num">7</span><span class="den">12</span></span> ＋ <span class="frac"><span class="num">5</span><span class="den">12</span></span>) × <span class="frac"><span class="num">1</span><span class="den">9</span></span> ＝ 1 × <span class="frac"><span class="num">1</span><span class="den">9</span></span> ＝ <strong><span class="frac"><span class="num">1</span><span class="den">9</span></span></strong></div>
+        <div>（3）原式 ＝ (24＋1) × <span class="frac"><span class="num">7</span><span class="den">24</span></span> ＝ 7 ＋ <span class="frac"><span class="num">7</span><span class="den">24</span></span> ＝ <strong>7<span class="frac"><span class="num">7</span><span class="den">24</span></span></strong>（或 <span class="frac"><span class="num">175</span><span class="den">24</span></span>）</div>
+        <div>（4）原式 ＝ <span class="frac"><span class="num">4</span><span class="den">5</span></span> ÷ [<span class="frac"><span class="num">8</span><span class="den">15</span></span> × <span class="frac"><span class="num">3</span><span class="den">4</span></span>] ＝ <span class="frac"><span class="num">4</span><span class="den">5</span></span> ÷ <span class="frac"><span class="num">2</span><span class="den">5</span></span> ＝ <strong>2</strong></div>
+      </div>
+      <div class="ans-p" style="margin-top:4px;"><strong>3. 解方程（每题4分，写出“解”且过程正确得3分，结果1分，共8分）：</strong></div>
+      <div class="ans-grid-2">
+        <div>（1）解：<span class="frac"><span class="num">3</span><span class="den">5</span></span><i>x</i> ＝ 18 &nbsp;⇒&nbsp; <i>x</i> ＝ 18 ÷ <span class="frac"><span class="num">3</span><span class="den">5</span></span> &nbsp;⇒&nbsp; <strong><i>x</i> ＝ 30</strong></div>
+        <div>（2）解：<span class="frac"><span class="num">3</span><span class="den">4</span></span><i>x</i> ＝ <span class="frac"><span class="num">11</span><span class="den">8</span></span> － <span class="frac"><span class="num">4</span><span class="den">8</span></span> ＝ <span class="frac"><span class="num">7</span><span class="den">8</span></span> &nbsp;⇒&nbsp; <strong><i>x</i> ＝ <span class="frac"><span class="num">7</span><span class="den">6</span></span></strong></div>
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>五、操作与图形题（共13分）</h3>
+      <div class="ans-p"><strong>1.（3分）</strong>标点正确（－2.5 在 －2 与 －3 正中间；＋<span class="frac"><span class="num">3</span><span class="den">2</span></span> 即 1.5 在 1 与 2 正中间；－1 在 －1 刻度处）得 1.5 分；排序正确得 1.5 分：<strong>－2.5 ＜ －1 ＜ ＋<span class="frac"><span class="num">3</span><span class="den">2</span></span></strong>。</div>
+      <div class="ans-p"><strong>2.（4分）</strong>（1）<strong>北</strong>偏<strong>东</strong> <strong>30</strong>° 方向 <strong>600</strong> 米处（写“东偏北 60° 方向 600 米处”同样给满分，2分）；（2）在左下象限，从“南”向“西”数第 2 条虚线（即西偏南 30° 虚线）与第 2 个同心圆的交点处标出“体育馆”（2分）。</div>
+      <div class="ans-p"><strong>3.（每小题3分，共6分）</strong></div>
+      <div class="ans-grid-2">
+        <div>（1）3.14 × 8 ÷ 2 ＋ 8 ＝ 12.56 ＋ 8 ＝ <strong>20.56（cm）</strong><br><span class="tip-note">（易错提示：半圆周长＝圆周长的一半＋一条直径）</span></div>
+        <div>（2）<i>r</i> ＝ 10 ÷ 2 ＝ 5（cm）<br>10 × 10 － 3.14 × 5² ＝ 100 － 78.5 ＝ <strong>21.5（cm²）</strong></div>
+      </div>
+    </div>
+
+    <div class="ans-sec" style="margin-bottom:0;">
+      <h3>六、解决问题（共22分，列式正确占一半以上分值，单位与作答不完整酌情扣0.5分）</h3>
+      <div class="ans-p"><strong>1.（4分）</strong> 360 × <span class="frac"><span class="num">5</span><span class="den">6</span></span> × <span class="frac"><span class="num">3</span><span class="den">5</span></span> ＝ 300 × <span class="frac"><span class="num">3</span><span class="den">5</span></span> ＝ <strong>180（本）</strong> &nbsp; 答：学校购进绘本 180 本。</div>
+      <div class="ans-p"><strong>2.（4分）</strong> 420 ÷ (1 ＋ <span class="frac"><span class="num">1</span><span class="den">6</span></span>) ＝ 420 ÷ <span class="frac"><span class="num">7</span><span class="den">6</span></span> ＝ <strong>360（千克）</strong> &nbsp; 答：去年收获苹果 360 千克。</div>
+      <div class="ans-p"><strong>3.（4分）</strong> <span class="frac"><span class="num">5</span><span class="den">6</span></span> ÷ (<span class="frac"><span class="num">1</span><span class="den">10</span></span> ＋ <span class="frac"><span class="num">1</span><span class="den">15</span></span>) ＝ <span class="frac"><span class="num">5</span><span class="den">6</span></span> ÷ <span class="frac"><span class="num">1</span><span class="den">6</span></span> ＝ <strong>5（天）</strong> &nbsp; 答：两队合作 5 天能完成这项工程的 <span class="frac"><span class="num">5</span><span class="den">6</span></span>。</div>
+      <div class="ans-p"><strong>4.（5分）</strong> 车轮周长：3.14 × 60 ＝ 188.4（cm）＝ 1.884（m）；每分钟行驶：1.884 × 100 ＝ 188.4（m）；<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所需时间：1884 ÷ 188.4 ＝ <strong>10（分钟）</strong> &nbsp; 答：大约需要 10 分钟。</div>
+      <div class="ans-p"><strong>5.（5分）</strong> 花坛半径：<i>r</i> ＝ 37.68 ÷ 3.14 ÷ 2 ＝ 6（米）；外圆半径：<i>R</i> ＝ 6 ＋ 1 ＝ 7（米）；<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小路面积：3.14 × (7² － 6²) ＝ 3.14 × (49 － 36) ＝ 3.14 × 13 ＝ <strong>40.82（平方米）</strong> &nbsp; 答：这条环形小路的面积是 40.82 平方米。</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册阶段性综合测试卷（一至四单元）</span>
+    <span>参考答案与评分标准</span>
+  </div>
+</div>
+
+<script>
+  function printMode(mode) {
+    document.body.classList.remove('print-exam-only', 'print-ans-only');
+    if (mode === 'exam') document.body.classList.add('print-exam-only');
+    if (mode === 'ans') document.body.classList.add('print-ans-only');
+    window.print();
+    setTimeout(() => {
+      document.body.classList.remove('print-exam-only', 'print-ans-only');
+    }, 300);
+  }
+</script>
+</body>
+</html>
