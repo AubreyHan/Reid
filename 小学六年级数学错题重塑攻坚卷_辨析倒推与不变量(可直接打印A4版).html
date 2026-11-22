@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>小学六年级数学错题重塑攻坚卷（辨析 · 倒推 · 抓不变量 · 围圆综合 · A4可打印版）</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 13mm 12mm 13mm;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: "Songti SC", "STSong", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+    color: #1a1a1a;
+    background: #eef1f5;
+    margin: 0;
+    padding: 18px 0 40px 0;
+    font-size: 13px;
+    line-height: 1.54;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print-banner {
+    width: 210mm;
+    margin: 0 auto 16px auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0f766e;
+    border-radius: 8px;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .banner-info { font-size: 13px; color: #334155; }
+  .banner-info strong { color: #0f172a; font-size: 14px; }
+  .banner-actions { display: flex; gap: 8px; flex-shrink: 0; }
+  .btn {
+    border: none;
+    padding: 7px 14px;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .btn-primary { background: #0f766e; color: #fff; }
+  .btn-primary:hover { background: #115e59; }
+  .btn-secondary { background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; }
+  .btn-secondary:hover { background: #e2e8f0; }
+
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 18px auto;
+    background: #ffffff;
+    padding: 12mm 13mm 11mm 13mm;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .sheet-content { flex: 1; }
+  .page-footer {
+    margin-top: auto;
+    padding-top: 6px;
+    border-top: 1px solid #d4d4d8;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #666;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  .exam-header { text-align: center; margin-bottom: 5px; }
+  .exam-title {
+    font-size: 18.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 0 2px 0;
+    color: #000;
+  }
+  .badge-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1px 7px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    vertical-align: 2px;
+    margin-left: 6px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .exam-subtitle {
+    font-size: 11px;
+    color: #444;
+    margin: 0 0 5px 0;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    white-space: nowrap;
+  }
+  .student-info {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    font-size: 12.5px;
+    margin-bottom: 5px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .student-info .field-line {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 74px;
+    height: 14px;
+    vertical-align: bottom;
+  }
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 6px;
+    font-size: 11.5px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .score-table th, .score-table td {
+    border: 1px solid #333;
+    text-align: center;
+    padding: 2px 4px;
+  }
+  .score-table th { background: #f5f5f5; font-weight: 600; }
+  .score-table td { height: 19px; }
+
+  .section-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #000;
+    margin: 6px 0 4px 0;
+    padding-bottom: 2px;
+    border-bottom: 1.2px solid #27272a;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .section-title .pts {
+    font-size: 11.5px;
+    font-weight: 400;
+    color: #333;
+    margin-left: 4px;
+  }
+
+  .frac {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 2px;
+    line-height: 1.05;
+    font-size: 0.88em;
+    font-family: "Times New Roman", "Songti SC", serif;
+  }
+  .frac .num { border-bottom: 1px solid #1a1a1a; padding: 0 2.5px 1px 2.5px; text-align: center; }
+  .frac .den { padding: 1px 2.5px 0 2.5px; text-align: center; }
+
+  .blank {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 40px;
+    text-align: center;
+    margin: 0 2px;
+    height: 14px;
+    vertical-align: baseline;
+  }
+  .blank-sm { min-width: 30px; }
+
+  .q-num { font-weight: 600; margin-right: 2px; }
+  .origin-tag {
+    display: inline-block;
+    font-size: 10.2px;
+    color: #3f3f46;
+    border: 1px solid #a1a1aa;
+    border-radius: 3px;
+    padding: 0 4px;
+    margin-right: 4px;
+    line-height: 1.35;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  /* 辨析题 */
+  .reason-item { margin-bottom: 5.5px; }
+  .reason-stem {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: justify;
+  }
+  .judge-box { flex-shrink: 0; margin-left: 10px; white-space: nowrap; }
+  .reason-line {
+    margin-top: 2px;
+    padding-left: 18px;
+    font-size: 11.8px;
+    color: #555;
+    display: flex;
+    align-items: flex-end;
+  }
+  .reason-line .line-fill {
+    flex: 1;
+    border-bottom: 1px dashed #71717a;
+    height: 15px;
+    margin-left: 4px;
+  }
+
+  /* 选择题 */
+  .choice-item { margin-bottom: 5px; }
+  .choice-stem { text-align: justify; }
+  .choice-opts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding-left: 18px;
+    margin-top: 1.5px;
+    font-size: 12.3px;
+  }
+  .choice-opts-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 16px;
+    padding-left: 18px;
+    margin-top: 1.5px;
+    font-size: 12.3px;
+  }
+
+  /* 填空 */
+  .fill-list { margin: 0; padding: 0; list-style: none; }
+  .fill-list li { margin-bottom: 4.5px; text-align: justify; }
+
+  /* 压轴解答题 */
+  .app-item {
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    padding: 9px 12px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .app-stem { text-align: justify; line-height: 1.62; }
+  .app-ans-line {
+    font-size: 12.5px;
+    color: #555;
+    text-align: right;
+    padding-top: 4px;
+  }
+
+  /* 自查清单框 */
+  .check-box {
+    margin-top: 16px;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 10px 14px;
+    background: #f8fafc;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 12px;
+    line-height: 1.75;
+    color: #1e293b;
+  }
+  .check-box h4 {
+    margin: 0 0 4px 0;
+    font-size: 13px;
+    color: #0f172a;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 3px;
+  }
+
+  /* 参考答案页 */
+  .ans-header {
+    text-align: center;
+    border-bottom: 2px solid #1e293b;
+    padding-bottom: 5px;
+    margin-bottom: 7px;
+  }
+  .ans-header h2 { margin: 0; font-size: 16px; color: #0f172a; }
+  .ans-header p { margin: 2px 0 0 0; font-size: 10.8px; color: #475569; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; }
+  .ans-sec {
+    margin-bottom: 6px;
+    font-size: 11.4px;
+    line-height: 1.48;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .ans-sec h3 {
+    font-size: 12.2px;
+    margin: 0 0 3px 0;
+    padding: 2px 7px;
+    background: #f1f5f9;
+    border-left: 3px solid #0f766e;
+    color: #0f172a;
+  }
+  .ans-p { margin: 2px 0; }
+  .method-box {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-left: 3px solid #0f766e;
+    border-radius: 4px;
+    padding: 5px 9px;
+    font-size: 11px;
+    line-height: 1.46;
+    color: #134e4a;
+    margin-top: 5px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  body.print-exam-only .answer-page { display: none !important; }
+  body.print-ans-only .exam-page { display: none !important; }
+
+  @media print {
+    body { background: #fff; padding: 0; margin: 0; }
+    .no-print-banner { display: none !important; }
+    .sheet {
+      width: auto;
+      height: 270mm;
+      min-height: 270mm;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      page-break-after: always;
+      break-after: page;
+    }
+    .sheet:last-of-type { page-break-after: auto; break-after: auto; }
+    body.print-exam-only .exam-page:last-of-type { page-break-after: auto; break-after: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="no-print-banner">
+  <div class="banner-info">
+    <strong>六年级数学错题重塑攻坚卷（针对错题精准拆解与双倍强化）</strong><br>
+    聚焦：量纲维度辨析 · 具体量与分率 · 多步量率倒推 · 抓不变量转化单位“1” · 量率与围圆融合 ｜ A4（3页试卷 + 1页精析）
+  </div>
+  <div class="banner-actions">
+    <button class="btn btn-primary" onclick="printMode('all')">🖨️ 打印全套（含解析）</button>
+    <button class="btn btn-secondary" onclick="printMode('exam')">📄 仅打印试卷（1-3页）</button>
+    <button class="btn btn-secondary" onclick="printMode('ans')">✅ 仅打印答案（第4页）</button>
+  </div>
+</div>
+
+<!-- ==================== 第 1 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="exam-header">
+      <h1 class="exam-title">六年级数学错题重塑攻坚卷<span class="badge-tag">溯源拆解 · 双倍强化</span></h1>
+      <p class="exam-subtitle">定向突破：量纲维度辨析 · 具体量与分率 · 倒推还原法 · 抓不变量转化单位“1” · 围圆综合 ｜ 时间：60分钟 · 满分：100分（π取3.14）</p>
+      <div class="student-info">
+        <div>姓名：<span class="field-line"></span></div>
+        <div>日期：<span class="field-line"></span></div>
+        <div>用时：<span class="field-line" style="min-width:56px;"></span> 分</div>
+        <div>得分：<span class="field-line" style="min-width:56px;"></span></div>
+      </div>
+      <table class="score-table">
+        <tr>
+          <th style="width:14%;">题号</th>
+          <th>一、深度辨析（12分）</th>
+          <th>二、精准选择（12分）</th>
+          <th>三、脚手架填空（20分）</th>
+          <th>四、压轴攻坚（56分）</th>
+          <th style="width:13%;">总分（100分）</th>
+        </tr>
+        <tr>
+          <th>得分</th>
+          <td></td><td></td><td></td><td></td><td></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 一、深度辨析题 -->
+    <div class="section-title">一、深度辨析题<span class="pts">（判断“√”或“×”，<strong>错的必须在横线上写出理由或举反例</strong>。每题3分，共12分）</span></div>
+
+    <div class="reason-item">
+      <div class="reason-stem">
+        <span><span class="q-num">1.</span><span class="origin-tag">量纲重塑</span>一个直径是 4 dm 的圆，它的周长和面积相等；若把直径换算成 40 cm，周长和面积就不再相等了。</span>
+        <span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span>
+      </div>
+      <div class="reason-line"><span>理由/反例：</span><span class="line-fill"></span></div>
+    </div>
+
+    <div class="reason-item">
+      <div class="reason-stem">
+        <span><span class="q-num">2.</span><span class="origin-tag">一维增量</span>小圆半径 10 m、大圆半径 50 m，若两圆半径都向外增加 2 m，大圆周长增加的长度比小圆周长增加得更多。</span>
+        <span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span>
+      </div>
+      <div class="reason-line"><span>理由/反例：</span><span class="line-fill"></span></div>
+    </div>
+
+    <div class="reason-item">
+      <div class="reason-stem">
+        <span><span class="q-num">3.</span><span class="origin-tag">二维增量</span>接第 2 题，若小圆（<i>r</i>＝10 m）和大圆（<i>r</i>＝50 m）半径都向外增加 2 m，两圆增加的环形面积一样大。</span>
+        <span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span>
+      </div>
+      <div class="reason-line"><span>理由/反例：</span><span class="line-fill"></span></div>
+    </div>
+
+    <div class="reason-item" style="margin-bottom:4px;">
+      <div class="reason-stem">
+        <span><span class="q-num">4.</span><span class="origin-tag">量纲比值</span>对于任意大小的圆，它的“面积 ÷ 半径的平方”（<i>S</i> ÷ <i>r</i>²）总是固定不变的数 π，而“面积 ÷ 直径”（<i>S</i> ÷ <i>d</i>）会随圆变大而变大。</span>
+        <span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span>
+      </div>
+      <div class="reason-line"><span>理由/反例：</span><span class="line-fill"></span></div>
+    </div>
+
+    <!-- 二、具体量与分率精准选择 -->
+    <div class="section-title">二、精准选择题<span class="pts">（辨析具体量与分率、铺垫单位“1”转化。每题3分，共12分）</span></div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span class="q-num">1.</span><span class="origin-tag">一根分两段</span>一根钢管锯成两段，第一段占全长的 <span class="frac"><span class="num">3</span><span class="den">8</span></span>，第二段长 <span class="frac"><span class="num">3</span><span class="den">8</span></span> 米，两段钢管相比，（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。
+      </div>
+      <div class="choice-opts">
+        <div>A. 第一段长</div>
+        <div>B. 第二段长</div>
+        <div>C. 一样长</div>
+        <div>D. 无法比较</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span class="q-num">2.</span><span class="origin-tag">两根逆推原长</span>两根同样长的电线，第一根剪去 <span class="frac"><span class="num">4</span><span class="den">7</span></span> 米，第二根剪去全长的 <span class="frac"><span class="num">4</span><span class="den">7</span></span>。如果<strong>第一根剩下的比第二根剩下的长</strong>，那么原来每根电线的长度一定（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。
+      </div>
+      <div class="choice-opts-2">
+        <div>A. 大于 1 米</div>
+        <div>B. 等于 1 米</div>
+        <div>C. 小于 1 米（且不小于 <span class="frac"><span class="num">4</span><span class="den">7</span></span> 米）</div>
+        <div>D. 无法确定</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span class="q-num">3.</span><span class="origin-tag">单位“1”切换</span>一匹布，第一天用去全长的 <span class="frac"><span class="num">1</span><span class="den">5</span></span>，第二天用去<strong>剩下的</strong> <span class="frac"><span class="num">1</span><span class="den">4</span></span>，两天用去的长度相比，（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。
+      </div>
+      <div class="choice-opts">
+        <div>A. 第一天长</div>
+        <div>B. 第二天长</div>
+        <div>C. 一样长</div>
+        <div>D. 无法比较</div>
+      </div>
+    </div>
+
+    <div class="choice-item" style="margin-bottom:4px;">
+      <div class="choice-stem">
+        <span class="q-num">4.</span><span class="origin-tag">五年级倍比溯源</span>书架上文艺书占总数的 <span class="frac"><span class="num">3</span><span class="den">8</span></span>，其余全是科学书。那么文艺书是科学书的（&nbsp;&nbsp;&nbsp;）；若科学书有 25 本，文艺书有（&nbsp;&nbsp;&nbsp;）本。
+      </div>
+      <div class="choice-opts">
+        <div>A. <span class="frac"><span class="num">3</span><span class="den">5</span></span>，15</div>
+        <div>B. <span class="frac"><span class="num">3</span><span class="den">8</span></span>，15</div>
+        <div>C. <span class="frac"><span class="num">5</span><span class="den">3</span></span>，20</div>
+        <div>D. <span class="frac"><span class="num">3</span><span class="den">5</span></span>，40</div>
+      </div>
+    </div>
+
+    <!-- 三、脚手架专项填空 -->
+    <div class="section-title">三、脚手架专项填空<span class="pts">（先打通“倒推单步”“不变量转化”“周长转面积差”三大关键环节！每空2分，共20分）</span></div>
+    <ol class="fill-list">
+      <li><span class="q-num">1.</span><span class="origin-tag">四年级还原溯源 · 倒推多与少</span>
+        （1）一根绳子用去全长的 <span class="frac"><span class="num">1</span><span class="den">3</span></span> 还<strong>多 4 米</strong>，还剩 12 米。说明全长的 <span class="frac"><span class="num">2</span><span class="den">3</span></span> 对应 <span class="blank blank-sm"></span> 米，绳子原长 <span class="blank blank-sm"></span> 米。<br>
+        （2）一筐苹果卖出全筐的 <span class="frac"><span class="num">2</span><span class="den">5</span></span> 还<strong>少 3 千克</strong>，还剩 21 千克。说明全筐的 <span class="frac"><span class="num">3</span><span class="den">5</span></span> 对应 <span class="blank blank-sm"></span> 千克，苹果原重 <span class="blank blank-sm"></span> 千克。
+      </li>
+      <li><span class="q-num">2.</span><span class="origin-tag">不变量单位“1”转化</span>
+        （1）某班男生占全班人数的 <span class="frac"><span class="num">4</span><span class="den">9</span></span>，男生人数是女生人数的 <span class="blank blank-sm"></span>；后来转来几名男生（女生人数不变），这时男生占现在全班人数的 <span class="frac"><span class="num">1</span><span class="den">2</span></span>，此时男生人数是女生人数的 <span class="blank blank-sm"></span> 倍。<br>
+        （2）一杯糖水中，糖占糖水的 <span class="frac"><span class="num">1</span><span class="den">6</span></span>，则糖占水的 <span class="blank blank-sm"></span>；再加入 10 g 糖（水量不变）后，糖占水的 <span class="frac"><span class="num">2</span><span class="den">5</span></span>，杯中原有水 <span class="blank blank-sm"></span> g。
+      </li>
+      <li style="margin-bottom:0;"><span class="q-num">3.</span><span class="origin-tag">周长转面积差防错</span>
+        两个圆的周长分别是 25.12 cm 和 12.56 cm，大圆的半径是 <span class="blank blank-sm"></span> cm，大圆面积比小圆面积多 <span class="blank"></span> cm²。
+      </li>
+    </ol>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学错题重塑攻坚卷（辨析 · 倒推 · 抓不变量 · 围圆综合）</span>
+    <span>第 1 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 2 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="section-title" style="margin-top:0;">四、核心压轴重塑与进阶<span class="pts">（每类薄弱题型配“同型巩固 + 进阶变式”双倍强化，请写出完整步骤。共6题，共56分）</span></div>
+
+    <div class="app-item" style="min-height:212px;">
+      <div class="app-stem">
+        <span class="q-num">1.</span><span class="origin-tag">倒推法 · 同型巩固 · 8分</span>
+        一袋大米，第一周吃了总数的 <span class="frac"><span class="num">1</span><span class="den">3</span></span> 还<strong>多 4 千克</strong>，第二周吃了<strong>余下的</strong> <span class="frac"><span class="num">1</span><span class="den">4</span></span> 还<strong>少 1 千克</strong>，这时袋里还剩 19 千克大米。这袋大米原来重多少千克？
+      </div>
+      <div class="app-ans-line">答：这袋大米原来重 <span class="blank"></span> 千克。</div>
+    </div>
+
+    <div class="app-item" style="min-height:216px;">
+      <div class="app-stem">
+        <span class="q-num">2.</span><span class="origin-tag">倒推法 · 进阶挑战 · 10分</span>
+        修路队修一条公路，第一天修了全长的 <span class="frac"><span class="num">1</span><span class="den">5</span></span> 还<strong>多 10 米</strong>，第二天修了<strong>剩下的</strong> <span class="frac"><span class="num">2</span><span class="den">5</span></span> 还<strong>少 6 米</strong>，第三天把最后剩下的 48 米全部修完。这条公路全长多少米？
+      </div>
+      <div class="app-ans-line">答：这条公路全长 <span class="blank"></span> 米。</div>
+    </div>
+
+    <div class="app-item" style="min-height:216px;">
+      <div class="app-stem">
+        <span class="q-num">3.</span><span class="origin-tag">抓不变量 · 单一量不变巩固 · 9分</span>
+        学校合唱队原有男生和女生共若干人，其中女生占总人数的 <span class="frac"><span class="num">3</span><span class="den">7</span></span>。本学期又新招了 12 名女生（男生人数不变），这时女生占现在总人数的 <span class="frac"><span class="num">3</span><span class="den">5</span></span>。合唱队原来一共有多少人？
+      </div>
+      <div class="app-ans-line">答：合唱队原来一共有 <span class="blank"></span> 人。</div>
+    </div>
+
+    <div class="app-item" style="min-height:216px; margin-bottom:0;">
+      <div class="app-stem">
+        <span class="q-num">4.</span><span class="origin-tag">抓不变量 · 总数不变进阶对比 · 10分</span>
+        甲、乙两个书架上共有若干本书，原来甲书架上的书占总数的 <span class="frac"><span class="num">3</span><span class="den">8</span></span>。如果从乙书架拿 15 本书放到甲书架上，这时甲书架上的书就占总数的 <span class="frac"><span class="num">1</span><span class="den">2</span></span>。甲、乙两个书架原来各有多少本书？
+      </div>
+      <div class="app-ans-line">答：甲书架原有 <span class="blank"></span> 本，乙书架原有 <span class="blank"></span> 本。</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学错题重塑攻坚卷（辨析 · 倒推 · 抓不变量 · 围圆综合）</span>
+    <span>第 2 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 3 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="app-item" style="min-height:315px;">
+      <div class="app-stem">
+        <span class="q-num">5.</span><span class="origin-tag">量率对应 + 围圆 · 同型巩固 · 9分</span>
+        一根铁丝剪成两段，第一段占全长的 <span class="frac"><span class="num">3</span><span class="den">7</span></span>，第二段长 25.12 米。<br>
+        （1）这根铁丝全长多少米？第一段长多少米？（4分）<br>
+        （2）如果把这两段铁丝分别围成一个圆，<strong>两个圆的面积之和</strong>是多少平方米？<strong>大圆面积比小圆面积多</strong>多少平方米？（5分）
+      </div>
+      <div class="app-ans-line">答：（1）全长 <span class="blank"></span> 米，第一段长 <span class="blank"></span> 米；（2）面积之和 <span class="blank"></span> 平方米，多 <span class="blank"></span> 平方米。</div>
+    </div>
+
+    <div class="app-item" style="min-height:345px;">
+      <div class="app-stem">
+        <span class="q-num">6.</span><span class="origin-tag">终极融合压轴 · 连续用去 + 围圆二维缩放 · 10分</span>
+        一根铜丝，第一次用去全长的 <span class="frac"><span class="num">1</span><span class="den">4</span></span>，第二次用去<strong>剩下的</strong> <span class="frac"><span class="num">1</span><span class="den">3</span></span>，这时还剩下 37.68 米。<br>
+        （1）这根铜丝原来全长多少米？（4分）<br>
+        （2）如果把<strong>第一次用去的铜丝</strong>围成一个小圆，把<strong>最后剩下的铜丝</strong>围成一个大圆，大圆的面积是小圆面积的几倍？大圆的面积比小圆的面积多多少平方米？（6分）
+      </div>
+      <div class="app-ans-line">答：（1）全长 <span class="blank"></span> 米；（2）是小圆面积的 <span class="blank blank-sm"></span> 倍，多 <span class="blank"></span> 平方米。</div>
+    </div>
+
+    <div class="check-box">
+      <h4>✅ 交卷前 30 秒防错自查清单（做完勾选，养成满分解题习惯）</h4>
+      <div>□ <strong>量纲核查</strong>：辨析题里遇到“周长/面积/体积相等”，我检查单位维度了吗？遇到“增加量”，我区分一维（2πΔ<i>r</i> 恒定）和二维（π(<i>R</i>²－<i>r</i>²) 随半径变）了吗？</div>
+      <div>□ <strong>倒推验算</strong>：第 1、2 题算出的原重/全长，我<strong>顺着题目条件从头算一遍</strong>，看最后剩的是不是正好 19 千克和 48 米？</div>
+      <div>□ <strong>不变量核查</strong>：第 3 题“招新女生”不变量是________；第 4 题“乙拿给甲”不变量是________。我顺推验算过结果吗？</div>
+      <div>□ <strong>圆公式核查</strong>：第 5、6 题由周长求半径时，我除以 3.14 后<strong>再除以 2</strong> 了吗？算面积差用的是 π(<i>R</i>²－<i>r</i>²) 而不是 π(<i>R</i>－<i>r</i>)² 吗？</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学错题重塑攻坚卷（辨析 · 倒推 · 抓不变量 · 围圆综合）</span>
+    <span>第 3 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 4 页：参考答案与方法拆解 ==================== -->
+<div class="sheet answer-page">
+  <div class="sheet-content">
+    <div class="ans-header">
+      <h2>参考答案、评分标准与核心方法图解</h2>
+      <p>六年级数学错题重塑攻坚卷 ｜ 建议带孩子用“正向代入验算法”复盘每一道压轴题</p>
+    </div>
+
+    <div class="ans-sec">
+      <h3>一、深度辨析题（每题3分：判断1分，理由/反例2分，共12分）</h3>
+      <div class="ans-p"><strong>1. ×</strong>　周长（长度单位）与面积（面积单位）量纲不同，无论用 dm 还是 cm 都<strong>永远不能说相等</strong>（<i>d</i>＝4 dm 时只是数值相等）。</div>
+      <div class="ans-p"><strong>2. ×</strong>　周长增量 Δ<i>C</i>＝2πΔ<i>r</i>＝2×3.14×2＝12.56 m，与原来半径大小无关，大圆和小圆周长增加得<strong>一样多</strong>。</div>
+      <div class="ans-p"><strong>3. ×</strong>　小圆增加面积 π(12²－10²)＝44π（m²），大圆增加面积 π(52²－50²)＝204π（m²），原半径越大，面积增加越多。</div>
+      <div class="ans-p"><strong>4. √</strong>　<i>S</i>÷<i>r</i>²＝π（无量纲定值）；<i>S</i>÷<i>d</i>＝π<i>r</i>²÷(2<i>r</i>)＝<span class="frac"><span class="num">1</span><span class="den">2</span></span>π<i>r</i>，含长度量纲 <i>r</i>，随圆变大而变大。</div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>二、精准选择题（每题3分，共12分）</h3>
+      <div class="ans-p">
+        <strong>1. B</strong>（第二段占 1－3/8＝5/8 ＞ 3/8） &nbsp;&nbsp;
+        <strong>2. A</strong>（第一根剩得长 ⇒ 剪得短 ⇒ 4/7 ＜ 4/7·<i>L</i> ⇒ <i>L</i>＞1 m） &nbsp;&nbsp;
+        <strong>3. C</strong>（第二天占 4/5×1/4＝1/5） &nbsp;&nbsp;
+        <strong>4. A</strong>（3÷(8－3)＝3/5；25×3/5＝15）
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>三、脚手架专项填空（每空2分，共20分）</h3>
+      <div class="ans-p">
+        <strong>1.</strong>（1）<strong>16</strong>（12＋4）；<strong>24</strong>（16÷2/3） &nbsp;（2）<strong>18</strong>（21－3）；<strong>30</strong>（18÷3/5）<br>
+        <strong>2.</strong>（1）<strong><span class="frac"><span class="num">4</span><span class="den">5</span></span></strong>；<strong>1</strong> &nbsp;&nbsp;（2）<strong><span class="frac"><span class="num">1</span><span class="den">5</span></span></strong>；<strong>50</strong>（10 ÷ (2/5－1/5)） &nbsp;&nbsp;&nbsp;
+        <strong>3.</strong> <strong>4</strong>；<strong>37.68</strong>（<i>R</i>＝4，<i>r</i>＝2，3.14×(16－4)＝37.68）
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>四、核心压轴重塑与进阶（共56分）</h3>
+      <div class="ans-p"><strong>1.（8分 · 倒推法）</strong><br>
+        &nbsp;&nbsp;① 第一周后余下：(19 － 1) ÷ (1 － <span class="frac"><span class="num">1</span><span class="den">4</span></span>) ＝ 18 ÷ <span class="frac"><span class="num">3</span><span class="den">4</span></span> ＝ 24（千克）（4分）<br>
+        &nbsp;&nbsp;② 原重：(24 ＋ 4) ÷ (1 － <span class="frac"><span class="num">1</span><span class="den">3</span></span>) ＝ 28 ÷ <span class="frac"><span class="num">2</span><span class="den">3</span></span> ＝ <strong>42（千克）</strong>（4分）　<span style="color:#475569;">[验算：42×1/3＋4＝18，余24；24×1/4－1＝5，剩19 √]</span>
+      </div>
+      <div class="ans-p"><strong>2.（10分 · 倒推法进阶）</strong><br>
+        &nbsp;&nbsp;① 第一天后剩下：(48 － 6) ÷ (1 － <span class="frac"><span class="num">2</span><span class="den">5</span></span>) ＝ 42 ÷ <span class="frac"><span class="num">3</span><span class="den">5</span></span> ＝ 70（米）（5分）<br>
+        &nbsp;&nbsp;② 全长：(70 ＋ 10) ÷ (1 － <span class="frac"><span class="num">1</span><span class="den">5</span></span>) ＝ 80 ÷ <span class="frac"><span class="num">4</span><span class="den">5</span></span> ＝ <strong>100（米）</strong>（5分）　<span style="color:#475569;">[验算：100×1/5＋10＝30，余70；70×2/5－6＝22，剩48 √]</span>
+      </div>
+      <div class="ans-p"><strong>3.（9分 · 抓单一不变量：男生人数）</strong><br>
+        &nbsp;&nbsp;原来女生占总数的 <span class="frac"><span class="num">3</span><span class="den">7</span></span> ⇒ 女生是男生的 <span class="frac"><span class="num">3</span><span class="den">4</span></span>；现在女生占总数的 <span class="frac"><span class="num">3</span><span class="den">5</span></span> ⇒ 女生是男生的 <span class="frac"><span class="num">3</span><span class="den">2</span></span>；<br>
+        &nbsp;&nbsp;男生人数：12 ÷ (<span class="frac"><span class="num">3</span><span class="den">2</span></span> － <span class="frac"><span class="num">3</span><span class="den">4</span></span>) ＝ 12 ÷ <span class="frac"><span class="num">3</span><span class="den">4</span></span> ＝ 16（人）（5分）；原来总人数：16 ÷ (1 － <span class="frac"><span class="num">3</span><span class="den">7</span></span>) ＝ <strong>28（人）</strong>（4分）。
+      </div>
+      <div class="ans-p"><strong>4.（10分 · 抓总和不变量：两书架总数）</strong><br>
+        &nbsp;&nbsp;内部调动，<strong>总数不变</strong>！总本数：15 ÷ (<span class="frac"><span class="num">1</span><span class="den">2</span></span> － <span class="frac"><span class="num">3</span><span class="den">8</span></span>) ＝ 15 ÷ <span class="frac"><span class="num">1</span><span class="den">8</span></span> ＝ 120（本）（5分）；<br>
+        &nbsp;&nbsp;原来甲书架：120 × <span class="frac"><span class="num">3</span><span class="den">8</span></span> ＝ <strong>45（本）</strong>（2.5分）；原来乙书架：120 － 45 ＝ <strong>75（本）</strong>（2.5分）。
+      </div>
+      <div class="ans-p"><strong>5.（9分 · 量率对应 + 围圆）</strong><br>
+        &nbsp;&nbsp;（1）第二段占 1 － <span class="frac"><span class="num">3</span><span class="den">7</span></span> ＝ <span class="frac"><span class="num">4</span><span class="den">7</span></span>，全长：25.12 ÷ <span class="frac"><span class="num">4</span><span class="den">7</span></span> ＝ <strong>43.96（米）</strong>，第一段：43.96 － 25.12 ＝ <strong>18.84（米）</strong>（4分）；<br>
+        &nbsp;&nbsp;（2）大圆半径 <i>R</i> ＝ 25.12÷3.14÷2 ＝ 4（米），小圆半径 <i>r</i> ＝ 18.84÷3.14÷2 ＝ 3（米）；<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面积之和：3.14×(4²＋3²)＝3.14×25＝<strong>78.5（平方米）</strong>；面积之差：3.14×(4²－3²)＝3.14×7＝<strong>21.98（平方米）</strong>（5分）。
+      </div>
+      <div class="ans-p"><strong>6.（10分 · 终极融合压轴）</strong><br>
+        &nbsp;&nbsp;（1）第二次用去全长的 (1－<span class="frac"><span class="num">1</span><span class="den">4</span></span>)×<span class="frac"><span class="num">1</span><span class="den">3</span></span>＝<span class="frac"><span class="num">1</span><span class="den">4</span></span>，剩下全长的 1－<span class="frac"><span class="num">1</span><span class="den">4</span></span>－<span class="frac"><span class="num">1</span><span class="den">4</span></span>＝<span class="frac"><span class="num">1</span><span class="den">2</span></span>；全长：37.68 ÷ <span class="frac"><span class="num">1</span><span class="den">2</span></span> ＝ <strong>75.36（米）</strong>（4分）；<br>
+        &nbsp;&nbsp;（2）第一次用去：75.36 × <span class="frac"><span class="num">1</span><span class="den">4</span></span> ＝ 18.84（米）⇒ <i>r</i> ＝ 3（米）；剩下 37.68 米 ⇒ <i>R</i> ＝ 6（米）；<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;半径是 2 倍 ⇒ 大圆面积是小圆面积的 2² ＝ <strong>4 倍</strong>（2分）；面积差：3.14×(6²－3²)＝3.14×27＝<strong>84.78（平方米）</strong>（4分）。
+      </div>
+    </div>
+
+    <div class="method-box">
+      <strong>两大压轴解题口诀（带孩子画线段图理解）：</strong><br>
+      ① <strong>倒推法口诀（从后往前退）</strong>：“用去几分之几<strong>还多 <i>a</i></strong>”→ 多用导致剩得少，倒推要<strong>先加 <i>a</i></strong>，再除以 (1－分率)；“用去几分之几<strong>还少 <i>b</i></strong>”→ 少用导致剩得多，倒推要<strong>先减 <i>b</i></strong>，再除以 (1－分率)！<br>
+      ② <strong>抓不变量两步法</strong>：第一步先问<strong>“谁变了？谁没变？”</strong>（外来增减 → 另一量不变；内部互调 → 总数不变）；第二步<strong>把不变量设为单位“1”</strong>，用“变化的具体量 ÷ 对应的分率差 ＝ 不变量”一招秒杀！
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学错题重塑攻坚卷（辨析 · 倒推 · 抓不变量 · 围圆综合）</span>
+    <span>参考答案与方法拆解</span>
+  </div>
+</div>
+
+<script>
+  function printMode(mode) {
+    document.body.classList.remove('print-exam-only', 'print-ans-only');
+    if (mode === 'exam') document.body.classList.add('print-exam-only');
+    if (mode === 'ans') document.body.classList.add('print-ans-only');
+    window.print();
+    setTimeout(() => {
+      document.body.classList.remove('print-exam-only', 'print-ans-only');
+    }, 300);
+  }
+</script>
+</body>
+</html>
