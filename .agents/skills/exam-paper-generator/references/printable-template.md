@@ -143,7 +143,8 @@
       page-break-after: always;
       break-after: page;
     }
-    .sheet:last-of-type {
+    .sheet:last-of-type,
+    .sheet.is-last-visible {
       page-break-after: auto;
       break-after: auto;
     }
@@ -216,12 +217,23 @@
   ];
   function printMode(mode) {
     document.body.classList.remove(...PRINT_CLASSES);
+    document.querySelectorAll('.sheet.is-last-visible')
+      .forEach(el => el.classList.remove('is-last-visible'));
     if (mode === 'exam') document.body.classList.add('print-exam-only');
     if (mode === 'answer') document.body.classList.add('print-answer-only');
     if (mode === 'analysis') document.body.classList.add('print-analysis-only');
     if (mode === 'answer-analysis') document.body.classList.add('print-answer-analysis');
+    const visibleSheets = Array.from(document.querySelectorAll('.sheet'))
+      .filter(el => getComputedStyle(el).display !== 'none');
+    if (visibleSheets.length > 0) {
+      visibleSheets[visibleSheets.length - 1].classList.add('is-last-visible');
+    }
     window.print();
-    setTimeout(() => document.body.classList.remove(...PRINT_CLASSES), 300);
+    setTimeout(() => {
+      document.body.classList.remove(...PRINT_CLASSES);
+      document.querySelectorAll('.sheet.is-last-visible')
+        .forEach(el => el.classList.remove('is-last-visible'));
+    }, 300);
   }
 </script>
 </body>
