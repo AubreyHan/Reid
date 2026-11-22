@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>小学六年级英语上册第一单元测试卷（进阶强化卷 · 含听力 · A4可打印版）</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 13mm 12mm 13mm;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+    color: #1a1a1a;
+    background: #eef1f5;
+    margin: 0;
+    padding: 18px 0 40px 0;
+    font-size: 12px;
+    line-height: 1.48;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 顶部打印工具栏（打印时自动隐藏） */
+  .no-print-banner {
+    width: 210mm;
+    margin: 0 auto 12px auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #1d4ed8;
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .banner-info { font-size: 12.2px; color: #334155; }
+  .banner-info strong { color: #0f172a; font-size: 13.8px; }
+  .banner-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: flex-end;
+    flex-shrink: 0;
+  }
+  .btn {
+    border: none;
+    padding: 6px 11px;
+    font-size: 11.8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: inherit;
+  }
+  .btn-primary { background: #1d4ed8; color: #fff; }
+  .btn-primary:hover { background: #1e40af; }
+  .btn-secondary { background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; }
+  .btn-secondary:hover { background: #e2e8f0; }
+
+  /* 音频播放条（仅屏幕可见，打印自动隐藏） */
+  .audio-bar {
+    width: 210mm;
+    margin: 0 auto 14px auto;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 9px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 12px;
+    color: #1e293b;
+  }
+  .audio-bar audio { flex: 1; height: 34px; }
+
+  /* A4纸张容器 */
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 18px auto;
+    background: #ffffff;
+    padding: 12mm 13mm 11mm 13mm;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .sheet-content { flex: 1; }
+
+  .page-footer {
+    margin-top: auto;
+    padding-top: 5px;
+    border-top: 1px solid #d4d4d8;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.4px;
+    color: #666;
+  }
+
+  .choice-item, .passage-box, .ans-sec, .analysis-card, .rubric-table, .spec-table, .board-table {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* 卷头 */
+  .exam-header { text-align: center; margin-bottom: 4px; }
+  .exam-title {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    margin: 0 0 1px 0;
+    color: #000;
+    font-family: "Songti SC", "STSong", "PingFang SC", serif;
+  }
+  .exam-unit-tag { font-size: 11.8px; font-weight: 600; color: #1e293b; margin: 0 0 1px 0; }
+  .exam-subtitle { font-size: 10.2px; color: #475569; margin: 0 0 4px 0; }
+  .student-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 11.5px;
+    margin-bottom: 4px;
+  }
+  .student-info .field-line {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 68px;
+    height: 12px;
+    vertical-align: bottom;
+  }
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+    font-size: 10px;
+  }
+  .score-table th, .score-table td {
+    border: 1px solid #333;
+    text-align: center;
+    padding: 1.5px 2px;
+  }
+  .score-table th { background: #f5f5f5; font-weight: 600; }
+  .score-table td { height: 15px; }
+
+  .part-banner {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #0f172a;
+    background: #f1f5f9;
+    border: 1px solid #64748b;
+    border-radius: 4px;
+    padding: 2px 10px;
+    margin: 4px 0 3px 0;
+  }
+  .audio-file-note {
+    text-align: center;
+    font-size: 9.8px;
+    color: #475569;
+    margin: 0 0 3px 0;
+  }
+
+  .section-title {
+    font-size: 12.4px;
+    font-weight: 700;
+    color: #000;
+    margin: 5px 0 2.5px 0;
+    padding-bottom: 1.5px;
+    border-bottom: 1.1px solid #333;
+  }
+  .section-title .pts { font-size: 10.4px; font-weight: 400; color: #333; margin-left: 4px; }
+  .sub-title { font-size: 11.5px; font-weight: 700; margin: 4.5px 0 2px 0; color: #111; }
+  .sub-title .pts { font-size: 10.3px; font-weight: 400; color: #444; }
+
+  .u-sound { text-decoration: underline; text-underline-offset: 2px; font-weight: 700; }
+  .u-target { text-decoration: underline; text-underline-offset: 3px; }
+
+  .blank {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 58px;
+    text-align: center;
+    margin: 0 2px;
+    height: 13px;
+    vertical-align: baseline;
+  }
+  .blank-xs { min-width: 38px; }
+  .blank-sm { min-width: 48px; }
+  .blank-md { min-width: 84px; }
+  .blank-lg { min-width: 108px; }
+
+  .paren {
+    display: inline-block;
+    min-width: 36px;
+    text-align: center;
+    flex-shrink: 0;
+    font-family: "PingFang SC", Arial, sans-serif;
+  }
+
+  .q-list { margin: 0; padding: 0; list-style: none; }
+  .q-list > li { margin-bottom: 2.5px; }
+  .q-num { font-weight: 700; margin-right: 2px; }
+
+  .listen-opt-list { margin: 2px 0 3px 0; padding: 0; list-style: none; }
+  .listen-opt-list li {
+    display: grid;
+    grid-template-columns: 36px 22px 1fr 1fr 1fr;
+    align-items: baseline;
+    margin-bottom: 1.5px;
+    font-size: 11.5px;
+  }
+
+  .odd-list { margin: 2px 0 4px 0; padding: 0; list-style: none; }
+  .odd-list li {
+    display: grid;
+    grid-template-columns: 36px 22px 1fr 1fr 1fr 1fr;
+    align-items: baseline;
+    margin-bottom: 2px;
+    font-size: 11.6px;
+  }
+
+  .choice-item { margin-bottom: 2.5px; line-height: 1.4; font-size: 11.5px; }
+  .choice-stem { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; }
+  .choice-opts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 6px;
+    row-gap: 1px;
+    padding-left: 16px;
+    margin-top: 0.5px;
+    font-size: 11.2px;
+  }
+  .choice-opts-3col { grid-template-columns: repeat(3, 1fr); }
+  .choice-opts-2col { grid-template-columns: repeat(2, 1fr); }
+
+  .tf-list { margin: 2px 0 4px 0; padding: 0; list-style: none; font-size: 11.5px; }
+  .tf-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+
+  .listen-cloze {
+    border: 1px solid #64748b;
+    border-radius: 5px;
+    background: #fcfcfd;
+    padding: 5px 10px;
+    margin-top: 2.5px;
+    font-size: 11.5px;
+    line-height: 1.68;
+    text-align: justify;
+  }
+
+  .write-line {
+    border-bottom: 1.1px solid #333;
+    height: 18px;
+    width: 100%;
+    line-height: 18px;
+  }
+  .sentence-ans { margin: 1px 0 3.5px 18px; }
+
+  /* 完形填空框 */
+  .cloze-box {
+    border: 1px solid #64748b;
+    border-radius: 5px;
+    background: #fcfcfd;
+    padding: 5px 10px;
+    margin: 3px 0 4px 0;
+    font-size: 11.5px;
+    line-height: 1.5;
+    text-align: justify;
+    text-indent: 1.8em;
+  }
+
+  /* 分享板表格（非连续性文本） */
+  .board-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 3px 0 5px 0;
+    font-size: 11px;
+    line-height: 1.38;
+  }
+  .board-table th, .board-table td {
+    border: 1px solid #64748b;
+    padding: 3.5px 6px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .board-table th {
+    background: #f1f5f9;
+    text-align: center;
+    font-weight: 700;
+  }
+  .board-table td.name-col {
+    text-align: center;
+    font-weight: 700;
+    background: #f8fafc;
+  }
+
+  /* 阅读文章框 */
+  .passage-box {
+    border: 1px solid #64748b;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background: #fcfcfd;
+    margin: 3px 0 4px 0;
+    font-size: 11.3px;
+    line-height: 1.42;
+  }
+  .passage-title { text-align: center; font-size: 12.2px; font-weight: 700; margin: 0 0 2px 0; color: #000; }
+  .passage-meta { font-size: 10.6px; font-weight: 600; color: #334155; margin-bottom: 2px; }
+  .passage-box p { margin: 0 0 2px 0; text-indent: 1.8em; text-align: justify; }
+  .passage-box p:last-child { margin-bottom: 0; }
+
+  /* 邮件书面表达框 */
+  .writing-prompt {
+    border: 1px solid #64748b;
+    border-radius: 5px;
+    padding: 5px 9px;
+    background: #fcfcfd;
+    margin: 3px 0 4px 0;
+    font-size: 11.2px;
+    line-height: 1.4;
+  }
+  .mindmap-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    margin: 4px 0 3px 0;
+  }
+  .mm-card {
+    border: 1px solid #64748b;
+    border-radius: 4px;
+    padding: 3px 4px;
+    background: #fff;
+    text-align: center;
+    font-size: 10.2px;
+    line-height: 1.28;
+  }
+  .mm-card strong {
+    display: block;
+    font-size: 10.5px;
+    color: #0f172a;
+    border-bottom: 1px dashed #94a3b8;
+    padding-bottom: 1px;
+    margin-bottom: 1.5px;
+  }
+  .mm-card span { color: #475569; font-size: 9.8px; }
+
+  .email-box {
+    border: 1px solid #64748b;
+    border-radius: 5px;
+    padding: 5px 12px 7px 12px;
+    background: #fff;
+    margin-top: 4px;
+  }
+  .email-meta {
+    font-size: 10.8px;
+    color: #1e293b;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 3px;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .email-salutation { font-size: 11.4px; font-weight: 600; margin-bottom: 1px; }
+  .email-sign { text-align: right; font-size: 11.2px; font-weight: 600; margin-top: 2px; }
+  .eng-line {
+    height: 20px;
+    border-bottom: 1.1px solid #444;
+    position: relative;
+  }
+  .eng-line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10.5px;
+    border-bottom: 1px dashed #cbd5e1;
+  }
+
+  .self-check-box {
+    margin-top: 4px;
+    border: 1px dashed #64748b;
+    border-radius: 5px;
+    padding: 3.5px 9px;
+    background: #f8fafc;
+    font-size: 10.4px;
+    color: #334155;
+  }
+  .self-check-title { font-weight: 700; color: #0f172a; margin-bottom: 1.5px; }
+  .self-check-items { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px 12px; }
+
+  /* 答案与分析样式 */
+  .ans-header {
+    text-align: center;
+    border-bottom: 1.8px solid #1e293b;
+    padding-bottom: 4px;
+    margin-bottom: 5px;
+  }
+  .ans-header h2 { margin: 0; font-size: 14.8px; color: #0f172a; }
+  .ans-header p { margin: 2px 0 0 0; font-size: 10px; color: #475569; }
+  .ans-sec { margin-bottom: 5px; font-size: 10.6px; line-height: 1.42; }
+  .ans-sec h3 {
+    font-size: 11.2px;
+    margin: 0 0 2.5px 0;
+    padding: 1.5px 7px;
+    background: #f1f5f9;
+    border-left: 3px solid #1d4ed8;
+    color: #0f172a;
+  }
+  .ans-p { margin: 2px 0; text-align: justify; }
+  .script-item { margin: 2px 0; padding-left: 4px; }
+  .script-passage {
+    border: 1px solid #94a3b8;
+    background: #f8fafc;
+    border-radius: 4px;
+    padding: 5px 9px;
+    margin-top: 2.5px;
+    font-size: 10.8px;
+    line-height: 1.48;
+    text-align: justify;
+  }
+  .tip-note { font-size: 9.8px; color: #475569; }
+  .rubric-table, .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2.5px;
+    font-size: 9.8px;
+    line-height: 1.32;
+  }
+  .rubric-table th, .rubric-table td,
+  .spec-table th, .spec-table td {
+    border: 1px solid #94a3b8;
+    padding: 2px 5px;
+    text-align: left;
+  }
+  .rubric-table th, .spec-table th { background: #f1f5f9; font-weight: 600; text-align: center; }
+  .spec-table td.c { text-align: center; }
+  .sample-essay {
+    border: 1px solid #94a3b8;
+    background: #f8fafc;
+    border-radius: 4px;
+    padding: 4.5px 9px;
+    margin-top: 3px;
+    font-size: 10.1px;
+    line-height: 1.38;
+  }
+
+  .analysis-card {
+    border: 1px solid #94a3b8;
+    border-radius: 5px;
+    padding: 4.5px 8.5px;
+    margin-bottom: 5px;
+    background: #ffffff;
+    font-size: 10.3px;
+    line-height: 1.4;
+  }
+  .analysis-card-title {
+    font-weight: 700;
+    font-size: 11px;
+    color: #0f172a;
+    border-bottom: 1px dashed #cbd5e1;
+    padding-bottom: 1.5px;
+    margin-bottom: 2.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .diff-badge {
+    font-size: 9.5px;
+    font-weight: 600;
+    border: 1px solid #64748b;
+    border-radius: 3px;
+    padding: 0 5px;
+    background: #f8fafc;
+    color: #1e293b;
+  }
+  .target-tag {
+    font-size: 9.5px;
+    font-weight: 700;
+    border: 1px solid #1d4ed8;
+    border-radius: 3px;
+    padding: 0 5px;
+    background: #eff6ff;
+    color: #1e40af;
+    margin-left: 5px;
+  }
+  .analysis-grid { margin: 0; padding: 0; list-style: none; }
+  .analysis-grid li { margin-bottom: 1.5px; text-align: justify; }
+  .analysis-grid li:last-child { margin-bottom: 0; }
+
+  /* 分模块打印模式 */
+  body.print-exam-only .part-answer,
+  body.print-exam-only .part-analysis { display: none !important; }
+
+  body.print-answer-only .part-exam,
+  body.print-answer-only .part-analysis { display: none !important; }
+
+  body.print-analysis-only .part-exam,
+  body.print-analysis-only .part-answer { display: none !important; }
+
+  body.print-answer-analysis .part-exam { display: none !important; }
+
+  @media print {
+    body { background: #fff; padding: 0; margin: 0; }
+    .no-print, .no-print-banner, .audio-bar { display: none !important; }
+    .sheet {
+      width: auto;
+      height: 270mm;
+      min-height: 270mm;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      page-break-after: always;
+      break-after: page;
+    }
+    .sheet:last-of-type,
+    .sheet.is-last-visible {
+      page-break-after: auto;
+      break-after: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- 顶部打印工具栏（打印自动隐藏） -->
+<div class="no-print-banner">
+  <div class="banner-info">
+    <strong>小学六年级英语上册第一单元测试卷 · 进阶强化卷（含听力 · A4 可打印版）</strong><br>
+    北京版（2022课标修订）Unit One ｜ 专项强化：过去式词形 / are·air·ere·here辨音 / 高频词拼写 / 完整句人称转换
+  </div>
+  <div class="banner-actions">
+    <button class="btn btn-primary" onclick="printMode('all')">打印完整版</button>
+    <button class="btn btn-secondary" onclick="printMode('exam')">仅打印空白试卷</button>
+    <button class="btn btn-secondary" onclick="printMode('answer')">仅打印参考答案</button>
+    <button class="btn btn-secondary" onclick="printMode('analysis')">仅打印题目分析</button>
+    <button class="btn btn-secondary" onclick="printMode('answer-analysis')">仅打印答案与分析</button>
+  </div>
+</div>
+
+<!-- 配套听力音频播放条（同目录相对路径） -->
+<div class="audio-bar no-print">
+  <span><strong>配套听力音频：</strong><code>./小学六年级英语上册第一单元测试卷_进阶强化卷_听力.m4a</code></span>
+  <audio controls preload="metadata" src="./小学六年级英语上册第一单元测试卷_进阶强化卷_听力.m4a">
+    您的浏览器不支持音频播放，请直接打开同目录下的 <code>./小学六年级英语上册第一单元测试卷_进阶强化卷_听力.m4a</code>。
+  </audio>
+</div>
+
+<!-- ==================== 第一部分：空白试卷 · 第 1 页 ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content">
+    <div class="exam-header">
+      <h1 class="exam-title">小学六年级英语上册第一单元测试卷（进阶强化卷）</h1>
+      <div class="exam-unit-tag">Unit One: A Wonderful Summer Holiday（含听力 · 薄弱点精准强化）</div>
+      <div class="exam-subtitle">依据北京版义务教育教科书六年级上册第一单元编排 ｜ 难度：中等偏上 ｜ 满分：100分（听力30分＋笔试70分） ｜ 建议用时：60分钟</div>
+      <div class="student-info">
+        <span>班级：<span class="field-line"></span></span>
+        <span>姓名：<span class="field-line"></span></span>
+        <span>学号：<span class="field-line" style="min-width:52px;"></span></span>
+        <span>得分：<span class="field-line" style="min-width:52px;"></span></span>
+      </div>
+      <table class="score-table">
+        <tr>
+          <th style="width:7%;">题号</th>
+          <th colspan="4">听力部分（30分）</th>
+          <th colspan="7">笔试部分（70分）</th>
+          <th style="width:8%;">总分</th>
+        </tr>
+        <tr>
+          <th>小题</th>
+          <th>一</th><th>二</th><th>三</th><th>四</th>
+          <th>五</th><th>六</th><th>七</th><th>八</th><th>九</th><th>十</th><th>十一</th>
+          <th>100</th>
+        </tr>
+        <tr>
+          <td><strong>得分</strong></td>
+          <td></td><td></td><td></td><td></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="part-banner">第一部分：听力部分（Listening Part · 共 30 分）</div>
+    <div class="audio-file-note">配套音频文件：小学六年级英语上册第一单元测试卷_进阶强化卷_听力.m4a（请先浏览题目，听提示音开始作答）</div>
+
+    <!-- 一、听选单词或短语 -->
+    <div class="section-title">一、听录音，选出你所听到的句子中包含的单词或短语，听两遍。<span class="pts">（每题1分，共5分）</span></div>
+    <ul class="listen-opt-list">
+      <li><span>(　　)</span><strong>1.</strong><span>A. here</span><span>B. there</span><span>C. where</span></li>
+      <li><span>(　　)</span><strong>2.</strong><span>A. hair</span><span>B. hear</span><span>C. pair</span></li>
+      <li><span>(　　)</span><strong>3.</strong><span>A. visited</span><span>B. stayed</span><span>C. enjoyed</span></li>
+      <li><span>(　　)</span><strong>4.</strong><span>A. Toronto</span><span>B. Ottawa</span><span>C. Canada</span></li>
+      <li><span>(　　)</span><strong>5.</strong><span>A. fed the chickens</span><span>B. walked the dogs</span><span>C. watered the vegetables</span></li>
+    </ul>
+
+    <!-- 二、听对话选答案 -->
+    <div class="section-title">二、听对话，根据对话内容选择正确的答案，听两遍。<span class="pts">（每题2分，共10分）</span></div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">1.</span> Where did Peter stay this summer holiday?</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts choice-opts-3col"><span>A. In Dalian.</span><span>B. In Shanghai.</span><span>C. In Beijing.</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">2.</span> How did Mary get to the National Library of China?</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts choice-opts-3col"><span>A. On foot.</span><span>B. By bus.</span><span>C. By train.</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">3.</span> How long did David stay at his grandparents' home in Hubei?</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts choice-opts-3col"><span>A. For one week.</span><span>B. For two weeks.</span><span>C. For three weeks.</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">4.</span> What did Sara do in the daytime at the summer camp?</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts choice-opts-3col"><span>A. Sang and told stories.</span><span>B. Climbed mountains and did sports.</span><span>C. Watched a hockey game.</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">5.</span> Which is <strong>NOT</strong> true about Mike's summer holiday?</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts choice-opts-3col"><span>A. He flew to Canada.</span><span>B. He helped with chores.</span><span>C. He worked in Beijing.</span></div>
+    </div>
+
+    <!-- 三、听短文判断正误 -->
+    <div class="section-title">三、听短文，判断下列句子正（T）误（F），听两遍。<span class="pts">（每题2分，共10分）</span></div>
+    <ul class="tf-list">
+      <li><span><span class="q-num">(1)</span> Lily went to Hulunbuir Grassland with her parents and her little sister.</span><span class="paren">(　　)</span></li>
+      <li><span><span class="q-num">(2)</span> They took a train from Beijing to the grassland.</span><span class="paren">(　　)</span></li>
+      <li><span><span class="q-num">(3)</span> They stayed on the grassland for six days.</span><span class="paren">(　　)</span></li>
+      <li><span><span class="q-num">(4)</span> In the afternoon, they played games on the grass and took photos.</span><span class="paren">(　　)</span></li>
+      <li><span><span class="q-num">(5)</span> Lily felt happy when it was time to say goodbye.</span><span class="paren">(　　)</span></li>
+    </ul>
+
+    <!-- 四、听短文填空 -->
+    <div class="section-title">四、听短文，根据短文内容填空（每空一词，注意词形与拼写），听三遍。<span class="pts">（每空1分，共5分）</span></div>
+    <div class="listen-cloze">
+      Sam (1) <span class="blank blank-md"></span> his grandparents in the countryside with his cousin this August. Every morning, they (2) <span class="blank blank-sm"></span> the baby chicks and walked the dog. Sometimes they drove to the (3) <span class="blank blank-md"></span>. In the afternoon, they (4) <span class="blank blank-md"></span> the flowers and vegetables together. Before they left, Sam found it hard to say (5) <span class="blank blank-md"></span>.
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级英语上册第一单元测试卷（进阶强化卷） · 空白试卷</span>
+    <span>第 1 页（共 4 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第一部分：空白试卷 · 第 2 页 ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content">
+    <div class="part-banner" style="margin-top:0;">第二部分：笔试部分（Writing Part · 共 70 分）</div>
+
+    <!-- 五、语音辨析 -->
+    <div class="section-title">五、语音辨析（Letters and Sounds）<span class="pts">（共6分）</span></div>
+    <div class="sub-title">1. 选出每组单词中画线部分发音不同的一项。<span class="pts">（每题1分，共4分）</span></div>
+    <ul class="odd-list">
+      <li><span>(　　)</span><strong>1.</strong><span>A. th<span class="u-sound">ere</span></span><span>B. wh<span class="u-sound">ere</span></span><span>C. h<span class="u-sound">ere</span></span><span>D. sh<span class="u-sound">are</span></span></li>
+      <li><span>(　　)</span><strong>2.</strong><span>A. h<span class="u-sound">air</span></span><span>B. ch<span class="u-sound">air</span></span><span>C. p<span class="u-sound">air</span></span><span>D. h<span class="u-sound">ear</span></span></li>
+      <li><span>(　　)</span><strong>3.</strong><span>A. h<span class="u-sound">are</span></span><span>B. c<span class="u-sound">are</span>ful</span><span>C. r<span class="u-sound">are</span></span><span>D. c<span class="u-sound">ar</span></span></li>
+      <li><span>(　　)</span><strong>4.</strong><span>A. <span class="u-sound">air</span></span><span>B. w<span class="u-sound">ear</span></span><span>C. n<span class="u-sound">ear</span></span><span>D. wh<span class="u-sound">ere</span></span></li>
+    </ul>
+
+    <div class="sub-title">2. 辨音选词填空，每空选填一个最恰当的词。<span class="pts">（每空0.5分，共2分）</span></div>
+    <ul class="q-list" style="font-size:11.6px;">
+      <li><span class="q-num">(1)</span> Come <span class="blank blank-sm"></span> (here / there) and look at the photo in my hand! Don't stand over <span class="blank blank-sm"></span> (here / there).</li>
+      <li><span class="q-num">(2)</span> The girl with long black <span class="blank blank-sm"></span> (hair / hear) can <span class="blank blank-sm"></span> (hair / hear) the birds singing in the tree.</li>
+    </ul>
+
+    <!-- 六、词汇与词形变化 -->
+    <div class="section-title">六、词汇与词形变化<span class="pts">（共14分）</span></div>
+    <div class="sub-title">1. 根据句意和首字母提示补全单词，注意拼写准确。<span class="pts">（每题1分，共5分）</span></div>
+    <ul class="q-list" style="font-size:11.5px;">
+      <li><span class="q-num">(1)</span> We went to the <strong>b</strong><span class="blank blank-md"></span> in Dalian and swam in the blue sea.</li>
+      <li><span class="q-num">(2)</span> Working as a helper at the museum made Maomao's holiday really <strong>m</strong><span class="blank blank-md"></span>.</li>
+      <li><span class="q-num">(3)</span> After a wonderful week at the camp, it was hard for us to say <strong>g</strong><span class="blank blank-md"></span>.</li>
+      <li><span class="q-num">(4)</span> Guoguo <strong>s</strong><span class="blank blank-md"></span> went fishing with her grandpa by the lake in the afternoon.</li>
+      <li><span class="q-num">(5)</span> In the <strong>d</strong><span class="blank blank-md"></span>, the children climbed mountains and played sports together.</li>
+    </ul>
+
+    <div class="sub-title">2. 用括号内所给单词的适当形式填空。<span class="pts">（每题1分，共9分）</span></div>
+    <ul class="q-list" style="font-size:11.5px;">
+      <li><span class="q-num">(1)</span> We all <span class="blank blank-md"></span> (enjoy) our summer holiday very much.</li>
+      <li><span class="q-num">(2)</span> Mike <span class="blank blank-md"></span> (fly) back to Canada to see his grandparents this summer.</li>
+      <li><span class="q-num">(3)</span> Did Baobao <span class="blank blank-md"></span> (visit) Tianchi Lake on Changbai Mountain?</li>
+      <li><span class="q-num">(4)</span> My little sister enjoyed <span class="blank blank-md"></span> (take) care of the baby chicks on the farm.</li>
+      <li><span class="q-num">(5)</span> Lingling <span class="blank blank-lg"></span> (not travel) this summer; she stayed in Beijing.</li>
+      <li><span class="q-num">(6)</span> Yesterday afternoon, my cousins and I <span class="blank blank-md"></span> (water) the flowers in the garden.</li>
+      <li><span class="q-num">(7)</span> Grandpa and Grandma <span class="blank blank-md"></span> (tell) us many interesting old stories in the evening.</li>
+      <li><span class="q-num">(8)</span> After breakfast, we walked the two dogs and <span class="blank blank-md"></span> (run) after them happily.</li>
+      <li><span class="q-num">(9)</span> Before the Chinese students <span class="blank blank-md"></span> (leave) Canada, they watched an ice hockey game.</li>
+    </ul>
+
+    <!-- 七、单项选择 -->
+    <div class="section-title">七、单项选择<span class="pts">（每题1分，共10分）</span></div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">1.</span> — ______ did you stay at your grandparents' home?　— From August 2nd to August 15th.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. How long</span><span>B. When</span><span>C. How often</span><span>D. Where</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">2.</span> — Did your brother ______ swimming with you yesterday?　— Yes, he ______ very fast.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. go; swam</span><span>B. went; swam</span><span>C. go; swims</span><span>D. went; swim</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">3.</span> The museum is not far ______ Maomao's home, so he went there ______ bus.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. to; by</span><span>B. from; on</span><span>C. from; by</span><span>D. away; in</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">4.</span> Guoguo ______ to Hubei to see her grandparents and ______ lots of fun there.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. goes; has</span><span>B. went; had</span><span>C. went; has</span><span>D. go; had</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">5.</span> — ______ was the view of Tianchi Lake?　— It was really wonderful!</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. What</span><span>B. Where</span><span>C. How</span><span>D. Who</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">6.</span> My cousin ______ a good book at the National Library of China last Friday.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. reads</span><span>B. reading</span><span>C. read</span><span>D. is reading</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">7.</span> Sara and her friends sang, danced and ______ stories around the campfire.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. tell</span><span>B. tells</span><span>C. telling</span><span>D. told</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">8.</span> Walking the two dogs on the farm ______ our favourite job this summer.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. is</span><span>B. are</span><span>C. was</span><span>D. were</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">9.</span> He helped his grandparents ______ a lot of chores and learned ______ care of animals.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. with; take</span><span>B. with; to take</span><span>C. to; taking</span><span>D. for; to take</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">10.</span> — I went to Beijicun in Mohe with my family this summer!　— ______</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. I'm sorry to hear that.</span><span>B. Sounds wonderful!</span><span>C. You're welcome.</span><span>D. Not too far.</span></div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级英语上册第一单元测试卷（进阶强化卷） · 空白试卷</span>
+    <span>第 2 页（共 4 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第一部分：空白试卷 · 第 3 页 ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content">
+    <!-- 八、完形填空 -->
+    <div class="section-title" style="margin-top:0;">八、完形填空<span class="pts">（每空1分，共5分）</span></div>
+    <div class="cloze-box">
+      Last August, Leo stayed in Beijing and had a <strong>(1)</strong> ______ summer holiday. He didn't stay at home all day. Instead, he worked as a helper at a city library <strong>(2)</strong> ______ August 3rd to August 12th. The library was near his home, so he went there <strong>(3)</strong> ______ every morning. He helped put the books on the shelves and <strong>(4)</strong> ______ stories to little children. Sometimes he read science books there, too. On the last day, the children gave him a thank-you card. Leo <strong>(5)</strong> ______ very proud and happy.
+    </div>
+    <ul class="odd-list">
+      <li><span>(　　)</span><strong>1.</strong><span>A. boring</span><span>B. meaningful</span><span>C. far</span><span>D. hard</span></li>
+      <li><span>(　　)</span><strong>2.</strong><span>A. between</span><span>B. on</span><span>C. from</span><span>D. for</span></li>
+      <li><span>(　　)</span><strong>3.</strong><span>A. on foot</span><span>B. by plane</span><span>C. by train</span><span>D. by ship</span></li>
+      <li><span>(　　)</span><strong>4.</strong><span>A. tell</span><span>B. tells</span><span>C. told</span><span>D. telling</span></li>
+      <li><span>(　　)</span><strong>5.</strong><span>A. feel</span><span>B. feels</span><span>C. feeling</span><span>D. felt</span></li>
+    </ul>
+
+    <!-- 九、按要求完成句子 -->
+    <div class="section-title" style="margin-top:7px;">九、按要求完成句子<span class="pts">（共10分）</span></div>
+    <div class="sub-title">1. 句型转换，每空一词。<span class="pts">（每题2分，共6分）</span></div>
+    <ul class="q-list" style="font-size:11.6px;">
+      <li style="margin-bottom:3.5px;"><span class="q-num">(1)</span> Lingling went to the library <span class="u-target">on foot</span>.（对画线部分提问）<br>
+        <span style="margin-left:20px;"></span><span class="blank blank-sm"></span> <span class="blank blank-sm"></span> Lingling go to the library?
+      </li>
+      <li style="margin-bottom:3.5px;"><span class="q-num">(2)</span> They stayed in Canada <span class="u-target">for three weeks</span>.（对画线部分提问）<br>
+        <span style="margin-left:20px;"></span><span class="blank blank-sm"></span> <span class="blank blank-sm"></span> did they stay in Canada?
+      </li>
+      <li style="margin-bottom:3.5px;"><span class="q-num">(3)</span> Mike went back to Canada by plane.（改为同义句）<br>
+        <span style="margin-left:20px;"></span>Mike <span class="blank blank-sm"></span> <span class="blank blank-sm"></span> to Canada.
+      </li>
+    </ul>
+
+    <div class="sub-title" style="margin-top:5px;">2. 句子改错：下列每句均有一处语法错误，请将<strong>改正后的完整句子</strong>写在横线上。<span class="pts">（每题2分，共4分）</span></div>
+    <ul class="q-list" style="font-size:11.6px;">
+      <li style="margin-bottom:3.5px;">
+        <span class="q-num">(1)</span> Did you enjoyed your summer holiday in Dalian?
+        <div class="sentence-ans"><div class="write-line">&nbsp;</div></div>
+      </li>
+      <li style="margin-bottom:3.5px;">
+        <span class="q-num">(2)</span> Yesterday evening, we sing songs and told stories together.
+        <div class="sentence-ans"><div class="write-line">&nbsp;</div></div>
+      </li>
+    </ul>
+
+    <!-- 十、阅读理解（A） -->
+    <div class="section-title" style="margin-top:7px;">十、阅读理解<span class="pts">（共15分）</span></div>
+    <div class="sub-title">（A）阅读班级“暑期分享板”，选择正确的答案。<span class="pts">（每题1分，共5分）</span></div>
+    <table class="board-table">
+      <tr>
+        <th style="width:11%;">Name</th>
+        <th style="width:20%;">Place &amp; Time</th>
+        <th style="width:17%;">How</th>
+        <th style="width:52%;">Activities</th>
+      </tr>
+      <tr>
+        <td class="name-col">Amy</td>
+        <td>Sanya<br>July 15th – July 21st</td>
+        <td>by plane</td>
+        <td>Swam in the warm sea, played on the beach, collected shells and learned to surf.</td>
+      </tr>
+      <tr>
+        <td class="name-col">Kevin</td>
+        <td>Xi'an<br>Aug. 4th – Aug. 9th</td>
+        <td>by high-speed train</td>
+        <td>Visited the Terracotta Army and Shaanxi History Museum, and ate delicious noodles.</td>
+      </tr>
+      <tr>
+        <td class="name-col">Mia</td>
+        <td>Beijing (community centre)<br>Aug. 1st – Aug. 14th</td>
+        <td>on foot<br>(not far from home)</td>
+        <td>Worked as a helper: taught little children English songs and helped old people read newspapers.</td>
+      </tr>
+    </table>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">1.</span> How did Kevin go to Xi'an?</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. By plane.</span><span>B. By high-speed train.</span><span>C. On foot.</span><span>D. By bus.</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">2.</span> How long did Amy stay in Sanya?</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. For five days.</span><span>B. For six days.</span><span>C. For seven days.</span><span>D. For eight days.</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">3.</span> Why did Mia go to the community centre on foot?</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts choice-opts-2col">
+        <span>A. Because she likes running in the morning.</span>
+        <span>B. Because it was not far from her home.</span>
+        <span>C. Because there were no buses near her home.</span>
+        <span>D. Because she went there with her parents.</span>
+      </div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">4.</span> Who stayed in Beijing during the summer holiday?</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. Amy.</span><span>B. Kevin.</span><span>C. Mia.</span><span>D. Both Kevin and Mia.</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">5.</span> Which of the following is <strong>TRUE</strong> according to the sharing board?</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts choice-opts-2col">
+        <span>A. Amy worked as a helper in Sanya.</span>
+        <span>B. Kevin stayed in Xi'an for two weeks.</span>
+        <span>C. Mia helped both children and old people.</span>
+        <span>D. All three children travelled to other cities.</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级英语上册第一单元测试卷（进阶强化卷） · 空白试卷</span>
+    <span>第 3 页（共 4 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第一部分：空白试卷 · 第 4 页 ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content">
+    <!-- 十、阅读理解（B） -->
+    <div class="sub-title" style="margin-top:0;">（B）阅读 Lucas 的暑期日记，完成下列任务。<span class="pts">（共10分）</span></div>
+    <div class="passage-box">
+      <div class="passage-title">A Special Week on My Uncle's Farm</div>
+      <div class="passage-meta">August 16th　Sunny</div>
+      <p>Today was my last day on my uncle's farm in Hebei. I came here with my parents by car on August 10th. At first, I thought farm life would be boring because there was no Wi-Fi and I couldn't play computer games.</p>
+      <p>However, I soon changed my mind! Every early morning, I helped my uncle feed the chickens and ducks, and I also collected warm eggs. After breakfast, I learned to water the green vegetables and pick sweet apples. In the afternoon, my uncle taught me how to go fishing by the clean river. I even caught two small fish yesterday! In the evening, my family sat in the yard, listened to grandpa's old stories and watched the bright moon.</p>
+      <p>When we packed our bags this afternoon, I felt a little sad and found it hard to say goodbye to my uncle and the cute animals. This was truly a wonderful and meaningful week!</p>
+    </div>
+
+    <div class="sub-title" style="font-size:11.2px; margin:3px 0 2px 0;">任务一：判断下列句子正（T）误（F）。<span class="pts">（每题1分，共4分）</span></div>
+    <ul class="tf-list" style="font-size:11.3px;">
+      <li><span><span class="q-num">1.</span> Lucas went to his uncle's farm in Hebei by train.</span><span class="paren">(　　)</span></li>
+      <li><span><span class="q-num">2.</span> At first, Lucas thought farm life would be boring.</span><span class="paren">(　　)</span></li>
+      <li><span><span class="q-num">3.</span> Lucas learned how to go fishing from his uncle in the afternoon.</span><span class="paren">(　　)</span></li>
+      <li><span><span class="q-num">4.</span> Lucas stayed on his uncle's farm for one week.</span><span class="paren">(　　)</span></li>
+    </ul>
+
+    <div class="sub-title" style="font-size:11.2px; margin:3px 0 2px 0;">任务二：请用<strong>完整句子</strong>回答下列问题（注意人称转换、时态和单词拼写）。<span class="pts">（每题2分，共6分）</span></div>
+    <ul class="q-list" style="font-size:11.3px;">
+      <li style="margin-bottom:2px;">
+        <span class="q-num">5.</span> Why did Lucas think farm life would be boring at first?
+        <div class="sentence-ans" style="margin-bottom:2px;"><div class="write-line" style="height:17px;">&nbsp;</div></div>
+      </li>
+      <li style="margin-bottom:2px;">
+        <span class="q-num">6.</span> What did Lucas do every early morning on the farm?
+        <div class="sentence-ans" style="margin-bottom:2px;"><div class="write-line" style="height:17px;">&nbsp;</div></div>
+      </li>
+      <li style="margin-bottom:2px;">
+        <span class="q-num">7.</span> How did Lucas feel when it was time to leave the farm?
+        <div class="sentence-ans" style="margin-bottom:2px;"><div class="write-line" style="height:17px;">&nbsp;</div></div>
+      </li>
+    </ul>
+
+    <!-- 十一、书面表达 -->
+    <div class="section-title" style="margin:5px 0 3px 0;">十一、书面表达<span class="pts">（共10分）</span></div>
+    <div class="writing-prompt">
+      <p style="margin:0 0 2px 0;">假设你的加拿大笔友 <strong>Mike</strong> 来信询问你的暑假经历。请以 <strong>Li Hua</strong> 的名义给他回复一封电子邮件，参考下方导图分享你的暑假故事。</p>
+      <div class="mindmap-grid">
+        <div class="mm-card"><strong>1. Overall</strong><span>wonderful / meaningful</span></div>
+        <div class="mm-card"><strong>2. Where &amp; When</strong><span>in July / for ... days</span></div>
+        <div class="mm-card"><strong>3. Who &amp; How</strong><span>with family / by train...</span></div>
+        <div class="mm-card"><strong>4. Daytime &amp; Evening</strong><span>visited / swam / told stories</span></div>
+        <div class="mm-card"><strong>5. Feeling</strong><span>enjoyed / hard to say goodbye</span></div>
+      </div>
+      <p style="margin:2px 0 0 0; font-size:10.5px; color:#334155;">
+        <strong>要求：</strong>① 涵盖导图要点，条理清晰；② <strong>通篇准确使用一般过去时</strong>；③ 书写规范，不少于 60 词；文中不出现真实姓名和校名。
+      </p>
+    </div>
+
+    <div class="email-box">
+      <div class="email-meta">
+        <span><strong>To:</strong> Mike &lt;mike@canada.com&gt;</span>
+        <span><strong>Subject:</strong> My Meaningful Summer Holiday</span>
+      </div>
+      <div class="email-salutation">Dear Mike,</div>
+      <div class="eng-line">&nbsp;</div>
+      <div class="eng-line">&nbsp;</div>
+      <div class="eng-line">&nbsp;</div>
+      <div class="eng-line">&nbsp;</div>
+      <div class="eng-line">&nbsp;</div>
+      <div class="eng-line">&nbsp;</div>
+      <div class="eng-line">&nbsp;</div>
+      <div class="email-sign">Yours,<br>Li Hua</div>
+    </div>
+
+    <div class="self-check-box">
+      <div class="self-check-title">Self-Check（交卷前 2 分钟自查清单）</div>
+      <div class="self-check-items">
+        <div>□ 核查所有动词过去式（规则 <code>-ed</code> 与不规则变化）。</div>
+        <div>□ 核查易错词拼写（<code>goodbye / wonderful / meaningful</code>）。</div>
+        <div>□ 问谁答谁，邮件格式完整，句首大写、标点规范。</div>
+        <div>□ 卷面整洁，正文词数不少于 60 词。</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级英语上册第一单元测试卷（进阶强化卷） · 空白试卷</span>
+    <span>第 4 页（共 4 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第二部分：参考答案 · 第 1 页（听力原文） ==================== -->
+<div class="sheet part-answer">
+  <div class="sheet-content">
+    <div class="ans-header">
+      <h2>小学六年级英语上册第一单元测试卷（进阶强化卷）· 听力原文</h2>
+      <p>配套音频：<code>./小学六年级英语上册第一单元测试卷_进阶强化卷_听力.m4a</code> ｜ 可直接播放或由教师/家长按本页原文朗读</p>
+    </div>
+
+    <div class="ans-sec">
+      <h3>一、听录音，选出你所听到的句子中包含的单词或短语（每题读两遍，每题后停顿约 4 秒）</h3>
+      <div class="script-item"><strong>1.</strong> Look! Miss Hare is standing over <strong>there</strong> with her friends.</div>
+      <div class="script-item"><strong>2.</strong> The little girl bought a new <strong>pair</strong> of sports shoes for the camp.</div>
+      <div class="script-item"><strong>3.</strong> Baobao <strong>visited</strong> Beijicun in Mohe with his parents this August.</div>
+      <div class="script-item"><strong>4.</strong> Mike walked around the University of <strong>Ottawa</strong> with some Chinese students.</div>
+      <div class="script-item"><strong>5.</strong> In the afternoon, Guoguo <strong>watered the vegetables</strong> in her grandpa's garden.</div>
+    </div>
+
+    <div class="ans-sec" style="margin-top:6px;">
+      <h3>二、听对话，根据对话内容选择正确的答案（每组对话及问题读两遍，每题后停顿约 5 秒）</h3>
+      <div class="script-item">
+        <strong>1.</strong> <strong>Girl:</strong> Hi, Peter! Did you go to Dalian or Shanghai this summer?<br>
+        　 <strong>Boy:</strong> Neither. I stayed in Beijing and joined a swimming club. What about you?<br>
+        　 <strong>Girl:</strong> I went to Dalian and played on the beach.<br>
+        　 <em>Question:</em> Where did Peter stay this summer holiday?
+      </div>
+      <div class="script-item">
+        <strong>2.</strong> <strong>Boy:</strong> How did you go to the National Library of China, Mary? By bus?<br>
+        　 <strong>Girl:</strong> No. My home is not far from the library, so I walked there. It only took ten minutes.<br>
+        　 <em>Question:</em> How did Mary get to the National Library of China?
+      </div>
+      <div class="script-item">
+        <strong>3.</strong> <strong>Girl:</strong> How long did you stay at your grandparents' home in Hubei, David?<br>
+        　 <strong>Boy:</strong> We arrived on July 10th and left on July 23rd. We had a lot of fun there.<br>
+        　 <em>Question:</em> How long did David stay at his grandparents' home in Hubei?
+      </div>
+      <div class="script-item">
+        <strong>4.</strong> <strong>Boy:</strong> What did you do at the summer camp in the daytime, Sara?<br>
+        　 <strong>Girl:</strong> We climbed mountains and did sports. And in the evening, we sang songs and told stories.<br>
+        　 <em>Question:</em> What did Sara do in the daytime at the summer camp?
+      </div>
+      <div class="script-item">
+        <strong>5.</strong> <strong>Girl:</strong> Did Mike fly back to Canada alone this summer?<br>
+        　 <strong>Boy:</strong> Yes, he did. He helped his grandparents with a lot of chores and also helped some Chinese students learn in Canada.<br>
+        　 <em>Question:</em> Which is NOT true about Mike's summer holiday?
+      </div>
+    </div>
+
+    <div class="ans-sec" style="margin-top:6px;">
+      <h3>三、听短文，判断下列句子正（T）误（F）（全文读两遍，两遍间停顿约 3 秒）</h3>
+      <div class="script-passage">
+        Hello, everyone! I'm Lily. Last summer, I went to Hulunbuir Grassland with my parents and my little brother. It is far from Beijing, so we went there by plane and then took a car to the grassland. We stayed there for six days. In the morning, we rode horses and fed cute baby sheep. In the afternoon, we played games on the green grass and took lots of photos. In the evening, we ate delicious food and watched the bright stars in the sky. When it was time to leave, we all felt sad to say goodbye. It was the most exciting holiday I ever had!
+      </div>
+    </div>
+
+    <div class="ans-sec" style="margin-top:6px;">
+      <h3>四、听短文，根据短文内容填空（全文读三遍：第一遍正常语速、第二遍慢速留白书写、第三遍正常语速核对）</h3>
+      <div class="script-passage">
+        Hi, I'm Sam. This August, I <strong>(1) visited</strong> my grandparents in the countryside with my cousin. Every morning, we <strong>(2) fed</strong> the baby chicks and walked the dog. Sometimes we went to the <strong>(3) beach</strong> by car because it was not too far. In the afternoon, we <strong>(4) watered</strong> the flowers and vegetables together. Before we left, I found it hard to say <strong>(5) goodbye</strong>. We really had a meaningful holiday!
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级英语上册第一单元测试卷（进阶强化卷） · 参考答案</span>
+    <span>参考答案 第 1 页（共 2 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第二部分：参考答案 · 第 2 页（标准答案与评分标准） ==================== -->
+<div class="sheet part-answer">
+  <div class="sheet-content">
+    <div class="ans-header">
+      <h2>小学六年级英语上册第一单元测试卷（进阶强化卷）· 参考答案与评分标准</h2>
+      <p>依据北京版义务教育教科书六年级上册 Unit One 编排 ｜ 听力 30 分 ＋ 笔试 70 分 ＝ 100 分</p>
+    </div>
+
+    <div class="ans-sec">
+      <h3>第一部分：听力部分标准答案（共30分）</h3>
+      <div class="ans-p"><strong>一、听选单词或短语（每题1分，共5分）：</strong> 1. <strong>B</strong>　2. <strong>C</strong>　3. <strong>A</strong>　4. <strong>B</strong>　5. <strong>C</strong></div>
+      <div class="ans-p"><strong>二、听对话选答案（每题2分，共10分）：</strong> 1. <strong>C</strong>　2. <strong>A</strong>　3. <strong>B</strong> <span class="tip-note">（7月10日至23日共14天＝2周）</span>　4. <strong>B</strong>　5. <strong>C</strong></div>
+      <div class="ans-p"><strong>三、听短文判断正误（每题2分，共10分）：</strong> (1) <strong>F</strong> <span class="tip-note">（little brother）</span>　(2) <strong>F</strong> <span class="tip-note">（by plane and car）</span>　(3) <strong>T</strong>　(4) <strong>T</strong>　(5) <strong>F</strong> <span class="tip-note">（felt sad）</span></div>
+      <div class="ans-p"><strong>四、听短文填空（每空1分，共5分）：</strong> (1) <strong>visited</strong>　(2) <strong>fed</strong>　(3) <strong>beach</strong>　(4) <strong>watered</strong>　(5) <strong>goodbye</strong> <span class="tip-note">（动词漏变过去式扣0.5分，拼写错如 goodby 扣0.5分）</span></div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>第二部分：笔试部分标准答案（共70分）</h3>
+      <div class="ans-p"><strong>五、语音辨析（共6分）：</strong><br>
+        1. 选发音不同（每题1分，共4分）：1. <strong>C</strong> <span class="tip-note">（here /ɪə/，余 /eə/）</span>　2. <strong>D</strong> <span class="tip-note">（hear /ɪə/，余 /eə/）</span>　3. <strong>D</strong> <span class="tip-note">（car /ɑː/，余 /eə/）</span>　4. <strong>C</strong> <span class="tip-note">（near /ɪə/，余 /eə/）</span><br>
+        2. 辨音选词（每空0.5分，共2分）：(1) <strong>here</strong>; <strong>there</strong>　(2) <strong>hair</strong>; <strong>hear</strong>
+      </div>
+      <div class="ans-p"><strong>六、词汇与词形变化（共14分）：</strong><br>
+        1. 首字母填空（每题1分，共5分）：(1) <strong>beach</strong>　(2) <strong>meaningful</strong>　(3) <strong>goodbye</strong>　(4) <strong>sometimes</strong>　(5) <strong>daytime</strong><br>
+        2. 适当形式填空（每题1分，共9分）：(1) <strong>enjoyed</strong>　(2) <strong>flew</strong>　(3) <strong>visit</strong>　(4) <strong>taking</strong>　(5) <strong>didn't travel</strong>　(6) <strong>watered</strong>　(7) <strong>told</strong>　(8) <strong>ran</strong>　(9) <strong>left</strong>
+      </div>
+      <div class="ans-p"><strong>七、单项选择（每题1分，共10分）：</strong> 1. <strong>B</strong>　2. <strong>A</strong>　3. <strong>C</strong>　4. <strong>B</strong>　5. <strong>C</strong>　6. <strong>C</strong>　7. <strong>D</strong>　8. <strong>C</strong>　9. <strong>B</strong>　10. <strong>B</strong></div>
+      <div class="ans-p"><strong>八、完形填空（每空1分，共5分）：</strong> 1. <strong>B</strong>　2. <strong>C</strong>　3. <strong>A</strong>　4. <strong>C</strong>　5. <strong>D</strong></div>
+      <div class="ans-p"><strong>九、按要求完成句子（共10分）：</strong><br>
+        1. 句型转换（每空1分，每题2分，共6分）：(1) <strong>How did</strong>　(2) <strong>How long</strong>　(3) <strong>flew back</strong><br>
+        2. 句子改错（每题2分，共4分；未改出核心错误不得分，抄写笔误每处扣0.5分）：<br>
+        (1) <strong>Did you enjoy your summer holiday in Dalian?</strong>　(2) <strong>Yesterday evening, we sang songs and told stories together.</strong>
+      </div>
+      <div class="ans-p"><strong>十、阅读理解（共15分）：</strong><br>
+        （A）选择（每题1分，共5分）：1. <strong>B</strong>　2. <strong>C</strong> <span class="tip-note">（7月15日至21日共7天）</span>　3. <strong>B</strong>　4. <strong>C</strong>　5. <strong>C</strong><br>
+        （B）任务型阅读（共10分）：<br>
+        任务一（每题1分，共4分）：1. <strong>F</strong>　2. <strong>T</strong>　3. <strong>T</strong>　4. <strong>T</strong> <span class="tip-note">（8月10日至16日共7天＝1周）</span><br>
+        任务二（每题2分，共6分；<strong>人称未转换或时态错误扣0.5分，单词拼写错误每处扣0.5分</strong>）：<br>
+        5. <strong>Because there was no Wi-Fi and he couldn't play computer games.</strong><br>
+        6. <strong>He helped his uncle feed the chickens and ducks, and (he) also collected warm eggs.</strong><br>
+        7. <strong>He felt a little sad and found it hard to say goodbye (to his uncle and the cute animals).</strong>
+      </div>
+    </div>
+
+    <div class="ans-sec" style="margin-bottom:0;">
+      <h3>十一、书面表达评分标准与参考范文（共10分）</h3>
+      <table class="rubric-table">
+        <tr>
+          <th style="width:15%;">等级</th>
+          <th style="width:12%;">分值</th>
+          <th>评分细则（重点考查要点完整性、一般过去时准确度与邮件得体性）</th>
+        </tr>
+        <tr>
+          <td style="text-align:center;"><strong>一档（优秀）</strong></td>
+          <td style="text-align:center;">9～10分</td>
+          <td>完整涵盖导图 5 项要点；<strong>一般过去时准确无混用</strong>，白天与晚上活动层次分明，拼写及标点错误 ≤1 处，词数达 60 词以上。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;"><strong>二档（良好）</strong></td>
+          <td style="text-align:center;">7～8分</td>
+          <td>涵盖大部分要点，内容较充实；基本准确使用过去时，有 2～4 处小错但不影响理解，词数基本达标。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;"><strong>三档（合格）</strong></td>
+          <td style="text-align:center;">4～6分</td>
+          <td>只写出部分要点，一般现在时与过去时混用明显，拼写错误较多，词数略显不足（40～55 词）。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;"><strong>四档（待提高）</strong></td>
+          <td style="text-align:center;">0～3分</td>
+          <td>偏离主题或仅写零散短语，无法连贯表意，词数严重不足。</td>
+        </tr>
+      </table>
+      <div class="sample-essay">
+        <strong>参考范文（Model Email，约 86 词）：</strong><br>
+        Dear Mike,<br>
+        How are you? I had a wonderful and meaningful summer holiday this year. In July, I went to Qingdao with my parents by train and stayed there for six days. In the daytime, we went to the beach on foot. I swam in the sea, played volleyball and collected pretty shells. Sometimes I went fishing with my uncle. In the evening, we walked by the sea, ate delicious seafood and told funny stories. We really enjoyed the trip, and it was hard to say goodbye to that beautiful city! What about your holiday?<br>
+        Yours, Li Hua
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级英语上册第一单元测试卷（进阶强化卷） · 参考答案</span>
+    <span>参考答案 第 2 页（共 2 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第三部分：题目分析 · 第 1 页 ==================== -->
+<div class="sheet part-analysis">
+  <div class="sheet-content">
+    <div class="ans-header">
+      <h2>小学六年级英语上册第一单元测试卷（进阶强化卷）· 题目分析与复习建议</h2>
+      <p>针对首测薄弱点定向加固 ｜ 难度升级至“中等偏上（基础35%｜中等45%｜提升20%）”</p>
+    </div>
+
+    <div class="ans-sec">
+      <h3>一、试卷结构与薄弱点强化双向细目表</h3>
+      <table class="spec-table">
+        <tr>
+          <th style="width:7%;">题号</th>
+          <th style="width:16%;">题型模块</th>
+          <th style="width:16%;">对应教材位置</th>
+          <th style="width:7%;">题量</th>
+          <th style="width:7%;">分值</th>
+          <th style="width:33%;">核心考点与本次强化设计</th>
+          <th style="width:14%;">难度 / 靶向</th>
+        </tr>
+        <tr>
+          <td class="c">一</td><td>听选单词/短语</td><td>p.14 &amp; L1–4</td><td class="c">5</td><td class="c">5</td><td>辨听 here/there、hair/hear/pair 与过去式词</td><td class="c">基础 · 靶向辨音</td>
+        </tr>
+        <tr>
+          <td class="c">二</td><td>听对话选答案</td><td>Lesson 1–4 拓展</td><td class="c">5</td><td class="c">10</td><td>同义转述、日期换算（14天=2周）、反向排错</td><td class="c">中等～提升</td>
+        </tr>
+        <tr>
+          <td class="c">三</td><td>听短文判正误</td><td>p.13 草原拓展</td><td class="c">5</td><td class="c">10</td><td>语篇细节精准比对（人物、交通、情绪）</td><td class="c">中等</td>
+        </tr>
+        <tr>
+          <td class="c">四</td><td>听短文填空</td><td>Lesson 3–4 综合</td><td class="c">5</td><td class="c">5</td><td>定向强训 <code>visited/watered/fed/goodbye</code></td><td class="c">提升 · 靶向-ed</td>
+        </tr>
+        <tr>
+          <td class="c">五</td><td>语音辨析</td><td>p.14 语音拓展</td><td class="c">8</td><td class="c">6</td><td>四选一抓例外词（here/hear/near/car）+ 辨音选词</td><td class="c">中等 · 靶向辨音</td>
+        </tr>
+        <tr>
+          <td class="c">六</td><td>词汇与词形</td><td>Word List &amp; L1–4</td><td class="c">14</td><td class="c">14</td><td>首字母拼写（goodbye等）+ 9题动词变形综合</td><td class="c">中等 · 靶向词形</td>
+        </tr>
+        <tr>
+          <td class="c">七</td><td>单项选择</td><td>Lesson 1–4 语法</td><td class="c">10</td><td class="c">10</td><td>When vs How long 陷阱、动名词主语、双空搭配</td><td class="c">中等～提升</td>
+        </tr>
+        <tr>
+          <td class="c">八</td><td>完形填空</td><td>Lesson 2 拓展</td><td class="c">5</td><td class="c">5</td><td>语篇连贯推理、过去式平行结构与 <code>felt</code></td><td class="c">中等</td>
+        </tr>
+        <tr>
+          <td class="c">九</td><td>句型与改错</td><td>Lesson 1–4 句型</td><td class="c">5</td><td class="c">10</td><td><code>flew back</code> 同义替换 + 典型过去式改错</td><td class="c">中等～提升</td>
+        </tr>
+        <tr>
+          <td class="c">十</td><td>阅读理解（A+B）</td><td>非连续文本+日记</td><td class="c">12</td><td class="c">15</td><td>表格天数推算 + 第一人称日记转第三人称完整答句</td><td class="c">提升 · 靶向简答</td>
+        </tr>
+        <tr>
+          <td class="c">十一</td><td>书面表达（邮件）</td><td>p.10 &amp; p.47 格式</td><td class="c">1</td><td class="c">10</td><td>邮件交际写作（≥60词），强化时态与拼写自查</td><td class="c">综合提升</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="ans-sec">
+      <h3>二、听力部分逐题解析（第一至四大题）</h3>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第一大题：听选单词或短语（5分）<span class="target-tag">强化：here/there 听辨</span></span>
+          <span class="diff-badge">难度：基础</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>高频易混音组 <code>here / there / where</code>、<code>hair / hear / pair</code> 以及 Unit 1 重点动词短语。</li>
+          <li><strong>解题思路：</strong>第 1 题借固定搭配 <code>over there</code> 与 /ðeə/ 音双确认；第 2 题借 <code>a new pair of</code> 锁定 C；第 3–5 题抓句中核心动词与专有名词。</li>
+          <li><strong>易错提醒：</strong>第 4 题 <code>Ottawa</code> 与 <code>Toronto</code> 均为加拿大大学城，需听清首音节 /ˈɒtəwə/。</li>
+          <li><strong>巩固建议：</strong>把 <code>here / there / where</code> 与 <code>hair / hear / pair</code> 分组大声朗读 3 遍，建立听觉肌肉记忆。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第二大题：听对话选答案（10分）</span>
+          <span class="diff-badge">难度：中等～提升</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>对话信息转述（<code>walked there = on foot</code>、<code>fly back = flew</code>）、日期天数折算、否定排除与“NOT true”反向设问。</li>
+          <li><strong>解题思路：</strong>第 1 题听到 <code>Neither</code> 立刻排除 Dalian 和 Shanghai；<strong>第 3 题需速算</strong>：7 月 10 日到 23 日含首尾共 <code>23 - 10 + 1 = 14</code> 天＝<code>two weeks</code>（选 B）；第 5 题边听边在正确项旁打 √，最后选没打 √ 的 C。</li>
+          <li><strong>易错提醒：</strong>第 1 题易被女生说的 <code>I went to Dalian</code> 干扰，必须看清问题问的是 <strong>Peter</strong> 而不是女生；第 5 题漏看大写加粗的 <strong>NOT</strong>。</li>
+          <li><strong>巩固建议：</strong>养成听对话前用笔圈出题干中的“人名”和“<code>NOT</code> / <code>daytime</code>”等限定词的习惯。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第三大题：听短文判断正误（10分）</span>
+          <span class="diff-badge">难度：中等</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>语篇信息整体捕捉，呼应教材 p.13 呼伦贝尔大草原范文主题。</li>
+          <li><strong>解题思路：</strong>第一遍听音时重点核对每句中的“核心易改点”——人物（<code>brother</code> vs <code>sister</code>）、交通（<code>plane+car</code> vs <code>train</code>）、天数（<code>six days</code>）、时段活动、情绪（<code>sad</code> vs <code>happy</code>）；第二遍复核存疑句。</li>
+          <li><strong>易错提醒：</strong>第 (1) 题前面父母都对，只有最后一个词偷换了 <code>sister</code>；第 (5) 题句尾才出现 <code>felt sad</code>，切忌听到前面开心就误判 T。</li>
+          <li><strong>巩固建议：</strong>听短文判断题时，听前先划出 5 句话里的“人物、方式、数字、情感词”，带着靶心去听。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card" style="margin-bottom:0;">
+        <div class="analysis-card-title">
+          <span>第四大题：听短文填空（5分）<span class="target-tag">强化：-ed 过去式 + goodbye</span></span>
+          <span class="diff-badge">难度：提升</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>直接针对上次 <code>enjoyed</code> 漏写 <code>-ed</code> 与 <code>goodbye</code> 漏写 <code>e</code> 设计：考查 <code>visited</code>、<code>watered</code>（规则过去式）、<code>fed</code>（不规则）、<code>beach</code>、<code>goodbye</code>。</li>
+          <li><strong>解题思路：</strong>写前先扫全段，发现 <code>walked / drove / left / found</code> 全是过去式，立刻给第 (1)(2)(4) 空标上“过去式”记号，再听音核实词根。</li>
+          <li><strong>易错提醒：</strong>连读中 <code>visited my</code>、<code>watered the</code> 的 <code>-ed</code> 极易漏听，必须依靠“语篇时态一致”补全；<code>goodbye</code> 切记结尾有 <code>e</code>。</li>
+          <li><strong>巩固建议：</strong>坚持“听写三步法”：① 听前标词性/时态；② 听中快写词干；③ 第三遍专查 <code>-ed</code>、复数和词尾字母。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级英语上册第一单元测试卷（进阶强化卷） · 题目分析</span>
+    <span>题目分析 第 1 页（共 2 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第三部分：题目分析 · 第 2 页 ==================== -->
+<div class="sheet part-analysis">
+  <div class="sheet-content">
+    <div class="ans-sec">
+      <h3>三、笔试部分重点解析（第五至十一大题）</h3>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第五大题：语音辨析（6分）<span class="target-tag">强化：打破“看长相判音”</span></span>
+          <span class="diff-badge">难度：中等</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>围绕教材 p.14 <code>are / air / ere</code>（/eə/），系统对比四大“长相陷阱”：<code>here</code>（/ɪə/）、<code>hear</code>（/ɪə/）、<code>car</code>（/ɑː/）、<code>near</code>（/ɪə/），并延伸 <code>wear</code>（/eə/）。</li>
+          <li><strong>解题思路：</strong>做语音题务必在心里<strong>默读出声</strong>！第 1 题 <code>there / where / share</code> 均含 /eə/，只有 <code>here</code> 发 /ɪə/；第 4 题 <code>air / wear / where</code> 虽拼写各异但均发 /eə/，只有 <code>near</code> 发 /ɪə/。</li>
+          <li><strong>易错提醒：</strong>第 2 小题辨音选词要同时结合语境：<code>in my hand</code>（近处）配 <code>here</code>，<code>over there</code>（远处）配 <code>there</code>；长黑发是 <code>hair</code>，听见鸟鸣是 <code>hear</code>。</li>
+          <li><strong>巩固建议：</strong>牢记口诀：“<strong>耳（ear）听（hear）近处（near）在这儿（here）→ /ɪə/；椅子（chair）空气（air）在哪儿（where）在那儿（there）→ /eə/</strong>”。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第六大题：词汇与词形变化（14分）<span class="target-tag">强化：动词过去式与拼写</span></span>
+          <span class="diff-badge">难度：中等</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>高频词精准拼写（<code>beach / meaningful / goodbye / sometimes / daytime</code>）＋ 9 种典型动词形态切换（规则 <code>-ed</code>、不规则过去式、<code>Did+原形</code>、<code>enjoy doing</code>、<code>didn't+原形</code>）。</li>
+          <li><strong>解题思路：</strong>填动词前先做“三看”——一看前面有没有 <code>Did / didn't</code>（有则用原形，如第 3、5 题）；二看前面有没有 <code>enjoy</code>（后接 <code>-ing</code>，如第 4 题 <code>taking</code>）；三看时间状语定过去式（如 <code>enjoyed / flew / watered / told / ran / left</code>）。</li>
+          <li><strong>易错提醒：</strong>第 3 题看到问句是过去时却忘了 <code>Did</code> 后要还原 <code>visit</code>；第 4 题 <code>take</code> 去 <code>e</code> 加 <code>-ing</code> 写为 <code>taking</code>；第 1(3) 题再次检验 <code>goodbye</code> 拼写。</li>
+          <li><strong>巩固建议：</strong>把 <code>enjoy + doing</code>（教材 p.8 原句 <code>enjoyed taking care of</code>）和 <code>learn to do</code>（p.5 <code>learned to take care of</code>）成对对比记忆。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第七、八大题：单项选择（10分）与完形填空（5分）</span>
+          <span class="diff-badge">难度：中等～提升</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>疑问词精准区分（<code>When</code> vs <code>How long</code>）、一般过去时双空呼应、动名词作主语单数谓语（第 8 题）、语篇完形推理。</li>
+          <li><strong>解题思路：</strong><strong>单选第 1 题是进阶重难点</strong>：答句是起止日期 <code>From August 2nd to August 15th</code>（回答“何时”），必须选 <code>When</code>；只有答句是 <code>For two weeks</code> 才选 <code>How long</code>。<strong>第 8 题</strong>主语是“遛狗这件事”（<code>Walking the two dogs</code>），单数且发生在今年暑假，故用 <code>was</code>。</li>
+          <li><strong>易错提醒：</strong>单选第 1 题惯性看到 <code>stay</code> 就错选 <code>How long</code>；完形第 4、5 题需紧跟全篇过去时选 <code>told</code> 和 <code>felt</code>。</li>
+          <li><strong>巩固建议：</strong>做单选与完形时，先读完整句和答语再落笔，绝不“只看半句就下结论”。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第九大题：句型转换与句子改错（10分）<span class="target-tag">强化：过去时易错点排雷</span></span>
+          <span class="diff-badge">难度：中等～提升</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>交通方式同义替换（<code>went back by plane = flew back</code>）、<code>How</code> / <code>How long</code> 提问，以及两类最高频的过去时语法病句辨识。</li>
+          <li><strong>解题思路：</strong>改错第 (1) 题 <code>Did</code> 已经承担过去时，<code>enjoyed</code> 必须还原为 <code>enjoy</code>；第 (2) 题有 <code>Yesterday evening</code> 和并列动词 <code>told</code>，<code>sing</code> 必须改为 <code>sang</code>。</li>
+          <li><strong>易错提醒：</strong>句型转换第 1(3) 题 <code>fly</code> 易忘变过去式 <code>flew</code>；改错题要求写出<strong>完整正确句子</strong>，切勿只改一个词。</li>
+          <li><strong>巩固建议：</strong>以后自己写完英文句子，也用这两道改错题的视角充当“小老师”自查一遍。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第十大题：阅读理解（A 篇 5分 ＋ B 篇 10分）<span class="target-tag">强化：人称转换与完整作答</span></span>
+          <span class="diff-badge">难度：提升</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>A 篇考查非连续性表格信息提取与日期计算（7 月 15–21 日＝7 天）；B 篇第一人称日记转第三人称完整句作答。</li>
+          <li><strong>解题思路：</strong>B 篇任务二第 5–7 题是<strong>专门针对首测第 5 题的强化训练</strong>：原文是 Lucas 的第一人称（<code>I / my</code>），回答时必须完成“<strong>问谁答谁＋人称转换</strong>”——<code>I → He</code>、<code>my → his</code>，特别是第 7 题用 <code>He felt a little sad and found it hard to say goodbye.</code> 直接回扣 <code>How did Lucas feel?</code>。</li>
+          <li><strong>易错提醒：</strong>① 直接照抄原文 <code>I thought... / I felt...</code> 未换第三人称；② <code>goodbye</code> 拼写再漏 <code>e</code>；③ B 篇第 4 题 8 月 10 日至 16 日共 7 天即 <code>one week</code>，易误算成 6 天判 F。</li>
+          <li><strong>巩固建议：</strong>简答题牢记四步法：<strong>定人称（He/She/They）→ 定动词（照题干变过去式）→ 找原文依据 → 查拼写与标点</strong>。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card" style="margin-bottom:0;">
+        <div class="analysis-card-title">
+          <span>第十一大题：书面表达·英文电子邮件（10分）</span>
+          <span class="diff-badge">难度：综合提升</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>书信交际语境下的过去时叙事（≥60 词），将教材 Unit 1 话题与 Unit 4 电子邮件格式提前衔接。</li>
+          <li><strong>解题思路：</strong>开篇简短问候（<code>How are you?</code>）＋ 总体评价 → 交代时间、地点、同行人、交通方式 → 用 <code>In the daytime / In the evening</code> 分层展开活动 → 结尾抒发感受（可自然用上 <code>enjoyed</code> 与 <code>hard to say goodbye</code>）并反问对方（<code>What about your holiday?</code>）。</li>
+          <li><strong>易错提醒：</strong>高频易漏字母词自查清单：<code>goodbye</code>（莫漏 e）、<code>wonderful</code>（仅 1 个 l）、<code>meaningful</code>、<code>sometimes</code>（莫漏 s）、<code>vegetables</code>、<code>enjoyed</code>（莫漏 -ed）。</li>
+          <li><strong>巩固建议：</strong>写完后大声默读一遍检查流畅度，再用笔逐个圈出所有动词核对过去式。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级英语上册第一单元测试卷（进阶强化卷） · 题目分析</span>
+    <span>题目分析 第 2 页（共 2 页）</span>
+  </div>
+</div>
+
+<script>
+  const PRINT_CLASSES = [
+    'print-exam-only',
+    'print-answer-only',
+    'print-analysis-only',
+    'print-answer-analysis'
+  ];
+  function printMode(mode) {
+    document.body.classList.remove(...PRINT_CLASSES);
+    document.querySelectorAll('.sheet.is-last-visible')
+      .forEach(el => el.classList.remove('is-last-visible'));
+    if (mode === 'exam') document.body.classList.add('print-exam-only');
+    if (mode === 'answer') document.body.classList.add('print-answer-only');
+    if (mode === 'analysis') document.body.classList.add('print-analysis-only');
+    if (mode === 'answer-analysis') document.body.classList.add('print-answer-analysis');
+    const visibleSheets = Array.from(document.querySelectorAll('.sheet'))
+      .filter(el => getComputedStyle(el).display !== 'none');
+    if (visibleSheets.length > 0) {
+      visibleSheets[visibleSheets.length - 1].classList.add('is-last-visible');
+    }
+    window.print();
+    setTimeout(() => {
+      document.body.classList.remove(...PRINT_CLASSES);
+      document.querySelectorAll('.sheet.is-last-visible')
+        .forEach(el => el.classList.remove('is-last-visible'));
+    }, 300);
+  }
+</script>
+</body>
+</html>
