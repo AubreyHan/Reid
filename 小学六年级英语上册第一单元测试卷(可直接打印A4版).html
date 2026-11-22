@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>小学六年级英语上册第一单元测试卷（难度中等 · 可直接打印A4版）</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 13mm 12mm 13mm;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+    color: #1a1a1a;
+    background: #eef1f5;
+    margin: 0;
+    padding: 18px 0 40px 0;
+    font-size: 12.6px;
+    line-height: 1.54;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 顶部打印工具栏（打印时自动隐藏） */
+  .no-print-banner {
+    width: 210mm;
+    margin: 0 auto 16px auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #1d4ed8;
+    border-radius: 8px;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .banner-info {
+    font-size: 12.8px;
+    color: #334155;
+  }
+  .banner-info strong {
+    color: #0f172a;
+    font-size: 14px;
+  }
+  .banner-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .btn {
+    border: none;
+    padding: 7px 14px;
+    font-size: 12.8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: inherit;
+  }
+  .btn-primary {
+    background: #1d4ed8;
+    color: #fff;
+  }
+  .btn-primary:hover { background: #1e40af; }
+  .btn-secondary {
+    background: #f1f5f9;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+  }
+  .btn-secondary:hover { background: #e2e8f0; }
+
+  /* A4纸张模拟容器 */
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 18px auto;
+    background: #ffffff;
+    padding: 12mm 13mm 11mm 13mm;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sheet-content {
+    flex: 1;
+  }
+
+  .page-footer {
+    margin-top: auto;
+    padding-top: 6px;
+    border-top: 1px solid #d4d4d8;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.8px;
+    color: #666;
+  }
+
+  /* 试卷大标题与考生信息 */
+  .exam-header {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  .exam-title {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 0 2px 0;
+    color: #000;
+    font-family: "Songti SC", "STSong", "PingFang SC", serif;
+  }
+  .exam-unit-tag {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 2px 0;
+  }
+  .exam-subtitle {
+    font-size: 10.8px;
+    color: #475569;
+    margin: 0 0 5px 0;
+  }
+  .student-info {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .student-info .field-line {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 72px;
+    height: 13px;
+    vertical-align: bottom;
+  }
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 6px;
+    font-size: 11px;
+  }
+  .score-table th, .score-table td {
+    border: 1px solid #333;
+    text-align: center;
+    padding: 2px 4px;
+  }
+  .score-table th {
+    background: #f5f5f5;
+    font-weight: 600;
+  }
+  .score-table td {
+    height: 18px;
+  }
+
+  /* 大题标题 */
+  .section-title {
+    font-size: 13.4px;
+    font-weight: 700;
+    color: #000;
+    margin: 8px 0 4px 0;
+    padding-bottom: 2px;
+    border-bottom: 1.2px solid #333;
+  }
+  .section-title .pts {
+    font-size: 11.4px;
+    font-weight: 400;
+    color: #333;
+    margin-left: 4px;
+  }
+  .sub-title {
+    font-size: 12.2px;
+    font-weight: 700;
+    margin: 6px 0 3px 0;
+    color: #111;
+  }
+  .sub-title .pts {
+    font-size: 11px;
+    font-weight: 400;
+    color: #444;
+  }
+
+  /* 下划线字母高亮 */
+  .u-sound {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 700;
+  }
+
+  /* 语音判断网格 */
+  .phonics-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    margin: 4px 0 6px 0;
+  }
+  .phonics-card {
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 4px 6px;
+    text-align: center;
+    background: #fcfcfd;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .phonics-card .p-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11.2px;
+    color: #333;
+    margin-bottom: 2px;
+  }
+  .phonics-words {
+    font-size: 12.2px;
+    color: #000;
+  }
+
+  /* 单词填空横线 */
+  .blank {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 64px;
+    text-align: center;
+    margin: 0 2px;
+    height: 14px;
+    vertical-align: baseline;
+  }
+  .blank-xs { min-width: 34px; }
+  .blank-sm { min-width: 48px; }
+  .blank-md { min-width: 96px; }
+  .blank-lg { min-width: 128px; }
+  .blank-xl { min-width: 160px; }
+
+  .paren {
+    display: inline-block;
+    min-width: 42px;
+    text-align: center;
+    flex-shrink: 0;
+    font-family: "PingFang SC", Arial, sans-serif;
+  }
+
+  /* 题目列表 */
+  .q-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .q-list > li {
+    margin-bottom: 4px;
+  }
+  .q-num {
+    font-weight: 700;
+    margin-right: 3px;
+  }
+
+  /* 选不同类列表 */
+  .odd-list {
+    margin: 2px 0 4px 0;
+    padding: 0;
+    list-style: none;
+  }
+  .odd-list li {
+    display: grid;
+    grid-template-columns: 36px 24px 1fr 1fr 1fr 1fr;
+    align-items: baseline;
+    margin-bottom: 3px;
+    font-size: 12.2px;
+  }
+
+  /* 过去式表格 */
+  .verb-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px 8px;
+    margin: 4px 0 6px 0;
+    font-size: 12px;
+  }
+  .verb-item {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+  }
+  .verb-line {
+    flex: 1;
+    border-bottom: 1px solid #333;
+    height: 14px;
+    min-width: 42px;
+  }
+
+  /* 选词方框 */
+  .word-box {
+    border: 1px solid #64748b;
+    border-radius: 5px;
+    background: #f8fafc;
+    padding: 4px 12px;
+    margin: 4px 0 6px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 12.2px;
+    color: #0f172a;
+  }
+
+  /* 单项选择 */
+  .choice-item {
+    margin-bottom: 4.5px;
+    line-height: 1.46;
+  }
+  .choice-stem {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 6px;
+  }
+  .choice-opts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 8px;
+    row-gap: 1px;
+    padding-left: 18px;
+    margin-top: 1px;
+    font-size: 12px;
+  }
+  .choice-opts-2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .choice-opts-1col {
+    grid-template-columns: 1fr;
+  }
+
+  /* 补全对话选项框 */
+  .dialogue-opts {
+    border: 1px solid #64748b;
+    border-radius: 5px;
+    background: #f8fafc;
+    padding: 5px 10px;
+    margin: 4px 0 6px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 14px;
+    font-size: 11.8px;
+  }
+  .dialogue-box {
+    padding: 2px 4px;
+    font-size: 12.2px;
+    line-height: 1.56;
+  }
+  .dialogue-box p {
+    margin: 2px 0;
+  }
+  .speaker {
+    font-weight: 700;
+    display: inline-block;
+    min-width: 68px;
+  }
+
+  /* 句子书写横线 */
+  .write-line {
+    border-bottom: 1px solid #444;
+    height: 21px;
+    width: 100%;
+  }
+  .sentence-ans {
+    margin: 1px 0 4px 18px;
+  }
+  .u-target {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* 阅读文章框 */
+  .passage-box {
+    border: 1px solid #94a3b8;
+    border-radius: 5px;
+    padding: 6px 11px;
+    background: #fcfcfd;
+    margin: 4px 0 6px 0;
+    font-size: 12px;
+    line-height: 1.52;
+  }
+  .passage-title {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0 0 3px 0;
+    color: #000;
+  }
+  .passage-box p {
+    margin: 0 0 3px 0;
+    text-indent: 1.8em;
+    text-align: justify;
+  }
+  .passage-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 判断题 */
+  .tf-list {
+    margin: 2px 0 6px 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+  }
+  .tf-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2.5px;
+  }
+
+  /* 书面表达导图 */
+  .writing-prompt {
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 12px;
+    background: #fcfcfd;
+    margin: 6px 0 10px 0;
+    font-size: 12.2px;
+    line-height: 1.55;
+  }
+  .mindmap-wrap {
+    margin: 8px 0 6px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .mindmap-center {
+    border: 1.6px solid #1e293b;
+    background: #f1f5f9;
+    border-radius: 20px;
+    padding: 4px 18px;
+    font-weight: 700;
+    font-size: 13px;
+    color: #0f172a;
+  }
+  .mindmap-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 7px;
+  }
+  .mm-card {
+    border: 1px solid #64748b;
+    border-radius: 5px;
+    padding: 5px 6px;
+    background: #fff;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.38;
+  }
+  .mm-card strong {
+    display: block;
+    font-size: 11.4px;
+    color: #0f172a;
+    border-bottom: 1px dashed #cbd5e1;
+    padding-bottom: 2px;
+    margin-bottom: 3px;
+  }
+  .mm-card span {
+    color: #475569;
+    font-size: 10.6px;
+  }
+
+  /* 英文作文书写线 */
+  .composition-box {
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 12px 16px 14px 16px;
+    background: #fff;
+    margin-top: 8px;
+  }
+  .comp-title-line {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #000;
+  }
+  .eng-line {
+    height: 29px;
+    border-bottom: 1px solid #555;
+    position: relative;
+  }
+  .eng-line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 16px;
+    border-bottom: 1px dashed #cbd5e1;
+  }
+
+  .self-check-box {
+    margin-top: 12px;
+    border: 1px dashed #64748b;
+    border-radius: 6px;
+    padding: 8px 12px;
+    background: #f8fafc;
+    font-size: 11.6px;
+    color: #334155;
+  }
+  .self-check-title {
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+  }
+  .self-check-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 16px;
+  }
+
+  /* 参考答案页 */
+  .ans-header {
+    text-align: center;
+    border-bottom: 1.8px solid #1e293b;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+  }
+  .ans-header h2 {
+    margin: 0;
+    font-size: 15.4px;
+    color: #0f172a;
+  }
+  .ans-header p {
+    margin: 2px 0 0 0;
+    font-size: 10.4px;
+    color: #475569;
+  }
+  .ans-sec {
+    margin-bottom: 5.5px;
+    font-size: 10.8px;
+    line-height: 1.44;
+  }
+  .ans-sec h3 {
+    font-size: 11.6px;
+    margin: 0 0 2.5px 0;
+    padding: 1.5px 7px;
+    background: #f1f5f9;
+    border-left: 3px solid #1d4ed8;
+    color: #0f172a;
+  }
+  .ans-p {
+    margin: 2px 0;
+    text-align: justify;
+  }
+  .tip-note {
+    font-size: 10.2px;
+    color: #475569;
+  }
+  .rubric-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 3px;
+    font-size: 10.2px;
+    line-height: 1.36;
+  }
+  .rubric-table th, .rubric-table td {
+    border: 1px solid #cbd5e1;
+    padding: 2.5px 6px;
+    text-align: left;
+  }
+  .rubric-table th {
+    background: #f8fafc;
+    font-weight: 600;
+    text-align: center;
+  }
+  .sample-essay {
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    border-radius: 4px;
+    padding: 5px 9px;
+    margin-top: 4px;
+    font-size: 10.6px;
+    line-height: 1.44;
+  }
+
+  /* 打印控制模式 */
+  body.print-exam-only .answer-page { display: none !important; }
+  body.print-ans-only .exam-page { display: none !important; }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      margin: 0;
+    }
+    .no-print-banner {
+      display: none !important;
+    }
+    .sheet {
+      width: auto;
+      height: 270mm;
+      min-height: 270mm;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      page-break-after: always;
+      break-after: page;
+    }
+    .sheet:last-of-type {
+      page-break-after: auto;
+      break-after: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- 顶部交互工具栏（打印自动隐藏） -->
+<div class="no-print-banner">
+  <div class="banner-info">
+    <strong>小学六年级英语上册 · 第一单元测试卷（难度中等 · A4打印版）</strong><br>
+    紧扣北京版（2022课标修订）六上英语 Unit One: A Wonderful Summer Holiday（Lesson 1–4 及语音）｜共4页试卷＋1页参考答案
+  </div>
+  <div class="banner-actions">
+    <button class="btn btn-primary" onclick="printMode('exam')">仅打印试卷（4页）</button>
+    <button class="btn btn-secondary" onclick="printMode('ans')">仅打印答案（1页）</button>
+    <button class="btn btn-secondary" onclick="printMode('all')">打印全套（5页）</button>
+  </div>
+</div>
+
+<!-- ==================== 第 1 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="exam-header">
+      <h1 class="exam-title">小学六年级英语上册第一单元测试卷</h1>
+      <div class="exam-unit-tag">Unit One: A Wonderful Summer Holiday</div>
+      <div class="exam-subtitle">依据北京版义务教育教科书六年级上册第一单元编排 ｜ 难度：中等 ｜ 满分：100分 ｜ 建议用时：60分钟</div>
+      <div class="student-info">
+        <span>班级：<span class="field-line"></span></span>
+        <span>姓名：<span class="field-line"></span></span>
+        <span>学号：<span class="field-line" style="min-width:56px;"></span></span>
+        <span>得分：<span class="field-line" style="min-width:56px;"></span></span>
+      </div>
+      <table class="score-table">
+        <tr>
+          <th style="width:10%;">题号</th>
+          <th style="width:11%;">一</th>
+          <th style="width:11%;">二</th>
+          <th style="width:11%;">三</th>
+          <th style="width:11%;">四</th>
+          <th style="width:11%;">五</th>
+          <th style="width:11%;">六</th>
+          <th style="width:11%;">七</th>
+          <th style="width:13%;">总分</th>
+        </tr>
+        <tr>
+          <td><strong>得分</strong></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 一、语音辨析 -->
+    <div class="section-title">一、语音辨析（Letters and Sounds）<span class="pts">（共10分）</span></div>
+
+    <div class="sub-title">1. 判断下列每组单词画线部分发音是（T）否（F）相同。<span class="pts">（每题1分，共5分）</span></div>
+    <div class="phonics-grid">
+      <div class="phonics-card">
+        <div class="p-top"><span>(1)</span><span>(　　)</span></div>
+        <div class="phonics-words">h<span class="u-sound">are</span><br>sh<span class="u-sound">are</span></div>
+      </div>
+      <div class="phonics-card">
+        <div class="p-top"><span>(2)</span><span>(　　)</span></div>
+        <div class="phonics-words">th<span class="u-sound">ere</span><br>h<span class="u-sound">ere</span></div>
+      </div>
+      <div class="phonics-card">
+        <div class="p-top"><span>(3)</span><span>(　　)</span></div>
+        <div class="phonics-words">ch<span class="u-sound">air</span><br>p<span class="u-sound">air</span></div>
+      </div>
+      <div class="phonics-card">
+        <div class="p-top"><span>(4)</span><span>(　　)</span></div>
+        <div class="phonics-words">wh<span class="u-sound">ere</span><br>c<span class="u-sound">are</span>ful</div>
+      </div>
+      <div class="phonics-card">
+        <div class="p-top"><span>(5)</span><span>(　　)</span></div>
+        <div class="phonics-words">h<span class="u-sound">air</span><br>h<span class="u-sound">ear</span></div>
+      </div>
+    </div>
+
+    <div class="sub-title">2. 根据句意，选择 <em>are</em>、<em>air</em> 或 <em>ere</em> 补全单词。<span class="pts">（每空1分，共5分）</span></div>
+    <ul class="q-list" style="font-size:12.2px;">
+      <li><span class="q-num">(1)</span> Be c<span class="blank blank-xs"></span>ful! The soup is very hot.</li>
+      <li><span class="q-num">(2)</span> Wh<span class="blank blank-xs"></span> did you go this summer holiday?</li>
+      <li><span class="q-num">(3)</span> The cute girl sitting on the chair has long black h<span class="blank blank-xs"></span>.</li>
+      <li><span class="q-num">(4)</span> I want to sh<span class="blank blank-xs"></span> my wonderful summer story with my friends.</li>
+      <li><span class="q-num">(5)</span> Look! The funny dog is wearing a new p<span class="blank blank-xs"></span> of shoes.</li>
+    </ul>
+
+    <!-- 二、词汇积累与运用 -->
+    <div class="section-title">二、词汇积累与运用<span class="pts">（共20分）</span></div>
+
+    <div class="sub-title">1. 选出每组单词中不同类的一项。<span class="pts">（每题1分，共5分）</span></div>
+    <ul class="odd-list">
+      <li><span>(　　)</span><strong>1.</strong><span>A. wonderful</span><span>B. meaningful</span><span>C. exciting</span><span>D. daytime</span></li>
+      <li><span>(　　)</span><strong>2.</strong><span>A. Toronto</span><span>B. Ottawa</span><span>C. Canada</span><span>D. Dalian</span></li>
+      <li><span>(　　)</span><strong>3.</strong><span>A. train</span><span>B. beach</span><span>C. bus</span><span>D. plane</span></li>
+      <li><span>(　　)</span><strong>4.</strong><span>A. fed</span><span>B. flew</span><span>C. stayed</span><span>D. swim</span></li>
+      <li><span>(　　)</span><strong>5.</strong><span>A. chick</span><span>B. dog</span><span>C. cat</span><span>D. university</span></li>
+    </ul>
+
+    <div class="sub-title">2. 写出下列动词的过去式。<span class="pts">（每题0.5分，共5分）</span></div>
+    <div class="verb-grid">
+      <div class="verb-item"><span>(1) enjoy →</span><span class="verb-line"></span></div>
+      <div class="verb-item"><span>(2) go →</span><span class="verb-line"></span></div>
+      <div class="verb-item"><span>(3) stay →</span><span class="verb-line"></span></div>
+      <div class="verb-item"><span>(4) take →</span><span class="verb-line"></span></div>
+      <div class="verb-item"><span>(5) feed →</span><span class="verb-line"></span></div>
+      <div class="verb-item"><span>(6) fly →</span><span class="verb-line"></span></div>
+      <div class="verb-item"><span>(7) tell →</span><span class="verb-line"></span></div>
+      <div class="verb-item"><span>(8) sing →</span><span class="verb-line"></span></div>
+      <div class="verb-item"><span>(9) run →</span><span class="verb-line"></span></div>
+      <div class="verb-item"><span>(10) leave →</span><span class="verb-line"></span></div>
+    </div>
+
+    <div class="sub-title">3. 从方框中选择合适的词或短语，并用其适当形式填空。<span class="pts">（每题2分，共10分）</span></div>
+    <div class="word-box">
+      <span>on foot</span>
+      <span>far from</span>
+      <span>go fishing</span>
+      <span>sometimes</span>
+      <span>take care of</span>
+    </div>
+    <ul class="q-list" style="font-size:12.2px;">
+      <li><span class="q-num">(1)</span> The National Library of China is near Lingling's home, so she went there <span class="blank blank-md"></span>.</li>
+      <li><span class="q-num">(2)</span> Hubei is <span class="blank blank-md"></span> Beijing, so Guoguo took a train to get there.</li>
+      <li><span class="q-num">(3)</span> In the afternoon, Guoguo <span class="blank blank-md"></span> watered the flowers and vegetables in the garden.</li>
+      <li><span class="q-num">(4)</span> My little sister enjoyed learning to <span class="blank blank-md"></span> the baby chicks on the farm.</li>
+      <li><span class="q-num">(5)</span> Last Saturday afternoon, Mike <span class="blank blank-md"></span> with his grandfather by the lake and had great fun.</li>
+    </ul>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级英语上册第一单元测试卷（难度中等）</span>
+    <span>第 1 页（共 4 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 2 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+
+    <!-- 三、单项选择 -->
+    <div class="section-title" style="margin-top:0;">三、单项选择<span class="pts">（每题1分，共10分）</span></div>
+
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">1.</span> — ______ was your summer holiday?　— It was wonderful!</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. What</span><span>B. How</span><span>C. Where</span><span>D. When</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">2.</span> — Did you travel to Shanghai this summer?　— No, I ______. I stayed in Beijing.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. don't</span><span>B. wasn't</span><span>C. didn't</span><span>D. did</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">3.</span> Baobao visited Northeast China with his family and ______ the view of Tianchi Lake.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. enjoy</span><span>B. enjoys</span><span>C. enjoying</span><span>D. enjoyed</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">4.</span> — ______ did Maomao get to the China Science and Technology Museum?　— By bus.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. How</span><span>B. What</span><span>C. Where</span><span>D. Who</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">5.</span> Mike stayed with his grandparents in Canada ______ three weeks.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. in</span><span>B. on</span><span>C. for</span><span>D. at</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">6.</span> Maomao worked as a helper at the museum ______ the 1st to the 10th of August.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. between</span><span>B. from</span><span>C. at</span><span>D. on</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">7.</span> Lingling went to the library and ______ many interesting books there.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. read</span><span>B. reads</span><span>C. reading</span><span>D. to read</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">8.</span> — ______ did Guoguo stay at her grandparents' home in Hubei?　— For two weeks.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. How many</span><span>B. How often</span><span>C. How long</span><span>D. How old</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">9.</span> In the daytime, Sara and her friends climbed mountains and ______ sports at the summer camp.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. do</span><span>B. does</span><span>C. doing</span><span>D. did</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">10.</span> Before the Chinese students ______ Canada, they watched an ice hockey game with Mike.</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. leave</span><span>B. left</span><span>C. leaves</span><span>D. are leaving</span></div>
+    </div>
+
+    <!-- 四、情景交际 -->
+    <div class="section-title">四、情景交际：选择合适的句子补全对话（有一项多余）<span class="pts">（每空2分，共10分）</span></div>
+    <div class="dialogue-opts">
+      <div><strong>A.</strong> How did you get there?</div>
+      <div><strong>B.</strong> What did you do there?</div>
+      <div><strong>C.</strong> No, I didn't.</div>
+      <div><strong>D.</strong> How was your summer holiday?</div>
+      <div><strong>E.</strong> I stayed there for ten days.</div>
+      <div><strong>F.</strong> Where did you go?</div>
+    </div>
+    <div class="dialogue-box">
+      <p><span class="speaker">Guoguo:</span> Hi, Yangyang! Welcome back to school! (1) <span class="blank blank-sm"></span></p>
+      <p><span class="speaker">Yangyang:</span> It was really fun! Did you travel this summer, Guoguo?</p>
+      <p><span class="speaker">Guoguo:</span> Yes, I did. I went to Hangzhou with my parents.</p>
+      <p><span class="speaker">Yangyang:</span> Sounds great! (2) <span class="blank blank-sm"></span></p>
+      <p><span class="speaker">Guoguo:</span> We took a high-speed train. It was fast and comfortable.</p>
+      <p><span class="speaker">Yangyang:</span> (3) <span class="blank blank-sm"></span></p>
+      <p><span class="speaker">Guoguo:</span> We enjoyed the beautiful view of West Lake, visited a tea museum and ate delicious food.</p>
+      <p><span class="speaker">Yangyang:</span> How long did you stay in Hangzhou?</p>
+      <p><span class="speaker">Guoguo:</span> (4) <span class="blank blank-sm"></span> What about you, Yangyang? Did you travel, too?</p>
+      <p><span class="speaker">Yangyang:</span> (5) <span class="blank blank-sm"></span> I stayed in Beijing. I joined a sports club and went swimming with my friends.</p>
+      <p><span class="speaker">Guoguo:</span> Cool! Both of us had a wonderful holiday!</p>
+    </div>
+
+    <!-- 五、句型转换与连词成句 -->
+    <div class="section-title">五、句型转换与连词成句<span class="pts">（共14分）</span></div>
+
+    <div class="sub-title">1. 按要求完成句子，每空一词。<span class="pts">（每题2分，共8分）</span></div>
+    <ul class="q-list" style="font-size:12px;">
+      <li><span class="q-num">(1)</span> I went to <span class="u-target">Northeast China</span> with my family.（对画线部分提问）<br>
+        <span style="margin-left:20px;"></span><span class="blank blank-sm"></span> <span class="blank blank-sm"></span> you go with your family?
+      </li>
+      <li><span class="q-num">(2)</span> Yangyang joined a sports club this summer.（改为一般疑问句）<br>
+        <span style="margin-left:20px;"></span><span class="blank blank-sm"></span> Yangyang <span class="blank blank-sm"></span> a sports club this summer?
+      </li>
+      <li><span class="q-num">(3)</span> Guoguo went to Hubei by train.（改为同义句）<br>
+        <span style="margin-left:20px;"></span>Guoguo <span class="blank blank-sm"></span> a <span class="blank blank-sm"></span> to Hubei.
+      </li>
+      <li><span class="q-num">(4)</span> Mike flew back to Canada to see his grandparents.（改为否定句）<br>
+        <span style="margin-left:20px;"></span>Mike <span class="blank blank-sm"></span> <span class="blank blank-sm"></span> back to Canada to see his grandparents.
+      </li>
+    </ul>
+
+    <div class="sub-title">2. 连词成句，注意首字母大写和标点符号。<span class="pts">（每题2分，共6分）</span></div>
+    <ul class="q-list" style="font-size:12px;">
+      <li>
+        <span class="q-num">(1)</span> all / enjoyed / holiday / summer / We / our (.)
+        <div class="sentence-ans"><div class="write-line"></div></div>
+      </li>
+      <li>
+        <span class="q-num">(2)</span> far / Is / from / museum / the / home / your (?)
+        <div class="sentence-ans"><div class="write-line"></div></div>
+      </li>
+      <li>
+        <span class="q-num">(3)</span> Canada / grandparents / I / to / went / to / my / see (.)
+        <div class="sentence-ans"><div class="write-line"></div></div>
+      </li>
+    </ul>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级英语上册第一单元测试卷（难度中等）</span>
+    <span>第 2 页（共 4 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 3 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="section-title" style="margin-top:0;">六、阅读理解<span class="pts">（共24分）</span></div>
+
+    <!-- Passage A -->
+    <div class="sub-title">（A）阅读短文，判断下列句子正（T）误（F）。<span class="pts">（每题2分，共10分）</span></div>
+    <div class="passage-box">
+      <div class="passage-title">A Meaningful Summer in Qingdao</div>
+      <p>Last July, Lin Tao had a wonderful and meaningful summer holiday. He went to Qingdao with his parents by train. They stayed at his uncle's house for eight days.</p>
+      <p>In the morning, Lin Tao often went to the beach on foot because it was not far from his uncle's house. He swam in the sea, played volleyball on the beach and collected pretty shells. In the afternoon, he sometimes went fishing with his uncle. On the last two days, Lin Tao worked as a little helper at a seaside park. He helped clean up the beach and told visitors not to drop litter.</p>
+      <p>"Qingdao is a great city, and helping protect the beach made my holiday really special," Lin Tao said.</p>
+    </div>
+    <ul class="tf-list">
+      <li><span><span class="q-num">(1)</span> Lin Tao went to Qingdao with his parents by plane.</span><span class="paren">(　　)</span></li>
+      <li><span><span class="q-num">(2)</span> They stayed at his uncle's house for eight days.</span><span class="paren">(　　)</span></li>
+      <li><span><span class="q-num">(3)</span> The beach was very far from his uncle's house.</span><span class="paren">(　　)</span></li>
+      <li><span><span class="q-num">(4)</span> In the afternoon, Lin Tao sometimes went fishing with his uncle.</span><span class="paren">(　　)</span></li>
+      <li><span><span class="q-num">(5)</span> Lin Tao worked as a helper at a seaside park for two days.</span><span class="paren">(　　)</span></li>
+    </ul>
+
+    <!-- Passage B -->
+    <div class="sub-title" style="margin-top:8px;">（B）阅读短文，完成下列任务。<span class="pts">（共14分）</span></div>
+    <div class="passage-box">
+      <div class="passage-title">Emma's Summer Camp Diary</div>
+      <p>This August, Emma and her classmates went to a Nature Summer Camp in the countryside near Beijing. The camp was about forty kilometres from their school, so they went there by bus. They stayed there from the 12th to the 18th of August.</p>
+      <p>Every morning, the children got up early and fed the baby chicks, ducks and rabbits on the farm. After breakfast, they learned to water the vegetables and pick fresh tomatoes. In the daytime, they also climbed a small mountain and learned about different plants from a science teacher.</p>
+      <p>In the evening, they did not watch TV or play on phones. Instead, they sat around a campfire, sang English songs, danced and shared interesting stories. Before they left the camp, Emma made a picture book about her camp life with her team.</p>
+      <p>"I learned a lot from nature and made many new friends. It was hard to say goodbye!" Emma wrote in her diary.</p>
+    </div>
+
+    <div class="sub-title" style="font-size:11.8px;">任务一：选择正确的答案。<span class="pts">（每题2分，共8分）</span></div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">1.</span> How did Emma and her classmates get to the summer camp?</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. On foot.</span><span>B. By train.</span><span>C. By bus.</span><span>D. By car.</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">2.</span> How long did they stay at the summer camp?</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. For five days.</span><span>B. For six days.</span><span>C. For seven days.</span><span>D. For eight days.</span></div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">3.</span> What did the children do in the evening?</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts choice-opts-2col">
+        <span>A. They watched TV and played on phones.</span>
+        <span>B. They fed the chickens and watered vegetables.</span>
+        <span>C. They climbed a small mountain.</span>
+        <span>D. They sang songs, danced and shared stories.</span>
+      </div>
+    </div>
+    <div class="choice-item">
+      <div class="choice-stem"><span><span class="q-num">4.</span> What did Emma make with her team before leaving the camp?</span><span class="paren">(　　)</span></div>
+      <div class="choice-opts"><span>A. A science poster.</span><span>B. A picture book.</span><span>C. A video.</span><span>D. A model plane.</span></div>
+    </div>
+
+    <div class="sub-title" style="font-size:11.8px; margin-top:6px;">任务二：根据短文内容，回答问题。<span class="pts">（每题2分，共6分）</span></div>
+    <ul class="q-list" style="font-size:12px;">
+      <li>
+        <span class="q-num">5.</span> Where did Emma and her classmates go this August?
+        <div class="sentence-ans"><div class="write-line"></div></div>
+      </li>
+      <li>
+        <span class="q-num">6.</span> Who taught them about different plants in the daytime?
+        <div class="sentence-ans"><div class="write-line"></div></div>
+      </li>
+      <li>
+        <span class="q-num">7.</span> How did Emma feel when it was time to leave the camp?
+        <div class="sentence-ans"><div class="write-line"></div></div>
+      </li>
+    </ul>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级英语上册第一单元测试卷（难度中等）</span>
+    <span>第 3 页（共 4 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 4 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="section-title" style="margin-top:0;">七、书面表达<span class="pts">（共12分）</span></div>
+
+    <div class="writing-prompt">
+      <p style="margin:0 0 4px 0;">新学期开始了，同学们都在分享自己精彩的暑假故事。请根据下方思维导图的提示，以 <strong>My Wonderful Summer Holiday</strong> 为题，写一篇英语短文介绍你的暑假经历。</p>
+      <div class="mindmap-wrap">
+        <div class="mindmap-center">My Wonderful Summer Holiday</div>
+        <div class="mindmap-grid">
+          <div class="mm-card">
+            <strong>1. How was it?</strong>
+            <span>wonderful / fun / meaningful / exciting</span>
+          </div>
+          <div class="mm-card">
+            <strong>2. Where?</strong>
+            <span>Beijing / Dalian / grandparents' home / a camp...</span>
+          </div>
+          <div class="mm-card">
+            <strong>3. Who &amp; How?</strong>
+            <span>with parents / by train / by car / on foot...</span>
+          </div>
+          <div class="mm-card">
+            <strong>4. What did you do?</strong>
+            <span>visited... / played on the beach / read books...</span>
+          </div>
+          <div class="mm-card">
+            <strong>5. How did you feel?</strong>
+            <span>had a great time / enjoyed the holiday</span>
+          </div>
+        </div>
+      </div>
+      <p style="margin:4px 0 0 0; font-size:11.6px; color:#334155;">
+        <strong>写作要求：</strong>① 内容涵盖导图要点，可适当发挥；② <strong>正确使用一般过去时</strong>；③ 语句通顺，大小写及标点规范，不少于50词（约6～8句话）；文中不出现真实姓名和校名。
+      </p>
+    </div>
+
+    <div class="composition-box">
+      <div class="comp-title-line">My Wonderful Summer Holiday</div>
+      <div class="eng-line"></div>
+      <div class="eng-line"></div>
+      <div class="eng-line"></div>
+      <div class="eng-line"></div>
+      <div class="eng-line"></div>
+      <div class="eng-line"></div>
+      <div class="eng-line"></div>
+      <div class="eng-line"></div>
+      <div class="eng-line"></div>
+      <div class="eng-line"></div>
+      <div class="eng-line"></div>
+      <div class="eng-line"></div>
+    </div>
+
+    <div class="self-check-box">
+      <div class="self-check-title">Self-Check（写后自查清单 · 呼应教材 Unit One 自我评价）</div>
+      <div class="self-check-items">
+        <div>□ 我用英语清楚介绍了暑假去了哪里、怎么去的、做了什么。</div>
+        <div>□ 我正确使用了动词过去式（如 went, visited, had, enjoyed）。</div>
+        <div>□ 句子首字母大写，专有名词拼写正确，标点使用规范。</div>
+        <div>□ 卷面整洁，书写工整，词数不少于 50 词。</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级英语上册第一单元测试卷（难度中等）</span>
+    <span>第 4 页（共 4 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 5 页（参考答案与评分标准） ==================== -->
+<div class="sheet answer-page">
+  <div class="sheet-content">
+    <div class="ans-header">
+      <h2>小学六年级英语上册第一单元测试卷 · 参考答案与评分标准</h2>
+      <p>依据北京版义务教育教科书六年级上册 Unit One 编排 ｜ 仅供教师批阅与家长核对使用</p>
+    </div>
+
+    <div class="ans-sec">
+      <h3>一、语音辨析（共10分）</h3>
+      <div class="ans-p"><strong>1. 判断发音（每题1分，共5分）：</strong>
+        (1) <strong>T</strong> <span class="tip-note">（are 均发 /eə/）</span>　
+        (2) <strong>F</strong> <span class="tip-note">（there 发 /eə/，here 发 /ɪə/）</span>　
+        (3) <strong>T</strong> <span class="tip-note">（air 均发 /eə/）</span>　
+        (4) <strong>T</strong> <span class="tip-note">（ere、are 均发 /eə/）</span>　
+        (5) <strong>F</strong> <span class="tip-note">（hair 发 /eə/，hear 发 /ɪə/）</span>
+      </div>
+      <div class="ans-p"><strong>2. 补全字母组合（每空1分，共5分）：</strong>
+        (1) <strong>are</strong> (careful)　(2) <strong>ere</strong> (Where)　(3) <strong>air</strong> (hair)　(4) <strong>are</strong> (share)　(5) <strong>air</strong> (pair)
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>二、词汇积累与运用（共20分）</h3>
+      <div class="ans-p"><strong>1. 选不同类（每题1分，共5分）：</strong>
+        1. <strong>D</strong> <span class="tip-note">（名词，其余为形容词）</span>　
+        2. <strong>C</strong> <span class="tip-note">（国家，其余为城市）</span>　
+        3. <strong>B</strong> <span class="tip-note">（自然景观，其余为交通工具）</span>　
+        4. <strong>D</strong> <span class="tip-note">（动词原形，其余为过去式）</span>　
+        5. <strong>D</strong> <span class="tip-note">（大学/场所，其余为动物）</span>
+      </div>
+      <div class="ans-p"><strong>2. 写动词过去式（每题0.5分，共5分）：</strong>
+        (1) <strong>enjoyed</strong>　(2) <strong>went</strong>　(3) <strong>stayed</strong>　(4) <strong>took</strong>　(5) <strong>fed</strong>　
+        (6) <strong>flew</strong>　(7) <strong>told</strong>　(8) <strong>sang</strong>　(9) <strong>ran</strong>　(10) <strong>left</strong>
+      </div>
+      <div class="ans-p"><strong>3. 选词/短语适当形式填空（每题2分，共10分）：</strong>
+        (1) <strong>on foot</strong>　(2) <strong>far from</strong>　(3) <strong>sometimes</strong>　(4) <strong>take care of</strong>　
+        (5) <strong>went fishing</strong> <span class="tip-note">（由 Last Saturday afternoon 及 and had 可知需用过去式，若写 go fishing 扣1分）</span>
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>三、单项选择（每题1分，共10分）</h3>
+      <div class="ans-p">
+        1. <strong>B</strong>　2. <strong>C</strong>　3. <strong>D</strong>　4. <strong>A</strong>　5. <strong>C</strong>　
+        6. <strong>B</strong>　7. <strong>A</strong>　8. <strong>C</strong>　9. <strong>D</strong>　10. <strong>B</strong><br>
+        <span class="tip-note"><strong>易错点解析：</strong>第5题“持续三周”用 for；第6题固定搭配 from ... to ...；第7题 read 的过去式拼写仍为 read（读音 /red/），与 went 并列；第8题由答语 For two weeks 可知问时长，用 How long；第10题由 watched 可知为过去时，leave 的过去式为 left。</span>
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>四、情景交际（每空2分，共10分）</h3>
+      <div class="ans-p">
+        (1) <strong>D</strong>　(2) <strong>A</strong>　(3) <strong>B</strong>　(4) <strong>E</strong>　(5) <strong>C</strong>
+        <span class="tip-note">（多余项为 F；对话前文已说明去了杭州，故不选 Where did you go?）</span>
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>五、句型转换与连词成句（共14分）</h3>
+      <div class="ans-p"><strong>1. 按要求完成句子（每空1分，每题2分，共8分）：</strong>
+        (1) <strong>Where did</strong>　(2) <strong>Did; join</strong>　(3) <strong>took; train</strong>　(4) <strong>didn't fly</strong>
+        <span class="tip-note">（注意首字母大写及助动词 did/didn't 后接动词原形）</span>
+      </div>
+      <div class="ans-p"><strong>2. 连词成句（每题2分，共6分；大小写或标点错误每处扣0.5分）：</strong><br>
+        (1) <strong>We all enjoyed our summer holiday.</strong>　
+        (2) <strong>Is the museum far from your home?</strong>　
+        (3) <strong>I went to Canada to see my grandparents.</strong>
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>六、阅读理解（共24分）</h3>
+      <div class="ans-p"><strong>（A）判断正误（每题2分，共10分）：</strong>
+        (1) <strong>F</strong> <span class="tip-note">（文中为 by train，非 by plane）</span>　
+        (2) <strong>T</strong>　
+        (3) <strong>F</strong> <span class="tip-note">（文中为 not far from，步行前往）</span>　
+        (4) <strong>T</strong>　
+        (5) <strong>T</strong> <span class="tip-note">（On the last two days）</span>
+      </div>
+      <div class="ans-p"><strong>（B）任务型阅读（共14分）：</strong><br>
+        <strong>任务一（每题2分，共8分）：</strong>
+        1. <strong>C</strong>　
+        2. <strong>C</strong> <span class="tip-note">（8月12日至18日首尾均含，共7天）</span>　
+        3. <strong>D</strong>　
+        4. <strong>B</strong><br>
+        <strong>任务二（每题2分，共6分，语法正确、意近即可给满分）：</strong><br>
+        5. <strong>They went to a Nature Summer Camp (in the countryside near Beijing).</strong><br>
+        6. <strong>A science teacher (taught them about different plants).</strong><br>
+        7. <strong>She felt it was hard to say goodbye.</strong> <span class="tip-note">（或答 She didn't want to say goodbye / She felt sad to leave. 均可）</span>
+      </div>
+    </div>
+
+    <div class="ans-sec" style="margin-bottom:0;">
+      <h3>七、书面表达评分标准与参考范文（共12分）</h3>
+      <table class="rubric-table">
+        <tr>
+          <th style="width:14%;">等级</th>
+          <th style="width:12%;">分值</th>
+          <th>评分细则</th>
+        </tr>
+        <tr>
+          <td style="text-align:center;"><strong>一档（优秀）</strong></td>
+          <td style="text-align:center;">10～12分</td>
+          <td>完整涵盖导图全部要点（整体评价、地点、同行人与交通方式、具体活动、感受）；<strong>一般过去时使用准确</strong>，语句流畅自然，拼写、大小写及标点错误极少（≤1处），词数达50词以上。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;"><strong>二档（良好）</strong></td>
+          <td style="text-align:center;">7～9分</td>
+          <td>涵盖大部分要点，内容较充实；基本正确使用一般过去时，有少量语法或拼写错误（2～4处），不影响整体理解，词数基本达标。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;"><strong>三档（合格）</strong></td>
+          <td style="text-align:center;">4～6分</td>
+          <td>只写出部分要点，时态混用较明显（如大量使用一般现在时），语言较简单，错误较多，词数略显不足（30～45词）。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;"><strong>四档（待提高）</strong></td>
+          <td style="text-align:center;">0～3分</td>
+          <td>偏离主题或仅写出个别单词/零散短语，无法连贯表意，字数严重不足。</td>
+        </tr>
+      </table>
+      <div class="sample-essay">
+        <strong>参考范文（Model Essay，约78词）：</strong><br>
+        <strong>My Wonderful Summer Holiday</strong><br>
+        I had a wonderful and meaningful summer holiday this year. I went to Dalian with my parents by train. We stayed there for five days. In the morning, we went to the beach on foot. I swam in the sea and played on the beach. In the afternoon, we visited a museum and ate lots of delicious seafood. In the evening, we walked along the sea and took many photos. We really had a great time there. I will always remember this special holiday!
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级英语上册第一单元测试卷（难度中等）</span>
+    <span>参考答案与评分标准</span>
+  </div>
+</div>
+
+<script>
+  function printMode(mode) {
+    document.body.classList.remove('print-exam-only', 'print-ans-only');
+    if (mode === 'exam') document.body.classList.add('print-exam-only');
+    if (mode === 'ans') document.body.classList.add('print-ans-only');
+    window.print();
+    setTimeout(() => {
+      document.body.classList.remove('print-exam-only', 'print-ans-only');
+    }, 300);
+  }
+</script>
+</body>
+</html>
