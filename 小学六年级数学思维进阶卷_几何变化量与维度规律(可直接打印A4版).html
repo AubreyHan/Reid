@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>小学六年级数学思维进阶专项卷（几何变化量与维度规律深度突破 · 加难A4可打印版）</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 13mm 12mm 13mm;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: "Songti SC", "STSong", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+    color: #1a1a1a;
+    background: #eef1f5;
+    margin: 0;
+    padding: 18px 0 40px 0;
+    font-size: 13px;
+    line-height: 1.54;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print-banner {
+    width: 210mm;
+    margin: 0 auto 16px auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #4338ca;
+    border-radius: 8px;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .banner-info { font-size: 13px; color: #334155; }
+  .banner-info strong { color: #0f172a; font-size: 14px; }
+  .banner-actions { display: flex; gap: 8px; flex-shrink: 0; }
+  .btn {
+    border: none;
+    padding: 7px 14px;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .btn-primary { background: #4338ca; color: #fff; }
+  .btn-primary:hover { background: #3730a3; }
+  .btn-secondary { background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; }
+  .btn-secondary:hover { background: #e2e8f0; }
+
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 18px auto;
+    background: #ffffff;
+    padding: 12mm 13mm 11mm 13mm;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .sheet-content { flex: 1; }
+  .page-footer {
+    margin-top: auto;
+    padding-top: 6px;
+    border-top: 1px solid #d4d4d8;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #666;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  .exam-header { text-align: center; margin-bottom: 5px; }
+  .exam-title {
+    font-size: 18.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 0 2px 0;
+    color: #000;
+  }
+  .badge-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1px 7px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    vertical-align: 2px;
+    margin-left: 6px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .exam-subtitle {
+    font-size: 11px;
+    color: #444;
+    margin: 0 0 5px 0;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    white-space: nowrap;
+  }
+  .student-info {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    font-size: 12.5px;
+    margin-bottom: 5px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .student-info .field-line {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 74px;
+    height: 14px;
+    vertical-align: bottom;
+  }
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 6px;
+    font-size: 11.5px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .score-table th, .score-table td {
+    border: 1px solid #333;
+    text-align: center;
+    padding: 2px 4px;
+  }
+  .score-table th { background: #f5f5f5; font-weight: 600; }
+  .score-table td { height: 19px; }
+
+  .section-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #000;
+    margin: 7px 0 4px 0;
+    padding-bottom: 2px;
+    border-bottom: 1.2px solid #27272a;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .section-title .pts {
+    font-size: 11.5px;
+    font-weight: 400;
+    color: #333;
+    margin-left: 4px;
+  }
+
+  .frac {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 2px;
+    line-height: 1.05;
+    font-size: 0.88em;
+    font-family: "Times New Roman", "Songti SC", serif;
+  }
+  .frac .num { border-bottom: 1px solid #1a1a1a; padding: 0 2.5px 1px 2.5px; text-align: center; }
+  .frac .den { padding: 1px 2.5px 0 2.5px; text-align: center; }
+
+  .blank {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 42px;
+    text-align: center;
+    margin: 0 2px;
+    height: 14px;
+    vertical-align: baseline;
+  }
+  .blank-sm { min-width: 30px; }
+
+  .q-num { font-weight: 600; margin-right: 2px; }
+  .origin-tag {
+    display: inline-block;
+    font-size: 10.2px;
+    color: #3f3f46;
+    border: 1px solid #a1a1aa;
+    border-radius: 3px;
+    padding: 0 4px;
+    margin-right: 4px;
+    line-height: 1.35;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  .fill-list { margin: 0; padding: 0; list-style: none; }
+  .fill-list li { margin-bottom: 5.5px; text-align: justify; }
+
+  .choice-item { margin-bottom: 7.5px; }
+  .choice-stem { text-align: justify; }
+  .choice-opts-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5px 14px;
+    padding-left: 18px;
+    margin-top: 2px;
+    font-size: 12.3px;
+  }
+  .choice-opts-1 {
+    padding-left: 18px;
+    margin-top: 2px;
+    font-size: 12.2px;
+    line-height: 1.48;
+  }
+
+  /* 探究与应用题框 */
+  .app-item {
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    padding: 9px 12px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .app-stem { text-align: justify; line-height: 1.6; }
+  .app-ans-line {
+    font-size: 12.2px;
+    color: #555;
+    text-align: right;
+    padding-top: 4px;
+  }
+  .track-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .track-svg {
+    flex-shrink: 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    padding: 3px;
+    background: #fff;
+  }
+
+  /* 底部思维规律自查表 */
+  .rule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 11.8px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .rule-table th, .rule-table td {
+    border: 1px solid #94a3b8;
+    padding: 5px 8px;
+    text-align: center;
+  }
+  .rule-table th { background: #f1f5f9; font-weight: 600; color: #0f172a; }
+
+  /* 答案总览与逐题解析样式 */
+  .ans-header {
+    text-align: center;
+    border-bottom: 2px solid #1e293b;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+  }
+  .ans-header h2 { margin: 0; font-size: 16.5px; color: #0f172a; }
+  .ans-header p { margin: 2px 0 0 0; font-size: 11px; color: #475569; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; }
+
+  .summary-box {
+    border: 1.5px solid #4338ca;
+    border-radius: 6px;
+    background: #f8faff;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    font-size: 11.8px;
+    line-height: 1.58;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .summary-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #312e81;
+    margin: 0 0 5px 0;
+    border-bottom: 1px solid #c7d2fe;
+    padding-bottom: 3px;
+  }
+  .summary-row { margin: 2.5px 0; }
+
+  .analysis-banner {
+    font-size: 13.2px;
+    font-weight: 700;
+    color: #0f172a;
+    background: #eef2ff;
+    border-left: 4px solid #4338ca;
+    padding: 3px 9px;
+    margin: 6px 0 6px 0;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .ans-sec {
+    margin-bottom: 7px;
+    font-size: 11.6px;
+    line-height: 1.52;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .ans-sec h4 {
+    font-size: 12.3px;
+    margin: 0 0 3px 0;
+    color: #1e1b4b;
+    border-bottom: 1px dashed #cbd5e1;
+    padding-bottom: 2px;
+  }
+  .ans-p { margin: 3px 0; text-align: justify; }
+  .key-takeaway {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-left: 3.5px solid #d97706;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 11.3px;
+    line-height: 1.52;
+    color: #451a03;
+    margin-top: 8px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  body.print-exam-only .answer-page { display: none !important; }
+  body.print-ans-only .exam-page { display: none !important; }
+
+  @media print {
+    body { background: #fff; padding: 0; margin: 0; }
+    .no-print-banner { display: none !important; }
+    .sheet {
+      width: auto;
+      height: 270mm;
+      min-height: 270mm;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      page-break-after: always;
+      break-after: page;
+    }
+    .sheet:last-of-type { page-break-after: auto; break-after: auto; }
+    body.print-exam-only .exam-page:last-of-type { page-break-after: auto; break-after: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="no-print-banner">
+  <div class="banner-info">
+    <strong>六年级数学思维进阶专项卷（几何变化量与维度规律 · 拔高版 ★★★★★）</strong><br>
+    针对“半径同增时周长变化是否相同”深度攻坚，拓展至线性/平方变化、地球套绳、双跑道、逆推原半径等 ｜ 试卷3页 + 答案总览与逐题精析2页
+  </div>
+  <div class="banner-actions">
+    <button class="btn btn-primary" onclick="printMode('all')">🖨️ 打印全套（共5页）</button>
+    <button class="btn btn-secondary" onclick="printMode('exam')">📄 仅打印试卷（1-3页）</button>
+    <button class="btn btn-secondary" onclick="printMode('ans')">✅ 仅打印答案与解析（4-5页）</button>
+  </div>
+</div>
+
+<!-- ==================== 第 1 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="exam-header">
+      <h1 class="exam-title">六年级数学思维进阶专项训练卷<span class="badge-tag">几何变化量 · 拔高版</span></h1>
+      <p class="exam-subtitle">核心聚焦：线性变化量（周长/棱长）vs 平方变化量（面积） · 定值增减 vs 分率增减 · 逆推与综合应用 ｜ 时间：60分钟 · 满分：100分（π取3.14）</p>
+      <div class="student-info">
+        <div>姓名：<span class="field-line"></span></div>
+        <div>日期：<span class="field-line"></span></div>
+        <div>用时：<span class="field-line" style="min-width:56px;"></span> 分</div>
+        <div>得分：<span class="field-line" style="min-width:56px;"></span></div>
+      </div>
+      <table class="score-table">
+        <tr>
+          <th style="width:14%;">题号</th>
+          <th>一、填空题（22分）</th>
+          <th>二、高阶选择（20分）</th>
+          <th>三、说理与探究（14分）</th>
+          <th>四、综合压轴（44分）</th>
+          <th style="width:13%;">总分（100分）</th>
+        </tr>
+        <tr>
+          <th>得分</th>
+          <td></td><td></td><td></td><td></td><td></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 一、填空题 -->
+    <div class="section-title">一、填空题<span class="pts">（仔细辨别“增加定值”与“按分率增加”的本质区别！每空2分，共22分）</span></div>
+    <ol class="fill-list">
+      <li><span class="q-num">1.</span><span class="origin-tag">四年级溯源 · 对比</span>
+        一个小正方形边长 5 cm，一个大正方形边长 20 cm。如果把两个正方形的边长<strong>都增加 2 cm</strong>：<br>
+        小正方形周长增加 <span class="blank blank-sm"></span> cm，大正方形周长增加 <span class="blank blank-sm"></span> cm；小正方形面积增加 <span class="blank blank-sm"></span> cm²，大正方形面积增加 <span class="blank blank-sm"></span> cm²。
+      </li>
+      <li><span class="q-num">2.</span><span class="origin-tag">圆的线性增量</span>
+        （1）任意一个圆，如果半径增加 3 cm，它的周长都增加 <span class="blank"></span> cm；<br>
+        （2）任意一个圆，如果<strong>直径</strong>增加 3 cm，它的周长都增加 <span class="blank"></span> cm；<br>
+        （3）反过来，如果一个圆的周长增加了 12.56 m，那么它的半径一定增加了 <span class="blank blank-sm"></span> m。
+      </li>
+      <li><span class="q-num">3.</span><span class="origin-tag">高能对比 · 增分率</span>
+        小圆半径是 4 cm，大圆半径是 8 cm。如果把两个圆的半径<strong>都增加各自原半径的 <span class="frac"><span class="num">1</span><span class="den">4</span></span></strong>，那么小圆周长增加了 <span class="blank"></span> cm，大圆周长增加了 <span class="blank"></span> cm。
+      </li>
+      <li style="margin-bottom:2px;"><span class="q-num">4.</span><span class="origin-tag">反向缩小与半圆</span>
+        一个半圆的半径由 <i>r</i> cm 减少到 (<i>r</i>－2) cm（<i>r</i>＞2），这个<strong>半圆的周长</strong>（含直径）减少了 <span class="blank"></span> cm；若把一个完整圆的半径缩小到原来的 <span class="frac"><span class="num">1</span><span class="den">3</span></span>，它的面积比原来减少了原面积的 <span class="blank blank-sm"></span>（填分数）。
+      </li>
+    </ol>
+
+    <!-- 二、高阶辨析选择题 -->
+    <div class="section-title">二、高阶辨析选择题<span class="pts">（用规律与字母检验直觉！每题4分，共20分）</span></div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span class="q-num">1.</span><span class="origin-tag">经典“地球套绳”实验</span>
+        假设用一根绳子紧紧绕地球赤道（近似大圆）一圈，另一根绳子紧紧绕篮球（近似小圆）一圈。现将这两根绳子<strong>各接长 6.28 米</strong>，再分别围成同心圆套在地球赤道和篮球外，绳子与物体表面都会形成一圈均匀缝隙。关于两处缝隙宽度，说法正确的是（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。
+      </div>
+      <div class="choice-opts-2">
+        <div>A. 篮球外面的缝隙明显更宽</div>
+        <div>B. 地球外面的缝隙明显更宽</div>
+        <div>C. 两处缝隙宽度完全相同，都是 1 米</div>
+        <div>D. 地球太大，无法比较缝隙宽度</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span class="q-num">2.</span><span class="origin-tag">逆向陷阱 · 同增面积</span>
+        小圆半径是 3 cm，大圆半径是 10 cm。如果把两个圆的<strong>面积都增加 31.4 cm²</strong>，那么哪一个圆的<strong>半径增加得更多</strong>？（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）
+      </div>
+      <div class="choice-opts-2">
+        <div>A. 小圆半径增加得更多</div>
+        <div>B. 大圆半径增加得更多</div>
+        <div>C. 两个圆半径增加得一样多</div>
+        <div>D. 无法判断</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span class="q-num">3.</span><span class="origin-tag">三/四年级溯源 · 长方形</span>
+        一个长方形长 <i>a</i> cm、宽 <i>b</i> cm（<i>a</i>＞<i>b</i>）。将它的长增加 3 cm、宽减少 3 cm 得到新长方形，与原长方形相比，新长方形的（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。
+      </div>
+      <div class="choice-opts-2">
+        <div>A. 周长不变，面积不变</div>
+        <div>B. 周长不变，面积变小</div>
+        <div>C. 周长变大，面积变小</div>
+        <div>D. 周长不变，面积变大</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span class="q-num">4.</span><span class="origin-tag">扇形周长变化</span>
+        有两个圆心角都是 90° 的扇形（即 <span class="frac"><span class="num">1</span><span class="den">4</span></span> 圆），大扇形半径为 <i>R</i>，小扇形半径为 <i>r</i>（<i>R</i>＞<i>r</i>）。如果把它们的半径都增加 4 cm，两扇形<strong>周长</strong>增加量相比，（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。
+      </div>
+      <div class="choice-opts-2">
+        <div>A. 大扇形增加得多</div>
+        <div>B. 小扇形增加得多</div>
+        <div>C. 一样多，都增加 14.28 cm</div>
+        <div>D. 一样多，都增加 6.28 cm</div>
+      </div>
+    </div>
+
+    <div class="choice-item" style="margin-bottom:0;">
+      <div class="choice-stem">
+        <span class="q-num">5.</span><span class="origin-tag">五年级三维迁移</span>
+        小正方体棱长 2 cm，大正方体棱长 5 cm，把它们的棱长都增加 1 cm，下列说法正确的是（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。
+      </div>
+      <div class="choice-opts-1">
+        <div>A. 棱长总和增加量相同，表面积增加量也相同　　　　B. 棱长总和增加量不同，表面积增加量也不同</div>
+        <div>C. 棱长总和增加量相同，但大正方体表面积和体积的增加量都比小正方体大</div>
+        <div>D. 棱长总和与表面积增加量都相同，只有体积增加量不同</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学思维进阶专项训练卷（几何变化量与维度规律 · 拔高版）</span>
+    <span>第 1 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 2 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <!-- 三、代数说理与规律探究 -->
+    <div class="section-title" style="margin-top:0;">三、代数说理与规律探究题<span class="pts">（用乘法分配律和图形规律讲透本质！共14分）</span></div>
+
+    <div class="app-item" style="min-height:178px;">
+      <div class="app-stem">
+        <span class="q-num">1.</span><span class="origin-tag">用字母与乘法分配律证明 · 6分</span>
+        设小圆半径为 <i>r</i> 米，大圆半径为 <i>R</i> 米（<i>R</i>＞<i>r</i>），现把两个圆的半径<strong>同时增加 <i>a</i> 米</strong>。<br>
+        （1）分别写出小圆、大圆<strong>周长增加量</strong>的字母式，并用<strong>乘法分配律</strong>化简，说明为什么周长增加得一样多。（3分）<br>
+        （2）当 <i>r</i>＝4、<i>R</i>＝9、<i>a</i>＝2 时，分别求出两个圆的<strong>面积增加量</strong>，并比较大小。（3分）
+      </div>
+    </div>
+
+    <div class="app-item" style="min-height:208px;">
+      <div class="track-layout">
+        <div class="app-stem" style="flex:1;">
+          <span class="q-num">2.</span><span class="origin-tag">环形跑道规律探究 · 8分</span>
+          右图是学校操场跑道示意图（由中间长 50 m 的直道和两端两个完全相同的半圆弯道组成）。第 1 跑道半圆半径为 15 m，每条跑道宽 1.2 m（相邻跑道半圆半径相差 1.2 m）。<br>
+          （1）第 2 跑道一圈比第 1 跑道长多少米？（4分）<br>
+          （2）若将中间直道由 50 m 改建为 80 m（道宽仍为 1.2 m），第 2 跑道比第 1 跑道长的米数会改变吗？第 3 跑道一圈比第 1 跑道长多少米？（4分）
+        </div>
+        <div class="track-svg">
+          <svg width="218" height="96" viewBox="0 0 240 104" xmlns="http://www.w3.org/2000/svg">
+            <!-- 外3道 r=42, 中2道 r=33, 内1道 r=24; 直道 x=66..174, cy=52 -->
+            <path d="M 66 10 L 174 10 A 42 42 0 0 1 174 94 L 66 94 A 42 42 0 0 1 66 10 Z" fill="#f8fafc" stroke="#64748b" stroke-width="1" stroke-dasharray="3,2"/>
+            <path d="M 66 19 L 174 19 A 33 33 0 0 1 174 85 L 66 85 A 33 33 0 0 1 66 19 Z" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
+            <path d="M 66 28 L 174 28 A 24 24 0 0 1 174 76 L 66 76 A 24 24 0 0 1 66 28 Z" fill="#ffffff" stroke="#111" stroke-width="1.4"/>
+            <!-- 辅助虚线与标注 -->
+            <line x1="66" y1="28" x2="66" y2="76" stroke="#94a3b8" stroke-width="0.9" stroke-dasharray="2,2"/>
+            <line x1="174" y1="28" x2="174" y2="76" stroke="#94a3b8" stroke-width="0.9" stroke-dasharray="2,2"/>
+            <!-- 半径标注 -->
+            <circle cx="66" cy="52" r="2" fill="#111"/>
+            <line x1="66" y1="52" x2="42" y2="52" stroke="#111" stroke-width="1"/>
+            <text x="53" y="48" font-family="Times New Roman, serif" font-size="9.5" text-anchor="middle" fill="#111">15m</text>
+            <!-- 直道标注 -->
+            <text x="120" y="55" font-family="Times New Roman, serif" font-size="11" text-anchor="middle" fill="#111">直道 50 m</text>
+            <!-- 道宽标注 -->
+            <text x="120" y="17.5" font-family="PingFang SC, sans-serif" font-size="8.2" text-anchor="middle" fill="#334155">道宽 1.2 m</text>
+            <text x="197" y="55" font-family="PingFang SC, sans-serif" font-size="8.5" fill="#111">1  2  3</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- 四、高阶综合应用题 -->
+    <div class="section-title" style="margin-top:6px;">四、高阶综合应用题<span class="pts">（难度微拔高，请写出完整的列式与计算过程。共4题，共44分）</span></div>
+
+    <div class="app-item" style="min-height:242px;">
+      <div class="app-stem">
+        <span class="q-num">1.</span><span class="origin-tag">同增定值 vs 同增分率 · 10分</span>
+        园林公司有两个圆形草坪，甲草坪的周长是 25.12 米，乙草坪的周长是甲草坪周长的 <span class="frac"><span class="num">3</span><span class="den">2</span></span>。<br>
+        （1）分别求出甲、乙两个草坪原来的半径。（3分）<br>
+        （2）<strong>方案 A</strong>：将两草坪半径<strong>都向外扩宽 1 米</strong>，哪个草坪周长增加得多？哪个草坪面积增加得多？各增加多少？（4分）<br>
+        （3）<strong>方案 B</strong>：将两草坪半径<strong>都向外扩宽各自原半径的 <span class="frac"><span class="num">1</span><span class="den">2</span></span></strong>，此时哪个草坪周长增加得多？多多少米？（3分）
+      </div>
+      <div class="app-ans-line">答：（1）甲 <span class="blank blank-sm"></span> m，乙 <span class="blank blank-sm"></span> m；（2）周长 <span class="blank blank-sm"></span>，面积 <span class="blank blank-sm"></span> 多；（3）<span class="blank blank-sm"></span> 多，多 <span class="blank blank-sm"></span> m。</div>
+    </div>
+
+    <div class="app-item" style="min-height:208px; margin-bottom:0;">
+      <div class="app-stem">
+        <span class="q-num">2.</span><span class="origin-tag">逆向拔高 · 由面积增量反推原半径 · 11分</span>
+        一个圆形花坛，如果把它的半径增加 2 米，它的周长会增加多少米？同时测得它的面积增加了 50.24 平方米，求这个圆形花坛<strong>原来的半径</strong>和<strong>原来的面积</strong>。<br>
+        <span style="font-size:11.5px; color:#555;">（思维提示：先利用圆环面积公式求出 (<i>r</i>＋2)²－<i>r</i>² 的值，再画一个“边长由 <i>r</i> 增加 2 的正方形面积变化图”即可巧妙算出 <i>r</i>！）</span>
+      </div>
+      <div class="app-ans-line">答：周长增加 <span class="blank"></span> 米；原来半径 <span class="blank blank-sm"></span> 米，原来面积 <span class="blank"></span> 平方米。</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学思维进阶专项训练卷（几何变化量与维度规律 · 拔高版）</span>
+    <span>第 2 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 3 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="app-item" style="min-height:305px;">
+      <div class="app-stem">
+        <span class="q-num">3.</span><span class="origin-tag">抓不变量 + 批量圆周长与面积增量 · 11分</span>
+        手工社团原有男、女同学共若干人，其中女生占总人数的 <span class="frac"><span class="num">2</span><span class="den">5</span></span>。后来又新加入 6 名女生（男生人数不变），这时女生占现在总人数的 <span class="frac"><span class="num">1</span><span class="den">2</span></span>。<br>
+        （1）现在手工社团一共有多少人？（5分）<br>
+        （2）社团准备每人制作一把圆形团扇，原计划团扇半径为 10 cm，后决定把每把团扇的半径都增加 2 cm。若要给现在<strong>全社团所有人的团扇</strong>边缘各镶一圈金丝带，修改半径后一共需要<strong>多准备</strong>多少厘米金丝带？每把团扇的扇面面积增加了多少平方厘米？（6分）
+      </div>
+      <div class="app-ans-line">答：（1）现有 <span class="blank blank-sm"></span> 人；（2）共多准备 <span class="blank"></span> cm 金丝带，每把面积增加 <span class="blank"></span> cm²。</div>
+    </div>
+
+    <div class="app-item" style="min-height:355px;">
+      <div class="app-stem">
+        <span class="q-num">4.</span><span class="origin-tag">终极压轴 · 两根铁丝围圆与反向增量对比 · 12分</span>
+        有甲、乙两根<strong>同样长</strong>的铁丝。甲铁丝剪去全长的 <span class="frac"><span class="num">1</span><span class="den">3</span></span> 后，用剩下的部分围成甲圆，测得甲圆的半径是 4 米；乙铁丝剪去 6.28 米后，用剩下的部分围成乙圆。<br>
+        （1）原来每根铁丝长多少米？（3分）<br>
+        （2）乙圆的半径是多少米？乙圆的面积比甲圆的面积多多少平方米？（5分）<br>
+        （3）现在分别把围成甲圆、乙圆的铁丝<strong>各再接长 6.28 米</strong>，重新围成两个新圆。请问：两个新圆的半径<strong>各增加了多少米</strong>（相同吗）？两个新圆的面积又<strong>各增加了多少平方米</strong>？（4分）
+      </div>
+      <div class="app-ans-line">答：（1）原长 <span class="blank"></span> m；（2）乙圆半径 <span class="blank blank-sm"></span> m，面积多 <span class="blank"></span> m²；（3）半径各增 <span class="blank blank-sm"></span> m，面积各增 <span class="blank"></span> m² 和 <span class="blank"></span> m²。</div>
+    </div>
+
+    <!-- 规律沉淀自查表 -->
+    <table class="rule-table">
+      <tr>
+        <th style="width:24%;">变化情景（大圆 vs 小圆）</th>
+        <th style="width:38%;">周长 / 半径（一维线性）变化对比</th>
+        <th style="width:38%;">面积（二维平方）变化对比</th>
+      </tr>
+      <tr>
+        <td>半径<strong>同增定值</strong> <i>a</i></td>
+        <td>周长增量<strong>完全相同</strong>（均增 2π<i>a</i>）</td>
+        <td><strong>大圆</strong>增加更多（π(2<i>Ra</i>＋<i>a</i>²) ＞ π(2<i>ra</i>＋<i>a</i>²)）</td>
+      </tr>
+      <tr>
+        <td>周长<strong>同增定值</strong> Δ<i>C</i></td>
+        <td>半径增量<strong>完全相同</strong>（均增 Δ<i>C</i>÷2π）</td>
+        <td><strong>大圆</strong>增加更多（如第 4 题第 3 问）</td>
+      </tr>
+      <tr>
+        <td>半径<strong>同增分率</strong>（如各增 <span class="frac"><span class="num">1</span><span class="den">2</span></span>）</td>
+        <td><strong>大圆</strong>增加更多（因为大圆的 Δ<i>r</i> 更大！）</td>
+        <td><strong>大圆</strong>增加更多（相差更加悬殊）</td>
+      </tr>
+    </table>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学思维进阶专项训练卷（几何变化量与维度规律 · 拔高版）</span>
+    <span>第 3 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 4 页：参考答案总览 + 逐题解析（上） ==================== -->
+<div class="sheet answer-page">
+  <div class="sheet-content">
+    <div class="ans-header">
+      <h2>参考答案总览与逐题深度解析</h2>
+      <p>六年级数学思维进阶专项训练卷（几何变化量与维度规律 · 拔高版） ｜ 先核对总体答案，再逐题复盘思路</p>
+    </div>
+
+    <!-- 第一部分：总体参考答案一览 -->
+    <div class="summary-box">
+      <div class="summary-title">【第一部分】全卷参考答案总览（快速批阅核对）</div>
+      <div class="summary-row"><strong>一、填空题（每空2分，共22分）：</strong>
+        <strong>1.</strong> 8；8；24；84 &nbsp;&nbsp;
+        <strong>2.</strong>（1）18.84（2）9.42（3）2 &nbsp;&nbsp;
+        <strong>3.</strong> 6.28；12.56 &nbsp;&nbsp;
+        <strong>4.</strong> 10.28；<span class="frac"><span class="num">8</span><span class="den">9</span></span>
+      </div>
+      <div class="summary-row"><strong>二、高阶辨析选择题（每题4分，共20分）：</strong>
+        <strong>1.</strong> C &nbsp;&nbsp;&nbsp;
+        <strong>2.</strong> A &nbsp;&nbsp;&nbsp;
+        <strong>3.</strong> B &nbsp;&nbsp;&nbsp;
+        <strong>4.</strong> C &nbsp;&nbsp;&nbsp;
+        <strong>5.</strong> C
+      </div>
+      <div class="summary-row"><strong>三、代数说理与规律探究题（共14分）：</strong>
+        <strong>1.</strong>（1）均为 2π<i>a</i>，与原半径无关，故一样多；（2）小圆增 62.8 m²，大圆增 125.6 m²（大圆大）。<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong>2.</strong>（1）7.536 米；（2）不会改变（仍为 7.536 米）；第 3 跑道比第 1 跑道长 15.072 米。
+      </div>
+      <div class="summary-row"><strong>四、高阶综合应用题（共44分）：</strong><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong>1.</strong>（1）甲 4 m，乙 6 m；（2）周长一样多（均增 6.28 m），面积乙多（甲增 28.26 m²，乙增 40.82 m²）；（3）乙周长增加多，多 6.28 m。<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong>2.</strong> 周长增加 12.56 米；原来半径 3 米，原来面积 28.26 平方米。<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong>3.</strong>（1）现在一共有 36 人；（2）共多准备 452.16 厘米金丝带；每把团扇面积增加 138.16 平方厘米。<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong>4.</strong>（1）原长 37.68 米；（2）乙圆半径 5 米，面积多 28.26 平方米；（3）半径各增加 1 米（相同）；甲圆面积增 28.26 m²，乙圆面积增 34.54 m²。
+      </div>
+    </div>
+
+    <!-- 第二部分：逐题深度解析 -->
+    <div class="analysis-banner">【第二部分】逐题深度解析</div>
+
+    <div class="ans-sec">
+      <h4>一、填空题逐题解析</h4>
+      <div class="ans-p"><strong>1. 解析：</strong>正方形周长 <i>C</i>＝4<i>a</i> 是一次线性关系，边长增加 2 cm，周长增加 4×2＝<strong>8 cm</strong>（与原边长 5 或 20 无关）；面积 <i>S</i>＝<i>a</i>² 是二次平方关系，小正方形增 7²－5²＝<strong>24 cm²</strong>，大正方形增 22²－20²＝<strong>84 cm²</strong>。</div>
+      <div class="ans-p"><strong>2. 解析：</strong>（1）Δ<i>C</i>＝2πΔ<i>r</i>＝2×3.14×3＝<strong>18.84 cm</strong>；（2）<i>C</i>＝π<i>d</i>，直径增 3 cm ⇒ Δ<i>C</i>＝3.14×3＝<strong>9.42 cm</strong>（注意直径增 3 相当于半径增 1.5）；（3）Δ<i>r</i>＝Δ<i>C</i>÷2π＝12.56÷6.28＝<strong>2 m</strong>。</div>
+      <div class="ans-p"><strong>3. 解析：</strong>本题是关键对照！因为是<strong>“增加各自原半径的 1/4”</strong>，大圆半径大，所以 Δ<i>r</i> 本身就不相等：小圆 Δ<i>r</i>＝4×1/4＝1 cm ⇒ Δ<i>C</i>＝<strong>6.28 cm</strong>；大圆 Δ<i>r</i>＝8×1/4＝2 cm ⇒ Δ<i>C</i>＝<strong>12.56 cm</strong>。</div>
+      <div class="ans-p"><strong>4. 解析：</strong>半圆周长 <i>C</i><sub>半</sub>＝π<i>r</i>＋2<i>r</i>＝(π＋2)<i>r</i>＝5.14<i>r</i>，仍是 <i>r</i> 的一次线性关系！半径少 2 cm，半圆周长减少 5.14×2＝<strong>10.28 cm</strong>（弧长少 6.28 cm ＋ 直径少 4 cm）。半径缩为 1/3，面积缩为 (1/3)²＝1/9，减少了 1－1/9＝<strong>8/9</strong>。</div>
+    </div>
+
+    <div class="ans-sec" style="margin-bottom:0;">
+      <h4>二、高阶辨析选择题逐题解析</h4>
+      <div class="ans-p"><strong>1. 选 C：</strong>绳子接长 Δ<i>C</i>＝6.28 m，缝隙宽度即新旧同心圆的半径差 Δ<i>r</i>＝Δ<i>C</i>÷(2π)＝6.28÷6.28＝<strong>1 米</strong>。无论地球赤道多大、篮球多小，2π<i>R</i> 在相减时全部抵消，缝隙都是 1 米！（最经典的反直觉线性定律）</div>
+      <div class="ans-p"><strong>2. 选 A：</strong>面积同增 31.4 cm² ⇒ 新旧半径平方差 <i>r</i><sub>新</sub>²－<i>r</i>²＝31.4÷3.14＝10。小圆：<i>r</i><sub>新</sub>²＝3²＋10＝19＞16＝4² ⇒ <i>r</i><sub>新</sub>＞4，半径增加<strong>超过 1 cm</strong>；大圆：<i>R</i><sub>新</sub>²＝10²＋10＝110＜110.25＝10.5² ⇒ <i>R</i><sub>新</sub>＜10.5，半径增加<strong>不到 0.5 cm</strong>。故小圆半径增加得多。</div>
+      <div class="ans-p"><strong>3. 选 B：</strong>新周长＝2[(<i>a</i>＋3)＋(<i>b</i>－3)]＝2(<i>a</i>＋<i>b</i>)，<strong>周长不变</strong>；新面积＝(<i>a</i>＋3)(<i>b</i>－3)＝<i>ab</i>－3(<i>a</i>－<i>b</i>)－9，因 <i>a</i>＞<i>b</i>，减去正数后<strong>面积一定变小</strong>（亦可用特值 <i>a</i>＝5, <i>b</i>＝4 验证：20 → 8×1＝8）。</div>
+      <div class="ans-p"><strong>4. 选 C：</strong>1/4 圆扇形周长＝弧长＋两条半径＝<span class="frac"><span class="num">1</span><span class="den">4</span></span>×2π<i>r</i>＋2<i>r</i>＝(<span class="frac"><span class="num">1</span><span class="den">2</span></span>π＋2)<i>r</i>＝3.57<i>r</i>，属线性关系。半径同增 4 cm，周长均增加 3.57×4＝<strong>14.28 cm</strong>（弧长增 6.28 cm ＋ 两条半径共增 8 cm，D 选项漏加两条半径）。</div>
+      <div class="ans-p"><strong>5. 选 C：</strong>正方体棱长总和＝12<i>a</i>（一维线性，棱长增 1 cm，均增 12 cm，相同）；表面积＝6<i>a</i>²（二维）与体积＝<i>a</i>³（三维）均为非线性，原棱长越大，增量越大（小正方体表面积增 30、体积增 19；大正方体表面积增 66、体积增 91）。</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学思维进阶专项训练卷（几何变化量与维度规律 · 拔高版）</span>
+    <span>答案与解析 · 第 1 页（共 2 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 5 页：逐题解析（下） ==================== -->
+<div class="sheet answer-page">
+  <div class="sheet-content">
+    <div class="ans-sec">
+      <h4>三、代数说理与规律探究题逐题解析</h4>
+      <div class="ans-p"><strong>1.（6分）解析：</strong><br>
+        （1）小圆周长增加量：2π(<i>r</i>＋<i>a</i>)－2π<i>r</i> ＝ 2π<i>r</i>＋2π<i>a</i>－2π<i>r</i> ＝ <strong>2π<i>a</i></strong>（米）；<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大圆周长增加量：2π(<i>R</i>＋<i>a</i>)－2π<i>R</i> ＝ 2π<i>R</i>＋2π<i>a</i>－2π<i>R</i> ＝ <strong>2π<i>a</i></strong>（米）。<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>结论</strong>：化简后原半径 <i>r</i> 和 <i>R</i> 全部消去，增量只取决于半径增加量 <i>a</i>，因此一定一样多！（3分）<br>
+        （2）小圆面积增加：3.14×[(4＋2)²－4²] ＝ 3.14×(36－16) ＝ 3.14×20 ＝ <strong>62.8（m²）</strong>；<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大圆面积增加：3.14×[(9＋2)²－9²] ＝ 3.14×(121－81) ＝ 3.14×40 ＝ <strong>125.6（m²）</strong>；125.6＞62.8，大圆面积增加得多。（3分）
+      </div>
+      <div class="ans-p"><strong>2.（8分）解析：</strong><br>
+        （1）第 1、2 跑道中间的两条直道长度完全相同（各 100 m），一圈的长度差全部来自两端合起来的一个整圆的周长差：Δ<i>C</i> ＝ 2×3.14×1.2 ＝ <strong>7.536（米）</strong>。（4分）<br>
+        （2）直道改为 80 m 后，所有跑道的直道同时变长，相减后完全抵消，因此长度差<strong>不会改变</strong>（仍为 7.536 米）；第 3 跑道半径比第 1 跑道大 1.2×2＝2.4 m，故长 2×3.14×2.4 ＝ <strong>15.072（米）</strong>（即 7.536×2）。（4分）
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h4>四、高阶综合应用题逐题解析</h4>
+      <div class="ans-p"><strong>1.（10分）解析：</strong><br>
+        （1）甲半径：<i>r</i><sub>甲</sub>＝25.12÷3.14÷2＝<strong>4（米）</strong>；乙周长＝25.12×<span class="frac"><span class="num">3</span><span class="den">2</span></span>＝37.68（米），乙半径：<i>r</i><sub>乙</sub>＝37.68÷3.14÷2＝<strong>6（米）</strong>（也可直接 4×<span class="frac"><span class="num">3</span><span class="den">2</span></span>＝6 米）。（3分）<br>
+        （2）方案 A（半径同增 1 m）：周长增量甲、乙<strong>一样多</strong>，均增 2×3.14×1＝<strong>6.28（米）</strong>；面积增量：甲增 3.14×(5²－4²)＝<strong>28.26（m²）</strong>，乙增 3.14×(7²－6²)＝<strong>40.82（m²）</strong>，<strong>乙草坪面积增加得多</strong>。（4分）<br>
+        （3）方案 B（半径同增各自原半径的 <span class="frac"><span class="num">1</span><span class="den">2</span></span>）：甲半径增 4×<span class="frac"><span class="num">1</span><span class="den">2</span></span>＝2 m ⇒ 周长增 2×3.14×2＝12.56 m；乙半径增 6×<span class="frac"><span class="num">1</span><span class="den">2</span></span>＝3 m ⇒ 周长增 2×3.14×3＝18.84 m；<strong>乙周长增加得多</strong>，多 18.84－12.56＝<strong>6.28（米）</strong>。（3分）
+      </div>
+
+      <div class="ans-p" style="display:flex; gap:12px; align-items:center;">
+        <div style="flex:1;">
+          <strong>2.（11分）解析：</strong><br>
+          ① 周长增加量（直接用线性规律，无需先知原半径！）：2×3.14×2 ＝ <strong>12.56（米）</strong>。（3分）<br>
+          ② 设原半径为 <i>r</i> 米，由圆环面积公式：3.14×[(<i>r</i>＋2)²－<i>r</i>²] ＝ 50.24 ⇒ (<i>r</i>＋2)²－<i>r</i>² ＝ 50.24÷3.14 ＝ 16。（3分）<br>
+          ③ 观察右图（边长由 <i>r</i> 增加 2 的正方形割补图）：增加的面积由<strong>两个长 <i>r</i> 宽 2 的长方形</strong>和<strong>一个 2×2 的小正方形</strong>组成，即 4<i>r</i>＋4 ＝ 16 ⇒ 4<i>r</i>＝12 ⇒ 原半径 <strong><i>r</i> ＝ 3（米）</strong>！（3分）<br>
+          ④ 原来面积：3.14×3² ＝ <strong>28.26（平方米）</strong>。（2分）
+        </div>
+        <div style="flex-shrink:0; border:1px solid #cbd5e1; border-radius:5px; padding:4px; background:#fff;">
+          <svg width="114" height="106" viewBox="0 0 114 106" xmlns="http://www.w3.org/2000/svg">
+            <!-- 割补图：原正方形 r=52, 增量 2=22 -->
+            <rect x="16" y="34" width="52" height="52" fill="#f8fafc" stroke="#111" stroke-width="1.3"/>
+            <rect x="16" y="12" width="52" height="22" fill="#e0e7ff" stroke="#4338ca" stroke-width="1.1"/>
+            <rect x="68" y="34" width="22" height="52" fill="#e0e7ff" stroke="#4338ca" stroke-width="1.1"/>
+            <rect x="68" y="12" width="22" height="22" fill="#fef3c7" stroke="#d97706" stroke-width="1.1"/>
+            <g font-family="Times New Roman, serif" font-size="10.5" text-anchor="middle" fill="#111">
+              <text x="42" y="64" font-style="italic">r²</text>
+              <text x="42" y="27" fill="#312e81">2r</text>
+              <text x="79" y="64" fill="#312e81">2r</text>
+              <text x="79" y="27" fill="#92400e">4</text>
+              <text x="42" y="99" font-style="italic">r</text>
+              <text x="79" y="99">2</text>
+              <text x="8" y="64" font-style="italic">r</text>
+              <text x="8" y="26">2</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="ans-p"><strong>3.（11分）解析：</strong><br>
+        （1）抓不变量（男生人数）：原来女生是男生的 <span class="frac"><span class="num">2</span><span class="den">3</span></span>，现在女生占总数的 <span class="frac"><span class="num">1</span><span class="den">2</span></span> 即等于男生的 1 倍；男生人数：6 ÷ (1－<span class="frac"><span class="num">2</span><span class="den">3</span></span>) ＝ 18（人）；现在总人数：18 ÷ (1－<span class="frac"><span class="num">1</span><span class="den">2</span></span>) ＝ <strong>36（人）</strong>。（5分）<br>
+        （2）每把团扇半径增 2 cm ⇒ 每把周长增 2×3.14×2＝12.56（cm），36 把共多准备：12.56×36 ＝ <strong>452.16（cm）</strong>（3分）；每把扇面面积增加：3.14×(12²－10²)＝3.14×44＝<strong>138.16（cm²）</strong>（3分）。
+      </div>
+
+      <div class="ans-p"><strong>4.（12分）解析：</strong><br>
+        （1）甲圆周长：2×3.14×4＝25.12（m），占全长的 1－<span class="frac"><span class="num">1</span><span class="den">3</span></span>＝<span class="frac"><span class="num">2</span><span class="den">3</span></span>；原每根铁丝长：25.12 ÷ <span class="frac"><span class="num">2</span><span class="den">3</span></span> ＝ <strong>37.68（米）</strong>。（3分）<br>
+        （2）乙圆周长：37.68－6.28＝31.4（m），乙圆半径：31.4÷3.14÷2＝<strong>5（米）</strong>（2分）；面积差：3.14×(5²－4²)＝3.14×9＝<strong>28.26（平方米）</strong>（3分）。<br>
+        （3）两圆周长同时接长 6.28 m ⇒ 半径增加量<strong>完全相同</strong>，各增加 6.28÷3.14÷2 ＝ <strong>1（米）</strong>（2分）；甲圆新半径 5 m，面积增 3.14×(5²－4²)＝<strong>28.26（m²）</strong>；乙圆新半径 6 m，面积增 3.14×(6²－5²)＝<strong>34.54（m²）</strong>（2分）。
+      </div>
+    </div>
+
+    <div class="key-takeaway">
+      <strong>一分钟终极心法（彻底告别“周长变化是否相同”直觉误区）：</strong><br>
+      遇到“大小两个图形同时变化，问变化量是否一样”，先看公式里变量是<strong>一次方</strong>还是<strong>平方/立方</strong>，再看增加的是<strong>固定数</strong>还是<strong>分率</strong>：<br>
+      ① <strong>一次方公式（圆周长 2π<i>r</i>、半圆周长 5.14<i>r</i>、正方形周长 4<i>a</i>、正方体棱长和 12<i>a</i>）＋ 增减固定数</strong> ⇒ 增量<strong>一定相同</strong>（乘法分配律自动消掉原尺寸！）；<br>
+      ② <strong>平方/立方公式（面积、体积）</strong>，或者 <strong>按分率/倍数增加</strong> ⇒ 原图形越大，增量一定<strong>越大</strong>！
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学思维进阶专项训练卷（几何变化量与维度规律 · 拔高版）</span>
+    <span>答案与解析 · 第 2 页（共 2 页）</span>
+  </div>
+</div>
+
+<script>
+  function printMode(mode) {
+    document.body.classList.remove('print-exam-only', 'print-ans-only');
+    if (mode === 'exam') document.body.classList.add('print-exam-only');
+    if (mode === 'ans') document.body.classList.add('print-ans-only');
+    window.print();
+    setTimeout(() => {
+      document.body.classList.remove('print-exam-only', 'print-ans-only');
+    }, 300);
+  }
+</script>
+</body>
+</html>
