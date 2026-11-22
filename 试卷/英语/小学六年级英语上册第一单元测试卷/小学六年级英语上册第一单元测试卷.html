@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>小学六年级英语上册第一单元测试卷（含听力 · 难度中等 · 可直接打印A4版）</title>
+<title>小学六年级英语上册第一单元测试卷（含听力 · 难度中等 · A4可打印版）</title>
 <style>
   @page {
     size: A4 portrait;
@@ -25,42 +25,61 @@
     print-color-adjust: exact;
   }
 
-  /* 顶部打印与听力播放工具栏（打印时自动隐藏） */
+  /* 顶部打印工具栏（打印时自动隐藏） */
   .no-print-banner {
     width: 210mm;
-    margin: 0 auto 16px auto;
+    margin: 0 auto 12px auto;
     background: #ffffff;
     border: 1px solid #cbd5e1;
     border-left: 4px solid #1d4ed8;
     border-radius: 8px;
-    padding: 12px 18px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  }
-  .banner-top {
+    padding: 12px 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
   .banner-info {
-    font-size: 12.5px;
+    font-size: 12.2px;
     color: #334155;
   }
   .banner-info strong {
     color: #0f172a;
-    font-size: 14px;
+    font-size: 13.8px;
   }
   .banner-actions {
     display: flex;
-    gap: 8px;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: flex-end;
     flex-shrink: 0;
   }
+  .btn {
+    border: none;
+    padding: 6px 11px;
+    font-size: 11.8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: inherit;
+  }
+  .btn-primary { background: #1d4ed8; color: #fff; }
+  .btn-primary:hover { background: #1e40af; }
+  .btn-secondary { background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; }
+  .btn-secondary:hover { background: #e2e8f0; }
+
+  /* 音频播放条（仅屏幕可见，打印自动隐藏） */
   .audio-bar {
-    margin-top: 10px;
-    padding-top: 9px;
-    border-top: 1px dashed #cbd5e1;
+    width: 210mm;
+    margin: 0 auto 14px auto;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 9px 16px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 12px;
     font-size: 12.2px;
     color: #1e293b;
@@ -69,26 +88,6 @@
     flex: 1;
     height: 34px;
   }
-  .btn {
-    border: none;
-    padding: 7px 13px;
-    font-size: 12.4px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 500;
-    font-family: inherit;
-  }
-  .btn-primary {
-    background: #1d4ed8;
-    color: #fff;
-  }
-  .btn-primary:hover { background: #1e40af; }
-  .btn-secondary {
-    background: #f1f5f9;
-    color: #1e293b;
-    border: 1px solid #cbd5e1;
-  }
-  .btn-secondary:hover { background: #e2e8f0; }
 
   /* A4纸张模拟容器 */
   .sheet {
@@ -117,6 +116,12 @@
     color: #666;
   }
 
+  /* 防止题目、文章、分析卡片被跨页截断 */
+  .choice-item, .passage-box, .ans-sec, .analysis-card, .rubric-table, .spec-table {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
   /* 试卷大标题与考生信息 */
   .exam-header {
     text-align: center;
@@ -137,7 +142,7 @@
     margin: 0 0 1px 0;
   }
   .exam-subtitle {
-    font-size: 10.4px;
+    font-size: 10.3px;
     color: #475569;
     margin: 0 0 4px 0;
   }
@@ -158,7 +163,7 @@
   .score-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     font-size: 10.2px;
   }
   .score-table th, .score-table td {
@@ -177,45 +182,50 @@
   /* 部分大标（听力部分 / 笔试部分） */
   .part-banner {
     text-align: center;
-    font-size: 13.4px;
+    font-size: 13.2px;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
     color: #0f172a;
     background: #f1f5f9;
-    border: 1px solid #94a3b8;
+    border: 1px solid #64748b;
     border-radius: 4px;
     padding: 2.5px 10px;
-    margin: 5px 0 5px 0;
+    margin: 4px 0 3px 0;
+  }
+  .audio-file-note {
+    text-align: center;
+    font-size: 10px;
+    color: #475569;
+    margin: 0 0 4px 0;
   }
 
   /* 大题标题 */
   .section-title {
-    font-size: 12.8px;
+    font-size: 12.6px;
     font-weight: 700;
     color: #000;
-    margin: 6px 0 3px 0;
+    margin: 5.5px 0 3px 0;
     padding-bottom: 1.5px;
     border-bottom: 1.1px solid #333;
   }
   .section-title .pts {
-    font-size: 10.8px;
+    font-size: 10.6px;
     font-weight: 400;
     color: #333;
     margin-left: 4px;
   }
   .sub-title {
-    font-size: 11.8px;
+    font-size: 11.7px;
     font-weight: 700;
     margin: 5px 0 2.5px 0;
     color: #111;
   }
   .sub-title .pts {
-    font-size: 10.6px;
+    font-size: 10.5px;
     font-weight: 400;
     color: #444;
   }
 
-  /* 下划线字母高亮 */
   .u-sound {
     text-decoration: underline;
     text-underline-offset: 2px;
@@ -230,7 +240,7 @@
     margin: 3px 0 5px 0;
   }
   .phonics-card {
-    border: 1px solid #cbd5e1;
+    border: 1px solid #94a3b8;
     border-radius: 4px;
     padding: 3px 10px;
     background: #fcfcfd;
@@ -278,7 +288,7 @@
 
   /* 听力选词单行网格 */
   .listen-opt-list {
-    margin: 2px 0 4px 0;
+    margin: 2px 0 3px 0;
     padding: 0;
     list-style: none;
   }
@@ -286,8 +296,8 @@
     display: grid;
     grid-template-columns: 36px 22px 1fr 1fr 1fr;
     align-items: baseline;
-    margin-bottom: 2px;
-    font-size: 11.8px;
+    margin-bottom: 1.8px;
+    font-size: 11.7px;
   }
 
   /* 选不同类列表 */
@@ -342,9 +352,9 @@
 
   /* 单项选择 */
   .choice-item {
-    margin-bottom: 3px;
+    margin-bottom: 2.8px;
     line-height: 1.42;
-    font-size: 11.7px;
+    font-size: 11.6px;
   }
   .choice-stem {
     display: flex;
@@ -359,24 +369,20 @@
     row-gap: 1px;
     padding-left: 16px;
     margin-top: 1px;
-    font-size: 11.4px;
+    font-size: 11.3px;
   }
-  .choice-opts-3col {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .choice-opts-2col {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .choice-opts-3col { grid-template-columns: repeat(3, 1fr); }
+  .choice-opts-2col { grid-template-columns: repeat(2, 1fr); }
 
   /* 听力短文填空卡片 */
   .listen-cloze {
-    border: 1px solid #94a3b8;
+    border: 1px solid #64748b;
     border-radius: 5px;
     background: #fcfcfd;
-    padding: 6px 11px;
+    padding: 5.5px 11px;
     margin-top: 3px;
-    font-size: 11.8px;
-    line-height: 1.75;
+    font-size: 11.7px;
+    line-height: 1.72;
     text-align: justify;
   }
 
@@ -397,9 +403,7 @@
     font-size: 12px;
     line-height: 1.54;
   }
-  .dialogue-box p {
-    margin: 2px 0;
-  }
+  .dialogue-box p { margin: 2px 0; }
   .speaker {
     font-weight: 700;
     display: inline-block;
@@ -413,17 +417,12 @@
     width: 100%;
     line-height: 19px;
   }
-  .sentence-ans {
-    margin: 1px 0 4px 18px;
-  }
-  .u-target {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
+  .sentence-ans { margin: 1px 0 4px 18px; }
+  .u-target { text-decoration: underline; text-underline-offset: 3px; }
 
   /* 阅读文章框 */
   .passage-box {
-    border: 1px solid #94a3b8;
+    border: 1px solid #64748b;
     border-radius: 5px;
     padding: 5.5px 11px;
     background: #fcfcfd;
@@ -443,9 +442,7 @@
     text-indent: 1.8em;
     text-align: justify;
   }
-  .passage-box p:last-child {
-    margin-bottom: 0;
-  }
+  .passage-box p:last-child { margin-bottom: 0; }
 
   /* 判断题 */
   .tf-list {
@@ -463,7 +460,7 @@
 
   /* 书面表达导图 */
   .writing-prompt {
-    border: 1px solid #94a3b8;
+    border: 1px solid #64748b;
     border-radius: 5px;
     padding: 6px 10px;
     background: #fcfcfd;
@@ -506,18 +503,15 @@
     display: block;
     font-size: 10.8px;
     color: #0f172a;
-    border-bottom: 1px dashed #cbd5e1;
+    border-bottom: 1px dashed #94a3b8;
     padding-bottom: 1.5px;
     margin-bottom: 2px;
   }
-  .mm-card span {
-    color: #475569;
-    font-size: 10px;
-  }
+  .mm-card span { color: #475569; font-size: 10px; }
 
   /* 英文作文书写线 */
   .composition-box {
-    border: 1px solid #94a3b8;
+    border: 1px solid #64748b;
     border-radius: 5px;
     padding: 7px 14px 9px 14px;
     background: #fff;
@@ -553,39 +547,19 @@
     font-size: 10.8px;
     color: #334155;
   }
-  .self-check-title {
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 2px;
-  }
-  .self-check-items {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px 14px;
-  }
+  .self-check-title { font-weight: 700; color: #0f172a; margin-bottom: 2px; }
+  .self-check-items { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 14px; }
 
-  /* 听力原文页 & 参考答案页 */
+  /* 第二部分（参考答案）与第三部分（题目分析）通用样式 */
   .ans-header {
     text-align: center;
     border-bottom: 1.8px solid #1e293b;
     padding-bottom: 4px;
     margin-bottom: 6px;
   }
-  .ans-header h2 {
-    margin: 0;
-    font-size: 15px;
-    color: #0f172a;
-  }
-  .ans-header p {
-    margin: 2px 0 0 0;
-    font-size: 10.2px;
-    color: #475569;
-  }
-  .ans-sec {
-    margin-bottom: 5.5px;
-    font-size: 10.8px;
-    line-height: 1.44;
-  }
+  .ans-header h2 { margin: 0; font-size: 15px; color: #0f172a; }
+  .ans-header p { margin: 2px 0 0 0; font-size: 10.2px; color: #475569; }
+  .ans-sec { margin-bottom: 5.5px; font-size: 10.8px; line-height: 1.44; }
   .ans-sec h3 {
     font-size: 11.4px;
     margin: 0 0 2.5px 0;
@@ -594,16 +568,10 @@
     border-left: 3px solid #1d4ed8;
     color: #0f172a;
   }
-  .ans-p {
-    margin: 2px 0;
-    text-align: justify;
-  }
-  .script-item {
-    margin: 2.5px 0;
-    padding-left: 4px;
-  }
+  .ans-p { margin: 2px 0; text-align: justify; }
+  .script-item { margin: 2.5px 0; padding-left: 4px; }
   .script-passage {
-    border: 1px solid #cbd5e1;
+    border: 1px solid #94a3b8;
     background: #f8fafc;
     border-radius: 4px;
     padding: 6px 10px;
@@ -612,29 +580,29 @@
     line-height: 1.56;
     text-align: justify;
   }
-  .tip-note {
-    font-size: 10px;
-    color: #475569;
-  }
-  .rubric-table {
+  .tip-note { font-size: 10px; color: #475569; }
+  .rubric-table, .spec-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 3px;
     font-size: 10px;
-    line-height: 1.34;
+    line-height: 1.35;
   }
-  .rubric-table th, .rubric-table td {
-    border: 1px solid #cbd5e1;
-    padding: 2px 6px;
+  .rubric-table th, .rubric-table td,
+  .spec-table th, .spec-table td {
+    border: 1px solid #94a3b8;
+    padding: 2.5px 5px;
     text-align: left;
   }
-  .rubric-table th {
-    background: #f8fafc;
+  .rubric-table th, .spec-table th {
+    background: #f1f5f9;
     font-weight: 600;
     text-align: center;
   }
+  .spec-table td.c { text-align: center; }
+
   .sample-essay {
-    border: 1px solid #cbd5e1;
+    border: 1px solid #94a3b8;
     background: #f8fafc;
     border-radius: 4px;
     padding: 4.5px 9px;
@@ -643,9 +611,57 @@
     line-height: 1.4;
   }
 
-  /* 打印控制模式 */
-  body.print-exam-only .answer-page { display: none !important; }
-  body.print-ans-only .exam-page { display: none !important; }
+  /* 第三部分：题目分析卡片 */
+  .analysis-card {
+    border: 1px solid #94a3b8;
+    border-radius: 5px;
+    padding: 5px 9px;
+    margin-bottom: 5.5px;
+    background: #ffffff;
+    font-size: 10.5px;
+    line-height: 1.42;
+  }
+  .analysis-card-title {
+    font-weight: 700;
+    font-size: 11.2px;
+    color: #0f172a;
+    border-bottom: 1px dashed #cbd5e1;
+    padding-bottom: 2px;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .diff-badge {
+    font-size: 9.8px;
+    font-weight: 600;
+    border: 1px solid #64748b;
+    border-radius: 3px;
+    padding: 0 5px;
+    background: #f8fafc;
+    color: #1e293b;
+  }
+  .analysis-grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .analysis-grid li {
+    margin-bottom: 1.8px;
+    text-align: justify;
+  }
+  .analysis-grid li:last-child { margin-bottom: 0; }
+
+  /* 分模块打印模式 */
+  body.print-exam-only .part-answer,
+  body.print-exam-only .part-analysis { display: none !important; }
+
+  body.print-answer-only .part-exam,
+  body.print-answer-only .part-analysis { display: none !important; }
+
+  body.print-analysis-only .part-exam,
+  body.print-analysis-only .part-answer { display: none !important; }
+
+  body.print-answer-analysis .part-exam { display: none !important; }
 
   @media print {
     body {
@@ -653,7 +669,9 @@
       padding: 0;
       margin: 0;
     }
-    .no-print-banner {
+    .no-print,
+    .no-print-banner,
+    .audio-bar {
       display: none !important;
     }
     .sheet {
@@ -666,7 +684,8 @@
       page-break-after: always;
       break-after: page;
     }
-    .sheet:last-of-type {
+    .sheet:last-of-type,
+    .sheet.is-last-visible {
       page-break-after: auto;
       break-after: auto;
     }
@@ -675,29 +694,31 @@
 </head>
 <body>
 
-<!-- 顶部交互与听力播放工具栏（打印自动隐藏） -->
+<!-- 顶部打印工具栏（打印自动隐藏） -->
 <div class="no-print-banner">
-  <div class="banner-top">
-    <div class="banner-info">
-      <strong>小学六年级英语上册 · 第一单元测试卷（含听力 · 难度中等 · A4打印版）</strong><br>
-      北京版（2022课标修订）Unit One: A Wonderful Summer Holiday ｜ 听力30分＋笔试70分 ｜ 共4页试卷＋2页听力原文与答案
-    </div>
-    <div class="banner-actions">
-      <button class="btn btn-primary" onclick="printMode('exam')">仅打印试卷（4页）</button>
-      <button class="btn btn-secondary" onclick="printMode('ans')">打印原文与答案（2页）</button>
-      <button class="btn btn-secondary" onclick="printMode('all')">打印全套（6页）</button>
-    </div>
+  <div class="banner-info">
+    <strong>小学六年级英语上册第一单元测试卷（含听力 · A4 可打印版）</strong><br>
+    北京版（2022课标修订）Unit One ｜ 包含：空白试卷（4页）/ 参考答案与原文（2页）/ 题目分析（2页）
   </div>
-  <div class="audio-bar">
-    <strong>配套听力音频：</strong>
-    <audio controls preload="metadata" src="小学六年级英语上册第一单元测试卷_听力音频.m4a">
-      您的浏览器不支持音频播放，请直接打开同目录下的 <code>小学六年级英语上册第一单元测试卷_听力音频.m4a</code>。
-    </audio>
+  <div class="banner-actions">
+    <button class="btn btn-primary" onclick="printMode('all')">打印完整版</button>
+    <button class="btn btn-secondary" onclick="printMode('exam')">仅打印空白试卷</button>
+    <button class="btn btn-secondary" onclick="printMode('answer')">仅打印参考答案</button>
+    <button class="btn btn-secondary" onclick="printMode('analysis')">仅打印题目分析</button>
+    <button class="btn btn-secondary" onclick="printMode('answer-analysis')">仅打印答案与分析</button>
   </div>
 </div>
 
-<!-- ==================== 第 1 页（听力部分 30 分） ==================== -->
-<div class="sheet exam-page">
+<!-- 配套听力音频播放条（相对路径引用同目录音频，打印自动隐藏） -->
+<div class="audio-bar no-print">
+  <span><strong>配套听力音频：</strong><code>./小学六年级英语上册第一单元测试卷_听力.m4a</code>（7分55秒）</span>
+  <audio controls preload="metadata" src="./小学六年级英语上册第一单元测试卷_听力.m4a">
+    您的浏览器不支持音频播放，请直接打开同目录下的 <code>./小学六年级英语上册第一单元测试卷_听力.m4a</code>。
+  </audio>
+</div>
+
+<!-- ==================== 第一部分：空白试卷 · 第 1 页 ==================== -->
+<div class="sheet part-exam">
   <div class="sheet-content">
     <div class="exam-header">
       <h1 class="exam-title">小学六年级英语上册第一单元测试卷</h1>
@@ -732,6 +753,7 @@
     </div>
 
     <div class="part-banner">第一部分：听力部分（Listening Part · 共 30 分）</div>
+    <div class="audio-file-note">配套音频文件：小学六年级英语上册第一单元测试卷_听力.m4a（请先浏览题目，听提示音开始作答）</div>
 
     <!-- 一、听录音，选出你所听到的单词或短语 -->
     <div class="section-title">一、听录音，选出你所听到的单词或短语，听两遍。<span class="pts">（每题1分，共5分）</span></div>
@@ -791,13 +813,13 @@
     </div>
   </div>
   <div class="page-footer">
-    <span>小学六年级英语上册第一单元测试卷（含听力 · 难度中等）</span>
+    <span>小学六年级英语上册第一单元测试卷 · 空白试卷</span>
     <span>第 1 页（共 4 页）</span>
   </div>
 </div>
 
-<!-- ==================== 第 2 页（笔试部分：五、六、七） ==================== -->
-<div class="sheet exam-page">
+<!-- ==================== 第一部分：空白试卷 · 第 2 页 ==================== -->
+<div class="sheet part-exam">
   <div class="sheet-content">
     <div class="part-banner" style="margin-top:0;">第二部分：笔试部分（Writing Part · 共 70 分）</div>
 
@@ -900,13 +922,13 @@
     </div>
   </div>
   <div class="page-footer">
-    <span>小学六年级英语上册第一单元测试卷（含听力 · 难度中等）</span>
+    <span>小学六年级英语上册第一单元测试卷 · 空白试卷</span>
     <span>第 2 页（共 4 页）</span>
   </div>
 </div>
 
-<!-- ==================== 第 3 页（笔试部分：八、九、十A） ==================== -->
-<div class="sheet exam-page">
+<!-- ==================== 第一部分：空白试卷 · 第 3 页 ==================== -->
+<div class="sheet part-exam">
   <div class="sheet-content">
     <!-- 八、情景交际 -->
     <div class="section-title" style="margin-top:0;">八、情景交际：选择合适的句子补全对话（有一项多余）<span class="pts">（每空1分，共5分）</span></div>
@@ -977,13 +999,13 @@
     </ul>
   </div>
   <div class="page-footer">
-    <span>小学六年级英语上册第一单元测试卷（含听力 · 难度中等）</span>
+    <span>小学六年级英语上册第一单元测试卷 · 空白试卷</span>
     <span>第 3 页（共 4 页）</span>
   </div>
 </div>
 
-<!-- ==================== 第 4 页（笔试部分：十B、十一） ==================== -->
-<div class="sheet exam-page">
+<!-- ==================== 第一部分：空白试卷 · 第 4 页 ==================== -->
+<div class="sheet part-exam">
   <div class="sheet-content">
     <!-- 十、阅读理解（B） -->
     <div class="sub-title" style="margin-top:0;">（B）阅读短文，完成下列任务。<span class="pts">（共10分）</span></div>
@@ -1084,17 +1106,17 @@
     </div>
   </div>
   <div class="page-footer">
-    <span>小学六年级英语上册第一单元测试卷（含听力 · 难度中等）</span>
+    <span>小学六年级英语上册第一单元测试卷 · 空白试卷</span>
     <span>第 4 页（共 4 页）</span>
   </div>
 </div>
 
-<!-- ==================== 第 5 页（听力原文） ==================== -->
-<div class="sheet answer-page">
+<!-- ==================== 第二部分：参考答案 · 第 1 页（听力原文） ==================== -->
+<div class="sheet part-answer">
   <div class="sheet-content">
     <div class="ans-header">
-      <h2>小学六年级英语上册第一单元测试卷 · 听力原文（Listening Script）</h2>
-      <p>可配合同目录音频文件 <code>小学六年级英语上册第一单元测试卷_听力音频.m4a</code> 播放，或由教师/家长按本页原文朗读</p>
+      <h2>小学六年级英语上册第一单元测试卷 · 参考答案与评分标准（听力原文）</h2>
+      <p>配套音频：<code>./小学六年级英语上册第一单元测试卷_听力.m4a</code> ｜ 可直接播放或由教师/家长按本页原文朗读</p>
     </div>
 
     <div class="ans-sec">
@@ -1152,19 +1174,19 @@
     </div>
 
     <div class="ans-sec" style="margin-top:10px;">
-      <div class="tip-note" style="border:1px dashed #94a3b8; border-radius:4px; padding:6px 10px; background:#f8fafc;">
-        <strong>音频使用提示：</strong>配套音频采用双角色男声（英音 Daniel）与女声（美音 Samantha）配音，中文播报提示题号与朗读遍数，内置标准停顿时间与提示音。测试时建议提前发卷，给学生留出 1–2 分钟浏览听力题目与选项后再开始播放。
+      <div class="tip-note" style="border:1px dashed #64748b; border-radius:4px; padding:6px 10px; background:#f8fafc;">
+        <strong>音频使用提示：</strong>同目录音频采用双角色男声（英音 Daniel）与女声（美音 Samantha）配音，中文播报提示题号与朗读遍数，内置标准停顿时间与提示音（全长 7 分 55 秒）。建议提前 1–2 分钟发卷供学生浏览听力选项后再播放。
       </div>
     </div>
   </div>
   <div class="page-footer">
-    <span>小学六年级英语上册第一单元测试卷（含听力 · 难度中等）</span>
-    <span>听力原文（第 1 页 / 共 2 页）</span>
+    <span>小学六年级英语上册第一单元测试卷 · 参考答案</span>
+    <span>参考答案 第 1 页（共 2 页）</span>
   </div>
 </div>
 
-<!-- ==================== 第 6 页（参考答案与评分标准） ==================== -->
-<div class="sheet answer-page">
+<!-- ==================== 第二部分：参考答案 · 第 2 页（标准答案与评分标准） ==================== -->
+<div class="sheet part-answer">
   <div class="sheet-content">
     <div class="ans-header">
       <h2>小学六年级英语上册第一单元测试卷 · 参考答案与评分标准</h2>
@@ -1172,38 +1194,39 @@
     </div>
 
     <div class="ans-sec">
-      <h3>第一部分：听力部分（共30分）</h3>
+      <h3>第一部分：听力部分标准答案（共30分）</h3>
       <div class="ans-p"><strong>一、听选单词或短语（每题1分，共5分）：</strong> 1. <strong>C</strong>　2. <strong>B</strong>　3. <strong>A</strong>　4. <strong>B</strong>　5. <strong>C</strong></div>
       <div class="ans-p"><strong>二、听问句选答语（每题2分，共10分）：</strong> 1. <strong>B</strong>　2. <strong>A</strong>　3. <strong>C</strong>　4. <strong>A</strong>　5. <strong>B</strong></div>
-      <div class="ans-p"><strong>三、听对话选答案（每题2分，共10分）：</strong> 1. <strong>B</strong>　2. <strong>C</strong>　3. <strong>B</strong>　4. <strong>A</strong> <span class="tip-note">（注意干扰项：喂小鸡虽有提及，但最喜欢的是遛狗）</span>　5. <strong>C</strong></div>
-      <div class="ans-p"><strong>四、听短文填空（每空1分，共5分）：</strong> (1) <strong>wonderful</strong>　(2) <strong>far</strong>　(3) <strong>daytime</strong>　(4) <strong>fishing</strong>　(5) <strong>enjoyed</strong> <span class="tip-note">（拼写正确且第5空为过去式方可得分）</span></div>
+      <div class="ans-p"><strong>三、听对话选答案（每题2分，共10分）：</strong> 1. <strong>B</strong>　2. <strong>C</strong>　3. <strong>B</strong>　4. <strong>A</strong>　5. <strong>C</strong></div>
+      <div class="ans-p"><strong>四、听短文填空（每空1分，共5分）：</strong> (1) <strong>wonderful</strong>　(2) <strong>far</strong>　(3) <strong>daytime</strong>　(4) <strong>fishing</strong>　(5) <strong>enjoyed</strong> <span class="tip-note">（拼写正确且第5空为过去式方可得分，漏写 -ed 扣0.5分）</span></div>
     </div>
 
     <div class="ans-sec">
-      <h3>第二部分：笔试部分（共70分）</h3>
+      <h3>第二部分：笔试部分标准答案（共70分）</h3>
       <div class="ans-p"><strong>五、语音辨析（共6分）：</strong><br>
-        1. 判断发音（每题1分，共3分）：(1) <strong>T</strong> <span class="tip-note">（/eə/）</span>　(2) <strong>F</strong> <span class="tip-note">（there /eə/ vs here /ɪə/）</span>　(3) <strong>T</strong> <span class="tip-note">（/eə/）</span><br>
+        1. 判断发音（每题1分，共3分）：(1) <strong>T</strong>　(2) <strong>F</strong>　(3) <strong>T</strong><br>
         2. 补全字母组合（每空1分，共3分）：(1) <strong>ere</strong> (Where)　(2) <strong>are</strong> (share)　(3) <strong>air</strong> (pair)
       </div>
       <div class="ans-p"><strong>六、词汇积累与运用（共14分）：</strong><br>
-        1. 选不同类（每题1分，共4分）：1. <strong>D</strong> <span class="tip-note">（名词，余为形容词）</span>　2. <strong>C</strong> <span class="tip-note">（国家，余为城市）</span>　3. <strong>B</strong> <span class="tip-note">（景观，余为交通工具）</span>　4. <strong>D</strong> <span class="tip-note">（原形，余为过去式）</span><br>
+        1. 选不同类（每题1分，共4分）：1. <strong>D</strong>　2. <strong>C</strong>　3. <strong>B</strong>　4. <strong>D</strong><br>
         2. 写动词过去式（每题0.5分，共5分）：(1) <strong>enjoyed</strong>　(2) <strong>went</strong>　(3) <strong>stayed</strong>　(4) <strong>took</strong>　(5) <strong>fed</strong>　(6) <strong>flew</strong>　(7) <strong>told</strong>　(8) <strong>sang</strong>　(9) <strong>ran</strong>　(10) <strong>left</strong><br>
-        3. 选词/短语适当形式填空（每题1分，共5分）：(1) <strong>on foot</strong>　(2) <strong>far from</strong>　(3) <strong>sometimes</strong>　(4) <strong>take care of</strong>　(5) <strong>went fishing</strong> <span class="tip-note">（由 Last Saturday 可知需用过去式，写 go fishing 扣0.5分）</span>
+        3. 选词/短语适当形式填空（每题1分，共5分）：(1) <strong>on foot</strong>　(2) <strong>far from</strong>　(3) <strong>sometimes</strong>　(4) <strong>take care of</strong>　(5) <strong>went fishing</strong> <span class="tip-note">（第5题若写原形 go fishing 扣0.5分）</span>
       </div>
       <div class="ans-p"><strong>七、单项选择（每题1分，共10分）：</strong>
-        1. <strong>B</strong>　2. <strong>C</strong>　3. <strong>D</strong>　4. <strong>A</strong>　5. <strong>C</strong>　6. <strong>B</strong>　7. <strong>A</strong>　8. <strong>C</strong>　9. <strong>D</strong>　10. <strong>B</strong><br>
-        <span class="tip-note"><strong>易错点解析：</strong>第5题持续时长用 for；第6题固定搭配 from ... to ...；第7题 read 过去式拼写不变（读 /red/）；第8题问时长用 How long；第10题 leave 过去式为 left。</span>
+        1. <strong>B</strong>　2. <strong>C</strong>　3. <strong>D</strong>　4. <strong>A</strong>　5. <strong>C</strong>　6. <strong>B</strong>　7. <strong>A</strong>　8. <strong>C</strong>　9. <strong>D</strong>　10. <strong>B</strong>
       </div>
       <div class="ans-p"><strong>八、情景交际（每空1分，共5分）：</strong> (1) <strong>D</strong>　(2) <strong>A</strong>　(3) <strong>B</strong>　(4) <strong>E</strong>　(5) <strong>C</strong> <span class="tip-note">（多余项为 F）</span></div>
       <div class="ans-p"><strong>九、句型转换与连词成句（共10分）：</strong><br>
-        1. 按要求完成句子（每空1分，每题2分，共6分）：(1) <strong>Where did</strong>　(2) <strong>took; train</strong>　(3) <strong>didn't fly</strong><br>
+        1. 按要求完成句子（每空1分，每题2分，共6分）：(1) <strong>Where did</strong>　(2) <strong>took; train</strong>　(3) <strong>didn't fly</strong> <span class="tip-note">（首字母未大写每处扣0.5分）</span><br>
         2. 连词成句（每题2分，共4分；大小写或标点错误每处扣0.5分）：(1) <strong>We all enjoyed our summer holiday.</strong>　(2) <strong>Is the museum far from your home?</strong>
       </div>
       <div class="ans-p"><strong>十、阅读理解（共15分）：</strong><br>
-        （A）判断正误（每题1分，共5分）：(1) <strong>F</strong> <span class="tip-note">（by train）</span>　(2) <strong>T</strong>　(3) <strong>F</strong> <span class="tip-note">（not far from）</span>　(4) <strong>T</strong>　(5) <strong>T</strong><br>
+        （A）判断正误（每题1分，共5分）：(1) <strong>F</strong>　(2) <strong>T</strong>　(3) <strong>F</strong>　(4) <strong>T</strong>　(5) <strong>T</strong><br>
         （B）任务型阅读（共10分）：<br>
-        任务一（每题2分，共6分）：1. <strong>C</strong> <span class="tip-note">（8月12日至18日首尾均含，共7天）</span>　2. <strong>D</strong>　3. <strong>B</strong><br>
-        任务二（每题2分，共4分，意近且语法正确即可）：4. <strong>They went there by bus. / By bus.</strong>　5. <strong>She felt it was hard to say goodbye.</strong> <span class="tip-note">（或 She felt sad to leave.）</span>
+        任务一（每题2分，共6分）：1. <strong>C</strong>　2. <strong>D</strong>　3. <strong>B</strong><br>
+        任务二（每题2分，共4分，意近且语法正确即给满分；仅答核心词组且无语法错误给1.5分）：<br>
+        4. <strong>They went there by bus.</strong> <span class="tip-note">（或 By bus.）</span>　
+        5. <strong>She felt it was hard to say goodbye.</strong> <span class="tip-note">（或 She felt sad to leave / didn't want to say goodbye.）</span>
       </div>
     </div>
 
@@ -1211,52 +1234,284 @@
       <h3>十一、书面表达评分标准与参考范文（共10分）</h3>
       <table class="rubric-table">
         <tr>
-          <th style="width:14%;">等级</th>
+          <th style="width:15%;">等级</th>
           <th style="width:12%;">分值</th>
-          <th>评分细则</th>
+          <th>评分细则（重点考查要点完整性与一般过去时准确度）</th>
         </tr>
         <tr>
           <td style="text-align:center;"><strong>一档（优秀）</strong></td>
           <td style="text-align:center;">9～10分</td>
-          <td>完整涵盖导图全部要点；<strong>一般过去时使用准确</strong>，语句流畅自然，拼写、大小写及标点错误极少（≤1处），词数达50词以上。</td>
+          <td>完整涵盖导图 5 项要点；<strong>一般过去时使用准确</strong>，语句流畅自然，拼写、大小写及标点错误 ≤1 处，词数达 50 词以上。</td>
         </tr>
         <tr>
           <td style="text-align:center;"><strong>二档（良好）</strong></td>
           <td style="text-align:center;">7～8分</td>
-          <td>涵盖大部分要点，内容较充实；基本正确使用一般过去时，有少量语法或拼写错误（2～4处），不影响理解，词数基本达标。</td>
+          <td>涵盖大部分要点，内容较充实；基本正确使用一般过去时，有 2～4 处小错但不影响理解，词数基本达标。</td>
         </tr>
         <tr>
           <td style="text-align:center;"><strong>三档（合格）</strong></td>
           <td style="text-align:center;">4～6分</td>
-          <td>只写出部分要点，时态混用较明显，语言较简单，错误较多，词数略显不足（30～45词）。</td>
+          <td>只写出部分要点，一般现在时与一般过去时混用明显，语言较简单，错误较多，词数略显不足（30～45 词）。</td>
         </tr>
         <tr>
           <td style="text-align:center;"><strong>四档（待提高）</strong></td>
           <td style="text-align:center;">0～3分</td>
-          <td>偏离主题或仅写出个别单词/零散短语，无法连贯表意，字数严重不足。</td>
+          <td>偏离主题或仅写出个别单词/零散短语，无法连贯表意，词数严重不足。</td>
         </tr>
       </table>
       <div class="sample-essay">
-        <strong>参考范文（Model Essay，约78词）：</strong><br>
+        <strong>参考范文（Model Essay，78 词）：</strong><br>
         <strong>My Wonderful Summer Holiday</strong><br>
         I had a wonderful and meaningful summer holiday this year. I went to Dalian with my parents by train. We stayed there for five days. In the morning, we went to the beach on foot. I swam in the sea and played on the beach. In the afternoon, we visited a museum and ate lots of delicious seafood. In the evening, we walked along the sea and took many photos. We really had a great time there. I will always remember this special holiday!
       </div>
     </div>
   </div>
   <div class="page-footer">
-    <span>小学六年级英语上册第一单元测试卷（含听力 · 难度中等）</span>
-    <span>参考答案与评分标准（第 2 页 / 共 2 页）</span>
+    <span>小学六年级英语上册第一单元测试卷 · 参考答案</span>
+    <span>参考答案 第 2 页（共 2 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第三部分：题目分析 · 第 1 页 ==================== -->
+<div class="sheet part-analysis">
+  <div class="sheet-content">
+    <div class="ans-header">
+      <h2>小学六年级英语上册第一单元测试卷 · 题目分析与复习建议</h2>
+      <p>面向家长辅导、学生订正与单元薄弱点复盘 ｜ 对标北京版六年级上册 Unit One 核心素养目标</p>
+    </div>
+
+    <div class="ans-sec">
+      <h3>一、试卷结构与知识点双向细目表</h3>
+      <table class="spec-table">
+        <tr>
+          <th style="width:8%;">题号</th>
+          <th style="width:17%;">题型模块</th>
+          <th style="width:17%;">对应教材位置</th>
+          <th style="width:8%;">题量</th>
+          <th style="width:8%;">分值</th>
+          <th style="width:30%;">核心考查知识点与能力</th>
+          <th style="width:12%;">难度梯度</th>
+        </tr>
+        <tr>
+          <td class="c">一</td><td>听选单词/短语</td><td>Lesson 1–4 &amp; p.14</td><td class="c">5</td><td class="c">5</td><td>辨听核心词与形近词语音差异</td><td class="c">基础</td>
+        </tr>
+        <tr>
+          <td class="c">二</td><td>听问句选答语</td><td>Lesson 1–4</td><td class="c">5</td><td class="c">10</td><td>五大特殊/一般疑问句听辨与应答</td><td class="c">基础</td>
+        </tr>
+        <tr>
+          <td class="c">三</td><td>听对话选答案</td><td>Lesson 1–3 拓展</td><td class="c">5</td><td class="c">10</td><td>抓对话关键信息、排除干扰项</td><td class="c">中等</td>
+        </tr>
+        <tr>
+          <td class="c">四</td><td>听短文填空</td><td>Lesson 1–4 综合</td><td class="c">5</td><td class="c">5</td><td>语篇听力理解与核心词拼写/过去式</td><td class="c">中等偏上</td>
+        </tr>
+        <tr>
+          <td class="c">五</td><td>语音辨析</td><td>Letters &amp; Sounds p.14</td><td class="c">6</td><td class="c">6</td><td>are / air / ere 发音规律 /eə/ 与拼写</td><td class="c">基础</td>
+        </tr>
+        <tr>
+          <td class="c">六</td><td>词汇积累与运用</td><td>Word List (1) p.98</td><td class="c">19</td><td class="c">14</td><td>词性分类、10个高频过去式、语境选词</td><td class="c">基础～中等</td>
+        </tr>
+        <tr>
+          <td class="c">七</td><td>单项选择</td><td>Lesson 1–4 语法</td><td class="c">10</td><td class="c">10</td><td>一般过去时、疑问词、介词搭配</td><td class="c">中等</td>
+        </tr>
+        <tr>
+          <td class="c">八</td><td>情景交际</td><td>Lesson 1–2 对话</td><td class="c">5</td><td class="c">5</td><td>上下文逻辑衔接与暑假交际功能句</td><td class="c">基础～中等</td>
+        </tr>
+        <tr>
+          <td class="c">九</td><td>句型转换与连词</td><td>Lesson 1–4 句型</td><td class="c">5</td><td class="c">10</td><td>did 助动词变形、同义句转换、语序</td><td class="c">中等</td>
+        </tr>
+        <tr>
+          <td class="c">十</td><td>阅读理解（A+B）</td><td>Lesson 3–4 拓展</td><td class="c">10</td><td class="c">15</td><td>事实核对、日期天数推算、完整作答</td><td class="c">中等～提升</td>
+        </tr>
+        <tr>
+          <td class="c">十一</td><td>书面表达</td><td>p.10 &amp; p.13 写作</td><td class="c">1</td><td class="c">10</td><td>借助导图完整叙述过去经历（≥50词）</td><td class="c">综合提升</td>
+        </tr>
+        <tr>
+          <td class="c" colspan="3"><strong>全卷合计（基础约50%｜中等约38%｜提升约12%）</strong></td>
+          <td class="c"><strong>76空/题</strong></td>
+          <td class="c"><strong>100</strong></td>
+          <td colspan="2">全面覆盖听、读、写、看与语音语法核心素养</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="ans-sec">
+      <h3>二、听力部分逐题解析（第一至四大题）</h3>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第一大题：听选单词或短语（5分）</span>
+          <span class="diff-badge">难度：基础</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>教材 p.14 语音词 <code>careful</code> 及 Lesson 1–4 重点词 <code>meaningful</code>、<code>on foot</code>、<code>university</code>、不规则动词过去式 <code>left</code>。</li>
+          <li><strong>解题思路：</strong>听前快速默读每组三个选项的发音；听录音时抓住句子重读词，迅速定位对应选项。</li>
+          <li><strong>易错提醒：</strong>第 1 题 <code>share / chair / careful</code> 均含 /eə/ 音，易听混词尾 <code>-ful</code>；第 5 题 <code>fed / flew / left</code> 均为单音节过去式，需留意首辅音 /l/ 与尾音 /ft/。</li>
+          <li><strong>巩固建议：</strong>熟读教材 p.14 歌谣并跟读 Unit 1 词汇表，做到“见词能读、听音能辨”。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第二大题：听问句选答语（10分）</span>
+          <span class="diff-badge">难度：基础</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>Unit 1 五大高频问句 <code>How was...?</code>（评价）、<code>Did you...?</code>（一般疑问）、<code>How did...?</code>（交通方式）、<code>How long did...?</code>（时长）、<code>What did...do?</code>（活动）。</li>
+          <li><strong>解题思路：</strong>核心技巧是“听首词定方向”——听到 <code>How was</code> 找形容词评价，听到 <code>Did</code> 找 <code>Yes/No + did/didn't</code>，听到 <code>How long</code> 找 <code>For + 时间段</code>。</li>
+          <li><strong>易错提醒：</strong>第 2 题 B 项 <code>Yes, I do.</code> 时态错误（问句是 <code>Did</code>，答句不能用 <code>do</code>）；第 4 题 B 项 <code>From ... to ...</code> 对应 <code>When</code> 而非 <code>How long</code>。</li>
+          <li><strong>巩固建议：</strong>整理“疑问词—答语结构”对照卡（Where→地点、When→时间点、How long→for+时长、How→交通/感受），每天口头快问快答。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第三大题：听对话选答案（10分）</span>
+          <span class="diff-badge">难度：中等</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>Lesson 1–3 对话场景迁移（地点、交通方式、日期表达、农场活动偏好、假期俱乐部）。</li>
+          <li><strong>解题思路：</strong>听前先看题干疑问词和人名（Lucy / Tom / Amy / Jack / Kate），带着问题听第二句关键答复。</li>
+          <li><strong>易错提醒：</strong>第 3 题注意序数词 <code>5th (fifth)</code> 与 <code>12th (twelfth)</code> 的听辨；<strong>第 4 题是典型干扰题</strong>，录音中提到 <code>fed the baby chicks</code> 和 <code>walked the two dogs</code> 两件事，但最后一句明确指出 <code>Walking the dogs was my favourite!</code>，切忌听到第一件事就仓促选 B。</li>
+          <li><strong>巩固建议：</strong>练习听长句时用铅笔在选项旁做速记符号（如日期写 <code>5-12</code>，最爱画 <code>★</code>），避免信息遗漏。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card" style="margin-bottom:0;">
+        <div class="analysis-card-title">
+          <span>第四大题：听短文填空（5分）</span>
+          <span class="diff-badge">难度：中等偏上</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>综合考查语篇听力理解与核心词拼写：<code>wonderful</code>（二级词）、<code>far</code>（短语 <code>far from</code>）、<code>daytime</code>（Lesson 4）、<code>fishing</code>（<code>go fishing</code>）、<code>enjoyed</code>（过去式）。</li>
+          <li><strong>解题思路：</strong>第一遍通听大意并预判每空词性（如第 1 空填形容词、第 4 空在 <code>went</code> 后填动名词、第 5 空作谓语需用过去式）；第二遍降速时速写词干；第三遍检查拼写与词形变化。</li>
+          <li><strong>易错提醒：</strong>① 第 5 空漏写过去式词尾 <code>-ed</code>（误写 <code>enjoy</code>）；② <code>wonderful</code> 多写一个 <code>l</code>；③ <code>daytime</code> 误分开写或拼错。</li>
+          <li><strong>巩固建议：</strong>听写类题目坚持“先语境定词性，再检查时态和单复数”；考前重点听写 Unit 1 词汇表及常用动词过去式。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级英语上册第一单元测试卷 · 题目分析</span>
+    <span>题目分析 第 1 页（共 2 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第三部分：题目分析 · 第 2 页 ==================== -->
+<div class="sheet part-analysis">
+  <div class="sheet-content">
+    <div class="ans-sec">
+      <h3>三、笔试部分重点解析（第五至十一大题）</h3>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第五大题：语音辨析（6分）</span>
+          <span class="diff-badge">难度：基础</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>教材 p.14 Letters and Sounds：字母组合 <code>are</code>、<code>air</code>、<code>ere</code> 发 /eə/ 音，并与 <code>here</code> /ɪə/ 区分。</li>
+          <li><strong>解题思路：</strong>第 1 题 (3) 跨拼写比较 <code>where</code> 与 <code>careful</code>，虽然字母组合不同（<code>ere</code> vs <code>are</code>），但均发 /eə/，故判 T；第 2 题先根据句意确定单词（Where / share / pair），再填入对应组合。</li>
+          <li><strong>易错提醒：</strong>误以为“字母组合不同发音就不同”，从而把 <code>where / careful</code> 错判为 F；或混淆 <code>there / where</code>（/eə/）与 <code>here</code>（/ɪə/）。</li>
+          <li><strong>巩固建议：</strong>归纳同音异形词群：<code>are</code>（hare, rare, share, careful）、<code>air</code>（chair, hair, air, pair）、<code>ere</code>（there, where），朗读记忆。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第六大题：词汇积累与运用（14分）</span>
+          <span class="diff-badge">难度：基础～中等</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>词义词性归类、Unit 1 高频 10 个规则/不规则动词过去式（Lesson 1–4 课文原词）、核心短语在真实语境中的形式变化。</li>
+          <li><strong>解题思路：</strong>① 选不同类时从“词性、范畴（国家/城市）、动词形态”三角度排查；② 选词填空先通读全句锁定词义，再看时间标志词（第 5 题 <code>Last Saturday afternoon</code> 与 <code>and had</code>）决定是否变形。</li>
+          <li><strong>易错提醒：</strong>① 第 1 题 (4) <code>swim</code> 是原形，其余为过去式；② 不规则过去式 <code>feed→fed</code>、<code>fly→flew</code>、<code>leave→left</code> 最易拼错；③ <strong>第 3 题 (5) 是高频失分点</strong>，只顾选对短语却忘了将 <code>go fishing</code> 改为过去式 <code>went fishing</code>。</li>
+          <li><strong>巩固建议：</strong>制作本单元“不规则动词过去式速记表”（go-went, take-took, feed-fed, fly-flew, tell-told, sing-sang, run-ran, leave-left, read-read），反复默写。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第七、八大题：单项选择（10分）与情景交际（5分）</span>
+          <span class="diff-badge">难度：中等</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>一般过去时陈述句与疑问句、介词搭配（<code>for + 时间段</code>、<code>from ... to ...</code>）、<code>and</code> 并列结构时态一致及对话逻辑。</li>
+          <li><strong>解题思路：</strong>做单选先找“时间词”或“并列动词”（如第 3 题 <code>visited ... and enjoyed</code>、第 7 题 <code>went ... and read</code>、第 9 题 <code>climbed ... and did</code>、第 10 题 <code>Before ... left, watched</code>）；补全对话先看答句反推问句。</li>
+          <li><strong>易错提醒：</strong>① <strong>单选第 7 题</strong> <code>read</code> 过去式拼写与原形完全相同（读 /red/），易误选 <code>reads</code>；② <strong>单选第 6 题</strong> <code>between ... and ...</code> 与 <code>from ... to ...</code> 混淆，句中有 <code>to</code> 必选 <code>from</code>；③ <strong>情景交际</strong>中 F 项 <code>Where did you go?</code> 为干扰项，因前文已说 <code>I went to Hangzhou</code>。</li>
+          <li><strong>巩固建议：</strong>养成圈画句中“时态信号词”（this summer / went / watched / for two weeks）的习惯，避免凭语感盲选。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第九大题：句型转换与连词成句（10分）</span>
+          <span class="diff-badge">难度：中等</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>过去时特殊疑问句（<code>Where did + 主语 + 动词原形</code>）、否定句（<code>didn't + 动词原形</code>）、交通方式同义句（<code>go to ... by train = take a train to ...</code>）。</li>
+          <li><strong>解题思路：</strong>句型转换牢记口诀“<strong>助动词 did 一出现，后面动词还原形</strong>”；连词成句先找标点（句号找主语开头，问号找 <code>Is / Did / Where</code> 开头），再按“主—谓—宾—状”排列并核对词数。</li>
+          <li><strong>易错提醒：</strong>① 1(2) 易忘把 <code>take</code> 变为过去式 <code>took</code>；② 1(3) 写成 <code>didn't flew</code>（未还原 <code>fly</code>）；③ 连词成句漏词、未大写首字母或抄错标点。</li>
+          <li><strong>巩固建议：</strong>专门练 5 组“含不规则动词的陈述句 ↔ 否定句 ↔ 疑问句”三合一转换，强化“did 后还原”条件反射。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-card-title">
+          <span>第十大题：阅读理解（A 篇 5分 ＋ B 篇 10分）</span>
+          <span class="diff-badge">难度：中等～提升</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>紧扣单元“暑期旅行与夏令营”主题，考查细节定位、同义替换（<code>not far from ↔ on foot</code>）、日期推算与完整句作答。</li>
+          <li><strong>解题思路：</strong>A 篇逐句回文画线比对（如 <code>by train</code> vs <code>by plane</code>）；B 篇任务一第 1 题需定位 <code>from the 12th to the 18th of August</code> 计算天数，任务二优先用完整过去时句子作答。</li>
+          <li><strong>易错提醒：</strong><strong>B 篇第 1 题为全卷高频易错题</strong>——8 月 12 日到 18 日首尾两天均在营地，应为 <code>18 - 12 + 1 = 7</code> 天（选 C），不少学生直接算 <code>18 - 12 = 6</code> 而误选 B；任务二第 5 题需将文中的第一人称 <code>I</code> / 直接引语合理转换为第三人称 <code>She</code>。</li>
+          <li><strong>巩固建议：</strong>阅读理解坚持“题文对应、画线留痕”，遇日期/数量题务必列式复核；简答题注意人称与时态转换。</li>
+        </ul>
+      </div>
+
+      <div class="analysis-card" style="margin-bottom:0;">
+        <div class="analysis-card-title">
+          <span>第十一大题：书面表达（10分）</span>
+          <span class="diff-badge">难度：综合提升</span>
+        </div>
+        <ul class="analysis-grid">
+          <li><strong>考查知识点：</strong>对应教材 p.10 &amp; p.13 写作任务，用一般过去时条理清晰地写一篇 50 词以上的暑期游记/经历。</li>
+          <li><strong>解题思路：</strong>按“<strong>总—分—总</strong>”三段/三层展开：开头总评（<code>I had a wonderful summer holiday.</code>）→ 中间交代地点、同行人、交通方式，并按 <code>In the morning / In the afternoon / In the evening</code> 分层写 2–3 件具体活动 → 结尾抒发感受（<code>We had a great time!</code>）。</li>
+          <li><strong>易错提醒：</strong>① 时态前后不统一（写到中间变回一般现在时）；② 中式直译如 <code>I by train went to Dalian</code>（正确应为 <code>I went to Dalian by train</code> 或 <code>I took a train to Dalian</code>）；③ 词数不足 50 词或遗漏导图要点。</li>
+          <li><strong>巩固建议：</strong>背熟教材 p.8 Guoguo 与 p.10 Baobao 范文中的高频连接词与表达，写完后逐项对照卷面 <code>Self-Check</code> 清单检查动词过去式与标点。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级英语上册第一单元测试卷 · 题目分析</span>
+    <span>题目分析 第 2 页（共 2 页）</span>
   </div>
 </div>
 
 <script>
+  const PRINT_CLASSES = [
+    'print-exam-only',
+    'print-answer-only',
+    'print-analysis-only',
+    'print-answer-analysis'
+  ];
   function printMode(mode) {
-    document.body.classList.remove('print-exam-only', 'print-ans-only');
+    document.body.classList.remove(...PRINT_CLASSES);
+    document.querySelectorAll('.sheet.is-last-visible')
+      .forEach(el => el.classList.remove('is-last-visible'));
     if (mode === 'exam') document.body.classList.add('print-exam-only');
-    if (mode === 'ans') document.body.classList.add('print-ans-only');
+    if (mode === 'answer') document.body.classList.add('print-answer-only');
+    if (mode === 'analysis') document.body.classList.add('print-analysis-only');
+    if (mode === 'answer-analysis') document.body.classList.add('print-answer-analysis');
+    const visibleSheets = Array.from(document.querySelectorAll('.sheet'))
+      .filter(el => getComputedStyle(el).display !== 'none');
+    if (visibleSheets.length > 0) {
+      visibleSheets[visibleSheets.length - 1].classList.add('is-last-visible');
+    }
     window.print();
     setTimeout(() => {
-      document.body.classList.remove('print-exam-only', 'print-ans-only');
+      document.body.classList.remove(...PRINT_CLASSES);
+      document.querySelectorAll('.sheet.is-last-visible')
+        .forEach(el => el.classList.remove('is-last-visible'));
     }, 300);
   }
 </script>
