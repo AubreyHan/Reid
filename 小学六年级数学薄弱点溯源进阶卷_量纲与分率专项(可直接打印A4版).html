@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>小学六年级数学薄弱点溯源进阶卷（量纲维度与具体量分率专项 · A4可打印版）</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 13mm 12mm 13mm;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Songti SC", "STSong", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+    color: #1a1a1a;
+    background: #eef1f5;
+    margin: 0;
+    padding: 18px 0 40px 0;
+    font-size: 13px;
+    line-height: 1.56;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print-banner {
+    width: 210mm;
+    margin: 0 auto 16px auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #b91c1c;
+    border-radius: 8px;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .banner-info {
+    font-size: 13px;
+    color: #334155;
+  }
+  .banner-info strong {
+    color: #0f172a;
+    font-size: 14px;
+  }
+  .banner-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .btn {
+    border: none;
+    padding: 7px 14px;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .btn-primary { background: #b91c1c; color: #fff; }
+  .btn-primary:hover { background: #991b1b; }
+  .btn-secondary { background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; }
+  .btn-secondary:hover { background: #e2e8f0; }
+
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 18px auto;
+    background: #ffffff;
+    padding: 12mm 13mm 11mm 13mm;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .sheet-content {
+    flex: 1;
+  }
+  .page-footer {
+    margin-top: auto;
+    padding-top: 6px;
+    border-top: 1px solid #d4d4d8;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #666;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  .exam-header {
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  .exam-title {
+    font-size: 18.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 0 2px 0;
+    color: #000;
+  }
+  .badge-hard {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1px 7px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    vertical-align: 2px;
+    margin-left: 6px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .exam-subtitle {
+    font-size: 11px;
+    color: #444;
+    margin: 0 0 6px 0;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    white-space: nowrap;
+  }
+  .student-info {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    font-size: 12.5px;
+    margin-bottom: 6px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .student-info .field-line {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 74px;
+    height: 14px;
+    vertical-align: bottom;
+  }
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 7px;
+    font-size: 11.5px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .score-table th, .score-table td {
+    border: 1px solid #333;
+    text-align: center;
+    padding: 2.5px 4px;
+  }
+  .score-table th { background: #f5f5f5; font-weight: 600; }
+  .score-table td { height: 20px; }
+
+  .module-banner {
+    background: #f4f4f5;
+    border-left: 4px solid #18181b;
+    padding: 4px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    margin: 7px 0 6px 0;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .module-banner .tag {
+    font-size: 11px;
+    font-weight: 500;
+    color: #3f3f46;
+  }
+
+  .section-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #000;
+    margin: 6px 0 4px 0;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #52525b;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .section-title .pts {
+    font-size: 11.5px;
+    font-weight: 400;
+    color: #333;
+    margin-left: 4px;
+  }
+
+  .frac {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 2px;
+    line-height: 1.05;
+    font-size: 0.88em;
+    font-family: "Times New Roman", "Songti SC", serif;
+  }
+  .frac .num { border-bottom: 1px solid #1a1a1a; padding: 0 2.5px 1px 2.5px; text-align: center; }
+  .frac .den { padding: 1px 2.5px 0 2.5px; text-align: center; }
+
+  .blank {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 44px;
+    text-align: center;
+    margin: 0 2px;
+    height: 14px;
+    vertical-align: baseline;
+  }
+  .blank-sm { min-width: 32px; }
+  .blank-lg { min-width: 72px; }
+
+  .q-num { font-weight: 600; margin-right: 2px; }
+  .origin-tag {
+    display: inline-block;
+    font-size: 10.5px;
+    color: #444;
+    border: 1px solid #a1a1aa;
+    border-radius: 3px;
+    padding: 0 4px;
+    margin-right: 4px;
+    line-height: 1.35;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  /* 辨析题（带说理横线） */
+  .reason-item {
+    margin-bottom: 7px;
+  }
+  .reason-stem {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: justify;
+  }
+  .judge-box {
+    flex-shrink: 0;
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+  .reason-line {
+    margin-top: 3px;
+    padding-left: 18px;
+    font-size: 12px;
+    color: #555;
+    display: flex;
+    align-items: flex-end;
+  }
+  .reason-line .line-fill {
+    flex: 1;
+    border-bottom: 1px dashed #71717a;
+    height: 16px;
+    margin-left: 4px;
+  }
+
+  /* 选择题 */
+  .choice-item {
+    margin-bottom: 6px;
+  }
+  .choice-stem {
+    text-align: justify;
+  }
+  .choice-opts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding-left: 18px;
+    margin-top: 2px;
+    font-size: 12.5px;
+  }
+  .choice-opts-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 16px;
+    padding-left: 18px;
+    margin-top: 2px;
+    font-size: 12.5px;
+  }
+  .choice-opts-1 {
+    padding-left: 18px;
+    margin-top: 2px;
+    font-size: 12.3px;
+    line-height: 1.5;
+  }
+
+  /* 填空 */
+  .fill-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .fill-list li {
+    margin-bottom: 5.5px;
+    text-align: justify;
+  }
+
+  /* 几何图形计算卡片 */
+  .geo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 6px 0 10px 0;
+  }
+  .geo-card {
+    border: 1px dashed #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 248px;
+    display: flex;
+    flex-direction: column;
+  }
+  .geo-card-title {
+    font-size: 12.5px;
+    line-height: 1.48;
+    margin-bottom: 4px;
+    text-align: justify;
+  }
+  .svg-center {
+    text-align: center;
+    margin: 2px 0;
+  }
+
+  /* 压轴解答题 */
+  .app-item {
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    padding: 9px 12px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .app-stem {
+    text-align: justify;
+    line-height: 1.6;
+  }
+  .app-ans-line {
+    font-size: 12.5px;
+    color: #555;
+    text-align: right;
+    padding-top: 4px;
+  }
+
+  /* 参考答案页 */
+  .ans-header {
+    text-align: center;
+    border-bottom: 2px solid #1e293b;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+  }
+  .ans-header h2 { margin: 0; font-size: 16.5px; color: #0f172a; }
+  .ans-header p { margin: 2px 0 0 0; font-size: 11px; color: #475569; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; }
+  .ans-sec {
+    margin-bottom: 7px;
+    font-size: 11.6px;
+    line-height: 1.5;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .ans-sec h3 {
+    font-size: 12.4px;
+    margin: 0 0 3px 0;
+    padding: 2px 7px;
+    background: #f1f5f9;
+    border-left: 3px solid #b91c1c;
+    color: #0f172a;
+  }
+  .ans-p { margin: 2px 0; }
+  .tip-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-left: 3px solid #d97706;
+    border-radius: 4px;
+    padding: 5px 8px;
+    font-size: 11.2px;
+    line-height: 1.48;
+    color: #451a03;
+    margin-top: 6px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  body.print-exam-only .answer-page { display: none !important; }
+  body.print-ans-only .exam-page { display: none !important; }
+
+  @media print {
+    body { background: #fff; padding: 0; margin: 0; }
+    .no-print-banner { display: none !important; }
+    .sheet {
+      width: auto;
+      height: 270mm;
+      min-height: 270mm;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      page-break-after: always;
+      break-after: page;
+    }
+    .sheet:last-of-type { page-break-after: auto; break-after: auto; }
+    body.print-exam-only .exam-page:last-of-type { page-break-after: auto; break-after: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="no-print-banner">
+  <div class="banner-info">
+    <strong>六年级数学薄弱点溯源进阶卷（培优拔高版 · 难度 ★★★★☆）</strong><br>
+    针对第1套错题（二·3 / 三·4）跨三～六年级溯源攻坚：量纲维度本质 × 具体量与分率 ｜ A4（3页试卷 + 1页精析答案）
+  </div>
+  <div class="banner-actions">
+    <button class="btn btn-primary" onclick="printMode('all')">🖨️ 打印全套（含解析）</button>
+    <button class="btn btn-secondary" onclick="printMode('exam')">📄 仅打印试卷（1-3页）</button>
+    <button class="btn btn-secondary" onclick="printMode('ans')">✅ 仅打印答案（第4页）</button>
+  </div>
+</div>
+
+<!-- ==================== 第 1 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="exam-header">
+      <h1 class="exam-title">六年级数学薄弱点溯源进阶训练卷<span class="badge-hard">培优拔高版</span></h1>
+      <p class="exam-subtitle">定向攻坚：专题一 量纲与维度本质（三～六年级溯源） · 专题二 具体量与分率（五～六年级溯源） ｜ 建议用时：60分钟 · 满分：100分（π取3.14）</p>
+      <div class="student-info">
+        <div>姓名：<span class="field-line"></span></div>
+        <div>日期：<span class="field-line"></span></div>
+        <div>用时：<span class="field-line" style="min-width:56px;"></span> 分</div>
+        <div>得分：<span class="field-line" style="min-width:56px;"></span></div>
+      </div>
+      <table class="score-table">
+        <tr>
+          <th style="width:14%;">模块题号</th>
+          <th>专题一·辨析（12分）</th>
+          <th>专题一·选择（12分）</th>
+          <th>专题一·填空与几何（21分）</th>
+          <th>专题二·选择（15分）</th>
+          <th>专题二·填空（14分）</th>
+          <th>专题二·压轴（26分）</th>
+          <th style="width:11%;">总分</th>
+        </tr>
+        <tr>
+          <th>得分</th>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="module-banner">
+      <span>专题一：量纲与维度本质（长度 · 面积 · 体积与圆的进阶）</span>
+      <span class="tag">溯源三/五年级 → 拔高六年级 ｜ 共45分</span>
+    </div>
+
+    <div class="section-title">一、深度辨析题<span class="pts">（先判断“√”或“×”，<strong>错的必须在横线上写出理由或举出反例</strong>。每题3分，共12分）</span></div>
+
+    <div class="reason-item">
+      <div class="reason-stem">
+        <span><span class="q-num">1.</span><span class="origin-tag">五年级溯源</span>棱长是 6 cm 的正方体，它的表面积和体积相等。</span>
+        <span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span>
+      </div>
+      <div class="reason-line"><span>理由/反例：</span><span class="line-fill"></span></div>
+    </div>
+
+    <div class="reason-item">
+      <div class="reason-stem">
+        <span><span class="q-num">2.</span><span class="origin-tag">三年级溯源</span>把一张长方形纸片沿边剪去一个小正方形，剩下图形的面积一定变小，周长也一定变小。</span>
+        <span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span>
+      </div>
+      <div class="reason-line"><span>理由/反例：</span><span class="line-fill"></span></div>
+    </div>
+
+    <div class="reason-item">
+      <div class="reason-stem">
+        <span><span class="q-num">3.</span><span class="origin-tag">六年级进阶</span>如果一个圆的半径增加 1 m，无论原来的圆有多大，它的周长都增加 6.28 m，面积增加的大小也总是相同的。</span>
+        <span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span>
+      </div>
+      <div class="reason-line"><span>理由/反例：</span><span class="line-fill"></span></div>
+    </div>
+
+    <div class="reason-item" style="margin-bottom:4px;">
+      <div class="reason-stem">
+        <span><span class="q-num">4.</span><span class="origin-tag">量纲思维</span>圆周率 π 是一个固定不变的数，所以大圆的“周长 ÷ 直径”等于小圆的“周长 ÷ 直径”，大圆的“面积 ÷ 半径”也等于小圆的“面积 ÷ 半径”。</span>
+        <span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span>
+      </div>
+      <div class="reason-line"><span>理由/反例：</span><span class="line-fill"></span></div>
+    </div>
+
+    <div class="section-title">二、进阶选择题<span class="pts">（每题3分，共12分）</span></div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span class="q-num">1.</span><span class="origin-tag">等周极值</span>用三根长度均为 62.8 cm 的铁丝，分别围成一个长方形（长 20 cm）、一个正方形和一个圆，围成的三个图形中（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。
+      </div>
+      <div class="choice-opts-2">
+        <div>A. 圆的面积最大，长方形的面积最小</div>
+        <div>B. 正方形的面积最大，圆的面积最小</div>
+        <div>C. 圆的面积最大，正方形的面积最小</div>
+        <div>D. 三个图形的面积一样大</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span class="q-num">2.</span><span class="origin-tag">维度变化</span>一个圆的半径由 <i>r</i> cm 增加到 (<i>r</i> ＋ 2) cm，下列说法<strong>一定正确</strong>的是（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。
+      </div>
+      <div class="choice-opts-2">
+        <div>A. 它的周长增加 2 cm</div>
+        <div>B. 它的周长增加 6.28 cm</div>
+        <div>C. 它的周长增加 12.56 cm</div>
+        <div>D. 它的面积增加 12.56 cm²</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span class="q-num">3.</span><span class="origin-tag">剪拼转化</span>把一个半径为 4 cm 的圆平均分成若干等份，剪拼成一个近似的长方形。与原来的圆相比，拼成的近似长方形（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。
+      </div>
+      <div class="choice-opts-2">
+        <div>A. 周长不变，面积不变</div>
+        <div>B. 周长增加 8 cm，面积不变</div>
+        <div>C. 周长增加 4 cm，面积不变</div>
+        <div>D. 周长不变，面积增加 8 cm²</div>
+      </div>
+    </div>
+
+    <div class="choice-item" style="margin-bottom:4px;">
+      <div class="choice-stem">
+        <span class="q-num">4.</span><span class="origin-tag">一二三维缩放</span>把一个正方体的棱长扩大到原来的 2 倍，它的棱长总和、表面积、体积分别扩大到原来的（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）倍。
+      </div>
+      <div class="choice-opts">
+        <div>A. 2、2、2</div>
+        <div>B. 2、4、6</div>
+        <div>C. 2、4、8</div>
+        <div>D. 4、8、16</div>
+      </div>
+    </div>
+
+    <div class="section-title">三、维度思维填空<span class="pts">（每空2分，共10分）</span></div>
+    <ol class="fill-list">
+      <li><span class="q-num">1.</span>
+        一个圆的半径是 <i>r</i> cm，当 <i>r</i> ＝ <span class="blank blank-sm"></span> 时，它的周长（单位：cm）与面积（单位：cm²）的<strong>数值</strong>恰好相等；如果改用分米（dm）作单位，此时该圆的周长是 <span class="blank"></span> dm，面积是 <span class="blank"></span> dm²，两者的数值便不再相等。
+      </li>
+      <li style="margin-bottom:0;"><span class="q-num">2.</span>
+        把一个半径为 5 cm 的圆沿一条直径剪成两个完全一样的半圆，这两个半圆的<strong>面积之和</strong>与原圆面积相比 <span class="blank"></span>（填“变大”“变小”或“不变”）；这两个半圆的<strong>周长之和</strong>比原圆周长增加了 <span class="blank blank-sm"></span> cm。
+      </li>
+    </ol>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学薄弱点溯源进阶训练卷（培优拔高版）</span>
+    <span>第 1 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 2 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="section-title" style="margin-top:0;">四、高阶图形计算（专题一压轴）<span class="pts">（第1题5分，第2题6分，共11分）</span></div>
+    <div class="geo-grid">
+      <!-- 图1：整体二维面积观 r^2 = 20 -->
+      <div class="geo-card">
+        <div class="geo-card-title"><strong>1.（5分）</strong>下图中，正方形的一个顶点在圆心 <i>O</i> 处，边长等于圆的半径。已知正方形的面积是 <strong>20 cm²</strong>，求阴影部分（<span class="frac"><span class="num">3</span><span class="den">4</span></span> 圆）的面积。</div>
+        <div class="svg-center">
+          <svg width="206" height="106" viewBox="0 0 206 106" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="hatch1" width="6" height="6" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="0" x2="0" y2="6" stroke="#64748b" stroke-width="1.4"/>
+              </pattern>
+            </defs>
+            <!-- 3/4 圆阴影：圆心 (100, 56), r=39 -->
+            <path d="M 100 56 L 139 56 A 39 39 0 1 1 100 17 Z" fill="url(#hatch1)" stroke="#1a1a1a" stroke-width="1.6"/>
+            <!-- 右上角正方形 (边长 = r = 39) -->
+            <rect x="100" y="17" width="39" height="39" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+            <!-- 直角符号 -->
+            <polyline points="100,49 107,49 107,56" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+            <!-- 圆心 O -->
+            <circle cx="100" cy="56" r="2.5" fill="#1a1a1a"/>
+            <text x="90" y="65" font-family="Times New Roman, serif" font-size="12" font-style="italic" fill="#1a1a1a">O</text>
+            <!-- 面积标注 -->
+            <text x="119.5" y="40" font-family="Times New Roman, serif" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1a1a1a">20 cm²</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 图2：12×6 长方形减两相切圆的面积与周长 -->
+      <div class="geo-card">
+        <div class="geo-card-title"><strong>2.（6分）</strong>下图中，长方形的长是 12 cm、宽是 6 cm，内部有两个最大的相切圆。分别求<strong>阴影部分的面积</strong>和<strong>阴影部分的周长</strong>。</div>
+        <div class="svg-center">
+          <svg width="212" height="106" viewBox="0 0 212 106" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="hatch2" width="6" height="6" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="0" x2="0" y2="6" stroke="#64748b" stroke-width="1.4"/>
+              </pattern>
+            </defs>
+            <!-- 长方形 140 × 70 -->
+            <rect x="24" y="12" width="140" height="70" fill="url(#hatch2)" stroke="#1a1a1a" stroke-width="1.6"/>
+            <!-- 两个最大相切圆 r=35 -->
+            <circle cx="59" cy="47" r="35" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.5"/>
+            <circle cx="129" cy="47" r="35" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.5"/>
+            <circle cx="59" cy="47" r="2" fill="#1a1a1a"/>
+            <circle cx="129" cy="47" r="2" fill="#1a1a1a"/>
+            <!-- 标注 -->
+            <text x="94" y="98" font-family="Times New Roman, serif" font-size="12" text-anchor="middle" fill="#1a1a1a">12 cm</text>
+            <text x="184" y="51" font-family="Times New Roman, serif" font-size="12" text-anchor="middle" fill="#1a1a1a">6 cm</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- 专题二 -->
+    <div class="module-banner" style="margin-top:8px;">
+      <span>专题二：分数的双重意义——“具体量”与“分率”深度攻坚</span>
+      <span class="tag">溯源五年级分数意义 → 拔高六年级量率对应与分类讨论 ｜ 共55分</span>
+    </div>
+
+    <div class="section-title">一、双胞胎母题对比选择题<span class="pts">（仔细辨别“一根分两段”与“两根分别剪”！每题3分，共15分）</span></div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span class="q-num">1.</span><span class="origin-tag">一根分两段</span>一根木料锯成两段，第一段长 <span class="frac"><span class="num">4</span><span class="den">9</span></span> 米，第二段占全长的 <span class="frac"><span class="num">5</span><span class="den">9</span></span>，两段木料相比，（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。
+      </div>
+      <div class="choice-opts">
+        <div>A. 第一段长</div>
+        <div>B. 第二段长</div>
+        <div>C. 一样长</div>
+        <div>D. 无法比较</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span class="q-num">2.</span><span class="origin-tag">两根分别剪</span>两根同样长的绳子（长度均<strong>大于 1 米</strong>），第一根用去 <span class="frac"><span class="num">3</span><span class="den">5</span></span> 米，第二根用去全长的 <span class="frac"><span class="num">3</span><span class="den">5</span></span>，两根绳子<strong>剩下的部分</strong>相比，（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。
+      </div>
+      <div class="choice-opts">
+        <div>A. 第一根剩下的长</div>
+        <div>B. 第二根剩下的长</div>
+        <div>C. 一样长</div>
+        <div>D. 无法比较</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span class="q-num">3.</span><span class="origin-tag">逆向分类推理</span>两根同样长的彩带，第一根剪去 <span class="frac"><span class="num">2</span><span class="den">5</span></span> 米，第二根剪去全长的 <span class="frac"><span class="num">2</span><span class="den">5</span></span>。如果<strong>第一根剩下的比第二根剩下的短</strong>，那么原来每根彩带的长度一定（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。
+      </div>
+      <div class="choice-opts-2">
+        <div>A. 大于 1 米</div>
+        <div>B. 等于 1 米</div>
+        <div>C. 小于 1 米（且不小于 <span class="frac"><span class="num">2</span><span class="den">5</span></span> 米）</div>
+        <div>D. 无法确定</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span class="q-num">4.</span><span class="origin-tag">单位“1”切换</span>一根绳子，第一次用去全长的 <span class="frac"><span class="num">1</span><span class="den">4</span></span>，第二次用去<strong>剩下的</strong> <span class="frac"><span class="num">1</span><span class="den">3</span></span>，两次用去的长度相比，（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。
+      </div>
+      <div class="choice-opts">
+        <div>A. 第一次长</div>
+        <div>B. 第二次长</div>
+        <div>C. 一样长</div>
+        <div>D. 无法比较</div>
+      </div>
+    </div>
+
+    <div class="choice-item" style="margin-bottom:6px;">
+      <div class="choice-stem">
+        <span class="q-num">5.</span><span class="origin-tag">综合辨析</span>下面四句话中，<strong>逻辑正确且能确定结论</strong>的是（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。
+      </div>
+      <div class="choice-opts-1">
+        <div>A. 甲堆煤比乙堆煤多 <span class="frac"><span class="num">1</span><span class="den">4</span></span>，由此可直接算出甲堆煤比乙堆煤多多少吨。</div>
+        <div>B. 一瓶果汁喝掉全瓶的 <span class="frac"><span class="num">3</span><span class="den">5</span></span> 后，还剩 <span class="frac"><span class="num">2</span><span class="den">5</span></span> 升，那么喝掉的一定比剩下的多。</div>
+        <div>C. 两袋大米，第一袋吃掉 <span class="frac"><span class="num">1</span><span class="den">2</span></span> 千克，第二袋吃掉它的 <span class="frac"><span class="num">1</span><span class="den">2</span></span>，第一袋吃掉的更少。</div>
+        <div>D. 某班男生人数比女生多 <span class="frac"><span class="num">1</span><span class="den">5</span></span>，则女生人数比男生少 <span class="frac"><span class="num">1</span><span class="den">5</span></span>。</div>
+      </div>
+    </div>
+
+    <div class="section-title">二、量率互推进阶填空<span class="pts">（每空2分，共14分）</span></div>
+    <ol class="fill-list">
+      <li><span class="q-num">1.</span><span class="origin-tag">五年级溯源</span>
+        把 3 米长的铁丝平均分成 5 段，每段长 <span class="blank blank-sm"></span> 米，每段占全长的 <span class="blank blank-sm"></span>；如果从这根铁丝上剪下 <span class="frac"><span class="num">3</span><span class="den">5</span></span> 米，还剩 <span class="blank blank-sm"></span> 米；如果剪下全长的 <span class="frac"><span class="num">3</span><span class="den">5</span></span>，还剩 <span class="blank blank-sm"></span> 米。
+      </li>
+      <li><span class="q-num">2.</span><span class="origin-tag">反推全长</span>
+        一根电线剪成两段，第一段长 <span class="frac"><span class="num">6</span><span class="den">5</span></span> 米，第二段占全长的 <span class="frac"><span class="num">3</span><span class="den">7</span></span>，这根电线全长 <span class="blank"></span> 米，第二段长 <span class="blank"></span> 米。
+      </li>
+      <li style="margin-bottom:0;"><span class="q-num">3.</span><span class="origin-tag">量率对应</span>
+        一根竹竿垂直插进水池，露出水面的部分占全长的 <span class="frac"><span class="num">1</span><span class="den">3</span></span>，水中的部分占全长的 <span class="frac"><span class="num">1</span><span class="den">2</span></span>，入泥部分长 <span class="frac"><span class="num">1</span><span class="den">2</span></span> 米，这根竹竿全长 <span class="blank blank-sm"></span> 米。
+      </li>
+    </ol>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学薄弱点溯源进阶训练卷（培优拔高版）</span>
+    <span>第 2 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 3 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="section-title" style="margin-top:0;">三、思维压轴解答题（专题二 + 跨模块大融合）<span class="pts">（共26分，请写出完整的推理或计算过程）</span></div>
+
+    <div class="app-item" style="min-height:218px;">
+      <div class="app-stem">
+        <span class="q-num">1.</span><span class="origin-tag">分类讨论说理 · 6分</span>
+        有两根同样长的丝带，第一根剪去 <span class="frac"><span class="num">3</span><span class="den">4</span></span> 米，第二根剪去全长的 <span class="frac"><span class="num">3</span><span class="den">4</span></span>。<strong>哪一根剪去的多？</strong>请分情况说明理由。<br>
+        <span style="font-size:11.8px; color:#555;">（思维提示：先思考丝带原长必须满足什么前提范围，再按“原长与 1 米的大小关系”分三种情况完整阐述。）</span>
+      </div>
+    </div>
+
+    <div class="app-item" style="min-height:208px;">
+      <div class="app-stem">
+        <span class="q-num">2.</span><span class="origin-tag">多步量率倒推 · 6分</span>
+        一桶食用油，第一周用去全桶的 <span class="frac"><span class="num">1</span><span class="den">4</span></span> 还多 3 千克，第二周用去<strong>余下的</strong> <span class="frac"><span class="num">1</span><span class="den">3</span></span> 还少 2 千克，这时桶里还剩 14 千克油。这桶油原来重多少千克？
+      </div>
+      <div class="app-ans-line">答：这桶油原来重 <span class="blank"></span> 千克。</div>
+    </div>
+
+    <div class="app-item" style="min-height:218px;">
+      <div class="app-stem">
+        <span class="q-num">3.</span><span class="origin-tag">转化单位“1”与不变量 · 7分</span>
+        阅览室里原有科技书和故事书共若干本，其中科技书占总数的 <span class="frac"><span class="num">2</span><span class="den">5</span></span>。后来又买进 18 本科技书，这时科技书占现在总数的 <span class="frac"><span class="num">1</span><span class="den">2</span></span>。阅览室原来一共有多少本书？
+      </div>
+      <div class="app-ans-line">答：阅览室原来一共有 <span class="blank"></span> 本书。</div>
+    </div>
+
+    <div class="app-item" style="min-height:242px; margin-bottom:0;">
+      <div class="app-stem">
+        <span class="q-num">4.</span><span class="origin-tag">双薄弱点压轴融合 · 7分</span>
+        一根铁丝剪成两段，第一段长 18.84 米，第二段占全长的 <span class="frac"><span class="num">2</span><span class="den">5</span></span>。<br>
+        （1）这根铁丝全长多少米？第二段长多少米？（3分）<br>
+        （2）如果把这两段铁丝分别首尾相连各围成一个圆，<strong>大圆的面积比小圆的面积多多少平方米？</strong>（4分）
+      </div>
+      <div class="app-ans-line">答：（1）全长 <span class="blank"></span> 米，第二段长 <span class="blank"></span> 米；（2）多 <span class="blank"></span> 平方米。</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学薄弱点溯源进阶训练卷（培优拔高版）</span>
+    <span>第 3 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 4 页：参考答案与深度解析 ==================== -->
+<div class="sheet answer-page">
+  <div class="sheet-content">
+    <div class="ans-header">
+      <h2>参考答案、评分标准与溯源精析</h2>
+      <p>六年级数学薄弱点溯源进阶训练卷（培优拔高版） ｜ 批阅后请重点带孩子复盘错因与思维锦囊</p>
+    </div>
+
+    <div class="ans-sec">
+      <h3>专题一：量纲与维度本质（共45分）</h3>
+      <div class="ans-p"><strong>一、深度辨析题（每题3分：判断1分，理由/反例合理2分，共12分）：</strong></div>
+      <div class="ans-p"><strong>1. ×</strong>　理由：表面积是二维面积（216 cm²），体积是三维空间大小（216 cm³），量纲/单位意义不同，不能比较大小（仅数值相等）。</div>
+      <div class="ans-p"><strong>2. ×</strong>　反例：若从长方形的一个<strong>角</strong>上剪去一个小正方形，剩下图形的周长<strong>不变</strong>；若从长方形<strong>边中间</strong>挖去一个小正方形，周长反而<strong>变大</strong>。</div>
+      <div class="ans-p"><strong>3. ×</strong>　理由：周长增加量 Δ<i>C</i>＝2π(<i>r</i>＋1)－2π<i>r</i>＝2π＝6.28 m（恒定）；但面积增加量 Δ<i>S</i>＝π[(<i>r</i>＋1)²－<i>r</i>²]＝π(2<i>r</i>＋1)，随原半径 <i>r</i> 增大而增大（如 <i>r</i>＝1 时增 3π，<i>r</i>＝10 时增 21π）。</div>
+      <div class="ans-p"><strong>4. ×</strong>　理由：<i>C</i>÷<i>d</i>＝π 是定值（无量纲）；但 <i>S</i>÷<i>r</i>＝π<i>r</i> 仍含长度量纲 <i>r</i>，随圆的大小变化（只有 <i>S</i>÷<i>r</i>²＝π 才是定值）。</div>
+
+      <div class="ans-p" style="margin-top:3px;"><strong>二、进阶选择题（每题3分，共12分）：</strong>
+        <strong>1. A</strong>（长方形 228 cm² ＜ 正方形 246.49 cm² ＜ 圆 314 cm²） &nbsp;
+        <strong>2. C</strong>（Δ<i>C</i>＝2π×2＝12.56 cm） &nbsp;
+        <strong>3. B</strong>（多出两条半径 2×4＝8 cm） &nbsp;
+        <strong>4. C</strong>（1D×2、2D×2²、3D×2³）
+      </div>
+
+      <div class="ans-p" style="margin-top:3px;"><strong>三、维度思维填空（每空2分，共10分）：</strong>
+        <strong>1.</strong> 2；1.256；0.1256（2 cm＝0.2 dm，<i>C</i>＝2×3.14×0.2＝1.256 dm，<i>S</i>＝3.14×0.2²＝0.1256 dm²） &nbsp;
+        <strong>2.</strong> 不变；20（切开增加 2 条直径：2×10＝20 cm）
+      </div>
+
+      <div class="ans-p" style="margin-top:3px;"><strong>四、高阶图形计算（共11分）：</strong></div>
+      <div class="ans-p"><strong>1.（5分）</strong>正方形面积 ＝ <i>r</i>² ＝ 20（cm²），无需强求 <i>r</i>，直接整体代入：<i>S</i><sub>阴影</sub> ＝ <span class="frac"><span class="num">3</span><span class="den">4</span></span> × 3.14 × 20 ＝ <strong>47.1（cm²）</strong>。</div>
+      <div class="ans-p"><strong>2.（6分）</strong>每个圆直径 <i>d</i>＝6 cm，半径 <i>r</i>＝3 cm。<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;① 阴影面积（3分）：12×6 － 2×3.14×3² ＝ 72 － 56.52 ＝ <strong>15.48（cm²）</strong>；<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;② 阴影周长（3分，<strong>高能易错：边界是外围长方形周长＋内部两圆周长，不是减！</strong>）：(12＋6)×2 ＋ 2×3.14×6 ＝ 36 ＋ 37.68 ＝ <strong>73.68（cm）</strong>。
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>专题二：分数的双重意义——“具体量”与“分率”（共55分）</h3>
+      <div class="ans-p"><strong>一、双胞胎母题对比选择题（每题3分，共15分）：</strong></div>
+      <div class="ans-p">
+        <strong>1. B</strong>（第一段占 1－5/9＝4/9 ＜ 5/9） &nbsp;
+        <strong>2. A</strong>（总长＞1 m ⇒ 第二根用去 3/5·<i>L</i> ＞ 3/5 m，用得越多剩得越少） &nbsp;
+        <strong>3. C</strong>（第一根剩得短 ⇒ 第一根剪得多 ⇒ 2/5 ＞ 2/5·<i>L</i> ⇒ <i>L</i>＜1 m，且 <i>L</i>≥2/5 m） &nbsp;
+        <strong>4. C</strong>（第二次占全长的 3/4 × 1/3 ＝ 1/4） &nbsp;
+        <strong>5. B</strong>（同一瓶中喝掉 3/5，剩下 2/5，3/5 ＞ 2/5）
+      </div>
+
+      <div class="ans-p" style="margin-top:3px;"><strong>二、量率互推进阶填空（每空2分，共14分）：</strong></div>
+      <div class="ans-p">
+        <strong>1.</strong> <span class="frac"><span class="num">3</span><span class="den">5</span></span>（或 0.6）；<span class="frac"><span class="num">1</span><span class="den">5</span></span>；2<span class="frac"><span class="num">2</span><span class="den">5</span></span>（或 <span class="frac"><span class="num">12</span><span class="den">5</span></span> / 2.4）；1<span class="frac"><span class="num">1</span><span class="den">5</span></span>（或 <span class="frac"><span class="num">6</span><span class="den">5</span></span> / 1.2） &nbsp;&nbsp;
+        <strong>2.</strong> <span class="frac"><span class="num">21</span><span class="den">10</span></span>（或 2.1）；<span class="frac"><span class="num">9</span><span class="den">10</span></span>（或 0.9） &nbsp;&nbsp;
+        <strong>3.</strong> 3（1/2 ÷ (1－1/3－1/2) ＝ 3）
+      </div>
+
+      <div class="ans-p" style="margin-top:3px;"><strong>三、思维压轴解答题（共26分）：</strong></div>
+      <div class="ans-p"><strong>1.（6分）</strong>前提：因第一根能剪去 <span class="frac"><span class="num">3</span><span class="den">4</span></span> 米，故每根丝带原长 <strong><i>L</i> ≥ <span class="frac"><span class="num">3</span><span class="den">4</span></span> 米</strong>（1.5分）。分三种情况（每类1.5分）：<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;① 当 <i>L</i> ＞ 1 米时，全长的 <span class="frac"><span class="num">3</span><span class="den">4</span></span> ＞ <span class="frac"><span class="num">3</span><span class="den">4</span></span> 米，<strong>第二根</strong>剪去的多；
+        ② 当 <i>L</i> ＝ 1 米时，全长的 <span class="frac"><span class="num">3</span><span class="den">4</span></span> ＝ <span class="frac"><span class="num">3</span><span class="den">4</span></span> 米，<strong>两根一样多</strong>；<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;③ 当 <span class="frac"><span class="num">3</span><span class="den">4</span></span> 米 ≤ <i>L</i> ＜ 1 米时，全长的 <span class="frac"><span class="num">3</span><span class="den">4</span></span> ＜ <span class="frac"><span class="num">3</span><span class="den">4</span></span> 米，<strong>第一根</strong>剪去的多。
+      </div>
+      <div class="ans-p"><strong>2.（6分）</strong>倒推法：第一周后余下 (14－2) ÷ (1－<span class="frac"><span class="num">1</span><span class="den">3</span></span>) ＝ 12 ÷ <span class="frac"><span class="num">2</span><span class="den">3</span></span> ＝ 18（千克）（3分）；<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;原来重：(18＋3) ÷ (1－<span class="frac"><span class="num">1</span><span class="den">4</span></span>) ＝ 21 ÷ <span class="frac"><span class="num">3</span><span class="den">4</span></span> ＝ <strong>28（千克）</strong>（3分）。
+      </div>
+      <div class="ans-p"><strong>3.（7分）</strong>抓<strong>不变量（故事书）</strong>：原科技书是故事书的 <span class="frac"><span class="num">2</span><span class="den">3</span></span>，现科技书占总数的 <span class="frac"><span class="num">1</span><span class="den">2</span></span> 即等于故事书的 1 倍；<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;故事书：18 ÷ (1－<span class="frac"><span class="num">2</span><span class="den">3</span></span>) ＝ 54（本）（4分）；原来总数：54 ÷ (1－<span class="frac"><span class="num">2</span><span class="den">5</span></span>) ＝ <strong>90（本）</strong>（3分）。（方程法正确同样满分）
+      </div>
+      <div class="ans-p"><strong>4.（7分）</strong>（1）第一段占 1－<span class="frac"><span class="num">2</span><span class="den">5</span></span>＝<span class="frac"><span class="num">3</span><span class="den">5</span></span>，全长：18.84 ÷ <span class="frac"><span class="num">3</span><span class="den">5</span></span> ＝ <strong>31.4（米）</strong>，第二段：31.4－18.84 ＝ <strong>12.56（米）</strong>（3分）；<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;（2）大圆半径 <i>R</i>＝18.84÷3.14÷2＝3（米），小圆半径 <i>r</i>＝12.56÷3.14÷2＝2（米），面积差：3.14×(3²－2²)＝<strong>15.7（平方米）</strong>（4分）。
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>家长复盘锦囊（跨年级防错口诀）：</strong><br>
+      ① <strong>量纲铁律</strong>：看到“相等/比较大小”，先查单位与维度——长度(一维) vs 面积(二维) vs 体积(三维) <strong>绝不可跨维比较</strong>；图形挖洞时，面积做“减法”，周长往往做“加法”！<br>
+      ② <strong>分率铁律</strong>：看到带单位与不带单位的分数同框，先问“<strong>是一根分两段，还是两根分别剪？</strong>”——一根分两段用“1－分率”锁定唯一答案；两根分别剪以“1米”为分界点做三类讨论！
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学薄弱点溯源进阶训练卷（培优拔高版）</span>
+    <span>参考答案与溯源精析</span>
+  </div>
+</div>
+
+<script>
+  function printMode(mode) {
+    document.body.classList.remove('print-exam-only', 'print-ans-only');
+    if (mode === 'exam') document.body.classList.add('print-exam-only');
+    if (mode === 'ans') document.body.classList.add('print-ans-only');
+    window.print();
+    setTimeout(() => {
+      document.body.classList.remove('print-exam-only', 'print-ans-only');
+    }, 300);
+  }
+</script>
+</body>
+</html>
