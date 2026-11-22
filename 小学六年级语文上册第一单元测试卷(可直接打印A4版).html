@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>小学六年级语文上册第一单元测试卷（难度中等 · 可直接打印A4版）</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 13mm 12mm 13mm;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Songti SC", "STSong", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+    color: #1a1a1a;
+    background: #eef1f5;
+    margin: 0;
+    padding: 18px 0 40px 0;
+    font-size: 13px;
+    line-height: 1.62;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 顶部打印工具栏（打印时自动隐藏） */
+  .no-print-banner {
+    width: 210mm;
+    margin: 0 auto 16px auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #1d4ed8;
+    border-radius: 8px;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .banner-info {
+    font-size: 13px;
+    color: #334155;
+  }
+  .banner-info strong {
+    color: #0f172a;
+    font-size: 14px;
+  }
+  .banner-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .btn {
+    border: none;
+    padding: 7px 14px;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .btn-primary {
+    background: #1d4ed8;
+    color: #fff;
+  }
+  .btn-primary:hover { background: #1e40af; }
+  .btn-secondary {
+    background: #f1f5f9;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+  }
+  .btn-secondary:hover { background: #e2e8f0; }
+
+  /* A4纸张模拟容器 */
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 18px auto;
+    background: #ffffff;
+    padding: 12mm 13mm 11mm 13mm;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sheet-content {
+    flex: 1;
+  }
+
+  .page-footer {
+    margin-top: auto;
+    padding-top: 6px;
+    border-top: 1px solid #d4d4d8;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #666;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  /* 试卷大标题与考生信息 */
+  .exam-header {
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  .exam-title {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin: 0 0 2px 0;
+    color: #000;
+  }
+  .exam-subtitle {
+    font-size: 11px;
+    color: #444;
+    margin: 0 0 6px 0;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .student-info {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    font-size: 12.5px;
+    margin-bottom: 6px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .student-info .field-line {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 78px;
+    height: 14px;
+    vertical-align: bottom;
+  }
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    font-size: 11.5px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .score-table th, .score-table td {
+    border: 1px solid #333;
+    text-align: center;
+    padding: 2.5px 4px;
+  }
+  .score-table th {
+    background: #f5f5f5;
+    font-weight: 600;
+  }
+  .score-table td {
+    height: 20px;
+  }
+
+  /* 大题标题 */
+  .section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    margin: 8px 0 5px 0;
+    padding-bottom: 2px;
+    border-bottom: 1.2px solid #333;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .section-title .pts {
+    font-size: 11.5px;
+    font-weight: 400;
+    color: #333;
+    margin-left: 4px;
+  }
+  .sub-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 7px 0 4px 0;
+    color: #111;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .sub-title .pts {
+    font-size: 11.5px;
+    font-weight: 400;
+    color: #333;
+  }
+
+  /* 看拼音写词语 - 田字格 */
+  .pinyin-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 10px;
+    column-gap: 14px;
+    margin: 6px 0 8px 0;
+  }
+  .pinyin-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pinyin-text {
+    font-family: "Times New Roman", "PingFang SC", sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
+    color: #111;
+  }
+  .tzg-pair {
+    display: flex;
+    gap: 5px;
+  }
+  .tzg {
+    width: 34px;
+    height: 34px;
+    border: 1.2px solid #333;
+    position: relative;
+    background: #fff;
+  }
+  .tzg::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    border-top: 1px dashed #a1a1aa;
+  }
+  .tzg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 1px dashed #a1a1aa;
+  }
+
+  /* 选择题 */
+  .q-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .q-list > li {
+    margin-bottom: 5px;
+    text-align: justify;
+  }
+  .q-num {
+    font-weight: 700;
+    margin-right: 2px;
+  }
+  .choice-item {
+    margin-bottom: 6px;
+  }
+  .choice-stem {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .choice-opts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2px;
+    column-gap: 12px;
+    padding-left: 18px;
+    margin-top: 2px;
+    font-size: 12.6px;
+  }
+  .choice-opts-1col {
+    grid-template-columns: 1fr;
+  }
+  .dot {
+    text-emphasis: filled dot;
+    -webkit-text-emphasis: filled dot;
+    text-emphasis-position: under;
+    -webkit-text-emphasis-position: under;
+    font-weight: 600;
+  }
+  .paren {
+    display: inline-block;
+    min-width: 44px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  /* 填空横线与书写行 */
+  .blank {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 72px;
+    text-align: center;
+    margin: 0 2px;
+    height: 15px;
+    vertical-align: baseline;
+  }
+  .blank-sm { min-width: 48px; }
+  .blank-md { min-width: 112px; }
+  .blank-lg { min-width: 152px; }
+  .blank-xl { min-width: 185px; }
+
+  .write-line {
+    border-bottom: 1px solid #555;
+    height: 23px;
+    width: 100%;
+  }
+  .write-area {
+    margin: 2px 0 6px 0;
+  }
+
+  /* 语文实践 - 路牌与名牌卡片 */
+  .sign-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    margin: 6px 0 4px 0;
+  }
+  .sign-card {
+    border: 1.2px solid #333;
+    border-radius: 5px;
+    padding: 5px 16px;
+    min-width: 220px;
+    text-align: center;
+    background: #fafafa;
+  }
+  .sign-label {
+    font-size: 11px;
+    color: #555;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .sign-zh {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 2px 0 4px 0;
+  }
+  .sign-py-line {
+    border-bottom: 1px solid #222;
+    height: 20px;
+    width: 170px;
+    margin: 0 auto 2px auto;
+  }
+
+  /* 阅读文章框 */
+  .passage-box {
+    border: 1px solid #94a3b8;
+    border-radius: 5px;
+    padding: 8px 13px;
+    background: #fcfcfd;
+    margin: 5px 0 8px 0;
+    font-size: 12.8px;
+    line-height: 1.68;
+  }
+  .passage-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: #000;
+  }
+  .passage-box p {
+    margin: 0 0 4px 0;
+    text-indent: 2em;
+    text-align: justify;
+  }
+  .passage-box p:last-child {
+    margin-bottom: 0;
+  }
+  .u-line {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .w-line {
+    text-decoration: underline wavy #333;
+    text-underline-offset: 3px;
+  }
+
+  /* 思维导图框 */
+  .flow-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin: 6px 0 6px 0;
+    font-size: 12px;
+  }
+  .flow-box {
+    flex: 1;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 5px 8px;
+    min-height: 52px;
+    background: #fff;
+  }
+  .flow-box-title {
+    font-weight: 700;
+    font-size: 11.8px;
+    text-align: center;
+    border-bottom: 1px dashed #999;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .flow-arrow {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    flex-shrink: 0;
+  }
+
+  /* 习作提示框与作文方格纸 */
+  .essay-prompt {
+    border: 1px solid #94a3b8;
+    border-radius: 5px;
+    padding: 7px 11px;
+    background: #fcfcfd;
+    margin: 4px 0 8px 0;
+    font-size: 12.2px;
+    line-height: 1.55;
+    text-align: justify;
+  }
+  .essay-prompt p {
+    margin: 0 0 3px 0;
+    text-indent: 2em;
+  }
+  .essay-prompt p:last-child {
+    margin-bottom: 0;
+  }
+  .essay-grid-wrap {
+    width: 100%;
+    position: relative;
+  }
+  .essay-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  .essay-table td {
+    border: 0.75px solid #64748b;
+    height: 7.4mm;
+    padding: 0;
+    position: relative;
+  }
+  .essay-table tr.gap-row td {
+    border: none;
+    height: 1.1mm;
+    font-size: 8.5px;
+    color: #64748b;
+    text-align: right;
+    line-height: 1;
+    padding-right: 1px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .word-mark {
+    position: relative;
+  }
+  .word-mark span {
+    position: absolute;
+    right: 1px;
+    top: -1px;
+    font-size: 8.5px;
+    color: #475569;
+    white-space: nowrap;
+  }
+
+  /* 参考答案页 */
+  .ans-header {
+    text-align: center;
+    border-bottom: 2px solid #1e293b;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+  }
+  .ans-header h2 {
+    margin: 0;
+    font-size: 16.5px;
+    color: #0f172a;
+  }
+  .ans-header p {
+    margin: 2px 0 0 0;
+    font-size: 11px;
+    color: #475569;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .ans-sec {
+    margin-bottom: 8px;
+    font-size: 11.8px;
+    line-height: 1.54;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .ans-sec h3 {
+    font-size: 12.6px;
+    margin: 0 0 3px 0;
+    padding: 2px 7px;
+    background: #f1f5f9;
+    border-left: 3px solid #1d4ed8;
+    color: #0f172a;
+  }
+  .ans-p {
+    margin: 2.5px 0;
+    text-align: justify;
+  }
+  .tip-note {
+    font-size: 11px;
+    color: #475569;
+  }
+  .rubric-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4px;
+    font-size: 11.2px;
+  }
+  .rubric-table th, .rubric-table td {
+    border: 1px solid #cbd5e1;
+    padding: 3px 6px;
+    text-align: left;
+  }
+  .rubric-table th {
+    background: #f8fafc;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  /* 打印控制模式 */
+  body.print-exam-only .answer-page { display: none !important; }
+  body.print-ans-only .exam-page { display: none !important; }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      margin: 0;
+    }
+    .no-print-banner {
+      display: none !important;
+    }
+    .sheet {
+      width: auto;
+      height: 270mm;
+      min-height: 270mm;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      page-break-after: always;
+      break-after: page;
+    }
+    .sheet:last-of-type {
+      page-break-after: auto;
+      break-after: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- 顶部交互工具栏（打印自动隐藏） -->
+<div class="no-print-banner">
+  <div class="banner-info">
+    <strong>小学六年级语文上册 · 第一单元测试卷（难度中等 · A4打印版）</strong><br>
+    紧扣统编教材第一单元（《草原》《丁香结》《古诗词三首》《变形记》及语文园地一）｜共4页试卷＋1页参考答案
+  </div>
+  <div class="banner-actions">
+    <button class="btn btn-primary" onclick="printMode('exam')">仅打印试卷（4页）</button>
+    <button class="btn btn-secondary" onclick="printMode('ans')">仅打印答案（1页）</button>
+    <button class="btn btn-secondary" onclick="printMode('all')">打印全套（5页）</button>
+  </div>
+</div>
+
+<!-- ==================== 第 1 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="exam-header">
+      <h1 class="exam-title">小学六年级语文上册第一单元测试卷</h1>
+      <p class="exam-subtitle">考查范围：第一单元（亲近自然，热爱生活）　｜　难度：中等　｜　考试时间：90分钟　｜　满分：100分</p>
+      <div class="student-info">
+        <span>班级：<span class="field-line"></span></span>
+        <span>姓名：<span class="field-line"></span></span>
+        <span>学号：<span class="field-line"></span></span>
+        <span>得分：<span class="field-line"></span></span>
+      </div>
+      <table class="score-table">
+        <tr>
+          <th style="width:14%;">题号</th>
+          <th style="width:24%;">一、积累与运用</th>
+          <th style="width:24%;">二、阅读理解</th>
+          <th style="width:22%;">三、习作表达</th>
+          <th style="width:16%;">总分</th>
+        </tr>
+        <tr>
+          <td><strong>满分</strong></td>
+          <td>38分</td>
+          <td>32分</td>
+          <td>30分</td>
+          <td>100分</td>
+        </tr>
+        <tr>
+          <td><strong>得分</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 一、积累与运用 -->
+    <div class="section-title">一、积累与运用<span class="pts">（共38分）</span></div>
+
+    <div class="sub-title">1. 看拼音，写词语。<span class="pts">（每词1分，共8分）</span></div>
+    <div class="pinyin-grid">
+      <div class="pinyin-item">
+        <div class="pinyin-text">gōu lè</div>
+        <div class="tzg-pair"><div class="tzg"></div><div class="tzg"></div></div>
+      </div>
+      <div class="pinyin-item">
+        <div class="pinyin-text">jùn mǎ</div>
+        <div class="tzg-pair"><div class="tzg"></div><div class="tzg"></div></div>
+      </div>
+      <div class="pinyin-item">
+        <div class="pinyin-text">lǐ mào</div>
+        <div class="tzg-pair"><div class="tzg"></div><div class="tzg"></div></div>
+      </div>
+      <div class="pinyin-item">
+        <div class="pinyin-text">jū shù</div>
+        <div class="tzg-pair"><div class="tzg"></div><div class="tzg"></div></div>
+      </div>
+      <div class="pinyin-item">
+        <div class="pinyin-text">yōu yǎ</div>
+        <div class="tzg-pair"><div class="tzg"></div><div class="tzg"></div></div>
+      </div>
+      <div class="pinyin-item">
+        <div class="pinyin-text">bèn zhuō</div>
+        <div class="tzg-pair"><div class="tzg"></div><div class="tzg"></div></div>
+      </div>
+      <div class="pinyin-item">
+        <div class="pinyin-text">zhē yǎn</div>
+        <div class="tzg-pair"><div class="tzg"></div><div class="tzg"></div></div>
+      </div>
+      <div class="pinyin-item">
+        <div class="pinyin-text">huǎng rán</div>
+        <div class="tzg-pair"><div class="tzg"></div><div class="tzg"></div></div>
+      </div>
+    </div>
+
+    <div class="sub-title">2. 选择题，把正确答案的序号填在括号里。<span class="pts">（每题2分，共10分）</span></div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span><span class="q-num">（1）</span>下列加点字的读音完全正确的一项是</span>
+        <span class="paren">（　　）</span>
+      </div>
+      <div class="choice-opts">
+        <div>A. <span class="dot">渲</span>染（xuān）　<span class="dot">迂</span>回（yū）　　羞<span class="dot">涩</span>（sè）</div>
+        <div>B. <span class="dot">蒙</span>古包（méng）　单<span class="dot">薄</span>（bó）　花<span class="dot">蕾</span>（lěi）</div>
+        <div>C. 衣<span class="dot">襟</span>（jīn）　　<span class="dot">妩</span>媚（wǔ）　　忽<span class="dot">见</span>（xiàn）</div>
+        <div>D. 笨<span class="dot">拙</span>（zhuó）　苍<span class="dot">穹</span>（qióng）　冠<span class="dot">冕</span>（miǎn）</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span><span class="q-num">（2）</span>下列词语中，书写完全正确的一项是</span>
+        <span class="paren">（　　）</span>
+      </div>
+      <div class="choice-opts">
+        <div>A. 一碧千里　翠色欲流　群马疾弛　襟飘带舞</div>
+        <div>B. 尘土纷嚣　断断续续　硕大无朋　顾影自怜</div>
+        <div>C. 平淡无味　孤芳自赏　心池神往　轻灵潇洒</div>
+        <div>D. 柔美勾勒　浑浊笨拙　点辍枝头　奇丽小诗</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span><span class="q-num">（3）</span>根据地名和人名拼音的拼写规则，下列拼写完全规范的一项是</span>
+        <span class="paren">（　　）</span>
+      </div>
+      <div class="choice-opts">
+        <div>A. 路牌“滨江路”：BINJIANGLU</div>
+        <div>B. 路牌“青云桥”：Qingyun Qiao</div>
+        <div>C. 姓名“辛弃疾”：Xin Qiji</div>
+        <div>D. 姓名“诸葛亮”：Zhu Geliang</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span><span class="q-num">（4）</span>下列古诗词中，加点字词的解释<strong>有误</strong>的一项是</span>
+        <span class="paren">（　　）</span>
+      </div>
+      <div class="choice-opts">
+        <div>A. 移舟泊烟<span class="dot">渚</span>（水中间的小块陆地）</div>
+        <div>B. 明月<span class="dot">别枝</span>惊鹊（离开树枝）</div>
+        <div>C. 旧时茅店<span class="dot">社林</span>边（社庙丛林）</div>
+        <div>D. 路转溪桥忽<span class="dot">见</span>（同“现”，出现）</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem">
+        <span><span class="q-num">（5）</span>下列关于本单元课文内容与写法的说法，<strong>不正确</strong>的一项是</span>
+        <span class="paren">（　　）</span>
+      </div>
+      <div class="choice-opts choice-opts-1col">
+        <div>A. 《草原》在描绘草原风光时自然融入了作者的感受，既展现出草原之美，又体现了“蒙汉情深”。</div>
+        <div>B. 《丁香结》中“檐前积雪”指的是斗室外茂盛的白丁香，作者由丁香结引发了对人生的豁达思考。</div>
+        <div>C. 阅读链接《花之歌》采用第一人称视角，运用丰富的想象，展现了花的高洁情怀与对光明的向往。</div>
+        <div>D. 《宿建德江》和《西江月·夜行黄沙道中》都描写了月夜景色，都抒发了诗人孤寂惆怅的思乡之情。</div>
+      </div>
+    </div>
+
+    <div class="sub-title">3. 按要求完成句子练习。<span class="pts">（每题2分，共6分）</span></div>
+    <ul class="q-list">
+      <li>
+        <span class="q-num">（1）</span><strong>仿写排比句：</strong>读例句，体会排比句增强语势、突出特点的好处，再围绕“校园的早晨”或“秋天的果园”写一个排比句。<br>
+        <span style="color:#444; font-size:12.2px;">例：漓江的水真静啊，静得让你感觉不到它在流动；漓江的水真清啊，清得可以看见江底的沙石；漓江的水真绿啊，绿得仿佛那是一块无瑕的翡翠。</span>
+        <div class="write-area">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">（2）</span><strong>景中融情：</strong>借鉴《草原》在写景中融入感受的写法，任选一处自然景物（如傍晚的晚霞、雨后的草地），写两三句话。
+        <div class="write-area">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">（3）</span><strong>修改病句：</strong>读了《丁香结》这篇课文，使我懂得了要以乐观豁达的心态面对生活中的不顺心。（把修改后的正确句子写在横线上）
+        <div class="write-area">
+          <div class="write-line"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级语文上册第一单元测试卷（难度中等）</span>
+    <span>第 1 页（共 4 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 2 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="sub-title" style="margin-top:0;">4. 根据课文内容和“日积月累”填空。<span class="pts">（每空1分，共10分）</span></div>
+    <ul class="q-list" style="line-height: 1.9;">
+      <li>
+        <span class="q-num">（1）</span>现代作家老舍在《草原》的结尾，用“<span class="blank blank-lg"></span>，<span class="blank blank-lg"></span>！”这两句诗点明主旨，抒发了蒙汉两族人民依依惜别的深情厚谊。
+      </li>
+      <li>
+        <span class="q-num">（2）</span>《六月二十七日望湖楼醉书》的作者是宋代诗人<span class="blank blank-sm"></span>，诗中运用比喻，生动写出西湖夏日骤雨来势迅猛的诗句是：“<span class="blank blank-lg"></span>，<span class="blank blank-lg"></span>。”
+      </li>
+      <li>
+        <span class="q-num">（3）</span>《西江月·夜行黄沙道中》中，“<span class="blank blank-sm"></span>”是词牌名。词中从嗅觉和听觉角度表现丰收喜悦的句子是：“<span class="blank blank-lg"></span>，<span class="blank blank-lg"></span>。”
+      </li>
+      <li>
+        <span class="q-num">（4）</span>唐代诗人杜甫在《江畔独步寻花》中，写出桃花盛开、色彩斑斓、令人目不暇接的诗句是：“<span class="blank blank-lg"></span>，<span class="blank blank-lg"></span>？”
+      </li>
+    </ul>
+
+    <div class="sub-title">5. 梳理与交流·语文实践。<span class="pts">（共4分）</span></div>
+    <ul class="q-list">
+      <li>
+        <span class="q-num">（1）</span>阅读的时候“想开去”，可以深化理解、活跃思维。你在阅读《草原》或《丁香结》时，由文中的哪一处内容想开去，联想到了生活中的什么经历或读过的哪篇作品？（2分）
+        <div class="write-area">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">（2）</span>请你按照本单元学过的地名和人名拼音拼写规则，把下面路牌和姓名卡上的拼音规范地补充完整。（每空1分，共2分）
+        <div class="sign-row">
+          <div class="sign-card">
+            <div class="sign-label">街道指示路牌</div>
+            <div class="sign-zh">丁 香 路</div>
+            <div class="sign-py-line"></div>
+          </div>
+          <div class="sign-card">
+            <div class="sign-label">学生姓名卡</div>
+            <div class="sign-zh">林 星 河</div>
+            <div class="sign-py-line"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <!-- 二、阅读理解 -->
+    <div class="section-title">二、阅读理解<span class="pts">（共32分）</span></div>
+
+    <div class="sub-title">（一）课内阅读。<span class="pts">（共14分）</span></div>
+    <div class="passage-box">
+      <div class="passage-title">丁香结（节选）</div>
+      <p>古人诗云：“芭蕉不展丁香结”“丁香空结雨中愁”。<span class="u-line">在细雨迷蒙中，着了水滴的丁香格外妩媚。花墙边两株紫色的，如同印象派的画，线条模糊了，直向窗前的莹白渗过来。</span>让人觉得，丁香确实该和微雨连在一起。</p>
+      <p>只是赏过这么多年的丁香，却一直不解，何以古人发明了丁香结的说法。今年一次春雨，久立窗前，望着斜伸过来的丁香枝条上一柄花蕾。小小的花苞圆圆的，鼓鼓的，恰如衣襟上的盘花扣。我才恍然，果然是丁香结。</p>
+      <p>丁香结，这三个字给人许多想象。再联想到那些诗句，真觉得它们负担着解不开的愁怨了。每个人一辈子都有许多不顺心的事，一件完了一件又来。所以丁香结年年都有。结，是解不完的；人生中的问题也是解不完的，不然，岂不太平淡无味了吗？</p>
+    </div>
+
+    <ul class="q-list">
+      <li>
+        <span class="q-num">1.</span> 选段中，作者为什么说“我才恍然，果然是丁香结”？（2分）
+        <div class="write-area"><div class="write-line"></div></div>
+      </li>
+      <li>
+        <span class="q-num">2.</span> 选段中画“____”的句子运用了<span class="blank blank-sm"></span>的修辞手法，生动写出了雨中丁香<span class="blank blank-xl"></span>的特点。（3分）
+      </li>
+      <li>
+        <span class="q-num">3.</span> 结合选段内容，说说作者为什么觉得“丁香确实该和微雨连在一起”。（3分）
+        <div class="write-area">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">4.</span> “结，是解不完的；人生中的问题也是解不完的，不然，岂不太平淡无味了吗？”这句话中的“结”象征着什么？表达了作者怎样的人生态度？（3分）
+        <div class="write-area">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">5.</span> 联系生活实际，说一说你在学习或生活中遇到过怎样的“丁香结”，你打算怎样去面对它？（3分）
+        <div class="write-area">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级语文上册第一单元测试卷（难度中等）</span>
+    <span>第 2 页（共 4 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 3 页 ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="sub-title" style="margin-top:0;">（二）课外拓展阅读。<span class="pts">（共18分）</span></div>
+    <div class="passage-box">
+      <div class="passage-title">银杏树下的秋光</div>
+      <p>① 小区小广场的拐角处，立着两棵高大的老银杏树。春夏季节，它们并不张扬，只是静静撑起一片浓密的绿荫，替纳凉的人们挡住炽烈的日光。可一到深秋，这两棵树便成了整座小区最耀眼的风景。</p>
+      <p>② 几场微凉的秋风拂过，银杏叶渐渐褪去了翠绿，先是在扇形的叶缘镶上一道浅金，没过几天，整树叶子便都染上了明朗的金黄。<span class="w-line">午后的阳光穿过枝桠，照在树梢的叶子上，金灿灿的，像挂满了细碎的灯盏；照在飘落的叶子上，轻飘飘的，像飞舞着成群的蝴蝶；照在铺满地面的落叶上，厚墩墩的，像织就了一张柔软的金毯。</span>微风掠过，树冠沙沙作响，仿佛在轻轻哼唱一首秋天的歌谣。</p>
+      <p>③ 周末的傍晚，银杏树下格外热闹。孩子们俯下身，小心翼翼地挑选叶片最完整、色泽最透亮的扇形银杏叶，夹进厚厚的书本里当作书签；几位老人坐在石凳上聊着家常，任凭几片金叶悠悠落在肩头。置身这片温暖的金色里，秋日的萧瑟一扫而空，连呼吸都变得清甜起来，真让人沉醉其中，舍不得迈步离开。</p>
+      <p>④ 又过了一周，一阵急风吹过，枝头的银杏叶纷纷扬扬地落下来，像下起了一场盛大的金色雨。我站在树下，心里忽然涌起一丝惋惜：这样美丽的叶子，转眼就要告别枝头了。正想着，我无意间抬头细看，却发现那脱去金衣的枝条上，竟已经悄悄结出了一个个饱满紧实的小芽苞。我心里猛地一亮：原来，银杏叶并不是带着遗憾凋落的，它把积蓄了一整年的阳光与养分归还给泥土，是为了滋养来年春天的新绿啊！告别并不意味着结束，把最灿烂的模样留给世界，把希望悄悄藏进枝头，这便是银杏教给我们的生命智慧。</p>
+    </div>
+
+    <ul class="q-list">
+      <li>
+        <span class="q-num">1.</span> 根据短文内容，梳理老银杏在不同时节的画面特点，把下面的导图补充完整。（每空1分，共3分）
+        <div class="flow-wrap">
+          <div class="flow-box">
+            <div class="flow-box-title">春夏季节</div>
+            <div style="height:26px;"></div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box">
+            <div class="flow-box-title">深秋晴日</div>
+            <div style="height:26px;"></div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box">
+            <div class="flow-box-title">深秋急风落叶时</div>
+            <div style="height:26px;"></div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">2.</span> 品读第②自然段中画“﹏﹏”的句子，这句话综合运用了<span class="blank blank-sm"></span>和<span class="blank blank-sm"></span>的修辞手法。这样写有什么好处？（3分）
+        <div class="write-area">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">3.</span> 第③自然段采用了“在景物中融入感受”的写法。请用“<u>　　</u>”在短文第③自然段中画出直接抒发作者感受的句子（2分），并说说作者抒发了怎样的情感（2分）。
+        <div class="write-area">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">4.</span> 作者一开始为银杏叶的飘落感到“惋惜”，后来为什么改变了想法？结合第④自然段谈谈你的理解。（4分）
+        <div class="write-area">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">5.</span> 阅读的时候“想开去”，能让阅读更有深度。读了《银杏树下的秋光》，你联想到了自然界中的哪一种植物，或者联想到了本单元的《丁香结》？请结合具体内容写一写你的联想与感悟。（4分）
+        <div class="write-area">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级语文上册第一单元测试卷（难度中等）</span>
+    <span>第 3 页（共 4 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 4 页（习作与作文格） ==================== -->
+<div class="sheet exam-page">
+  <div class="sheet-content">
+    <div class="section-title" style="margin-top:0;">三、习作表达<span class="pts">（共30分）</span></div>
+    <div class="essay-prompt">
+      <p>本单元的课文运用了丰富的联想和想象，读来趣味无穷。假如你可以变成另一种事物——可以变得很小，如一只蚂蚁、一滴雨露、一片银杏叶；也可以变得很大，如一棵大树、一朵白云、一座小桥……变形后，你生活的世界将随之发生改变，你会看到不一样的风景，经历奇特的故事。</p>
+      <p>请围绕<strong>“变形记”</strong>展开想象，从下面任选一个题目，也可以自拟一个有趣的题目，写一篇习作。</p>
+      <p style="text-indent:0; text-align:center; font-weight:700; color:#111; margin: 2px 0;">
+        《一滴雨露的旅行》　　《我是一只快乐的小蚂蚁》　　《夜晚，一棵大树下的故事》　　《在书桌上的奇幻冒险》
+      </p>
+      <p style="text-indent:0; font-size:11.6px; color:#333;">
+        <strong>要求：</strong>① 发挥丰富合理的想象，写出“变形”后的独特视角和奇妙经历；② <strong>注意把重点部分写得详细一些</strong>；③ 语句通顺，书写工整，不少于450字；文中不出现真实校名和人名。
+      </p>
+    </div>
+
+    <!-- 20列 × 25行 = 500格标准作文纸 -->
+    <div class="essay-grid-wrap">
+      <table class="essay-table" id="essayGrid">
+        <tbody>
+          <!-- 由静态行构建，25行×20列，每行间设极细行距并标注字数 -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级语文上册第一单元测试卷（难度中等）</span>
+    <span>第 4 页（共 4 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第 5 页（参考答案与评分标准） ==================== -->
+<div class="sheet answer-page">
+  <div class="sheet-content">
+    <div class="ans-header">
+      <h2>小学六年级语文上册第一单元测试卷 · 参考答案与评分标准</h2>
+      <p>依据统编教材六年级上册第一单元标准编排｜仅供教师批阅与家长核对使用</p>
+    </div>
+
+    <div class="ans-sec">
+      <h3>一、积累与运用（共38分）</h3>
+      <div class="ans-p"><strong>1. 看拼音，写词语（每词1分，每字0.5分，共8分）：</strong>
+        勾勒　骏马　礼貌　拘束　幽雅　笨拙　遮掩　恍然
+      </div>
+      <div class="ans-p"><strong>2. 选择题（每题2分，共10分）：</strong>
+        <strong>（1）C</strong> <span class="tip-note">（A项“渲染”读xuàn；B项“蒙古包”读měng；D项“笨拙”读zhuō）</span>　
+        <strong>（2）B</strong> <span class="tip-note">（A项“疾弛”应为“疾驰”；C项“心池神往”应为“心驰神往”；D项“点辍”应为“点缀”）</span>　
+        <strong>（3）C</strong> <span class="tip-note">（A项应为BINJIANG LU；B项应为QINGYUN QIAO；D项复姓连写，应为Zhuge Liang）</span>　
+        <strong>（4）B</strong> <span class="tip-note">（据教材注释，“别枝”指横斜的树枝）</span>　
+        <strong>（5）D</strong> <span class="tip-note">（《西江月·夜行黄沙道中》抒发的是对夏夜乡村美景的喜爱与丰收喜悦，非孤寂思乡）</span>
+      </div>
+      <div class="ans-p"><strong>3. 按要求完成句子练习（每题2分，共6分）：</strong><br>
+        （1）<em>示例：</em>校园的早晨真美啊，晨光照在教学楼上，镀上了一层金边；校园的早晨真热闹啊，朗朗的读书声此起彼伏；校园的早晨真有活力啊，同学们在操场上迎着朝阳奔跑欢笑。<span class="tip-note">（三句及以上结构相似、语意连贯的排比句即给满分）</span><br>
+        （2）<em>示例：</em>傍晚，西边的天空铺满橘红色的晚霞，云朵被染得像燃烧的锦缎。望着这瑰丽的画卷，我一天的疲惫顿时烟消云散，心里满是宁静与欢喜。<span class="tip-note">（有具体景物描写得1分，自然融入感受得1分）</span><br>
+        （3）删去“读了”或删去“使”。<em>修改后：</em>读了《丁香结》这篇课文，我懂得了要以乐观豁达的心态面对生活中的不顺心。<span class="tip-note">（或：这篇课文使我懂得了……）</span>
+      </div>
+      <div class="ans-p"><strong>4. 根据课文内容和“日积月累”填空（每空1分，错一字扣0.5分，扣完为止，共10分）：</strong><br>
+        （1）蒙汉情深何忍别　天涯碧草话斜阳　　（2）苏轼　黑云翻墨未遮山　白雨跳珠乱入船<br>
+        （3）西江月　稻花香里说丰年　听取蛙声一片　　（4）桃花一簇开无主　可爱深红爱浅红
+      </div>
+      <div class="ans-p"><strong>5. 梳理与交流·语文实践（共4分）：</strong><br>
+        （1）<em>示例：</em>读《草原》中蒙汉两族人民依依惜别的情景时，我想到了暑假离开外婆家时，外婆拉着我的手久久不愿松开的画面，更深切地体会到了“蒙汉情深”。<span class="tip-note">（结合课文具体内容1分，联想合情合理1分）</span><br>
+        （2）丁香路：<strong>DINGXIANG LU</strong>（1分，全大写且专名通名分写）　林星河：<strong>Lin Xinghe</strong>（1分，姓与名分写、首字母大写、其余小写）
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>二、阅读理解（共32分）</h3>
+      <div class="ans-p"><strong>（一）课内阅读《丁香结（节选）》（共14分）</strong></div>
+      <div class="ans-p">
+        <strong>1.（2分）</strong>因为作者仔细观察到丁香枝条上小小的花苞圆圆的、鼓鼓的，形状恰如衣襟上的盘花扣，像一个“结”。<br>
+        <strong>2.（3分）</strong>比喻（1分）；朦胧、妩媚、色彩柔和交融（意近即可，2分）。<br>
+        <strong>3.（3分）</strong>一方面，古人诗句常将丁香与微雨、愁怨联系在一起（1分）；另一方面，细雨迷蒙中着了水滴的丁香线条模糊、色泽相渗，显得格外妩媚动人，更有画意（2分）。<br>
+        <strong>4.（3分）</strong>“结”象征人生中解不完的愁怨或不顺心的事（1.5分）；表达了作者从容、豁达、积极乐观面对生活困扰的人生态度（1.5分）。<br>
+        <strong>5.（3分）</strong><em>示例：</em>比如我在学习数学应用题时常常遇到难解的“结”，我会调整心态，不急躁抱怨，把难题拆解开来多思考、向老师同学请教，解开它后反而觉得学习更有成就感。<span class="tip-note">（说出具体困扰1.5分，体现积极乐观的面对方式1.5分）</span>
+      </div>
+
+      <div class="ans-p" style="margin-top:5px;"><strong>（二）课外拓展阅读《银杏树下的秋光》（共18分）</strong></div>
+      <div class="ans-p">
+        <strong>1.（每空1分，共3分）</strong>春夏季节：并不张扬，静静撑起浓密的绿荫；深秋晴日：叶片染上金黄，阳光下璀璨耀眼；深秋急风落叶时：银杏叶纷纷扬扬飘落，枝条上已悄悄结出饱满的小芽苞。<span class="tip-note">（意思概括准确即可）</span><br>
+        <strong>2.（3分）</strong>排比、比喻（每空0.5分，共1分）。好处：从树梢、空中、地面三个层次生动描绘了阳光下银杏叶的色彩与姿态美，节奏感强、增强了语势，流露出作者对银杏的喜爱与赞美（2分）。<br>
+        <strong>3.（4分）</strong>画线句：<u>置身这片温暖的金色里，秋日的萧瑟一扫而空，连呼吸都变得清甜起来，真让人沉醉其中，舍不得迈步离开。</u>（2分）　情感：抒发了作者对深秋银杏美景的深深陶醉、喜爱与留恋之情（2分）。<br>
+        <strong>4.（4分）</strong>因为作者抬头细看时，发现落叶后的枝条上已经悄悄结出了饱满紧实的小芽苞（2分）；由此领悟到银杏落叶并非遗憾的结束，而是把养分归还泥土、滋养来年新绿，在绽放灿烂的同时把希望藏进枝头（2分）。<br>
+        <strong>5.（4分）</strong><em>示例：</em>读了短文，我联想到了本单元的《丁香结》。《丁香结》由丁香花苞悟出人生要有豁达乐观的心态；《银杏树下的秋光》则由银杏落叶和新芽悟出“告别孕育希望”的生命智慧。两篇文章都善于观察自然、借物抒怀，让我明白了只要用心观察，大自然处处都藏着生活的哲理。<span class="tip-note">（联想合理2分，结合具体内容谈感悟2分）</span>
+      </div>
+    </div>
+
+    <div class="ans-sec" style="margin-bottom:0;">
+      <h3>三、习作表达评分标准（共30分）</h3>
+      <table class="rubric-table">
+        <tr>
+          <th style="width:14%;">等级</th>
+          <th style="width:12%;">分值</th>
+          <th>评分细则（重点关注“想象合理有趣”与“重点部分写详细”）</th>
+        </tr>
+        <tr>
+          <td style="text-align:center;"><strong>一类文</strong></td>
+          <td style="text-align:center;">26～30分</td>
+          <td>紧扣“变形记”，视角转换自然，想象丰富奇特且合乎逻辑；<strong>重点情节描写具体生动</strong>（有细节、有画面、有心理感受）；结构清晰，语言流畅优美，字数达450字以上，错别字极少。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;"><strong>二类文</strong></td>
+          <td style="text-align:center;">21～25分</td>
+          <td>符合题意，想象较丰富，能围绕变形后的经历展开叙述，重点部分较详细；条理较清楚，语句较通顺，字数达到要求，有少量错别字。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;"><strong>三类文</strong></td>
+          <td style="text-align:center;">15～20分</td>
+          <td>基本符合题意，但想象较平淡，流水账式叙述，重点部分不够突出详细；语句基本通顺，字数略显不足（350～449字）。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;"><strong>四类文</strong></td>
+          <td style="text-align:center;">14分以下</td>
+          <td>偏离“变形”主题，内容空洞或字数严重不足（不足350字），语句不通顺，书写潦草难以辨认。</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级语文上册第一单元测试卷（难度中等）</span>
+    <span>参考答案与评分标准</span>
+  </div>
+</div>
+
+<script>
+  // 生成 25 行 × 20 列 = 500 格标准作文纸
+  (function buildEssayGrid() {
+    const tbody = document.querySelector('#essayGrid tbody');
+    if (!tbody) return;
+    const rows = 25;
+    const cols = 20;
+    const frag = document.createDocumentFragment();
+    for (let r = 1; r <= rows; r++) {
+      const tr = document.createElement('tr');
+      for (let c = 1; c <= cols; c++) {
+        const td = document.createElement('td');
+        tr.appendChild(td);
+      }
+      frag.appendChild(tr);
+
+      const gapTr = document.createElement('tr');
+      gapTr.className = 'gap-row';
+      const gapTd = document.createElement('td');
+      gapTd.colSpan = cols;
+      const count = r * cols;
+      if (count === 100 || count === 200 || count === 300 || count === 400 || count === 500) {
+        gapTd.innerHTML = '<div class="word-mark"><span>' + count + '字</span></div>';
+      } else if (count === 460) {
+        gapTd.innerHTML = '<div class="word-mark"><span>▲ 450字线（本行第10格）</span></div>';
+      }
+      gapTr.appendChild(gapTd);
+      frag.appendChild(gapTr);
+    }
+    tbody.appendChild(frag);
+  })();
+
+  function printMode(mode) {
+    document.body.classList.remove('print-exam-only', 'print-ans-only');
+    if (mode === 'exam') document.body.classList.add('print-exam-only');
+    if (mode === 'ans') document.body.classList.add('print-ans-only');
+    window.print();
+    setTimeout(() => {
+      document.body.classList.remove('print-exam-only', 'print-ans-only');
+    }, 300);
+  }
+</script>
+</body>
+</html>
