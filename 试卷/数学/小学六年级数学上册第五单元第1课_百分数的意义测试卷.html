@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>小学六年级数学上册第五单元第1课《百分数的意义》测试卷（A4可打印版）</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 13mm 12mm 13mm;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: "Songti SC", "STSong", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: #1a1a1a;
+    background: #eef1f5;
+    margin: 0;
+    padding: 18px 0 40px 0;
+    font-size: 12.2px;
+    line-height: 1.46;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 顶部打印工具栏（打印时自动隐藏） */
+  .no-print-banner {
+    width: 210mm;
+    margin: 0 auto 14px auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #1d4ed8;
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .banner-info { font-size: 12.5px; color: #334155; }
+  .banner-info strong { color: #0f172a; font-size: 14px; }
+  .banner-actions { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+  .btn {
+    border: none;
+    padding: 6px 11px;
+    font-size: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: inherit;
+  }
+  .btn-primary { background: #1d4ed8; color: #fff; }
+  .btn-primary:hover { background: #1e40af; }
+  .btn-secondary { background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; }
+  .btn-secondary:hover { background: #e2e8f0; }
+
+  /* A4 纸张容器 */
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 18px auto;
+    background: #ffffff;
+    padding: 12mm 13mm 11mm 13mm;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  .sheet-content { flex: 1; }
+  .page-footer {
+    margin-top: auto;
+    padding-top: 5px;
+    border-top: 1px solid #d4d4d8;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.6px;
+    color: #666;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  /* 防止题目或图表跨页截断 */
+  .q-item, .app-item, .ans-sec, .analysis-card, .data-table, svg {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* 卷头样式 */
+  .exam-header { text-align: center; margin-bottom: 5px; }
+  .exam-title {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    margin: 0 0 2px 0;
+    color: #000;
+  }
+  .exam-subtitle {
+    font-size: 10.6px;
+    color: #444;
+    margin: 0 0 5px 0;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    white-space: nowrap;
+  }
+  .student-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .student-info .field-line {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 70px;
+    height: 13px;
+    vertical-align: bottom;
+  }
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 5px;
+    font-size: 11px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .score-table th, .score-table td {
+    border: 1px solid #333;
+    text-align: center;
+    padding: 2px 3px;
+  }
+  .score-table th { background: #f5f5f5; font-weight: 600; }
+  .score-table td { height: 18px; }
+
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #000;
+    margin: 5px 0 3px 0;
+    padding-bottom: 1.5px;
+    border-bottom: 1.2px solid #27272a;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .section-title .pts {
+    font-size: 11px;
+    font-weight: 400;
+    color: #333;
+    margin-left: 4px;
+  }
+  .sub-title {
+    font-size: 12.6px;
+    font-weight: 600;
+    margin: 6px 0 4px 0;
+    color: #111;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  /* 分数排版 */
+  .frac {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 2px;
+    line-height: 1.04;
+    font-size: 0.87em;
+    font-family: "Times New Roman", "Songti SC", serif;
+  }
+  .frac .num { border-bottom: 1px solid #1a1a1a; padding: 0 2px 1px 2px; text-align: center; }
+  .frac .den { padding: 1px 2px 0 2px; text-align: center; }
+
+  .blank {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 40px;
+    text-align: center;
+    margin: 0 2px;
+    height: 13px;
+    vertical-align: baseline;
+  }
+  .blank-sm { min-width: 28px; }
+  .blank-lg { min-width: 78px; }
+  .q-num { font-weight: 600; margin-right: 2px; }
+
+  .q-list { margin: 0; padding: 0; list-style: none; }
+  .q-list > li { margin-bottom: 2px; text-align: justify; }
+
+  .judge-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.8px;
+  }
+  .judge-box { flex-shrink: 0; margin-left: 10px; white-space: nowrap; }
+
+  .choice-item { margin-bottom: 2.8px; }
+  .choice-stem { text-align: justify; }
+  .choice-opts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding-left: 16px;
+    margin-top: 0.5px;
+    font-size: 11.8px;
+  }
+  .choice-opts-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px 14px;
+    padding-left: 16px;
+    margin-top: 0.5px;
+    font-size: 11.8px;
+  }
+
+  /* 数据表与计算框 */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4px 0 7px 0;
+    font-size: 12.2px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .data-table th, .data-table td {
+    border: 1px solid #333;
+    text-align: center;
+    padding: 4px 6px;
+  }
+  .data-table th { background: #f4f4f5; font-weight: 600; }
+
+  .calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 8px;
+    margin: 4px 0 8px 0;
+  }
+  .calc-box {
+    border: 1px dashed #cbd5e1;
+    border-radius: 5px;
+    padding: 7px 10px;
+    min-height: 92px;
+  }
+  .calc-expr { font-size: 13px; }
+
+  .app-item {
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    padding: 8px 11px;
+    margin-bottom: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .app-stem { text-align: justify; line-height: 1.56; }
+  .app-ans-line {
+    font-size: 12px;
+    color: #555;
+    text-align: right;
+    padding-top: 4px;
+  }
+  .chart-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .svg-box {
+    flex-shrink: 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 4px;
+    background: #fff;
+  }
+
+  /* 第二部分：参考答案样式 */
+  .part-header {
+    text-align: center;
+    border-bottom: 2px solid #1e293b;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+  }
+  .part-header h2 { margin: 0; font-size: 16px; color: #0f172a; }
+  .part-header p { margin: 2px 0 0 0; font-size: 10.8px; color: #475569; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; }
+
+  .summary-box {
+    border: 1.5px solid #1d4ed8;
+    border-radius: 6px;
+    background: #f8fbff;
+    padding: 7px 11px;
+    margin-bottom: 9px;
+    font-size: 11.4px;
+    line-height: 1.54;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .summary-title {
+    font-size: 12.6px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin: 0 0 4px 0;
+    border-bottom: 1px solid #bfdbfe;
+    padding-bottom: 2px;
+  }
+  .ans-sec {
+    margin-bottom: 7px;
+    font-size: 11.4px;
+    line-height: 1.5;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .ans-sec h3 {
+    font-size: 12.2px;
+    margin: 0 0 3px 0;
+    padding: 2px 7px;
+    background: #f1f5f9;
+    border-left: 3px solid #1d4ed8;
+    color: #0f172a;
+  }
+  .ans-p { margin: 2.5px 0; text-align: justify; }
+
+  /* 第三部分：题目分析样式 */
+  .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    font-size: 11px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .spec-table th, .spec-table td {
+    border: 1px solid #64748b;
+    padding: 3.5px 5px;
+    text-align: center;
+  }
+  .spec-table th { background: #eff6ff; color: #1e3a8a; font-weight: 600; }
+  .spec-table td.left { text-align: left; }
+
+  .analysis-card {
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid #0f766e;
+    border-radius: 4px;
+    padding: 5px 9px;
+    margin-bottom: 6px;
+    background: #ffffff;
+    font-size: 11.2px;
+    line-height: 1.48;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .analysis-card h4 {
+    margin: 0 0 2.5px 0;
+    font-size: 11.8px;
+    color: #0f172a;
+  }
+  .analysis-card p { margin: 2px 0; text-align: justify; }
+  .tag-k { color: #1d4ed8; font-weight: 600; }
+  .tag-e { color: #b91c1c; font-weight: 600; }
+  .tag-s { color: #0f766e; font-weight: 600; }
+
+  /* 分模块打印模式 */
+  body.print-exam-only .part-answer,
+  body.print-exam-only .part-analysis { display: none !important; }
+
+  body.print-answer-only .part-exam,
+  body.print-answer-only .part-analysis { display: none !important; }
+
+  body.print-analysis-only .part-exam,
+  body.print-analysis-only .part-answer { display: none !important; }
+
+  body.print-answer-analysis .part-exam { display: none !important; }
+
+  @media print {
+    body { background: #fff; padding: 0; margin: 0; }
+    .no-print, .no-print-banner { display: none !important; }
+    .sheet {
+      width: auto;
+      height: 270mm;
+      min-height: 270mm;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      page-break-after: always;
+      break-after: page;
+    }
+    .sheet:last-of-type,
+    .sheet.is-last-visible {
+      page-break-after: auto;
+      break-after: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="no-print-banner">
+  <div class="banner-info">
+    <strong>小学六年级数学上册第五单元第1课《百分数的意义》测试卷（中等偏上 · A4可打印版）</strong><br>
+    紧扣人教版教材 p.79–84 ｜ 三部分独立起页：空白试卷（1–3页） / 参考答案（第4页） / 题目分析（5–6页）
+  </div>
+  <div class="banner-actions">
+    <button class="btn btn-primary" onclick="printMode('all')">打印完整版</button>
+    <button class="btn btn-secondary" onclick="printMode('exam')">仅打印空白试卷</button>
+    <button class="btn btn-secondary" onclick="printMode('answer')">仅打印参考答案</button>
+    <button class="btn btn-secondary" onclick="printMode('analysis')">仅打印题目分析</button>
+    <button class="btn btn-secondary" onclick="printMode('answer-analysis')">仅打印答案与分析</button>
+  </div>
+</div>
+
+<!-- ==================== 第一部分：空白试卷（第 1 页） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content">
+    <div class="exam-header">
+      <h1 class="exam-title">六年级数学上册第五单元第1课《百分数的意义》测试卷</h1>
+      <p class="exam-subtitle">教材标准：人教版六年级上册 第五单元《1. 百分数的意义》（p.79–84） ｜ 难度：中等偏上 ｜ 时间：60分钟 · 满分：100分</p>
+      <div class="student-info">
+        <div>班级：<span class="field-line"></span></div>
+        <div>姓名：<span class="field-line"></span></div>
+        <div>学号：<span class="field-line" style="min-width:56px;"></span></div>
+        <div>得分：<span class="field-line" style="min-width:56px;"></span></div>
+      </div>
+      <table class="score-table">
+        <tr>
+          <th style="width:12%;">题号</th>
+          <th>一（24分）</th>
+          <th>二（5分）</th>
+          <th>三（12分）</th>
+          <th>四（25分）</th>
+          <th>五（34分）</th>
+          <th style="width:14%;">总分（100分）</th>
+        </tr>
+        <tr>
+          <th>得分</th>
+          <td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 一、填空题 -->
+    <div class="section-title">一、填空题<span class="pts">（每空1分，共24分）</span></div>
+    <ol class="q-list">
+      <li><span class="q-num">1.</span>
+        68.5% 读作 <span class="blank blank-lg"></span>；百分之零点零四写作 <span class="blank"></span>；某校六年级今天出勤率是 98.5%，表示 <span class="blank blank-lg"></span> 占六年级总人数的 98.5%。
+      </li>
+      <li><span class="q-num">2.</span>
+        <span class="frac"><span class="num">3</span><span class="den">8</span></span> ＝ <span class="blank blank-sm"></span> ÷ 16 ＝ <span class="blank"></span>（填小数）＝ <span class="blank blank-sm"></span>% ＝ <span class="frac"><span class="num">15</span><span class="den"><span class="blank blank-sm" style="height:11px;min-width:24px;"></span></span></span>。
+      </li>
+      <li><span class="q-num">3.</span>
+        在“<span class="frac"><span class="num">7</span><span class="den">10</span></span>、70%、<span class="frac"><span class="num">7</span><span class="den">10</span></span> 米、125%”这四个数中，能表示一根绳子具体长度的是 <span class="blank"></span>；把 5 米长的铁丝平均分成 8 段，每段占全长的 <span class="blank"></span>（填百分数）。
+      </li>
+      <li><span class="q-num">4.</span>
+        六（2）班今天到校 48 人，请病假 1 人、事假 1 人，该班今天的出勤率是 <span class="blank"></span>，缺勤率是 <span class="blank"></span>。
+      </li>
+      <li><span class="q-num">5.</span>
+        在“发芽率、增长率、出粉率、合格率、完成率”中，可以超过 100% 的是 <span class="blank blank-lg"></span>（填两个），实际生产中一定小于 100% 的是 <span class="blank"></span>。
+      </li>
+      <li><span class="q-num">6.</span>
+        把 1.08 化成百分数是 <span class="blank"></span>；把 <span class="frac"><span class="num">5</span><span class="den">6</span></span> 化成百分数约是 <span class="blank"></span>（百分号前保留一位小数）。
+      </li>
+      <li><span class="q-num">7.</span>
+        60 千克的 35% 是 <span class="blank blank-sm"></span> 千克；<span class="blank blank-sm"></span> 米的 40% 是 18 米；15 吨是 20 吨的 <span class="blank blank-sm"></span>%。
+      </li>
+      <li><span class="q-num">8.</span>
+        把 20 g 盐完全溶解在 80 g 水中，这杯盐水的含盐率是 <span class="blank blank-sm"></span>%；如果再往这杯盐水中加入 100 g 水，此时盐水的含盐率变为 <span class="blank blank-sm"></span>%。
+      </li>
+      <li><span class="q-num">9.</span>
+        一批零件经检验，合格的有 190 个，不合格的有 10 个，这批零件的合格率是 <span class="blank blank-sm"></span>%；另一批零件的合格率与之相同，其中不合格的有 15 个，则另一批零件一共有 <span class="blank"></span> 个。
+      </li>
+      <li><span class="q-num">10.</span>
+        把 45% 的百分号去掉，这个数就扩大到原来的 <span class="blank blank-sm"></span> 倍；在一个非零自然数后面添上百分号，这个数就缩小到原来的 <span class="blank"></span>（填分数）。
+      </li>
+    </ol>
+
+    <!-- 二、判断题 -->
+    <div class="section-title">二、判断题<span class="pts">（对的画“√”，错的画“×”。每题1分，共5分）</span></div>
+    <ol class="q-list judge-list">
+      <li><span><span class="q-num">1.</span> 一根电线长 <span class="frac"><span class="num">3</span><span class="den">4</span></span> 米，也可以写成 75% 米。</span><span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span></li>
+      <li><span><span class="q-num">2.</span> 植树节同学们种了 105 棵树苗，全部成活，这批树苗的成活率是 105%。</span><span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span></li>
+      <li><span><span class="q-num">3.</span> 因为 <span class="frac"><span class="num">3</span><span class="den">5</span></span> ＝ 60%，所以 <span class="frac"><span class="num">3</span><span class="den">5</span></span> 和 60% 表示的意义完全相同。</span><span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span></li>
+      <li><span><span class="q-num">4.</span> 甲校女生占全校人数的 48%，乙校女生占全校人数的 52%，那么乙校女生人数一定比甲校多。</span><span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span></li>
+      <li><span><span class="q-num">5.</span> 把 1 kg 糖平均分成 100 份，每份是 1 kg 糖的 1%，也是 0.01 kg。</span><span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span></li>
+    </ol>
+
+    <!-- 三、选择题 -->
+    <div class="section-title">三、选择题<span class="pts">（把正确答案的序号填在括号里。每题2分，共12分）</span></div>
+
+    <div class="choice-item">
+      <div class="choice-stem"><span class="q-num">1.</span> 下面四个生活场景中的百分数，<strong>不可能正确</strong>的是（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。</div>
+      <div class="choice-opts-2">
+        <div>A. 某工厂今年产量是去年的 128%</div>
+        <div>B. 六（1）班某天作业的优秀率是 100%</div>
+        <div>C. 一种油菜籽的出油率是 102%</div>
+        <div>D. 某款果汁饮料的纯果汁含量为 30.5%</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem"><span class="q-num">2.</span> 在 0.67、<span class="frac"><span class="num">2</span><span class="den">3</span></span>、66.7%、0.666 这四个数中，最大数和最小数分别是（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。</div>
+      <div class="choice-opts-2">
+        <div>A. 最大是 0.67，最小是 0.666</div>
+        <div>B. 最大是 66.7%，最小是 <span class="frac"><span class="num">2</span><span class="den">3</span></span></div>
+        <div>C. 最大是 0.67，最小是 <span class="frac"><span class="num">2</span><span class="den">3</span></span></div>
+        <div>D. 最大是 <span class="frac"><span class="num">2</span><span class="den">3</span></span>，最小是 0.666</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem"><span class="q-num">3.</span> 一杯含糖率为 15% 的糖水，喝掉一半后，剩下糖水的含糖率是（&nbsp;&nbsp;&nbsp;）；若再往剩下的糖水中加入 5 g 糖和 20 g 水并充分搅拌，这杯糖水会（&nbsp;&nbsp;&nbsp;）。</div>
+      <div class="choice-opts">
+        <div>A. 7.5%，变淡</div>
+        <div>B. 15%，变甜</div>
+        <div>C. 15%，变淡</div>
+        <div>D. 15%，不变</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem"><span class="q-num">4.</span> 园林工人先种了 100 棵树苗，死了 10 棵；后来又补种了 10 棵，这 10 棵全部成活。这批树苗最终的总成活率是（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。</div>
+      <div class="choice-opts">
+        <div>A. 100%</div>
+        <div>B. 90%</div>
+        <div>C. 约 90.9%</div>
+        <div>D. 约 91.7%</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem"><span class="q-num">5.</span> 已知甲数的 40% 等于乙数的 <span class="frac"><span class="num">3</span><span class="den">5</span></span>（甲、乙两数均大于 0），那么甲数与乙数相比，（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。</div>
+      <div class="choice-opts">
+        <div>A. 甲数大</div>
+        <div>B. 乙数大</div>
+        <div>C. 一样大</div>
+        <div>D. 无法比较</div>
+      </div>
+    </div>
+
+    <div class="choice-item" style="margin-bottom:0;">
+      <div class="choice-stem"><span class="q-num">6.</span> 篮球队甲、乙两名队员投篮训练：甲上半场 10 投 7 中，下半场 10 投 5 中；乙上半场 8 投 6 中，下半场 12 投 7 中。两人的<strong>全场总命中率</strong>相比，（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。</div>
+      <div class="choice-opts">
+        <div>A. 甲高</div>
+        <div>B. 乙高</div>
+        <div>C. 一样高</div>
+        <div>D. 无法比较</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册第五单元第1课《百分数的意义》测试卷 · 空白试卷</span>
+    <span>第 1 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第一部分：空白试卷（第 2 页） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content">
+    <!-- 四、计算与互化题 -->
+    <div class="section-title" style="margin-top:0;">四、计算与互化题<span class="pts">（共25分）</span></div>
+
+    <div class="sub-title">1. 把下面的表格补充完整。（除不尽时，小数保留三位，百分数百分号前保留一位小数）（每空1分，共8分）</div>
+    <table class="data-table">
+      <tr>
+        <th style="width:16%;">分数</th>
+        <td style="width:21%;"><span class="frac"><span class="num">7</span><span class="den">20</span></span></td>
+        <td style="width:21%;"></td>
+        <td style="width:21%;"></td>
+        <td style="width:21%;"><span class="frac"><span class="num">5</span><span class="den">7</span></span></td>
+      </tr>
+      <tr>
+        <th>小数</th>
+        <td></td>
+        <td>1.25</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>百分数</th>
+        <td></td>
+        <td></td>
+        <td>0.4%</td>
+        <td></td>
+      </tr>
+    </table>
+
+    <div class="sub-title">2. 把下面各数按从小到大的顺序排列。（5分）</div>
+    <div style="text-align:center; font-size:13.2px; margin:6px 0 6px 0;">
+      87.5%　　　　0.87　　　　<span class="frac"><span class="num">7</span><span class="den">9</span></span>　　　　<span class="frac"><span class="num">8</span><span class="den">9</span></span>　　　　88%
+    </div>
+    <div style="text-align:center; margin-bottom:8px;">
+      <span class="blank blank-lg"></span> ＜ <span class="blank blank-lg"></span> ＜ <span class="blank blank-lg"></span> ＜ <span class="blank blank-lg"></span> ＜ <span class="blank blank-lg"></span>
+    </div>
+
+    <div class="sub-title">3. 脱式计算（能简算的要简算）与解方程。（每题3分，共12分）</div>
+    <div class="calc-grid">
+      <div class="calc-box">
+        <div class="calc-expr">（1）4.8 × 25% ＋ 5.2 × <span class="frac"><span class="num">1</span><span class="den">4</span></span></div>
+      </div>
+      <div class="calc-box">
+        <div class="calc-expr">（2）<span class="frac"><span class="num">3</span><span class="den">5</span></span> × 18 ＋ 60% × 33 － 0.6</div>
+      </div>
+      <div class="calc-box">
+        <div class="calc-expr">（3）<i>x</i> － 35%<i>x</i> ＝ 26</div>
+      </div>
+      <div class="calc-box">
+        <div class="calc-expr">（4）40%<i>x</i> ＋ <span class="frac"><span class="num">1</span><span class="den">5</span></span> ＝ 1.4</div>
+      </div>
+    </div>
+
+    <!-- 五、统计图表与解决问题 -->
+    <div class="section-title" style="margin-top:8px;">五、统计图表与解决问题<span class="pts">（第1～3题每题6分，第4～5题每题8分，共34分）</span></div>
+
+    <div class="app-item" style="min-height:144px;">
+      <div class="app-stem">
+        <span class="q-num">1.</span> 某区举办青少年编程竞赛，实验小学共有 450 名学生报名，获奖率是 36%；育才小学共有 360 名学生报名，获奖率是 45%。哪所学校获奖人数更多？如果育才小学获奖率提高到 50%，届时两校获奖人数相差多少人？（6分）
+      </div>
+      <div class="app-ans-line">答：两校获奖人数 <span class="blank"></span>；提高后相差 <span class="blank blank-sm"></span> 人。</div>
+    </div>
+
+    <div class="app-item" style="min-height:212px; margin-bottom:0;">
+      <div class="chart-wrap">
+        <div class="svg-box">
+          <svg width="248" height="132" viewBox="0 0 265 140" xmlns="http://www.w3.org/2000/svg">
+            <text x="135" y="12" font-family="PingFang SC, sans-serif" font-size="10.2" font-weight="bold" text-anchor="middle" fill="#1e293b">六（3）班“阳光体育”社团人数统计图</text>
+            <!-- 网格线 y=114 (0), 90 (4), 66 (8), 42 (12), 18 (16) -> 每人6px? 用 5.5px/人: 0=116, 4=94, 8=72, 12=50, 16=28 -->
+            <g stroke="#cbd5e1" stroke-width="0.8">
+              <line x1="34" y1="94" x2="252" y2="94"/>
+              <line x1="34" y1="72" x2="252" y2="72"/>
+              <line x1="34" y1="50" x2="252" y2="50"/>
+              <line x1="34" y1="28" x2="252" y2="28"/>
+            </g>
+            <!-- 坐标轴 -->
+            <line x1="34" y1="22" x2="34" y2="116" stroke="#111" stroke-width="1.2"/>
+            <line x1="34" y1="116" x2="254" y2="116" stroke="#111" stroke-width="1.2"/>
+            <!-- Y刻度 -->
+            <g font-family="Times New Roman, serif" font-size="9.5" text-anchor="end" fill="#333">
+              <text x="29" y="119">0</text>
+              <text x="29" y="97">4</text>
+              <text x="29" y="75">8</text>
+              <text x="29" y="53">12</text>
+              <text x="29" y="31">16</text>
+            </g>
+            <text x="17" y="25" font-family="PingFang SC, sans-serif" font-size="8.5" fill="#333">人数</text>
+            <!-- 柱形：篮球12(h=66,y=50), 足球9(h=49.5,y=66.5), 乒乓球15(h=82.5,y=33.5), 跳绳8(h=44,y=72), 羽毛球6(h=33,y=83) -->
+            <g fill="#94a3b8" stroke="#1e293b" stroke-width="1">
+              <rect x="48" y="50" width="24" height="66"/>
+              <rect x="90" y="66.5" width="24" height="49.5"/>
+              <rect x="132" y="33.5" width="24" height="82.5"/>
+              <rect x="174" y="72" width="24" height="44"/>
+              <rect x="216" y="83" width="24" height="33"/>
+            </g>
+            <!-- 数值标注 -->
+            <g font-family="Times New Roman, serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#111">
+              <text x="60" y="46">12</text>
+              <text x="102" y="62.5">9</text>
+              <text x="144" y="29.5">15</text>
+              <text x="186" y="68">8</text>
+              <text x="228" y="79">6</text>
+            </g>
+            <!-- X轴标签 -->
+            <g font-family="PingFang SC, sans-serif" font-size="9.5" text-anchor="middle" fill="#111">
+              <text x="60" y="131">篮球</text>
+              <text x="102" y="131">足球</text>
+              <text x="144" y="131">乒乓球</text>
+              <text x="186" y="131">跳绳</text>
+              <text x="228" y="131">羽毛球</text>
+            </g>
+          </svg>
+        </div>
+        <div class="app-stem" style="flex:1;">
+          <span class="q-num">2.</span> 左图是六（3）班全体同学参加“阳光体育”社团的人数统计图（每人只报一项）。（6分）<br>
+          （1）参加乒乓球社团的人数占全班总人数的百分之多少？（2分）<br>
+          （2）参加球类社团（篮球、足球、乒乓球、羽毛球）的人数一共占全班总人数的百分之多少？（2分）<br>
+          （3）后来有 3 名跳绳社团的同学转去了篮球社团，现在篮球社团人数占全班总人数的百分之多少？（2分）
+        </div>
+      </div>
+      <div class="app-ans-line">答：（1）<span class="blank blank-sm"></span>%；（2）<span class="blank blank-sm"></span>%；（3）<span class="blank blank-sm"></span>%。</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册第五单元第1课《百分数的意义》测试卷 · 空白试卷</span>
+    <span>第 2 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第一部分：空白试卷（第 3 页） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content">
+    <div class="app-item" style="min-height:242px;">
+      <div class="app-stem">
+        <span class="q-num">3.</span> 某校对六年级学生每天睡眠时间是否达到“不少于 9 小时”的标准进行了调查，统计结果如下表：（6分）
+        <table class="data-table" style="margin:5px 0;">
+          <tr>
+            <th style="width:36%;">睡眠情况</th>
+            <th style="width:32%;">达到标准</th>
+            <th style="width:32%;">未达到标准</th>
+          </tr>
+          <tr>
+            <th>人数 / 人</th>
+            <td>273</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>占六年级总人数的百分比</th>
+            <td>78%</td>
+            <td></td>
+          </tr>
+        </table>
+        （1）请通过计算将上表补充完整（写出计算过程）。（4分）<br>
+        （2）如果学校希望把六年级睡眠达标率提升到 90%，至少需要让多少名原本未达标的同学养成早睡习惯？（2分）
+      </div>
+      <div class="app-ans-line">答：（2）至少需要让 <span class="blank blank-sm"></span> 名未达标同学养成早睡习惯。</div>
+    </div>
+
+    <div class="app-item" style="min-height:278px;">
+      <div class="app-stem">
+        <span class="q-num">4.</span> 某电子厂两个车间同时生产同一种芯片：一车间生产了 300 块，合格率是 96%；二车间生产了 200 块，不合格的有 14 块。（8分）<br>
+        （1）二车间的合格率是多少？（2分）<br>
+        （2）把两个车间生产的这批芯片合在一起检验，这批芯片的<strong>总合格率</strong>是多少？（3分）<br>
+        （3）有同学直接用“（96% ＋ 二车间合格率）÷ 2”来求总合格率，你同意这种做法吗？请结合本题数据说明理由。（3分）
+      </div>
+      <div class="app-ans-line">答：（1）<span class="blank blank-sm"></span>%；（2）<span class="blank"></span>%；（3）理由见上方。</div>
+    </div>
+
+    <div class="app-item" style="min-height:336px; margin-bottom:0;">
+      <div class="app-stem">
+        <span class="q-num">5.</span> 某书店开展“阅读季”抽奖活动，预计共发放 <strong>1000 张</strong>抽奖券，奖品总预算为 <strong>3400 元</strong>，要求<strong>总中奖率恰好为 40%</strong>。奖次设置如下表：（8分）
+        <table class="data-table" style="margin:5px 0;">
+          <tr>
+            <th>奖次</th>
+            <th>每张奖品价值 / 元</th>
+            <th>中奖张数 / 张</th>
+            <th>奖品总金额 / 元</th>
+            <th>中奖率</th>
+          </tr>
+          <tr>
+            <th>一等奖</th>
+            <td>50</td>
+            <td>20</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>二等奖</th>
+            <td>10</td>
+            <td></td>
+            <td></td>
+            <td>10%</td>
+          </tr>
+          <tr>
+            <th>三等奖</th>
+            <td>5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>合计</th>
+            <td>—</td>
+            <td></td>
+            <td>3400</td>
+            <td>40%</td>
+          </tr>
+        </table>
+        （1）请通过计算将上表补充完整，并在下方写出关键计算过程。（6分）<br>
+        （2）如果书店想在<strong>总预算仍为 3400 元、发放总数仍为 1000 张、一等奖张数不变</strong>的前提下，把<strong>总中奖率提高到 45%</strong>，应将二等奖和三等奖的中奖张数分别调整为多少张？（2分）
+      </div>
+      <div class="app-ans-line">答：（2）二等奖调整为 <span class="blank blank-sm"></span> 张，三等奖调整为 <span class="blank blank-sm"></span> 张。</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册第五单元第1课《百分数的意义》测试卷 · 空白试卷</span>
+    <span>第 3 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第二部分：参考答案（第 4 页） ==================== -->
+<div class="sheet part-answer">
+  <div class="sheet-content">
+    <div class="part-header">
+      <h2>参考答案与评分标准</h2>
+      <p>小学六年级数学上册第五单元第1课《百分数的意义》测试卷 ｜ 先核对总体答案，再按采分点判分</p>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">全卷参考答案总览（快速批阅用）</div>
+      <div><strong>一、填空题（24分）：</strong>
+        <strong>1.</strong> 百分之六十八点五；0.04%；出勤人数 &nbsp;
+        <strong>2.</strong> 6；0.375；37.5；40 &nbsp;
+        <strong>3.</strong> <span class="frac"><span class="num">7</span><span class="den">10</span></span> 米；12.5% &nbsp;
+        <strong>4.</strong> 96%；4% &nbsp;
+        <strong>5.</strong> 增长率、完成率；出粉率 &nbsp;
+        <strong>6.</strong> 108%；83.3% &nbsp;
+        <strong>7.</strong> 21；45；75 &nbsp;
+        <strong>8.</strong> 20；10 &nbsp;
+        <strong>9.</strong> 95；300 &nbsp;
+        <strong>10.</strong> 100；<span class="frac"><span class="num">1</span><span class="den">100</span></span>
+      </div>
+      <div><strong>二、判断题（5分）：</strong>
+        <strong>1.</strong> × &nbsp;&nbsp; <strong>2.</strong> × &nbsp;&nbsp; <strong>3.</strong> × &nbsp;&nbsp; <strong>4.</strong> × &nbsp;&nbsp; <strong>5.</strong> √
+      </div>
+      <div><strong>三、选择题（12分）：</strong>
+        <strong>1.</strong> C &nbsp;&nbsp; <strong>2.</strong> A &nbsp;&nbsp; <strong>3.</strong> B &nbsp;&nbsp; <strong>4.</strong> C &nbsp;&nbsp; <strong>5.</strong> A &nbsp;&nbsp; <strong>6.</strong> B
+      </div>
+      <div><strong>四、计算与互化题（25分）：</strong>
+        <strong>1.</strong> 填表（按列从上到下）：① 0.35，35% ② <span class="frac"><span class="num">5</span><span class="den">4</span></span>（或 1<span class="frac"><span class="num">1</span><span class="den">4</span></span>），125% ③ <span class="frac"><span class="num">1</span><span class="den">250</span></span>，0.004 ④ 0.714，71.4%<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong>2.</strong> <span class="frac"><span class="num">7</span><span class="den">9</span></span> ＜ 0.87 ＜ 87.5% ＜ 88% ＜ <span class="frac"><span class="num">8</span><span class="den">9</span></span> &nbsp;&nbsp;
+        <strong>3.</strong>（1）2.5（或 <span class="frac"><span class="num">5</span><span class="den">2</span></span>）（2）30（3）<i>x</i>＝40（4）<i>x</i>＝3
+      </div>
+      <div><strong>五、统计图表与解决问题（34分）：</strong>
+        <strong>1.</strong> 一样多（均为 162 人）；相差 18 人 &nbsp;&nbsp;
+        <strong>2.</strong>（1）30%（2）84%（3）30% &nbsp;&nbsp;
+        <strong>3.</strong>（1）未达标 77 人、22%（2）42 名<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong>4.</strong>（1）93%（2）94.8%（3）不同意（理由见下） &nbsp;&nbsp;
+        <strong>5.</strong>（1）一等奖 1000 元、2%；二等奖 100 张、1000 元；三等奖 280 张、1400 元、28%；合计 400 张（2）二等奖 50 张，三等奖 380 张
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>四、计算与互化题 · 关键步骤采分标准（25分）</h3>
+      <div class="ans-p"><strong>1. 互化填表（8分）：</strong>每空 1 分。第 2 列分数未化最简（如写 125/100）扣 0.5 分；第 4 列四舍五入错误扣 1 分。</div>
+      <div class="ans-p"><strong>2. 从小到大排列（5分）：</strong>全对得 5 分；若排成从大到小但大小关系全对扣 2 分；其余每排错一处扣 1 分。</div>
+      <div class="ans-p"><strong>3. 脱式简算与解方程（每题3分，共12分）：</strong>过程 2 分，结果 1 分；未简算但结果正确扣 1 分；解方程漏写“解”扣 0.5 分。<br>
+        （1）原式＝(4.8＋5.2)×0.25＝10×0.25＝<strong>2.5</strong>　（2）原式＝0.6×(18＋33－1)＝0.6×50＝<strong>30</strong><br>
+        （3）解：0.65<i>x</i>＝26 ⇒ <strong><i>x</i>＝40</strong>　　　　　　　　　（4）解：0.4<i>x</i>＝1.4－0.2＝1.2 ⇒ <strong><i>x</i>＝3</strong>
+      </div>
+    </div>
+
+    <div class="ans-sec" style="margin-bottom:0;">
+      <h3>五、统计图表与解决问题 · 关键步骤采分标准（34分）</h3>
+      <div class="ans-p"><strong>1.（6分）</strong>实验小学：450×36%＝162（人）（1.5分）；育才小学：360×45%＝162（人）（1.5分）；结论：两校获奖人数<strong>一样多</strong>（1分）；提高后育才：360×50%＝180（人），相差 180－162＝<strong>18（人）</strong>（2分）。</div>
+      <div class="ans-p"><strong>2.（6分）</strong>先求全班总人数：12＋9＋15＋8＋6＝50（人）。<br>
+        （1）15÷50×100%＝<strong>30%</strong>（2分）；（2）(50－8)÷50×100%＝42÷50×100%＝<strong>84%</strong>（2分）；（3）(12＋3)÷50×100%＝<strong>30%</strong>（2分）。
+      </div>
+      <div class="ans-p"><strong>3.（6分）</strong>（1）未达标占比：1－78%＝<strong>22%</strong>（1分）；总人数：273÷78%＝350（人）（1.5分）；未达标人数：350－273＝<strong>77（人）</strong>（1.5分）。<br>
+        （2）350×90%－273＝315－273＝<strong>42（名）</strong>（或 350×(90%－78%)＝42 名）（2分）。
+      </div>
+      <div class="ans-p"><strong>4.（8分）</strong>（1）(200－14)÷200×100%＝186÷200×100%＝<strong>93%</strong>（2分）。<br>
+        （2）一车间合格：300×96%＝288（块）（1分）；总合格率：(288＋186)÷(300＋200)×100%＝474÷500×100%＝<strong>94.8%</strong>（2分）。<br>
+        （3）<strong>不同意</strong>（1分）。理由：(96%＋93%)÷2＝94.5%≠94.8%，因为两个车间生产的<strong>芯片总数不同</strong>（300 块 ≠ 200 块），单位“1”不同，不能把两个合格率直接平均，必须用“总合格数÷总生产数×100%”计算（2分）。
+      </div>
+      <div class="ans-p"><strong>5.（8分）</strong>（1）表格每填对 1 空得 0.5 分（共 8 空，4 分），写出关键计算过程得 2 分：<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;合计中奖张数：1000×40%＝<strong>400（张）</strong>；一等奖金额：50×20＝<strong>1000（元）</strong>，中奖率：20÷1000×100%＝<strong>2%</strong>；<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;二等奖张数：1000×10%＝<strong>100（张）</strong>，金额：10×100＝<strong>1000（元）</strong>；<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;三等奖张数：400－20－100＝<strong>280（张）</strong>，金额：5×280＝<strong>1400（元）</strong>（核验 1000＋1000＋1400＝3400 √），中奖率：280÷1000×100%＝<strong>28%</strong>。<br>
+        （2）中奖率提高到 45% ⇒ 总中奖 450 张，二、三等奖共 450－20＝430 张，预算 3400－1000＝2400 元；<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;解法一（假设法/鸡兔同笼）：二等奖 (2400－430×5)÷(10－5)＝250÷5＝<strong>50（张）</strong>，三等奖 430－50＝<strong>380（张）</strong>（2分）；<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;解法二（等值替换）：少 1 张 10 元二等奖可换 2 张 5 元三等奖，净增 1 张中奖名额；需多增 50 张名额，故二等奖减 50 张变为 <strong>50 张</strong>，三等奖增 100 张变为 <strong>380 张</strong>（2分）。
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册第五单元第1课《百分数的意义》测试卷 · 参考答案</span>
+    <span>参考答案 第 1 页（共 1 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第三部分：题目分析（第 5 页） ==================== -->
+<div class="sheet part-analysis">
+  <div class="sheet-content">
+    <div class="part-header">
+      <h2>题目分析与复习建议</h2>
+      <p>小学六年级数学上册第五单元第1课《百分数的意义》测试卷 ｜ 双向细目表与逐题深度精析</p>
+    </div>
+
+    <div class="ans-sec">
+      <h3>一、试卷结构与教材知识点细目表</h3>
+      <table class="spec-table">
+        <tr>
+          <th style="width:15%;">大题</th>
+          <th style="width:14%;">对应教材页码</th>
+          <th style="width:39%;">核心考查知识点</th>
+          <th style="width:10%;">分值</th>
+          <th style="width:22%;">难度梯度分布</th>
+        </tr>
+        <tr>
+          <td>一、填空题</td>
+          <td>p.79–84</td>
+          <td class="left">读写与意义、三数连等互化、具体量vs百分数、常见百分率与上限、含盐率、已知部分与百分率反推总数</td>
+          <td>24分</td>
+          <td>基础10分 / 中等10分 / 提升4分</td>
+        </tr>
+        <tr>
+          <td>二、判断题</td>
+          <td>p.79–82</td>
+          <td class="left">百分数不带单位、成活率上限100%、分数与百分数意义区别、总体未知不可直接比较、分率与具体量区分</td>
+          <td>5分</td>
+          <td>基础2分 / 中等3分</td>
+        </tr>
+        <tr>
+          <td>三、选择题</td>
+          <td>p.79–84</td>
+          <td class="left">出油率常识、三数精确比大小、溶液均匀性与加糖水变浓、补种成活率、乘积相等比字母、总命中率</td>
+          <td>12分</td>
+          <td>中等6分 / 提升6分</td>
+        </tr>
+        <tr>
+          <td>四、计算与互化</td>
+          <td>p.81–83</td>
+          <td class="left">分数/小数/百分数互化（含＞1、＜1%、除不尽）、五数排序、含百分数乘法分配律简算与解方程</td>
+          <td>25分</td>
+          <td>基础10分 / 中等10分 / 提升5分</td>
+        </tr>
+        <tr>
+          <td>五、统计与应用</td>
+          <td>p.82–84</td>
+          <td class="left">不同总体多寡比较、条形统计图求百分率、调查表反推总量与目标差、混合加权合格率说理、抽奖方案设计</td>
+          <td>34分</td>
+          <td>中等18分 / 提升16分</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="ans-sec" style="margin-bottom:0;">
+      <h3>二、逐题深度分析（一至三大题）</h3>
+
+      <div class="analysis-card">
+        <h4>一、填空题（第 1～10 题）</h4>
+        <p><span class="tag-k">【考查知识点】</span>紧扣教材例 1～例 3 与练习十四，全面覆盖百分数读写、意义、三数互化、生活百分率、求一个数的百分之几及反推总数。</p>
+        <p><span class="tag-s">【解题思路】</span>第 2 题先由 3/8＝0.375＝37.5%，再按分数基本性质推 6÷16 和 15/40；第 4 题总人数须把到校和病事假加全（48＋1＋1＝50）；第 8 题盐水总量是“盐＋水＝100 g”，加水后盐不变、盐水变 200 g；第 9 题合格率 190÷(190＋10)＝95%，再由不合格率 5% 对应 15 个反推 15÷5%＝300 个。</p>
+        <p><span class="tag-e">【易错提醒】</span>① 第 3 题第二空问“每段占全长的百分之多少”，应算 1÷8＝12.5%，极易误用 5÷8＝62.5%；② 第 5 题易忘“出粉率＜100%”的生活常识；③ 第 6 题 5÷6≈0.8333，须按教材 p.81 规范保留三位小数再化百分数得 83.3%；④ 第 8 题含盐率分母常漏加盐的 20 g 误算成 20÷80＝25%。</p>
+      </div>
+
+      <div class="analysis-card">
+        <h4>二、判断题（第 1～5 题）</h4>
+        <p><span class="tag-k">【考查知识点】</span>百分数核心概念辨析（只表倍比、不表具体量；部分占比类百分率≤100%；比较部分量须知总体）。</p>
+        <p><span class="tag-s">【解题思路】</span>第 1、3 题均考查“百分数是特殊的倍比关系，绝不带单位”；第 2 题成活率＝105÷105×100%＝100%；第 4 题对标教材 p.84 第 5 题思想，总人数未知无法比较；第 5 题把分率 1% 与具体量 0.01 kg 准确区分，表述完全正确。</p>
+        <p><span class="tag-e">【易错提醒】</span>第 5 题最易因前几题连续判“×”而惯性误判，审题需盯紧“1% 后面没带单位，0.01 kg 后面带了单位”。</p>
+      </div>
+
+      <div class="analysis-card">
+        <h4>三、选择题（第 1～6 题）</h4>
+        <p><span class="tag-k">【考查知识点】</span>百分率实际意义、高精度三数比较、浓度逻辑、补种成活率、乘积相等比较大小及总命中率。</p>
+        <p><span class="tag-s">【解题思路】</span>第 2 题统一化小数：0.67＞0.667＞0.6666…（2/3）＞0.666，一眼定最大最小；第 3 题均匀糖水喝掉一半浓度仍为 15%，新加糖水浓度 5÷(5＋20)＝20%＞15%，故变甜；第 4 题总种树 100＋10＝110 棵，成活 90＋10＝100 棵，100÷110≈90.9%；第 5 题 40%＝2/5＜3/5，积等则因数小的数大（甲大）；第 6 题须用“全场总命中÷全场总出手”分别算得 60% 和 65%。</p>
+        <p><span class="tag-e">【易错提醒】</span>① 第 2 题极易把 2/3 粗略当 0.67 或 66.7%；② 第 4 题补种成活率是经典“重灾区”，常误以为“死 10 补 10 等于全活 100%”，忘了分母已变为 110 棵；③ 第 6 题切忌把上下半场命中率直接求平均。</p>
+        <p><span class="tag-s">【巩固建议】</span>遇到多个百分率混合（如补种、上下半场、两车间合并），牢记铁律：<strong>永远回到定义“总部分量 ÷ 总整体量 × 100%”</strong>。</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册第五单元第1课《百分数的意义》测试卷 · 题目分析</span>
+    <span>题目分析 第 1 页（共 2 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第三部分：题目分析（第 6 页） ==================== -->
+<div class="sheet part-analysis">
+  <div class="sheet-content">
+    <div class="ans-sec">
+      <h3>二、逐题深度分析（四至五大题）</h3>
+
+      <div class="analysis-card">
+        <h4>四、计算与互化题（第 1～3 题）</h4>
+        <p><span class="tag-k">【考查知识点】</span>三数互化熟练度（教材 p.83 练习十四第 2 题进阶）、含百分数的运算律简算及分数/百分数方程。</p>
+        <p><span class="tag-s">【解题思路】</span>第 1 题重点核验 0.4%＝0.004＝4/1000＝1/250 与 5/7≈0.714＝71.4%；第 2 题全化小数（0.778、0.87、0.875、0.88、0.889）后直接排序，再还原原数；第 3 题（1）将 25% 和 1/4 统一为 0.25 提公因数；（2）将 3/5、60%、0.6 统一为 0.6，把末尾“－0.6”看作“－0.6×1”后用乘法分配律得 0.6×50＝30；（3）（4）把百分数化小数或分数解方程。</p>
+        <p><span class="tag-e">【易错提醒】</span>① 0.4% 化小数时小数点左移两位需补两个 0（易错写成 0.04）；② 排序题最后一定要写回题目原来的数，不要写转化后的小数；③ 第 3 题（2）末尾的“－0.6”易漏看成“×1”。</p>
+      </div>
+
+      <div class="analysis-card">
+        <h4>五、第 1 题（两校获奖人数对比 · 对标教材 p.84 第 5 题）</h4>
+        <p><span class="tag-k">【考查知识点】</span>求一个数的百分之多少（例 3），深化理解“百分率高 ≠ 实际数量多”。</p>
+        <p><span class="tag-s">【解题思路】</span>先分别用“报名人数×获奖率”算出两校获奖数均为 162 人（打破“45%＞36% 就育才多”的直觉），再算育才提高到 50% 后的 180 人并求差。</p>
+        <p><span class="tag-e">【易错提醒】</span>部分学生看到 450×36% 和 360×45% 不计算就凭感觉猜大小；其实用乘法交换/结合律 450×0.36＝45×3.6＝360×0.45 可口算秒知相等！</p>
+      </div>
+
+      <div class="analysis-card">
+        <h4>五、第 2 题（条形统计图求百分率 · 对标教材 p.84 第 6 题）</h4>
+        <p><span class="tag-k">【考查知识点】</span>从统计图读取数据并求部分占整体的百分比，结合内部人员流动（总人数不变）。</p>
+        <p><span class="tag-s">【解题思路】</span>先求和得全班 50 人；第（2）问可间接用“总人数－跳绳 8 人＝42 人”快速计算；第（3）问跳绳转去篮球属于内部调动，全班总人数仍是 50 人，篮球变 15 人 ⇒ 30%。</p>
+        <p><span class="tag-e">【易错提醒】</span>第（3）问容易忘记全班总人数不变（误把分母改成 53），或只用 3÷50 计算增长占比而未加原 12 人。</p>
+      </div>
+
+      <div class="analysis-card">
+        <h4>五、第 3 题（睡眠达标调查表 · 对标教材 p.84 第 7 题进阶）</h4>
+        <p><span class="tag-k">【考查知识点】</span>已知一个数的百分之几是多少求这个数（量率对应迁移到百分数），以及目标百分率差值计算。</p>
+        <p><span class="tag-s">【解题思路】</span>由达标 273 人对应 78% 先反推总人数 273÷0.78＝350 人；第（2）问直接用 350×(90%－78%)＝42 人最简洁。</p>
+        <p><span class="tag-e">【易错提醒】</span>第（1）问易误用 273×78% 求总人数；除数是小数 0.78 时注意竖式小数点同步右移两位（27300÷78＝350）。</p>
+      </div>
+
+      <div class="analysis-card">
+        <h4>五、第 4 题（双车间混合合格率 + 说理 · 拔高拉分题）</h4>
+        <p><span class="tag-k">【考查知识点】</span>加权百分率的本质理解与数学书面说理规范。</p>
+        <p><span class="tag-s">【解题思路】</span>分别求出两个车间的合格块数（288 块、186 块），再用“总合格数 474 ÷ 总块数 500”得 94.8%；第（3）问先明确表态“不同意”，再列出反例数据 94.5%≠94.8% 并点明本质原因是“两车间生产总数（单位‘1’）不同”。</p>
+        <p><span class="tag-e">【易错提醒】</span>① 二车间给的是“不合格 14 块”，审题切勿直接用 14÷200 当合格率；② 说理问要做到“表态＋算数据对比＋讲本质原因”三步完整。</p>
+      </div>
+
+      <div class="analysis-card">
+        <h4>五、第 5 题（“阅读季”抽奖方案设计与调整 · 对标教材 p.84 第 8 题拓展）</h4>
+        <p><span class="tag-k">【考查知识点】</span>百分率与总数的综合应用、多约束表格推理及假设法/替换策略。</p>
+        <p><span class="tag-s">【解题思路】</span>第（1）问先算总中奖 400 张，再依次推出一等奖、二等奖，最后用减法补齐三等奖并验算总金额 3400 元；第（2）问是经典提升点：预算与一等奖都不变，总名额增加 50 张，把每 1 张 10 元二等奖拆成 2 张 5 元三等奖刚好金额不变、名额＋1，因此二等奖减 50 张、三等奖加 100 张（或用鸡兔同笼假设法求解）。</p>
+        <p><span class="tag-e">【易错提醒】</span>① 第（1）问易把一等奖 20÷1000 误算成 20%；② 第（2）问调整后务必做双验算：张数 20＋50＋380＝450（45%）且金额 1000＋500＋1900＝3400 元！</p>
+        <p><span class="tag-s">【巩固建议】</span>本课是整个第五单元的基石。孩子练完本卷后，重点复盘两件事：① <strong>熟记常用分小百互化值</strong>（1/2、1/4、3/4、1/5～4/5、1/8～7/8）；② <strong>把百分数当成“分母为 100 的分率”</strong>，直接复用前面学过且已经非常扎实的分数“量率对应”思维，下节课学折扣、利率和增长率就会非常轻松！</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册第五单元第1课《百分数的意义》测试卷 · 题目分析</span>
+    <span>题目分析 第 2 页（共 2 页）</span>
+  </div>
+</div>
+
+<script>
+  const PRINT_CLASSES = [
+    'print-exam-only',
+    'print-answer-only',
+    'print-analysis-only',
+    'print-answer-analysis'
+  ];
+  function printMode(mode) {
+    document.body.classList.remove(...PRINT_CLASSES);
+    document.querySelectorAll('.sheet.is-last-visible')
+      .forEach(el => el.classList.remove('is-last-visible'));
+    if (mode === 'exam') document.body.classList.add('print-exam-only');
+    if (mode === 'answer') document.body.classList.add('print-answer-only');
+    if (mode === 'analysis') document.body.classList.add('print-analysis-only');
+    if (mode === 'answer-analysis') document.body.classList.add('print-answer-analysis');
+    const visibleSheets = Array.from(document.querySelectorAll('.sheet'))
+      .filter(el => getComputedStyle(el).display !== 'none');
+    if (visibleSheets.length > 0) {
+      visibleSheets[visibleSheets.length - 1].classList.add('is-last-visible');
+    }
+    window.print();
+    setTimeout(() => {
+      document.body.classList.remove(...PRINT_CLASSES);
+      document.querySelectorAll('.sheet.is-last-visible')
+        .forEach(el => el.classList.remove('is-last-visible'));
+    }, 300);
+  }
+</script>
+</body>
+</html>
