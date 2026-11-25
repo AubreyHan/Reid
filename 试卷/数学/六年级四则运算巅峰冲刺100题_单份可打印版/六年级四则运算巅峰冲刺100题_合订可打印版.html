@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>小学六年级四则运算巅峰冲刺100题（练习11–20合订A4可打印版）</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 9mm 11mm 9mm 11mm;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: #1a1a1a;
+    background: #eef1f5;
+    margin: 0;
+    padding: 18px 0 40px 0;
+    font-size: 13px;
+    line-height: 1.42;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print-banner {
+    width: 210mm;
+    margin: 0 auto 14px auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #8250df;
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .banner-info { font-size: 12.2px; color: #334155; }
+  .banner-info strong { color: #0f172a; font-size: 13.8px; }
+  .banner-actions { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+  .btn {
+    border: none;
+    padding: 6px 11px;
+    font-size: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: inherit;
+    text-decoration: none;
+  }
+  .btn-primary { background: #8250df; color: #fff; }
+  .btn-primary:hover { background: #6e40c9; }
+  .btn-secondary { background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; }
+  .btn-secondary:hover { background: #e2e8f0; }
+
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 16px auto;
+    background: #ffffff;
+    padding: 9mm 11mm 8mm 11mm;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  .sheet-content { flex: 1; }
+  .exam-flex { display: flex; flex-direction: column; }
+
+  .page-footer {
+    margin-top: auto;
+    padding-top: 4px;
+    border-top: 1px solid #d4d4d8;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.5px;
+    color: #666;
+  }
+
+  /* 空白试卷样式 */
+  .ex-header { border-bottom: 2px solid #111; padding-bottom: 5px; margin-bottom: 6px; }
+  .title-row { display: flex; justify-content: space-between; align-items: center; }
+  .main-title { font-size: 16px; font-weight: bold; color: #111; }
+  .diff-tag {
+    font-size: 11px; padding: 2px 8px; border-radius: 10px;
+    font-weight: bold; background: #fbefff; color: #8250df;
+  }
+  .meta-row { display: flex; justify-content: space-between; font-size: 12.5px; color: #444; margin-top: 5px; }
+  .meta-line { display: inline-block; border-bottom: 1px solid #444; min-width: 62px; margin-left: 4px; height: 14px; }
+  .tips-box {
+    background: #f6f8fa; border-left: 3px solid #8250df;
+    padding: 4px 10px; font-size: 11.5px; color: #333; margin-bottom: 8px;
+  }
+  .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 13px; flex-grow: 1; }
+  .problem-box {
+    border: 1px solid #d8dee4; border-radius: 6px; padding: 7px 9px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    background: #fff; height: 47mm; break-inside: avoid; page-break-inside: avoid;
+  }
+  .prob-header { display: flex; justify-content: flex-start; align-items: center; }
+  .prob-expr { font-size: 13.2px; font-weight: bold; color: #111; line-height: 1.32; }
+  .frac { display: inline-block; vertical-align: middle; text-align: center; font-size: 0.88em; padding: 0 1.5px; }
+  .frac .top { display: block; border-bottom: 1px solid #222; line-height: 1.06; padding: 0 2px; }
+  .frac .bot { display: block; line-height: 1.06; padding: 0 2px; }
+  .frac .frac { font-size: 0.86em; }
+  .frac .frac .top, .frac .frac .bot { line-height: 1.02; }
+  .working-area { flex-grow: 1; margin: 3px 0; display: flex; flex-direction: column; justify-content: space-around; }
+  .draft-line { border-bottom: 1px dashed #e1e4e8; height: 10px; }
+  .ans-target { align-self: flex-end; font-size: 11.5px; font-weight: 500; color: #333; padding-top: 2px; }
+  .ans-underline { display: inline-block; border-bottom: 1.5px solid #222; min-width: 78px; text-align: center; height: 13px; }
+
+  /* 第二部分：参考答案总览页 */
+  .part-header { text-align: center; border-bottom: 2px solid #1e293b; padding-bottom: 5px; margin-bottom: 7px; }
+  .part-header h2 { margin: 0; font-size: 16px; color: #0f172a; }
+  .part-header p { margin: 2px 0 0 0; font-size: 10.8px; color: #475569; }
+  .rubric-bar {
+    background: #f8fafc; border: 1px solid #cbd5e1; border-left: 3.5px solid #0969da;
+    border-radius: 4px; padding: 5px 10px; font-size: 11px; color: #334155; margin-bottom: 7px;
+  }
+  .sum-set {
+    border: 1px solid #cbd5e1; border-radius: 5px; padding: 4.5px 8px;
+    margin-bottom: 5.5px; background: #fafbfc; break-inside: avoid;
+  }
+  .sum-set-head {
+    display: flex; justify-content: space-between; font-size: 11.6px; color: #0969da;
+    border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 3px;
+  }
+  .sum-sub { font-size: 10.5px; color: #64748b; }
+  .sum-grid {
+    display: flex; flex-wrap: wrap; gap: 2px 12px;
+    font-size: 10.6px; line-height: 1.48; color: #111;
+  }
+  .sum-chip { white-space: nowrap; }
+
+  /* 第三部分：逐题算理剖析 */
+  .ana-set {
+    border: 1px solid #cbd5e1; border-radius: 6px; padding: 7px 10px;
+    margin-bottom: 8px; background: #fff; break-inside: avoid;
+  }
+  .ana-set-title {
+    font-size: 12.2px; font-weight: bold; color: #6e40c9;
+    border-bottom: 1.5px solid #8250df; padding-bottom: 3px; margin-bottom: 5px;
+  }
+  .ana-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 12px; }
+  .ana-item {
+    border-bottom: 1px dashed #e2e8f0; padding-bottom: 4px;
+    font-size: 10.6px; line-height: 1.42;
+  }
+  .ana-top { margin-bottom: 1.5px; }
+  .ana-num { font-weight: bold; color: #111; }
+  .tag-qiao {
+    display: inline-block; background: #fbefff; color: #6e40c9;
+    padding: 0 4px; border-radius: 3px; font-weight: 600; font-size: 10px;
+  }
+  .tag-chang {
+    display: inline-block; background: #eef2ff; color: #1d4ed8;
+    padding: 0 4px; border-radius: 3px; font-weight: 600; font-size: 10px;
+  }
+  .ana-body { color: #222; }
+  .ana-pit { color: #9a3412; font-size: 10.1px; margin-top: 1px; }
+
+  /* 分模块打印模式 */
+  body.print-exam-only .part-answer,
+  body.print-exam-only .part-analysis { display: none !important; }
+  body.print-answer-only .part-exam,
+  body.print-answer-only .part-analysis { display: none !important; }
+  body.print-analysis-only .part-exam,
+  body.print-analysis-only .part-answer { display: none !important; }
+  body.print-answer-analysis .part-exam { display: none !important; }
+
+  @media print {
+    body { background: #fff; padding: 0; margin: 0; }
+    .no-print, .no-print-banner { display: none !important; }
+    .sheet {
+      width: auto;
+      height: 277mm;
+      min-height: 277mm;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      page-break-after: always;
+      break-after: page;
+    }
+    .sheet:last-of-type,
+    .sheet.is-last-visible {
+      page-break-after: auto;
+      break-after: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="no-print-banner">
+  <div class="banner-info">
+    <strong>六年级四则运算巅峰冲刺 100 题（练习 11–20 · 全套合订 A4 打印版）</strong><br>
+    对标原练习 10 巅峰难度 ｜ 三部分独立起页：空白试卷（1–10页） / 参考答案总览（第11页） / 逐题算理剖析（12–16页）
+  </div>
+  <div class="banner-actions">
+    <a href="index.html" class="btn btn-secondary">返回目录</a>
+    <button class="btn btn-primary" onclick="printMode('all')">打印完整版</button>
+    <button class="btn btn-secondary" onclick="printMode('exam')">仅打印空白试卷</button>
+    <button class="btn btn-secondary" onclick="printMode('answer')">仅打印参考答案</button>
+    <button class="btn btn-secondary" onclick="printMode('analysis')">仅打印题目分析</button>
+    <button class="btn btn-secondary" onclick="printMode('answer-analysis')">仅打印答案与分析</button>
+  </div>
+</div>
+
+<!-- ==================== 空白试卷 第 1 页（练习11） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content exam-flex">
+    <div>
+      <div class="ex-header">
+        <div class="title-row">
+          <div class="main-title">练习11：四则混合运算巅峰突破（三项裂项进阶与高阶换元）</div>
+          <div class="diff-tag">巅峰难度：★★★★★★★</div>
+        </div>
+        <div class="meta-row">
+          <div>姓名：<span class="meta-line"></span></div>
+          <div>班级：<span class="meta-line"></span></div>
+          <div>完成用时：<span class="meta-line" style="min-width:50px;"></span> 分钟</div>
+          <div>得分：<span class="meta-line" style="min-width:50px;"></span> / 100分</div>
+        </div>
+      </div>
+      <div class="tips-box">作答要求：仔细审题，能简算的写出关键变形步骤；不能简算的按四则混合运算法则规范计算（最终分数化最简）。</div>
+    </div>
+
+    <div class="problem-grid">
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">1. &nbsp;<span class="frac"><span class="top">1</span><span class="bot">2×3×4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3×4×5</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4×5×6</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5×6×7</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">2. &nbsp;[2 − (<span class="frac"><span class="top">3</span><span class="bot">8</span></span> + <span class="frac"><span class="top">1</span><span class="bot">6</span></span>) ÷ <span class="frac"><span class="top">13</span><span class="bot">12</span></span>] × <span class="frac"><span class="top">8</span><span class="bot">5</span></span> + <span class="frac"><span class="top">3</span><span class="bot">5</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">3. &nbsp;(1 + <span class="frac"><span class="top">1</span><span class="bot">2</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">12</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">13</span></span>) − (1 + <span class="frac"><span class="top">1</span><span class="bot">2</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">13</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">12</span></span>)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">4. &nbsp;<span class="frac"><span class="top">5</span><span class="bot">12</span></span> ÷ [(<span class="frac"><span class="top">7</span><span class="bot">8</span></span> − <span class="frac"><span class="top">1</span><span class="bot">4</span></span>) × <span class="frac"><span class="top">4</span><span class="bot">9</span></span>] × <span class="frac"><span class="top">2</span><span class="bot">3</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">5. &nbsp;<span class="frac"><span class="top">2026 × 2027 − 1</span><span class="bot">2025 + 2026 × 2026</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">6. &nbsp;(4.5 × 7.2 × 1.25) ÷ (1.5 × 3.6 × 0.25)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">7. &nbsp;(1 − <span class="frac"><span class="top">1</span><span class="bot">2²</span></span>) × (1 − <span class="frac"><span class="top">1</span><span class="bot">3²</span></span>) × (1 − <span class="frac"><span class="top">1</span><span class="bot">4²</span></span>) × … × (1 − <span class="frac"><span class="top">1</span><span class="bot">12²</span></span>)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">8. &nbsp;[3 − (<span class="frac"><span class="top">2</span><span class="bot">5</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span>) × <span class="frac"><span class="top">20</span><span class="bot">13</span></span>] ÷ <span class="frac"><span class="top">5</span><span class="bot">6</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">9. &nbsp;99999 × 77778 + 33333 × 66666</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">10. &nbsp;120 − 120 ÷ 6 × 5 + 30</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 空白试卷</span>
+    <span>第 1 页（共 10 页）</span>
+  </div>
+</div>
+<!-- ==================== 空白试卷 第 2 页（练习12） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content exam-flex">
+    <div>
+      <div class="ex-header">
+        <div class="title-row">
+          <div class="main-title">练习12：四则混合运算巅峰突破（等差裂项与立方整体约分）</div>
+          <div class="diff-tag">巅峰难度：★★★★★★★</div>
+        </div>
+        <div class="meta-row">
+          <div>姓名：<span class="meta-line"></span></div>
+          <div>班级：<span class="meta-line"></span></div>
+          <div>完成用时：<span class="meta-line" style="min-width:50px;"></span> 分钟</div>
+          <div>得分：<span class="meta-line" style="min-width:50px;"></span> / 100分</div>
+        </div>
+      </div>
+      <div class="tips-box">作答要求：仔细审题，能简算的写出关键变形步骤；不能简算的按四则混合运算法则规范计算（最终分数化最简）。</div>
+    </div>
+
+    <div class="problem-grid">
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">1. &nbsp;<span class="frac"><span class="top">1</span><span class="bot">1×4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4×7</span></span> + <span class="frac"><span class="top">1</span><span class="bot">7×10</span></span> + <span class="frac"><span class="top">1</span><span class="bot">10×13</span></span> + <span class="frac"><span class="top">1</span><span class="bot">13×16</span></span> + <span class="frac"><span class="top">1</span><span class="bot">16×19</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">2. &nbsp;[4.5 − (1.25 + <span class="frac"><span class="top">5</span><span class="bot">8</span></span>) × 1.6] ÷ <span class="frac"><span class="top">3</span><span class="bot">4</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">3. &nbsp;(0.2 + 0.3 + 0.4 + 0.5) × (0.3 + 0.4 + 0.5 + 0.6) − (0.2 + 0.3 + 0.4 + 0.5 + 0.6) × (0.3 + 0.4 + 0.5)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">4. &nbsp;<span class="frac"><span class="top">7</span><span class="bot">9</span></span> ÷ [(<span class="frac"><span class="top">5</span><span class="bot">6</span></span> − <span class="frac"><span class="top">1</span><span class="bot">3</span></span>) ÷ <span class="frac"><span class="top">15</span><span class="bot">14</span></span>] × <span class="frac"><span class="top">9</span><span class="bot">14</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">5. &nbsp;<span class="frac"><span class="top">1×2×3 + 2×4×6 + 3×6×9 + 4×8×12</span><span class="bot">1×3×5 + 2×6×10 + 3×9×15 + 4×12×20</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">6. &nbsp;3.75 × 735 − <span class="frac"><span class="top">3</span><span class="bot">8</span></span> × 5730 + 16.2 × 62.5</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">7. &nbsp;1 + <span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">8</span></span> + <span class="frac"><span class="top">1</span><span class="bot">16</span></span> + <span class="frac"><span class="top">1</span><span class="bot">32</span></span> + <span class="frac"><span class="top">1</span><span class="bot">64</span></span> + <span class="frac"><span class="top">1</span><span class="bot">128</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">8. &nbsp;(3<span class="frac"><span class="top">1</span><span class="bot">4</span></span> − 1.75) ÷ [(<span class="frac"><span class="top">5</span><span class="bot">6</span></span> + <span class="frac"><span class="top">2</span><span class="bot">3</span></span>) × <span class="frac"><span class="top">4</span><span class="bot">5</span></span>]</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">9. &nbsp;2026 × 20252025 − 2025 × 20262026</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">10. &nbsp;<span class="frac"><span class="top">4</span><span class="bot">5</span></span> × <span class="frac"><span class="top">5</span><span class="bot">8</span></span> ÷ <span class="frac"><span class="top">4</span><span class="bot">5</span></span> × <span class="frac"><span class="top">5</span><span class="bot">8</span></span> + <span class="frac"><span class="top">15</span><span class="bot">64</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 空白试卷</span>
+    <span>第 2 页（共 10 页）</span>
+  </div>
+</div>
+<!-- ==================== 空白试卷 第 3 页（练习13） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content exam-flex">
+    <div>
+      <div class="ex-header">
+        <div class="title-row">
+          <div class="main-title">练习13：四则混合运算巅峰突破（分子为和的裂和消去与繁分数）</div>
+          <div class="diff-tag">巅峰难度：★★★★★★★</div>
+        </div>
+        <div class="meta-row">
+          <div>姓名：<span class="meta-line"></span></div>
+          <div>班级：<span class="meta-line"></span></div>
+          <div>完成用时：<span class="meta-line" style="min-width:50px;"></span> 分钟</div>
+          <div>得分：<span class="meta-line" style="min-width:50px;"></span> / 100分</div>
+        </div>
+      </div>
+      <div class="tips-box">作答要求：仔细审题，能简算的写出关键变形步骤；不能简算的按四则混合运算法则规范计算（最终分数化最简）。</div>
+    </div>
+
+    <div class="problem-grid">
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">1. &nbsp;1<span class="frac"><span class="top">1</span><span class="bot">2</span></span> − <span class="frac"><span class="top">5</span><span class="bot">6</span></span> + <span class="frac"><span class="top">7</span><span class="bot">12</span></span> − <span class="frac"><span class="top">9</span><span class="bot">20</span></span> + <span class="frac"><span class="top">11</span><span class="bot">30</span></span> − <span class="frac"><span class="top">13</span><span class="bot">42</span></span> + <span class="frac"><span class="top">15</span><span class="bot">56</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">2. &nbsp;[<span class="frac"><span class="top">7</span><span class="bot">10</span></span> + (<span class="frac"><span class="top">3</span><span class="bot">4</span></span> − <span class="frac"><span class="top">2</span><span class="bot">5</span></span>) ÷ <span class="frac"><span class="top">7</span><span class="bot">8</span></span>] × <span class="frac"><span class="top">10</span><span class="bot">11</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">3. &nbsp;(<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5</span></span> + <span class="frac"><span class="top">1</span><span class="bot">6</span></span>) − (<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5</span></span> + <span class="frac"><span class="top">1</span><span class="bot">6</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5</span></span>)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">4. &nbsp;4<span class="frac"><span class="top">1</span><span class="bot">5</span></span> ÷ [1.4 × (<span class="frac"><span class="top">5</span><span class="bot">6</span></span> − <span class="frac"><span class="top">1</span><span class="bot">3</span></span>)] − 2<span class="frac"><span class="top">2</span><span class="bot">5</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">5. &nbsp;<span class="frac"><span class="top">2025² − 2024²</span><span class="bot">2025 + 2024</span></span> + <span class="frac"><span class="top">2026² − 2025²</span><span class="bot">2026 + 2025</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">6. &nbsp;(6.4 × 12.5 × 8.1) ÷ (3.2 × 2.5 × 2.7)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">7. &nbsp;(1 + <span class="frac"><span class="top">1</span><span class="bot">2</span></span>) × (1 − <span class="frac"><span class="top">1</span><span class="bot">2</span></span>) × (1 + <span class="frac"><span class="top">1</span><span class="bot">3</span></span>) × (1 − <span class="frac"><span class="top">1</span><span class="bot">3</span></span>) × … × (1 + <span class="frac"><span class="top">1</span><span class="bot">9</span></span>) × (1 − <span class="frac"><span class="top">1</span><span class="bot">9</span></span>)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">8. &nbsp;1 ÷ (1 + <span class="frac"><span class="top">1</span><span class="bot">2 + <span class="frac"><span class="top">1</span><span class="bot">3</span></span></span></span>)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">9. &nbsp;9999² + 19999</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">10. &nbsp;240 − 240 ÷ 8 × 3 + 240 ÷ 12</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 空白试卷</span>
+    <span>第 3 页（共 10 页）</span>
+  </div>
+</div>
+<!-- ==================== 空白试卷 第 4 页（练习14） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content exam-flex">
+    <div>
+      <div class="ex-header">
+        <div class="title-row">
+          <div class="main-title">练习14：四则混合运算巅峰突破（带分数拆分与等比错位相减）</div>
+          <div class="diff-tag">巅峰难度：★★★★★★★</div>
+        </div>
+        <div class="meta-row">
+          <div>姓名：<span class="meta-line"></span></div>
+          <div>班级：<span class="meta-line"></span></div>
+          <div>完成用时：<span class="meta-line" style="min-width:50px;"></span> 分钟</div>
+          <div>得分：<span class="meta-line" style="min-width:50px;"></span> / 100分</div>
+        </div>
+      </div>
+      <div class="tips-box">作答要求：仔细审题，能简算的写出关键变形步骤；不能简算的按四则混合运算法则规范计算（最终分数化最简）。</div>
+    </div>
+
+    <div class="problem-grid">
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">1. &nbsp;<span class="frac"><span class="top">2</span><span class="bot">1×2×3</span></span> + <span class="frac"><span class="top">2</span><span class="bot">2×3×4</span></span> + <span class="frac"><span class="top">2</span><span class="bot">3×4×5</span></span> + … + <span class="frac"><span class="top">2</span><span class="bot">8×9×10</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">2. &nbsp;[5 − (25% + <span class="frac"><span class="top">3</span><span class="bot">8</span></span>) × 4] ÷ 1<span class="frac"><span class="top">1</span><span class="bot">4</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">3. &nbsp;(1 + <span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5</span></span> + <span class="frac"><span class="top">1</span><span class="bot">7</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5</span></span> + <span class="frac"><span class="top">1</span><span class="bot">7</span></span> + <span class="frac"><span class="top">1</span><span class="bot">9</span></span>) − (1 + <span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5</span></span> + <span class="frac"><span class="top">1</span><span class="bot">7</span></span> + <span class="frac"><span class="top">1</span><span class="bot">9</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5</span></span> + <span class="frac"><span class="top">1</span><span class="bot">7</span></span>)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">4. &nbsp;2025 ÷ 2025<span class="frac"><span class="top">2025</span><span class="bot">2026</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">5. &nbsp;<span class="frac"><span class="top">2026 × 20252025</span><span class="bot">2025 × 20262026</span></span> + <span class="frac"><span class="top">2024 × 2025 − 1</span><span class="bot">2023 + 2024 × 2024</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">6. &nbsp;41<span class="frac"><span class="top">1</span><span class="bot">3</span></span> × <span class="frac"><span class="top">3</span><span class="bot">4</span></span> + 51<span class="frac"><span class="top">1</span><span class="bot">4</span></span> × <span class="frac"><span class="top">4</span><span class="bot">5</span></span> + 61<span class="frac"><span class="top">1</span><span class="bot">5</span></span> × <span class="frac"><span class="top">5</span><span class="bot">6</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">7. &nbsp;<span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">9</span></span> + <span class="frac"><span class="top">1</span><span class="bot">27</span></span> + <span class="frac"><span class="top">1</span><span class="bot">81</span></span> + <span class="frac"><span class="top">1</span><span class="bot">243</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">8. &nbsp;[3.6 − (1.8 + 60%) ÷ <span class="frac"><span class="top">6</span><span class="bot">5</span></span>] × 25%</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">9. &nbsp;100² − 99² + 98² − 97² + … + 2² − 1²</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">10. &nbsp;18 ÷ <span class="frac"><span class="top">3</span><span class="bot">4</span></span> × <span class="frac"><span class="top">4</span><span class="bot">3</span></span> − 18 ÷ (<span class="frac"><span class="top">3</span><span class="bot">4</span></span> × <span class="frac"><span class="top">4</span><span class="bot">3</span></span>)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 空白试卷</span>
+    <span>第 4 页（共 10 页）</span>
+  </div>
+</div>
+<!-- ==================== 空白试卷 第 5 页（练习15） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content exam-flex">
+    <div>
+      <div class="ex-header">
+        <div class="title-row">
+          <div class="main-title">练习15：四则混合运算巅峰突破（阶乘裂项与乘法分配律变形）</div>
+          <div class="diff-tag">巅峰难度：★★★★★★★</div>
+        </div>
+        <div class="meta-row">
+          <div>姓名：<span class="meta-line"></span></div>
+          <div>班级：<span class="meta-line"></span></div>
+          <div>完成用时：<span class="meta-line" style="min-width:50px;"></span> 分钟</div>
+          <div>得分：<span class="meta-line" style="min-width:50px;"></span> / 100分</div>
+        </div>
+      </div>
+      <div class="tips-box">作答要求：仔细审题，能简算的写出关键变形步骤；不能简算的按四则混合运算法则规范计算（最终分数化最简）。</div>
+    </div>
+
+    <div class="problem-grid">
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">1. &nbsp;<span class="frac"><span class="top">1</span><span class="bot">1×2</span></span> + <span class="frac"><span class="top">2</span><span class="bot">1×2×3</span></span> + <span class="frac"><span class="top">3</span><span class="bot">1×2×3×4</span></span> + <span class="frac"><span class="top">4</span><span class="bot">1×2×3×4×5</span></span> + <span class="frac"><span class="top">5</span><span class="bot">1×2×3×4×5×6</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">2. &nbsp;[<span class="frac"><span class="top">11</span><span class="bot">12</span></span> − (<span class="frac"><span class="top">1</span><span class="bot">6</span></span> + <span class="frac"><span class="top">1</span><span class="bot">8</span></span>) × 2] ÷ <span class="frac"><span class="top">7</span><span class="bot">12</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">3. &nbsp;(2 + <span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5</span></span>) − (2 + <span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span>)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">4. &nbsp;<span class="frac"><span class="top">8</span><span class="bot">15</span></span> × [<span class="frac"><span class="top">5</span><span class="bot">6</span></span> ÷ (<span class="frac"><span class="top">7</span><span class="bot">9</span></span> − <span class="frac"><span class="top">1</span><span class="bot">3</span></span>)] − <span class="frac"><span class="top">1</span><span class="bot">5</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">5. &nbsp;<span class="frac"><span class="top">1×3 + 2×6 + 3×9 + 4×12 + 5×15</span><span class="bot">1×5 + 2×10 + 3×15 + 4×20 + 5×25</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">6. &nbsp;7.8 × 36 + 78 × 6.4 − 780 × 0.5</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">7. &nbsp;(1 + <span class="frac"><span class="top">1</span><span class="bot">1×3</span></span>) × (1 + <span class="frac"><span class="top">1</span><span class="bot">2×4</span></span>) × (1 + <span class="frac"><span class="top">1</span><span class="bot">3×5</span></span>) × … × (1 + <span class="frac"><span class="top">1</span><span class="bot">8×10</span></span>)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">8. &nbsp;<span class="frac"><span class="top">1</span><span class="bot">1 + <span class="frac"><span class="top">1</span><span class="bot">1 + <span class="frac"><span class="top">1</span><span class="bot">1 + <span class="frac"><span class="top">1</span><span class="bot">2</span></span></span></span></span></span></span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">9. &nbsp;2026² − 2025 × 2027</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">10. &nbsp;1 − <span class="frac"><span class="top">1</span><span class="bot">2</span></span> ÷ <span class="frac"><span class="top">1</span><span class="bot">2</span></span> × <span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">2</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 空白试卷</span>
+    <span>第 5 页（共 10 页）</span>
+  </div>
+</div>
+<!-- ==================== 空白试卷 第 6 页（练习16） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content exam-flex">
+    <div>
+      <div class="ex-header">
+        <div class="title-row">
+          <div class="main-title">练习16：四则混合运算巅峰突破（等差裂项变式与分组抵消）</div>
+          <div class="diff-tag">巅峰难度：★★★★★★★</div>
+        </div>
+        <div class="meta-row">
+          <div>姓名：<span class="meta-line"></span></div>
+          <div>班级：<span class="meta-line"></span></div>
+          <div>完成用时：<span class="meta-line" style="min-width:50px;"></span> 分钟</div>
+          <div>得分：<span class="meta-line" style="min-width:50px;"></span> / 100分</div>
+        </div>
+      </div>
+      <div class="tips-box">作答要求：仔细审题，能简算的写出关键变形步骤；不能简算的按四则混合运算法则规范计算（最终分数化最简）。</div>
+    </div>
+
+    <div class="problem-grid">
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">1. &nbsp;<span class="frac"><span class="top">3</span><span class="bot">2×5</span></span> + <span class="frac"><span class="top">3</span><span class="bot">5×8</span></span> + <span class="frac"><span class="top">3</span><span class="bot">8×11</span></span> + <span class="frac"><span class="top">3</span><span class="bot">11×14</span></span> + <span class="frac"><span class="top">3</span><span class="bot">14×17</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">2. &nbsp;[4 − (<span class="frac"><span class="top">5</span><span class="bot">6</span></span> + <span class="frac"><span class="top">3</span><span class="bot">4</span></span>) × <span class="frac"><span class="top">12</span><span class="bot">19</span></span>] ÷ <span class="frac"><span class="top">5</span><span class="bot">8</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">3. &nbsp;(<span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">10</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">5</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">11</span></span>) − (<span class="frac"><span class="top">1</span><span class="bot">4</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">11</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">5</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">10</span></span>)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">4. &nbsp;<span class="frac"><span class="top">11</span><span class="bot">15</span></span> ÷ [(<span class="frac"><span class="top">4</span><span class="bot">5</span></span> − 60%) × <span class="frac"><span class="top">11</span><span class="bot">6</span></span>] + <span class="frac"><span class="top">1</span><span class="bot">3</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">5. &nbsp;<span class="frac"><span class="top">2027 × 2026 − 2025</span><span class="bot">2027 × 2025 + 2</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">6. &nbsp;(5.6 × 9.6 × 3.5) ÷ (1.4 × 2.4 × 0.7)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">7. &nbsp;1<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + 2<span class="frac"><span class="top">1</span><span class="bot">6</span></span> + 3<span class="frac"><span class="top">1</span><span class="bot">12</span></span> + 4<span class="frac"><span class="top">1</span><span class="bot">20</span></span> + 5<span class="frac"><span class="top">1</span><span class="bot">30</span></span> + 6<span class="frac"><span class="top">1</span><span class="bot">42</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">8. &nbsp;[2.5 − (<span class="frac"><span class="top">7</span><span class="bot">8</span></span> − 0.375) ÷ <span class="frac"><span class="top">5</span><span class="bot">6</span></span>] × <span class="frac"><span class="top">10</span><span class="bot">19</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">9. &nbsp;111111 × 999999 + 999999 × 777777</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">10. &nbsp;72 ÷ 9 × 8 ÷ 4 × 2 − 16</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 空白试卷</span>
+    <span>第 6 页（共 10 页）</span>
+  </div>
+</div>
+<!-- ==================== 空白试卷 第 7 页（练习17） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content exam-flex">
+    <div>
+      <div class="ex-header">
+        <div class="title-row">
+          <div class="main-title">练习17：四则混合运算巅峰突破（双重约分与分数群组巧算）</div>
+          <div class="diff-tag">巅峰难度：★★★★★★★</div>
+        </div>
+        <div class="meta-row">
+          <div>姓名：<span class="meta-line"></span></div>
+          <div>班级：<span class="meta-line"></span></div>
+          <div>完成用时：<span class="meta-line" style="min-width:50px;"></span> 分钟</div>
+          <div>得分：<span class="meta-line" style="min-width:50px;"></span> / 100分</div>
+        </div>
+      </div>
+      <div class="tips-box">作答要求：仔细审题，能简算的写出关键变形步骤；不能简算的按四则混合运算法则规范计算（最终分数化最简）。</div>
+    </div>
+
+    <div class="problem-grid">
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">1. &nbsp;<span class="frac"><span class="top">1</span><span class="bot">1×3×5</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3×5×7</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5×7×9</span></span> + <span class="frac"><span class="top">1</span><span class="bot">7×9×11</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">2. &nbsp;[(3<span class="frac"><span class="top">1</span><span class="bot">3</span></span> − 1<span class="frac"><span class="top">5</span><span class="bot">6</span></span>) × <span class="frac"><span class="top">4</span><span class="bot">5</span></span> + 0.8] ÷ 2</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">3. &nbsp;(1 + <span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">8</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">8</span></span> + <span class="frac"><span class="top">1</span><span class="bot">16</span></span>) − (1 + <span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">8</span></span> + <span class="frac"><span class="top">1</span><span class="bot">16</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">8</span></span>)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">4. &nbsp;<span class="frac"><span class="top">13</span><span class="bot">18</span></span> ÷ [<span class="frac"><span class="top">13</span><span class="bot">12</span></span> × (<span class="frac"><span class="top">5</span><span class="bot">9</span></span> + <span class="frac"><span class="top">1</span><span class="bot">9</span></span>)] × <span class="frac"><span class="top">9</span><span class="bot">5</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">5. &nbsp;<span class="frac"><span class="top">2025 × 2026 − 2024</span><span class="bot">2025 × 2024 + 2026</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">6. &nbsp;238 ÷ 238<span class="frac"><span class="top">238</span><span class="bot">239</span></span> + <span class="frac"><span class="top">1</span><span class="bot">240</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">7. &nbsp;(1 − <span class="frac"><span class="top">1</span><span class="bot">2²</span></span>) × (1 − <span class="frac"><span class="top">1</span><span class="bot">3²</span></span>) × … × (1 − <span class="frac"><span class="top">1</span><span class="bot">20²</span></span>)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">8. &nbsp;[<span class="frac"><span class="top">7</span><span class="bot">12</span></span> + (<span class="frac"><span class="top">3</span><span class="bot">4</span></span> − 50%) × <span class="frac"><span class="top">5</span><span class="bot">3</span></span>] ÷ <span class="frac"><span class="top">5</span><span class="bot">6</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">9. &nbsp;66666 × 44444 + 33333 × 11112</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">10. &nbsp;10 − 10 × <span class="frac"><span class="top">2</span><span class="bot">5</span></span> ÷ <span class="frac"><span class="top">2</span><span class="bot">5</span></span> × <span class="frac"><span class="top">2</span><span class="bot">5</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 空白试卷</span>
+    <span>第 7 页（共 10 页）</span>
+  </div>
+</div>
+<!-- ==================== 空白试卷 第 8 页（练习18） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content exam-flex">
+    <div>
+      <div class="ex-header">
+        <div class="title-row">
+          <div class="main-title">练习18：四则混合运算巅峰突破（配凑裂项与复杂比例分配律）</div>
+          <div class="diff-tag">巅峰难度：★★★★★★★</div>
+        </div>
+        <div class="meta-row">
+          <div>姓名：<span class="meta-line"></span></div>
+          <div>班级：<span class="meta-line"></span></div>
+          <div>完成用时：<span class="meta-line" style="min-width:50px;"></span> 分钟</div>
+          <div>得分：<span class="meta-line" style="min-width:50px;"></span> / 100分</div>
+        </div>
+      </div>
+      <div class="tips-box">作答要求：仔细审题，能简算的写出关键变形步骤；不能简算的按四则混合运算法则规范计算（最终分数化最简）。</div>
+    </div>
+
+    <div class="problem-grid">
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">1. &nbsp;<span class="frac"><span class="top">1</span><span class="bot">2×4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4×6</span></span> + <span class="frac"><span class="top">1</span><span class="bot">6×8</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">18×20</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">2. &nbsp;[6 − (1.5 + <span class="frac"><span class="top">3</span><span class="bot">4</span></span>) ÷ <span class="frac"><span class="top">9</span><span class="bot">8</span></span>] × <span class="frac"><span class="top">5</span><span class="bot">12</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">3. &nbsp;(3 + <span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5</span></span> + <span class="frac"><span class="top">1</span><span class="bot">6</span></span>) − (3 + <span class="frac"><span class="top">1</span><span class="bot">2</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">6</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">5</span></span>)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">4. &nbsp;51<span class="frac"><span class="top">2</span><span class="bot">3</span></span> ÷ <span class="frac"><span class="top">5</span><span class="bot">3</span></span> + 71<span class="frac"><span class="top">3</span><span class="bot">4</span></span> ÷ <span class="frac"><span class="top">7</span><span class="bot">4</span></span> + 91<span class="frac"><span class="top">4</span><span class="bot">5</span></span> ÷ <span class="frac"><span class="top">9</span><span class="bot">5</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">5. &nbsp;<span class="frac"><span class="top">2026² + 2026</span><span class="bot">2027² − 2027</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">6. &nbsp;0.65 × 6.4 − 6.5 × 0.54 + 65 × 0.09</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">7. &nbsp;<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">3</span><span class="bot">4</span></span> + <span class="frac"><span class="top">7</span><span class="bot">8</span></span> + <span class="frac"><span class="top">15</span><span class="bot">16</span></span> + <span class="frac"><span class="top">31</span><span class="bot">32</span></span> + <span class="frac"><span class="top">63</span><span class="bot">64</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">8. &nbsp;2 − <span class="frac"><span class="top">1</span><span class="bot">2 − <span class="frac"><span class="top">1</span><span class="bot">2 − <span class="frac"><span class="top">1</span><span class="bot">2</span></span></span></span></span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">9. &nbsp;2025 × 2024 − 2026 × 2023</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">10. &nbsp;(<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3</span></span>) ÷ (<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">2</span></span> − <span class="frac"><span class="top">1</span><span class="bot">3</span></span>) ÷ <span class="frac"><span class="top">1</span><span class="bot">6</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 空白试卷</span>
+    <span>第 8 页（共 10 页）</span>
+  </div>
+</div>
+<!-- ==================== 空白试卷 第 9 页（练习19） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content exam-flex">
+    <div>
+      <div class="ex-header">
+        <div class="title-row">
+          <div class="main-title">练习19：四则混合运算巅峰突破（小升初名校分班压轴综合（上））</div>
+          <div class="diff-tag">巅峰难度：★★★★★★★</div>
+        </div>
+        <div class="meta-row">
+          <div>姓名：<span class="meta-line"></span></div>
+          <div>班级：<span class="meta-line"></span></div>
+          <div>完成用时：<span class="meta-line" style="min-width:50px;"></span> 分钟</div>
+          <div>得分：<span class="meta-line" style="min-width:50px;"></span> / 100分</div>
+        </div>
+      </div>
+      <div class="tips-box">作答要求：仔细审题，能简算的写出关键变形步骤；不能简算的按四则混合运算法则规范计算（最终分数化最简）。</div>
+    </div>
+
+    <div class="problem-grid">
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">1. &nbsp;<span class="frac"><span class="top">4</span><span class="bot">1×5</span></span> + <span class="frac"><span class="top">4</span><span class="bot">5×9</span></span> + <span class="frac"><span class="top">4</span><span class="bot">9×13</span></span> + <span class="frac"><span class="top">4</span><span class="bot">13×17</span></span> + <span class="frac"><span class="top">4</span><span class="bot">17×21</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">2. &nbsp;[3.2 − (1<span class="frac"><span class="top">3</span><span class="bot">5</span></span> + 40%) × <span class="frac"><span class="top">3</span><span class="bot">4</span></span>] ÷ <span class="frac"><span class="top">17</span><span class="bot">20</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">3. &nbsp;(0.1 + 0.12 + 0.123 + 0.1234) × (0.12 + 0.123 + 0.1234 + 0.12345) − (0.1 + 0.12 + 0.123 + 0.1234 + 0.12345) × (0.12 + 0.123 + 0.1234)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">4. &nbsp;<span class="frac"><span class="top">11</span><span class="bot">14</span></span> ÷ [(<span class="frac"><span class="top">5</span><span class="bot">7</span></span> − <span class="frac"><span class="top">3</span><span class="bot">14</span></span>) × <span class="frac"><span class="top">11</span><span class="bot">10</span></span>] × <span class="frac"><span class="top">7</span><span class="bot">5</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">5. &nbsp;<span class="frac"><span class="top">123456 × 123456</span><span class="bot">123455 × 123457 + 1</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">6. &nbsp;(2.8 × 7.5 × 4.2) ÷ (0.7 × 1.5 × 1.4)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">7. &nbsp;(<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5</span></span>) × 60 − (<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span>) × 60</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">8. &nbsp;1<span class="frac"><span class="top">1</span><span class="bot">3</span></span> − <span class="frac"><span class="top">7</span><span class="bot">12</span></span> + <span class="frac"><span class="top">9</span><span class="bot">20</span></span> − <span class="frac"><span class="top">11</span><span class="bot">30</span></span> + <span class="frac"><span class="top">13</span><span class="bot">42</span></span> − <span class="frac"><span class="top">15</span><span class="bot">56</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">9. &nbsp;88888 × 33333 + 44444 × 33334</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">10. &nbsp;360 ÷ 12 × 3 + 360 ÷ (12 × 3) − 100</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 空白试卷</span>
+    <span>第 9 页（共 10 页）</span>
+  </div>
+</div>
+<!-- ==================== 空白试卷 第 10 页（练习20） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content exam-flex">
+    <div>
+      <div class="ex-header">
+        <div class="title-row">
+          <div class="main-title">练习20：四则混合运算巅峰突破（小升初名校分班压轴综合（巅峰收官））</div>
+          <div class="diff-tag">巅峰难度：★★★★★★★</div>
+        </div>
+        <div class="meta-row">
+          <div>姓名：<span class="meta-line"></span></div>
+          <div>班级：<span class="meta-line"></span></div>
+          <div>完成用时：<span class="meta-line" style="min-width:50px;"></span> 分钟</div>
+          <div>得分：<span class="meta-line" style="min-width:50px;"></span> / 100分</div>
+        </div>
+      </div>
+      <div class="tips-box">作答要求：仔细审题，能简算的写出关键变形步骤；不能简算的按四则混合运算法则规范计算（最终分数化最简）。</div>
+    </div>
+
+    <div class="problem-grid">
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">1. &nbsp;<span class="frac"><span class="top">1</span><span class="bot">1×2×3</span></span> + <span class="frac"><span class="top">1</span><span class="bot">2×3×4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3×4×5</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">8×9×10</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">2. &nbsp;[75% + (2<span class="frac"><span class="top">1</span><span class="bot">4</span></span> − 1.5) ÷ <span class="frac"><span class="top">3</span><span class="bot">2</span></span>] × <span class="frac"><span class="top">16</span><span class="bot">5</span></span> − 1</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">3. &nbsp;(1 + <span class="frac"><span class="top">1</span><span class="bot">2</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">20</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">21</span></span>) − (1 + <span class="frac"><span class="top">1</span><span class="bot">2</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">21</span></span>) × (<span class="frac"><span class="top">1</span><span class="bot">2</span></span> + … + <span class="frac"><span class="top">1</span><span class="bot">20</span></span>)</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">4. &nbsp;2026 ÷ 2026<span class="frac"><span class="top">2026</span><span class="bot">2027</span></span> + <span class="frac"><span class="top">1</span><span class="bot">2028</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">5. &nbsp;<span class="frac"><span class="top">2026³ − 2026</span><span class="bot">2025 × 2026 × 2027</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">6. &nbsp;8.4 × 125% + 1.6 × <span class="frac"><span class="top">5</span><span class="bot">4</span></span> − 1.25 × 2</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">7. &nbsp;(1 − <span class="frac"><span class="top">1</span><span class="bot">2²</span></span>) × (1 − <span class="frac"><span class="top">1</span><span class="bot">3²</span></span>) × … × (1 − <span class="frac"><span class="top">1</span><span class="bot">15²</span></span>) × <span class="frac"><span class="top">15</span><span class="bot">8</span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">8. &nbsp;1 + <span class="frac"><span class="top">1</span><span class="bot">2 + <span class="frac"><span class="top">1</span><span class="bot">3 + <span class="frac"><span class="top">1</span><span class="bot">4</span></span></span></span></span></span></div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">9. &nbsp;999999 × 777778 + 333333 × 666666</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    <div class="problem-box">
+      <div class="prob-header">
+        <div class="prob-expr">10. &nbsp;(<span class="frac"><span class="top">2</span><span class="bot">3</span></span> + <span class="frac"><span class="top">3</span><span class="bot">4</span></span>) × 12 − <span class="frac"><span class="top">2</span><span class="bot">3</span></span> ÷ <span class="frac"><span class="top">3</span><span class="bot">4</span></span> × <span class="frac"><span class="top">3</span><span class="bot">4</span></span> × 12</div>
+      </div>
+      <div class="working-area">
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+        <div class="draft-line"></div>
+      </div>
+      <div class="ans-target">答案：<span class="ans-underline"></span></div>
+    </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 空白试卷</span>
+    <span>第 10 页（共 10 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第二部分：参考答案总览（独立起页） ==================== -->
+<div class="sheet part-answer">
+  <div class="sheet-content">
+    <div class="part-header">
+      <h2>全套 100 题参考答案总览与评分标准（练习 11–20）</h2>
+      <p>供家长与教师快速核对 ｜ 详细算理变形与易错提醒见后续「题目分析」部分</p>
+    </div>
+    <div class="rubric-bar">
+      <strong>评分标准：</strong>每份练习共 10 题，每题 10 分，满分 100 分。计算结果正确且写出合理步骤得 10 分；巧算题虽未用巧算但结果正确得 8 分（建议订正时补学巧算思路）；最终分数未化最简扣 1 分；过程正确仅抄错/漏约分酌情扣 2~3 分。
+    </div>
+      <div class="sum-set">
+        <div class="sum-set-head"><strong>练习 11</strong><span class="sum-sub">三项裂项进阶与高阶换元</span></div>
+        <div class="sum-grid"><span class="sum-chip"><strong>1.</strong> 1/14</span><span class="sum-chip"><strong>2.</strong> 3</span><span class="sum-chip"><strong>3.</strong> 1/13</span><span class="sum-chip"><strong>4.</strong> 1</span><span class="sum-chip"><strong>5.</strong> 1</span><span class="sum-chip"><strong>6.</strong> 30</span><span class="sum-chip"><strong>7.</strong> 13/24</span><span class="sum-chip"><strong>8.</strong> 2又2/5(2.4)</span><span class="sum-chip"><strong>9.</strong> 9999900000</span><span class="sum-chip"><strong>10.</strong> 50</span></div>
+      </div>
+      <div class="sum-set">
+        <div class="sum-set-head"><strong>练习 12</strong><span class="sum-sub">等差裂项与立方整体约分</span></div>
+        <div class="sum-grid"><span class="sum-chip"><strong>1.</strong> 6/19</span><span class="sum-chip"><strong>2.</strong> 2</span><span class="sum-chip"><strong>3.</strong> 3/25(0.12)</span><span class="sum-chip"><strong>4.</strong> 1又1/14(15/14)</span><span class="sum-chip"><strong>5.</strong> 2/5(0.4)</span><span class="sum-chip"><strong>6.</strong> 1620</span><span class="sum-chip"><strong>7.</strong> 1又127/128(255/128)</span><span class="sum-chip"><strong>8.</strong> 1又1/4(1.25)</span><span class="sum-chip"><strong>9.</strong> 0</span><span class="sum-chip"><strong>10.</strong> 5/8(0.625)</span></div>
+      </div>
+      <div class="sum-set">
+        <div class="sum-set-head"><strong>练习 13</strong><span class="sum-sub">分子为和的裂和消去与繁分数</span></div>
+        <div class="sum-grid"><span class="sum-chip"><strong>1.</strong> 1又1/8(1.125)</span><span class="sum-chip"><strong>2.</strong> 1</span><span class="sum-chip"><strong>3.</strong> 1/12</span><span class="sum-chip"><strong>4.</strong> 3又3/5(3.6)</span><span class="sum-chip"><strong>5.</strong> 2</span><span class="sum-chip"><strong>6.</strong> 30</span><span class="sum-chip"><strong>7.</strong> 5/9</span><span class="sum-chip"><strong>8.</strong> 7/10(0.7)</span><span class="sum-chip"><strong>9.</strong> 100000000</span><span class="sum-chip"><strong>10.</strong> 170</span></div>
+      </div>
+      <div class="sum-set">
+        <div class="sum-set-head"><strong>练习 14</strong><span class="sum-sub">带分数拆分与等比错位相减</span></div>
+        <div class="sum-grid"><span class="sum-chip"><strong>1.</strong> 22/45</span><span class="sum-chip"><strong>2.</strong> 2</span><span class="sum-chip"><strong>3.</strong> 1/9</span><span class="sum-chip"><strong>4.</strong> 2026/2027</span><span class="sum-chip"><strong>5.</strong> 2</span><span class="sum-chip"><strong>6.</strong> 123</span><span class="sum-chip"><strong>7.</strong> 121/243</span><span class="sum-chip"><strong>8.</strong> 2/5(0.4)</span><span class="sum-chip"><strong>9.</strong> 5050</span><span class="sum-chip"><strong>10.</strong> 14</span></div>
+      </div>
+      <div class="sum-set">
+        <div class="sum-set-head"><strong>练习 15</strong><span class="sum-sub">阶乘裂项与乘法分配律变形</span></div>
+        <div class="sum-grid"><span class="sum-chip"><strong>1.</strong> 719/720</span><span class="sum-chip"><strong>2.</strong> 4/7</span><span class="sum-chip"><strong>3.</strong> 2/5(0.4)</span><span class="sum-chip"><strong>4.</strong> 4/5(0.8)</span><span class="sum-chip"><strong>5.</strong> 3/5(0.6)</span><span class="sum-chip"><strong>6.</strong> 390</span><span class="sum-chip"><strong>7.</strong> 1又4/5(1.8)</span><span class="sum-chip"><strong>8.</strong> 5/8(0.625)</span><span class="sum-chip"><strong>9.</strong> 1</span><span class="sum-chip"><strong>10.</strong> 1</span></div>
+      </div>
+      <div class="sum-set">
+        <div class="sum-set-head"><strong>练习 16</strong><span class="sum-sub">等差裂项变式与分组抵消</span></div>
+        <div class="sum-grid"><span class="sum-chip"><strong>1.</strong> 15/34</span><span class="sum-chip"><strong>2.</strong> 4又4/5(4.8)</span><span class="sum-chip"><strong>3.</strong> 1/44</span><span class="sum-chip"><strong>4.</strong> 2又1/3(7/3)</span><span class="sum-chip"><strong>5.</strong> 1</span><span class="sum-chip"><strong>6.</strong> 80</span><span class="sum-chip"><strong>7.</strong> 21又6/7(153/7)</span><span class="sum-chip"><strong>8.</strong> 1</span><span class="sum-chip"><strong>9.</strong> 888887111112</span><span class="sum-chip"><strong>10.</strong> 16</span></div>
+      </div>
+      <div class="sum-set">
+        <div class="sum-set-head"><strong>练习 17</strong><span class="sum-sub">双重约分与分数群组巧算</span></div>
+        <div class="sum-grid"><span class="sum-chip"><strong>1.</strong> 8/99</span><span class="sum-chip"><strong>2.</strong> 1</span><span class="sum-chip"><strong>3.</strong> 1/16</span><span class="sum-chip"><strong>4.</strong> 1又4/5(1.8)</span><span class="sum-chip"><strong>5.</strong> 1</span><span class="sum-chip"><strong>6.</strong> 1</span><span class="sum-chip"><strong>7.</strong> 21/40(0.525)</span><span class="sum-chip"><strong>8.</strong> 1又1/5(1.2)</span><span class="sum-chip"><strong>9.</strong> 3333300000</span><span class="sum-chip"><strong>10.</strong> 6</span></div>
+      </div>
+      <div class="sum-set">
+        <div class="sum-set-head"><strong>练习 18</strong><span class="sum-sub">配凑裂项与复杂比例分配律</span></div>
+        <div class="sum-grid"><span class="sum-chip"><strong>1.</strong> 9/40(0.225)</span><span class="sum-chip"><strong>2.</strong> 1又2/3(5/3)</span><span class="sum-chip"><strong>3.</strong> 1/2(0.5)</span><span class="sum-chip"><strong>4.</strong> 123</span><span class="sum-chip"><strong>5.</strong> 1</span><span class="sum-chip"><strong>6.</strong> 6又1/2(6.5)</span><span class="sum-chip"><strong>7.</strong> 5又1/64(321/64)</span><span class="sum-chip"><strong>8.</strong> 1又1/4(1.25)</span><span class="sum-chip"><strong>9.</strong> 2</span><span class="sum-chip"><strong>10.</strong> 1</span></div>
+      </div>
+      <div class="sum-set">
+        <div class="sum-set-head"><strong>练习 19</strong><span class="sum-sub">小升初名校分班压轴综合（上）</span></div>
+        <div class="sum-grid"><span class="sum-chip"><strong>1.</strong> 20/21</span><span class="sum-chip"><strong>2.</strong> 2</span><span class="sum-chip"><strong>3.</strong> 0.012345</span><span class="sum-chip"><strong>4.</strong> 2</span><span class="sum-chip"><strong>5.</strong> 1</span><span class="sum-chip"><strong>6.</strong> 60</span><span class="sum-chip"><strong>7.</strong> 12</span><span class="sum-chip"><strong>8.</strong> 7/8(0.875)</span><span class="sum-chip"><strong>9.</strong> 4444400000</span><span class="sum-chip"><strong>10.</strong> 0</span></div>
+      </div>
+      <div class="sum-set">
+        <div class="sum-set-head"><strong>练习 20</strong><span class="sum-sub">小升初名校分班压轴综合（巅峰收官）</span></div>
+        <div class="sum-grid"><span class="sum-chip"><strong>1.</strong> 11/45</span><span class="sum-chip"><strong>2.</strong> 3</span><span class="sum-chip"><strong>3.</strong> 1/21</span><span class="sum-chip"><strong>4.</strong> 1</span><span class="sum-chip"><strong>5.</strong> 1</span><span class="sum-chip"><strong>6.</strong> 10</span><span class="sum-chip"><strong>7.</strong> 1</span><span class="sum-chip"><strong>8.</strong> 1又13/30(43/30)</span><span class="sum-chip"><strong>9.</strong> 999999000000</span><span class="sum-chip"><strong>10.</strong> 9</span></div>
+      </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 参考答案</span>
+    <span>参考答案 第 1 页（共 1 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 题目分析 第 1 页 ==================== -->
+<div class="sheet part-analysis">
+  <div class="sheet-content">
+    <div class="part-header">
+      <h2>题目分析与巅峰技巧精析（练习 11–20）</h2>
+      <p>逐题拆解算理变形与避坑要点 ｜ 核心技巧：三项/等差/阶乘裂项 · 换元消去 · 平方差与立方恒等约分 · 拆整凑整 · 等比错位相减</p>
+    </div>
+      <div class="ana-set">
+        <div class="ana-set-title">练习 11：三项裂项进阶与高阶换元（核心技巧：三项裂项、换元消去、平方差连乘、叠数公因数）</div>
+        <div class="ana-grid">
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">1.</span> <span class="tag-qiao">巧算 · 三项裂项相消</span>　<strong>答案：1/14</strong></div>
+          <div class="ana-body"><strong>解析：</strong>利用 1/[n(n+1)(n+2)] = 1/2 × [1/(n(n+1)) − 1/((n+1)(n+2))]，原式 = 1/2 × (1/(2×3) − 1/(6×7)) = 1/2 × (1/6 − 1/42) = 1/2 × 6/42 = 1/14。</div>
+          <div class="ana-pit"><strong>易错点：</strong>三项裂项前必须乘 1/2（首尾两数差为 2），最后 1/6−1/42 = 6/42 = 1/7，再乘 1/2 得 1/14。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">2.</span> <span class="tag-chang">常规 · 多层括号分数混算</span>　<strong>答案：3</strong></div>
+          <div class="ana-body"><strong>解析：</strong>先算小括号 3/8+1/6=13/24，再除以 13/12 得 1/2；中括号 2−1/2=3/2；3/2×8/5+3/5 = 12/5+3/5 = 3。</div>
+          <div class="ana-pit"><strong>易错点：</strong>先算小括号内通分，除法变乘倒数约分后再算减法。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">3.</span> <span class="tag-qiao">巧算 · 高阶换元代换</span>　<strong>答案：1/13</strong></div>
+          <div class="ana-body"><strong>解析：</strong>令 A = 1/2+1/3+…+1/12，原式 = (1+A)(A+1/13) − (1+A+1/13)A = A + 1/13 + A² + A/13 − A − A² − A/13 = 1/13。</div>
+          <div class="ana-pit"><strong>易错点：</strong>找准公共串设元 A，展开时把 1 和 1/13 单独留出即可全部消去。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">4.</span> <span class="tag-chang">常规 · 嵌套括号分数乘除</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>小括号 7/8−2/8=5/8；中括号 5/8×4/9=5/18；原式 = 5/12 × 18/5 × 2/3 = 3/2 × 2/3 = 1。</div>
+          <div class="ana-pit"><strong>易错点：</strong>中括号外是同级乘除，必须从左往右依次计算，不可先算后面乘法。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">5.</span> <span class="tag-qiao">巧算 · 大数恒等变形约分</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>分子 2026×(2026+1)−1 = 2026² + 2026 − 1 = 2026² + 2025，与分母完全相同，商恒为 1。</div>
+          <div class="ana-pit"><strong>易错点：</strong>切忌硬算大数乘法，把 2027 拆成 2026+1 即可一眼看出分子分母相等。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">6.</span> <span class="tag-qiao">巧算 · 对应因数配对除法</span>　<strong>答案：30</strong></div>
+          <div class="ana-body"><strong>解析：</strong>分组配对：(4.5÷1.5) × (7.2÷3.6) × (1.25÷0.25) = 3 × 2 × 5 = 30。</div>
+          <div class="ana-pit"><strong>易错点：</strong>去括号时除号后面的乘号全部变为除号，成对相除最省力。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">7.</span> <span class="tag-qiao">巧算 · 平方差因式连乘</span>　<strong>答案：13/24</strong></div>
+          <div class="ana-body"><strong>解析：</strong>利用 1−1/n² = (n−1)/n × (n+1)/n，展开为 (1/2×3/2)×(2/3×4/3)×…×(11/12×13/12)，中间互为倒数全消，剩 1/2 × 13/12 = 13/24。</div>
+          <div class="ana-pit"><strong>易错点：</strong>首尾各保留一个分数：最左留 1/2，最右留 (n+1)/n。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">8.</span> <span class="tag-chang">常规 · 中括号分数混合</span>　<strong>答案：2又2/5（或 2.4）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>小括号 2/5+1/4=13/20，乘 20/13 得 1；中括号 3−1=2；2 ÷ 5/6 = 12/5（或 2又2/5）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>乘法先约分能直接得到整数 1，注意最后是除以 5/6。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">9.</span> <span class="tag-qiao">巧算 · 大数公因数重组</span>　<strong>答案：9999900000</strong></div>
+          <div class="ana-body"><strong>解析：</strong>把 33333×66666 改写为 (33333×3)×(66666÷3) = 99999×22222，提取 99999 得 99999×(77778+22222) = 99999×100000 = 9999900000。</div>
+          <div class="ana-pit"><strong>易错点：</strong>观察 99999 是 33333 的 3 倍，借 3 凑出相同公因数 99999。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">10.</span> <span class="tag-chang">常规 · 同级运算顺序陷阱</span>　<strong>答案：50</strong></div>
+          <div class="ana-body"><strong>解析：</strong>乘除同级严格从左往右：120 ÷ 6 = 20，20 × 5 = 100；原式 = 120 − 100 + 30 = 50。</div>
+          <div class="ana-pit"><strong>易错点：</strong>切勿先算 6×5=30 再用 120÷30，也切勿先算 100+30。</div>
+        </div>
+        </div>
+      </div>
+      <div class="ana-set">
+        <div class="ana-set-title">练习 12：等差裂项与立方整体约分（核心技巧：间隔3裂项、换元含系数、立方提取整体约分、叠数相消）</div>
+        <div class="ana-grid">
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">1.</span> <span class="tag-qiao">巧算 · 等差间隔3裂项</span>　<strong>答案：6/19</strong></div>
+          <div class="ana-body"><strong>解析：</strong>母积子差，间隔为 3：原式 = 1/3 × (1 − 1/4 + 1/4 − 1/7 + … − 1/19) = 1/3 × (1 − 1/19) = 1/3 × 18/19 = 6/19。</div>
+          <div class="ana-pit"><strong>易错点：</strong>分母两数差 3，必须在最前面乘 1/3。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">2.</span> <span class="tag-chang">常规 · 分小混合中括号计算</span>　<strong>答案：2</strong></div>
+          <div class="ana-body"><strong>解析：</strong>1.25+5/8 = 15/8，乘 1.6(=8/5) 得 3；中括号 4.5−3 = 1.5 = 3/2；3/2 ÷ 3/4 = 2。</div>
+          <div class="ana-pit"><strong>易错点：</strong>小数与分数混算时，将 1.25 化 5/4、1.6 化 8/5 极易约分。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">3.</span> <span class="tag-qiao">巧算 · 小数串换元法</span>　<strong>答案：3/25（或 0.12）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>令 A = 0.3+0.4+0.5，原式 = (0.2+A)(A+0.6) − (0.2+A+0.6)A = 0.2×0.6 = 0.12（或 3/25）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>注意首尾两数分别是 0.2 和 0.6，相乘得 0.12 而非 1.2。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">4.</span> <span class="tag-chang">常规 · 多层除法嵌套</span>　<strong>答案：1又1/14（或 15/14）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>小括号 5/6−2/6=1/2；中括号 1/2 × 14/15 = 7/15；原式 = 7/9 × 15/7 × 9/14 = 15/14（或 1又1/14）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>连续分数除法全部转化为乘倒数后统一交叉约分。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">5.</span> <span class="tag-qiao">巧算 · 提取立方公因式整体约分</span>　<strong>答案：2/5（或 0.4）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>分子 = (1×2×3)×(1³+2³+3³+4³)，分母 = (1×3×5)×(1³+2³+3³+4³)，整体约掉括号得 6/15 = 2/5。</div>
+          <div class="ana-pit"><strong>易错点：</strong>每一项都放大 k 倍，三个因数相乘实际提取的是 k³。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">6.</span> <span class="tag-qiao">巧算 · 积不变定律统一公因数</span>　<strong>答案：1620</strong></div>
+          <div class="ana-body"><strong>解析：</strong>3.75=3/8×10，前两项统一提 3.75：3.75×(735−573) = 3.75×162 = 37.5×16.2；再加上 16.2×62.5，提 16.2 得 16.2×(37.5+62.5) = 16.2×100 = 1620！</div>
+          <div class="ana-pit"><strong>易错点：</strong>需要两次提取公因数：先对齐 3.75，算出 162 后再与 16.2 对齐凑整百。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">7.</span> <span class="tag-qiao">巧算 · 等比折半借一还一</span>　<strong>答案：1又127/128（或 255/128）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>借一个 1/128，从右向左逐级合并得 2，再还掉 1/128：2 − 1/128 = 1又127/128（或 255/128）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>注意首项是 1（不是 1/2），故补足后是 2 而不是 1。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">8.</span> <span class="tag-chang">常规 · 带分数与小数综合</span>　<strong>答案：1又1/4（或 1.25）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>前括号 3.25−1.75=1.5=3/2；中括号 3/2×4/5=6/5；3/2 ÷ 6/5 = 5/4（或 1.25）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>3又1/4 = 3.25，化小数相减更不容易出错。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">9.</span> <span class="tag-qiao">巧算 · 重数（位值叠数）分解</span>　<strong>答案：0</strong></div>
+          <div class="ana-body"><strong>解析：</strong>20252025 = 2025×10001，20262026 = 2026×10001，原式 = 2026×2025×10001 − 2025×2026×10001 = 0。</div>
+          <div class="ana-pit"><strong>易错点：</strong>四位重数 abcdabcd = abcd × 10001，是小升初必背分解式。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">10.</span> <span class="tag-chang">常规 · 同级乘除防误约陷阱</span>　<strong>答案：5/8（或 0.625）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>前四项乘除同级从左往右，4/5 约掉但两个 5/8 相乘得 25/64；25/64 + 15/64 = 40/64 = 5/8。</div>
+          <div class="ana-pit"><strong>易错点：</strong>切忌误认为“前面乘 4/5×5/8 除以 4/5×5/8 等于 1”。</div>
+        </div>
+        </div>
+      </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 题目分析</span>
+    <span>题目分析 第 1 页（共 5 页）</span>
+  </div>
+</div>
+<!-- ==================== 题目分析 第 2 页 ==================== -->
+<div class="sheet part-analysis">
+  <div class="sheet-content">
+
+      <div class="ana-set">
+        <div class="ana-set-title">练习 13：分子为和的裂和消去与繁分数（核心技巧：正负交替裂和、平方差约分、繁分数化简、等比三分之一）</div>
+        <div class="ana-grid">
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">1.</span> <span class="tag-qiao">巧算 · 正负交替裂和相消</span>　<strong>答案：1又1/8（或 1.125）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>每项拆成两分数之和：(1+1/2)−(1/2+1/3)+(1/3+1/4)−(1/4+1/5)+(1/5+1/6)−(1/6+1/7)+(1/7+1/8)，去括号正负相消剩 1 + 1/8 = 1又1/8（或 9/8）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>减号后拆出的括号展开时两项都要变减号，正负交替才能刚好抵消。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">2.</span> <span class="tag-chang">常规 · 中括号分数混合</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>小括号 15/20−8/20=7/20；7/20 ÷ 7/8 = 2/5；中括号 7/10+4/10=11/10；11/10 × 10/11 = 1。</div>
+          <div class="ana-pit"><strong>易错点：</strong>一步步约分化简，结果极为整洁。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">3.</span> <span class="tag-qiao">巧算 · 双端非1分数换元</span>　<strong>答案：1/12</strong></div>
+          <div class="ana-body"><strong>解析：</strong>令 A = 1/3+1/4+1/5，原式 = (1/2+A)(A+1/6) − (1/2+A+1/6)A = 1/2 × 1/6 = 1/12。</div>
+          <div class="ana-pit"><strong>易错点：</strong>记住通式：(a+A)(A+b)−(a+A+b)A = a×b，这里 a=1/2、b=1/6。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">4.</span> <span class="tag-chang">常规 · 带分数小数综合运算</span>　<strong>答案：3又3/5（或 3.6）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>小括号 5/6−2/6=1/2；中括号 7/5×1/2=7/10；21/5 ÷ 7/10 = 6；6 − 2又2/5 = 3又3/5（或 3.6）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>带分数做乘除时先统一化为假分数。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">5.</span> <span class="tag-qiao">巧算 · 平方差公式整体约分</span>　<strong>答案：2</strong></div>
+          <div class="ana-body"><strong>解析：</strong>利用 a²−b²=(a+b)(a−b)，第一项约去 (2025+2024) 得 2025−2024=1；第二项同理得 1；1+1 = 2。</div>
+          <div class="ana-pit"><strong>易错点：</strong>看到分子是两数平方差、分母是两数之和，立刻联想到平方差因式分解。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">6.</span> <span class="tag-qiao">巧算 · 对应因数配对除法</span>　<strong>答案：30</strong></div>
+          <div class="ana-body"><strong>解析：</strong>(6.4÷3.2) × (12.5÷2.5) × (8.1÷2.7) = 2 × 5 × 3 = 30。</div>
+          <div class="ana-pit"><strong>易错点：</strong>先观察每对倍数关系，再配对相除。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">7.</span> <span class="tag-qiao">巧算 · 交错因式分组连乘约分</span>　<strong>答案：5/9</strong></div>
+          <div class="ana-body"><strong>解析：</strong>加号项连乘：3/2×4/3×…×10/9 = 10/2 = 5；减号项连乘：1/2×2/3×…×8/9 = 1/9；相乘得 5 × 1/9 = 5/9。</div>
+          <div class="ana-pit"><strong>易错点：</strong>本质与平方差连乘相同，将加号项与减号项分组各自对角约分最清晰。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">8.</span> <span class="tag-chang">常规 · 多层繁分数化简</span>　<strong>答案：7/10（或 0.7）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>从最底层由下向上逐层化简：2+1/3=7/3 → 1/(7/3)=3/7 → 1+3/7=10/7 → 1 ÷ 10/7 = 7/10（或 0.7）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>繁分数必须从最底层开始化简，切忌跨层乱约分。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">9.</span> <span class="tag-qiao">巧算 · 拆数配完全平方</span>　<strong>答案：100000000</strong></div>
+          <div class="ana-body"><strong>解析：</strong>19999 = 2×9999 + 1，原式 = 9999² + 2×9999 + 1 = (9999+1)² = 10000² = 100000000（1亿）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>也可拆成 9999×9999 + 9999 + 10000 = 9999×10000 + 10000 = 10000×10000。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">10.</span> <span class="tag-chang">常规 · 运算顺序与分配律防错</span>　<strong>答案：170</strong></div>
+          <div class="ana-body"><strong>解析：</strong>分别计算乘除：240÷8×3 = 30×3 = 90，240÷12 = 20；再算加减：240 − 90 + 20 = 170。</div>
+          <div class="ana-pit"><strong>易错点：</strong>切勿误用“除法对加法分配律”把 240÷8 和 240÷12 合并成 240÷(8+12)。</div>
+        </div>
+        </div>
+      </div>
+      <div class="ana-set">
+        <div class="ana-set-title">练习 14：带分数拆分与等比错位相减（核心技巧：大数带分数拆项、错位相减、分子平方差裂项、百分数综合）</div>
+        <div class="ana-grid">
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">1.</span> <span class="tag-qiao">巧算 · 分子为2的三项直接裂项</span>　<strong>答案：22/45</strong></div>
+          <div class="ana-body"><strong>解析：</strong>2/[n(n+1)(n+2)] = 1/[n(n+1)] − 1/[(n+1)(n+2)]（无需再乘 1/2！），原式 = 1/(1×2) − 1/(9×10) = 1/2 − 1/90 = 44/90 = 22/45。</div>
+          <div class="ana-pit"><strong>易错点：</strong>分子正好是首尾之差 2，直接裂项不需乘系数，别习惯性多乘一个 1/2！</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">2.</span> <span class="tag-chang">常规 · 百分数与分数混合运算</span>　<strong>答案：2</strong></div>
+          <div class="ana-body"><strong>解析：</strong>25%+3/8 = 5/8，乘 4 得 5/2；中括号 5−5/2 = 5/2；5/2 ÷ 5/4 = 2。</div>
+          <div class="ana-pit"><strong>易错点：</strong>把 25% 化为 1/4、1又1/4 化为 5/4，计算一步到位。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">3.</span> <span class="tag-qiao">巧算 · 奇数分母串换元法</span>　<strong>答案：1/9</strong></div>
+          <div class="ana-body"><strong>解析：</strong>令 A = 1/3+1/5+1/7，原式 = (1+A)(A+1/9) − (1+A+1/9)A = 1 × 1/9 = 1/9。</div>
+          <div class="ana-pit"><strong>易错点：</strong>分母是否连续不影响换元结构，只要识别出公共串即可。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">4.</span> <span class="tag-qiao">巧算 · 大数带分数提公因数约分</span>　<strong>答案：2026/2027</strong></div>
+          <div class="ana-body"><strong>解析：</strong>除数 2025又2025/2026 = 2025×(1 + 1/2026) = 2025×2027/2026；商 = 2025 ÷ (2025×2027/2026) = 2026/2027。</div>
+          <div class="ana-pit"><strong>易错点：</strong>切勿强行把带分数分子乘开！先提取整数 2025 约分。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">5.</span> <span class="tag-qiao">巧算 · 双恒等式整体约分</span>　<strong>答案：2</strong></div>
+          <div class="ana-body"><strong>解析：</strong>第一项分子分母均为 2025×2026×10001，商为 1；第二项分子 2024²+2023 等于分母，商为 1；1+1 = 2。</div>
+          <div class="ana-pit"><strong>易错点：</strong>两个看似吓人的大数分式，分别恒等于 1。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">6.</span> <span class="tag-qiao">巧算 · 带分数拆整巧算</span>　<strong>答案：123</strong></div>
+          <div class="ana-body"><strong>解析：</strong>拆成能被分母整除的整数+假分数：(40+4/3)×3/4 + (50+5/4)×4/5 + (60+6/5)×5/6 = (30+1) + (40+1) + (50+1) = 31 + 41 + 51 = 123。</div>
+          <div class="ana-pit"><strong>易错点：</strong>把 41又1/3 拆成 40 + 4/3，使两部分都能与 3/4 完美约分，是竞赛神技！</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">7.</span> <span class="tag-qiao">巧算 · 等比数列错位相减</span>　<strong>答案：121/243</strong></div>
+          <div class="ana-body"><strong>解析：</strong>设 S = 1/3+1/9+…+1/243，则 3S = 1+1/3+1/9+…+1/81；两式相减 2S = 1 − 1/243 = 242/243 ⇒ S = 121/243。</div>
+          <div class="ana-pit"><strong>易错点：</strong>公比为 1/3 时用“乘 3 错位相减”，记住最后别忘除以 2。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">8.</span> <span class="tag-chang">常规 · 小数百分数分数混算</span>　<strong>答案：2/5（或 0.4）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>小括号 1.8+0.6=2.4；2.4 ÷ 1.2 = 2；中括号 3.6−2 = 1.6；1.6 × 0.25 = 0.4（或 2/5）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>60%=0.6、6/5=1.2、25%=0.25，全化小数极速秒算。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">9.</span> <span class="tag-qiao">巧算 · 平方差配对转等差求和</span>　<strong>答案：5050</strong></div>
+          <div class="ana-body"><strong>解析：</strong>两两配对用平方差：(100+99)(100−99) + (98+97)(98−97) + … + (2+1)(2−1) = 100+99+98+…+2+1 = (1+100)×100÷2 = 5050。</div>
+          <div class="ana-pit"><strong>易错点：</strong>每对差恰好为 1，直接转化为高斯求和 1+2+…+100。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">10.</span> <span class="tag-chang">常规 · 括号有无对比陷阱</span>　<strong>答案：14</strong></div>
+          <div class="ana-body"><strong>解析：</strong>前半部分无括号从左往右：18 × 4/3 × 4/3 = 32；后半部分有括号先算括号内得 1，18 ÷ 1 = 18；32 − 18 = 14。</div>
+          <div class="ana-pit"><strong>易错点：</strong>经典易错对照题：有括号和无括号结果截然不同，切忌盲目抵消得 0！</div>
+        </div>
+        </div>
+      </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 题目分析</span>
+    <span>题目分析 第 2 页（共 5 页）</span>
+  </div>
+</div>
+<!-- ==================== 题目分析 第 3 页 ==================== -->
+<div class="sheet part-analysis">
+  <div class="sheet-content">
+
+      <div class="ana-set">
+        <div class="ana-set-title">练习 15：阶乘裂项与乘法分配律变形（核心技巧：阶乘式裂项、分数连乘变形、平方差与完全平方大数）</div>
+        <div class="ana-grid">
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">1.</span> <span class="tag-qiao">巧算 · 阶乘型裂项相消</span>　<strong>答案：719/720</strong></div>
+          <div class="ana-body"><strong>解析：</strong>将分子 k 改写为 (k+1)−1，得 k/(k+1)! = 1/k! − 1/(k+1)!；原式 = (1 − 1/2!) + (1/2! − 1/3!) + … + (1/5! − 1/6!) = 1 − 1/720 = 719/720。</div>
+          <div class="ana-pit"><strong>易错点：</strong>1×2×3×4×5×6 = 720，识别分子比最后因数小 1 是裂项钥匙。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">2.</span> <span class="tag-chang">常规 · 中括号分数混算</span>　<strong>答案：4/7</strong></div>
+          <div class="ana-body"><strong>解析：</strong>乘法分配律展开小括号：(1/6+1/8)×2 = 1/3+1/4 = 7/12；中括号 11/12−7/12 = 4/12 = 1/3；1/3 ÷ 7/12 = 4/7。</div>
+          <div class="ana-pit"><strong>易错点：</strong>先对小括号乘 2 用分配律，避免通分到 24。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">3.</span> <span class="tag-qiao">巧算 · 首项为2的高阶换元</span>　<strong>答案：2/5（或 0.4）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>令 A = 1/2+1/3+1/4，原式 = (2+A)(A+1/5) − (2+A+1/5)A = 2 × 1/5 = 2/5。</div>
+          <div class="ana-pit"><strong>易错点：</strong>首项是 2 而不是 1，最终结果是 2×1/5 = 2/5，切勿惯性写 1/5！</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">4.</span> <span class="tag-chang">常规 · 嵌套分数乘除减</span>　<strong>答案：4/5（或 0.8）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>小括号 7/9−3/9=4/9；中括号 5/6 × 9/4 = 15/8；8/15 × 15/8 − 1/5 = 1 − 1/5 = 4/5。</div>
+          <div class="ana-pit"><strong>易错点：</strong>约分后正好出现互为倒数的 8/15 × 15/8 = 1。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">5.</span> <span class="tag-qiao">巧算 · 提取平方公因式约分</span>　<strong>答案：3/5（或 0.6）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>分子 = 3×(1²+2²+3²+4²+5²)，分母 = 5×(1²+2²+3²+4²+5²)，整体约去平方和得 3/5。</div>
+          <div class="ana-pit"><strong>易错点：</strong>识别每项都是 3k² 与 5k²，提取后整体消去。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">6.</span> <span class="tag-qiao">巧算 · 小数点移动统一公因数</span>　<strong>答案：390</strong></div>
+          <div class="ana-body"><strong>解析：</strong>统一转化为公因数 78：78×3.6 + 78×6.4 − 78×5 = 78×(3.6+6.4−5) = 78×5 = 390。</div>
+          <div class="ana-pit"><strong>易错点：</strong>积不变规律：一个因数扩 10 倍，另一个因数缩 10 倍。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">7.</span> <span class="tag-qiao">巧算 · 完全平方构造对角连乘</span>　<strong>答案：1又4/5（或 1.8）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>1 + 1/[k(k+2)] = [k(k+2)+1]/[k(k+2)] = (k+1)²/[k(k+2)] = (k+1)/k × (k+1)/(k+2)；连乘对角全消，剩 2/1 × 9/10 = 9/5（或 1.8）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>竞赛名题！k(k+2)+1 = (k+1)² 是构造连乘约分的关键。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">8.</span> <span class="tag-chang">常规 · 斐波那契型连分数</span>　<strong>答案：5/8（或 0.625）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>自下而上：1+1/2=3/2 → 1+2/3=5/3 → 1+3/5=8/5 → 1/(8/5) = 5/8。</div>
+          <div class="ana-pit"><strong>易错点：</strong>逐层取倒数加 1，结果分子分母恰好是相邻斐波那契数 5 和 8。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">9.</span> <span class="tag-qiao">巧算 · 中项平方差巧算</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>2025×2027 = (2026−1)(2026+1) = 2026² − 1；原式 = 2026² − (2026² − 1) = 1。</div>
+          <div class="ana-pit"><strong>易错点：</strong>减号后面添括号展开时注意 −(−1) 变成 +1。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">10.</span> <span class="tag-chang">常规 · 同级乘除与加减顺序</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>先算中间乘除：1/2 ÷ 1/2 × 1/2 = 1 × 1/2 = 1/2；再算加减：1 − 1/2 + 1/2 = 1。</div>
+          <div class="ana-pit"><strong>易错点：</strong>先乘除后加减，切勿把前面的 1−1/2 先算成 1/2。</div>
+        </div>
+        </div>
+      </div>
+      <div class="ana-set">
+        <div class="ana-set-title">练习 16：等差裂项变式与分组抵消（核心技巧：分子非1等差裂项、带分数整数群聚、交叉换元、重数除法）</div>
+        <div class="ana-grid">
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">1.</span> <span class="tag-qiao">巧算 · 分子等于间隔的直接裂项</span>　<strong>答案：15/34</strong></div>
+          <div class="ana-body"><strong>解析：</strong>分子 3 正好等于分母两数之差，直接裂项：(1/2−1/5)+(1/5−1/8)+…+(1/14−1/17) = 1/2 − 1/17 = 15/34。</div>
+          <div class="ana-pit"><strong>易错点：</strong>先检查分子与分母两因数差的关系，相等时不用再乘系数。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">2.</span> <span class="tag-chang">常规 · 中括号分数混合</span>　<strong>答案：4又4/5（或 4.8）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>小括号 10/12+9/12=19/12，乘 12/19 得 1；中括号 4−1=3；3 ÷ 5/8 = 24/5（或 4.8）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>先通分后约分，3 除以 5/8 等于 3×8/5。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">3.</span> <span class="tag-qiao">巧算 · 长分数串双端换元</span>　<strong>答案：1/44</strong></div>
+          <div class="ana-body"><strong>解析：</strong>令 A = 1/5+1/6+…+1/10，原式 = (1/4+A)(A+1/11) − (1/4+A+1/11)A = 1/4 × 1/11 = 1/44。</div>
+          <div class="ana-pit"><strong>易错点：</strong>准确圈出左右两个“多出来的端点” 1/4 和 1/11。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">4.</span> <span class="tag-chang">常规 · 分数与百分数嵌套</span>　<strong>答案：2又1/3（或 7/3）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>小括号 4/5−3/5=1/5；中括号 1/5×11/6=11/30；11/15 ÷ 11/30 + 1/3 = 2 + 1/3 = 2又1/3（或 7/3）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>60% 化为 3/5 与 4/5 同分母相减最简便。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">5.</span> <span class="tag-qiao">巧算 · 大数恒等变形约分</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>分子 = 2027×(2025+1)−2025 = 2027×2025 + (2027−2025) = 2027×2025 + 2，与分母完全相同，商为 1。</div>
+          <div class="ana-pit"><strong>易错点：</strong>把 2026 拆成 2025+1，使分子出现与分母相同的 2027×2025。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">6.</span> <span class="tag-qiao">巧算 · 对应因数配对除法</span>　<strong>答案：80</strong></div>
+          <div class="ana-body"><strong>解析：</strong>(5.6÷1.4) × (9.6÷2.4) × (3.5÷0.7) = 4 × 4 × 5 = 80。</div>
+          <div class="ana-pit"><strong>易错点：</strong>先找整倍关系再配对相除，一步口算。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">7.</span> <span class="tag-qiao">巧算 · 带分数整数分数分离+裂项</span>　<strong>答案：21又6/7（或 153/7）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>整数部分 1+2+3+4+5+6 = 21；分数部分 1/(1×2)+1/(2×3)+…+1/(6×7) = 1−1/7 = 6/7；合起来 21又6/7（或 153/7）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>带分数加法先把整数与分数分开，分数部分立即显现标准裂项！</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">8.</span> <span class="tag-chang">常规 · 小数分数混算</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>0.375=3/8，小括号 7/8−3/8=1/2；1/2 ÷ 5/6 = 3/5 = 0.6；中括号 2.5−0.6 = 1.9 = 19/10；19/10 × 10/19 = 1。</div>
+          <div class="ana-pit"><strong>易错点：</strong>熟记 0.375 = 3/8 能大幅加快化简速度。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">9.</span> <span class="tag-qiao">巧算 · 大数提取公因数与补数法</span>　<strong>答案：888887111112</strong></div>
+          <div class="ana-body"><strong>解析：</strong>提取 999999 得 999999 × (111111+777777) = (1000000−1) × 888888 = 888888000000 − 888888 = 888887111112。</div>
+          <div class="ana-pit"><strong>易错点：</strong>退位减法仔细核对位数：6个8后面6个0减6个8，得 888887111112。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">10.</span> <span class="tag-chang">常规 · 长链同级乘除顺序</span>　<strong>答案：16</strong></div>
+          <div class="ana-body"><strong>解析：</strong>严格从左到右：72÷9=8 → 8×8=64 → 64÷4=16 → 16×2=32 → 32−16 = 16。</div>
+          <div class="ana-pit"><strong>易错点：</strong>长链乘除切忌把 4×2 结合成 8 再去被 64 除。</div>
+        </div>
+        </div>
+      </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 题目分析</span>
+    <span>题目分析 第 3 页（共 5 页）</span>
+  </div>
+</div>
+<!-- ==================== 题目分析 第 4 页 ==================== -->
+<div class="sheet part-analysis">
+  <div class="sheet-content">
+
+      <div class="ana-set">
+        <div class="ana-set-title">练习 17：双重约分与分数群组巧算（核心技巧：奇偶裂项、2/3等比错位相减、分子平方和构造、大数平方差）</div>
+        <div class="ana-grid">
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">1.</span> <span class="tag-qiao">巧算 · 奇数三项裂项（差为4）</span>　<strong>答案：8/99</strong></div>
+          <div class="ana-body"><strong>解析：</strong>每项首尾因数差 4：1/[n(n+2)(n+4)] = 1/4 × [1/(n(n+2)) − 1/((n+2)(n+4))]；原式 = 1/4 × (1/(1×3) − 1/(9×11)) = 1/4 × (33−1)/99 = 8/99。</div>
+          <div class="ana-pit"><strong>易错点：</strong>奇数三项裂项的首尾差是 4（不是 2），前面系数必须是 1/4！</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">2.</span> <span class="tag-chang">常规 · 带分数小数混合与隐含简算</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>3又1/3−1又5/6 = 3/2；提 4/5(=0.8)：(3/2+1)×4/5 = 5/2×4/5 = 2；2 ÷ 2 = 1。</div>
+          <div class="ana-pit"><strong>易错点：</strong>发现 0.8 = 4/5 即可提取公因数提速。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">3.</span> <span class="tag-qiao">巧算 · 等比串换元法</span>　<strong>答案：1/16</strong></div>
+          <div class="ana-body"><strong>解析：</strong>令 A = 1/2+1/4+1/8，原式 = (1+A)(A+1/16) − (1+A+1/16)A = 1/16（无需算出等比和！）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>先观察整体结构，用换元法一步得 1/16，比分别算等比和快得多。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">4.</span> <span class="tag-chang">常规 · 中括号分数乘除</span>　<strong>答案：1又4/5（或 1.8）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>小括号 6/9=2/3；中括号 13/12×2/3 = 13/18；13/18 ÷ 13/18 × 9/5 = 9/5（或 1.8）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>中括号算完刚好等于 13/18，与被除数相除得 1。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">5.</span> <span class="tag-qiao">巧算 · 大数对称恒等约分</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>分子 = 2025×(2024+2)−2024 = 2025×2024 + 4050 − 2024 = 2025×2024 + 2026，与分母完全相等，商为 1！</div>
+          <div class="ana-pit"><strong>易错点：</strong>2026 比 2024 大 2，拆成 2024+2 后 2×2025−2024 恰好等于 2026。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">6.</span> <span class="tag-qiao">巧算 · 带分数提公因数+凑1</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>238 ÷ [238×(1+1/239)] = 1 ÷ 240/239 = 239/240；239/240 + 1/240 = 1。</div>
+          <div class="ana-pit"><strong>易错点：</strong>先化简前面除法得 239/240，再与 1/240 完美凑 1。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">7.</span> <span class="tag-qiao">巧算 · 长链平方差连乘</span>　<strong>答案：21/40（或 0.525）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>平方差因式分解连乘抵消，公式为 (n+1)/(2n)；代入 n=20 得 21/40（或 0.525）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>检查末项 n=20，最终剩 1/2 × 21/20 = 21/40。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">8.</span> <span class="tag-chang">常规 · 百分数分数混合</span>　<strong>答案：1又1/5（或 1.2）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>3/4−1/2=1/4；1/4×5/3=5/12；中括号 7/12+5/12=1；1 ÷ 5/6 = 6/5（或 1.2）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>中括号内相加恰好等于 1。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">9.</span> <span class="tag-qiao">巧算 · 大数借倍重组</span>　<strong>答案：3333300000</strong></div>
+          <div class="ana-body"><strong>解析：</strong>66666×44444 = 33333×88888；原式 = 33333×(88888+11112) = 33333×100000 = 3333300000。</div>
+          <div class="ana-pit"><strong>易错点：</strong>66666 拆成 33333×2，把 2 乘给 44444 得 88888，与 11112 刚好凑十万。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">10.</span> <span class="tag-chang">常规 · 同级乘除防陷阱</span>　<strong>答案：6</strong></div>
+          <div class="ana-body"><strong>解析：</strong>后面从左往右：10×2/5 = 4 → 4÷2/5 = 10 → 10×2/5 = 4；10 − 4 = 6。</div>
+          <div class="ana-pit"><strong>易错点：</strong>乘除交替时老老实实一步步化乘倒数，最稳妥。</div>
+        </div>
+        </div>
+      </div>
+      <div class="ana-set">
+        <div class="ana-set-title">练习 18：配凑裂项与复杂比例分配律（核心技巧：分子为n²裂项、小数换元变式、繁分数方程思想、等比求和）</div>
+        <div class="ana-grid">
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">1.</span> <span class="tag-qiao">巧算 · 偶数等差裂项</span>　<strong>答案：9/40（或 0.225）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>间隔为 2：原式 = 1/2 × (1/2 − 1/20) = 1/2 × 9/20 = 9/40（或 0.225）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>首项是 1/2（不是 1），且别忘最前面乘 1/2。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">2.</span> <span class="tag-chang">常规 · 分小混合运算</span>　<strong>答案：1又2/3（或 5/3）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>1.5+0.75 = 9/4；9/4 ÷ 9/8 = 2；中括号 6−2 = 4；4 × 5/12 = 5/3（或 1又2/3）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>把 1.5 化为 6/4，与 3/4 相加得 9/4，刚好约掉 9。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">3.</span> <span class="tag-qiao">巧算 · 首项为3的换元消去</span>　<strong>答案：1/2（或 0.5）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>令 A = 1/2+1/3+1/4+1/5，原式 = (3+A)(A+1/6) − (3+A+1/6)A = 3 × 1/6 = 1/2（或 0.5）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>套用 (a+A)(A+b)−(a+A+b)A = ab，直接得 3×1/6 = 1/2。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">4.</span> <span class="tag-qiao">巧算 · 带分数除法拆整巧算</span>　<strong>答案：123</strong></div>
+          <div class="ana-body"><strong>解析：</strong>拆成除数分子的整倍数：(50+5/3)×3/5 + (70+7/4)×4/7 + (90+9/5)×5/9 = (30+1) + (40+1) + (50+1) = 31+41+51 = 123。</div>
+          <div class="ana-pit"><strong>易错点：</strong>除以 5/3 等于乘 3/5，把 51又2/3 拆成 50 + 5/3 即可整除！</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">5.</span> <span class="tag-qiao">巧算 · 提公因式恒等约分</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>分子 = 2026×(2026+1) = 2026×2027；分母 = 2027×(2027−1) = 2027×2026；分子分母完全相同，商为 1。</div>
+          <div class="ana-pit"><strong>易错点：</strong>分别提取分子公因式 2026 和分母公因式 2027。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">6.</span> <span class="tag-qiao">巧算 · 小数点缩放提公因数</span>　<strong>答案：6又1/2（或 6.5）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>统一提 0.65：0.65 × (6.4 − 5.4 + 9) = 0.65 × 10 = 6.5（或 6又1/2）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>最后一项 65×0.09 = 0.65×9，小数点移动两位要数准。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">7.</span> <span class="tag-qiao">巧算 · 凑整转等比折半</span>　<strong>答案：5又1/64（或 321/64）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>每项改写为 1−1/2^k：6 − (1/2+1/4+1/8+1/16+1/32+1/64) = 6 − (1 − 1/64) = 5又1/64（或 321/64）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>减号后面括起来的是 (1 − 1/64)，去括号得 6 − 1 + 1/64 = 5又1/64！</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">8.</span> <span class="tag-chang">常规 · 减法型连分数化简</span>　<strong>答案：1又1/4（或 1.25）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>自下而上：2−1/2=3/2 → 2−2/3=4/3 → 2−3/4 = 5/4（或 1.25）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>每层倒数后都是用 2 去减，注意符号不要看成加号。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">9.</span> <span class="tag-qiao">巧算 · 换元/拆数消去二次项</span>　<strong>答案：2</strong></div>
+          <div class="ana-body"><strong>解析：</strong>设 a=2025，原式 = a(a−1) − (a+1)(a−2) = (a²−a) − (a²−a−2) = 2（或拆成 2025×2024−(2025+1)×2023 = 2025−2023 = 2）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>“和同近积大”的代数体现：2025+2024 = 2026+2023，差值为 2。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">10.</span> <span class="tag-chang">常规 · 括号与同级乘除混合</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>前两括号相同，商为 1；后括号 1/2−1/3 = 1/6；1 × 1/6 ÷ 1/6 = 1。</div>
+          <div class="ana-pit"><strong>易错点：</strong>看清每组括号位置，先化简相等括号的商为 1。</div>
+        </div>
+        </div>
+      </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 题目分析</span>
+    <span>题目分析 第 4 页（共 5 页）</span>
+  </div>
+</div>
+<!-- ==================== 题目分析 第 5 页 ==================== -->
+<div class="sheet part-analysis">
+  <div class="sheet-content">
+
+      <div class="ana-set">
+        <div class="ana-set-title">练习 19：小升初名校分班压轴综合（上）（核心技巧：分子递减裂项、双括号分配律、等比加减、大数叠数约分）</div>
+        <div class="ana-grid">
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">1.</span> <span class="tag-qiao">巧算 · 间隔4直接裂项</span>　<strong>答案：20/21</strong></div>
+          <div class="ana-body"><strong>解析：</strong>分子 4 恰好等于分母两数之差：(1 − 1/5) + (1/5 − 1/9) + … + (1/17 − 1/21) = 1 − 1/21 = 20/21。</div>
+          <div class="ana-pit"><strong>易错点：</strong>确认分子等于分母两因数之差即可直接拆减，无需再乘 1/4。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">2.</span> <span class="tag-chang">常规 · 百分数带分数综合</span>　<strong>答案：2</strong></div>
+          <div class="ana-body"><strong>解析：</strong>1又3/5+40% = 1.6+0.4 = 2；2×3/4 = 1.5；中括号 3.2−1.5 = 1.7 = 17/10；17/10 ÷ 17/20 = 2。</div>
+          <div class="ana-pit"><strong>易错点：</strong>小括号内凑整得 2，立刻让后续计算变得无比清爽。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">3.</span> <span class="tag-qiao">巧算 · 多位小数高阶换元</span>　<strong>答案：0.012345</strong></div>
+          <div class="ana-body"><strong>解析：</strong>令 A = 0.12+0.123+0.1234，原式 = (0.1+A)(A+0.12345) − (0.1+A+0.12345)A = 0.1 × 0.12345 = 0.012345。</div>
+          <div class="ana-pit"><strong>易错点：</strong>面对超长小数串不要慌，换元后只需算 0.1 × 0.12345（小数点左移一位）。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">4.</span> <span class="tag-chang">常规 · 中括号乘除运算</span>　<strong>答案：2</strong></div>
+          <div class="ana-body"><strong>解析：</strong>小括号 10/14−3/14 = 1/2；中括号 1/2×11/10 = 11/20；11/14 × 20/11 × 7/5 = 2。</div>
+          <div class="ana-pit"><strong>易错点：</strong>乘除全部化乘后交叉约分，11、7、5 全部约净。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">5.</span> <span class="tag-qiao">巧算 · 平方差逆用整体约分</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>分母 123455×123457 + 1 = (123456−1)(123456+1) + 1 = 123456² − 1 + 1 = 123456²，与分子相等，商为 1。</div>
+          <div class="ana-pit"><strong>易错点：</strong>两个相邻隔 2 的数相乘再加 1，恒等于中间数的平方！</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">6.</span> <span class="tag-qiao">巧算 · 对应因数配对除法</span>　<strong>答案：60</strong></div>
+          <div class="ana-body"><strong>解析：</strong>(2.8÷0.7) × (7.5÷1.5) × (4.2÷1.4) = 4 × 5 × 3 = 60。</div>
+          <div class="ana-pit"><strong>易错点：</strong>逐对相除，切勿先硬乘出大数再除。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">7.</span> <span class="tag-qiao">巧算 · 逆用乘法分配律整体消去</span>　<strong>答案：12</strong></div>
+          <div class="ana-body"><strong>解析：</strong>提取公因数 60：[(1/2+1/3+1/4+1/5) − (1/2+1/3+1/4)] × 60 = 1/5 × 60 = 12。</div>
+          <div class="ana-pit"><strong>易错点：</strong>先逆用分配律把两个括号相减，瞬间消去前三项，比分别展开快十倍！</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">8.</span> <span class="tag-qiao">巧算 · 非首项裂和相消</span>　<strong>答案：7/8（或 0.875）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>1又1/3 = 1+1/3，后续拆为 −(1/3+1/4)+(1/4+1/5)−(1/5+1/6)+(1/6+1/7)−(1/7+1/8)；相消后剩 1 − 1/8 = 7/8。</div>
+          <div class="ana-pit"><strong>易错点：</strong>注意末项前是减号，去括号后保留的是 −1/8 而不是 +1/8！</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">9.</span> <span class="tag-qiao">巧算 · 大数公因数借倍重组</span>　<strong>答案：4444400000</strong></div>
+          <div class="ana-body"><strong>解析：</strong>88888×33333 = 44444×66666；提 44444 得 44444×(66666+33334) = 44444×100000 = 4444400000。</div>
+          <div class="ana-pit"><strong>易错点：</strong>把 88888 拆成 44444×2，把 2 给 33333 凑出 66666。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">10.</span> <span class="tag-chang">常规 · 有无括号对比与顺序</span>　<strong>答案：0</strong></div>
+          <div class="ana-body"><strong>解析：</strong>360÷12×3 = 30×3 = 90；360÷(12×3) = 360÷36 = 10；90 + 10 − 100 = 0。</div>
+          <div class="ana-pit"><strong>易错点：</strong>严格区分无括号（从左往右）与有括号（先算括号）。</div>
+        </div>
+        </div>
+      </div>
+      <div class="ana-set">
+        <div class="ana-set-title">练习 20：小升初名校分班压轴综合（巅峰收官）（核心技巧：三项拓展裂项、终极换元、双层繁分数、百分数简算、平方差终极）</div>
+        <div class="ana-grid">
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">1.</span> <span class="tag-qiao">巧算 · 长链三项裂项相消</span>　<strong>答案：11/45</strong></div>
+          <div class="ana-body"><strong>解析：</strong>原式 = 1/2 × [1/(1×2) − 1/(9×10)] = 1/2 × (1/2 − 1/90) = 1/2 × 44/90 = 22/90 = 11/45。</div>
+          <div class="ana-pit"><strong>易错点：</strong>首尾保留 1/(1×2) 和 1/(9×10)，别忘最外层乘 1/2 并约成最简分数。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">2.</span> <span class="tag-chang">常规 · 百分数带分数小数混算</span>　<strong>答案：3</strong></div>
+          <div class="ana-body"><strong>解析：</strong>2.25−1.5 = 0.75 = 3/4；3/4 ÷ 3/2 = 1/2；中括号 3/4+1/2 = 5/4；5/4 × 16/5 − 1 = 4 − 1 = 3。</div>
+          <div class="ana-pit"><strong>易错点：</strong>全化为最简分数（75%=3/4、1.5=3/2），步步可约。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">3.</span> <span class="tag-qiao">巧算 · 超长分数串终极换元</span>　<strong>答案：1/21</strong></div>
+          <div class="ana-body"><strong>解析：</strong>令 A = 1/2+1/3+…+1/20，原式 = (1+A)(A+1/21) − (1+A+1/21)A = 1/21。</div>
+          <div class="ana-pit"><strong>易错点：</strong>无论项数多长，换元后瞬间化简为首项 1 × 末项 1/21。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">4.</span> <span class="tag-qiao">巧算 · 2026大数带分数提公因数</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>2026 ÷ [2026×(1+1/2027)] = 2027/2028；2027/2028 + 1/2028 = 1。</div>
+          <div class="ana-pit"><strong>易错点：</strong>提取 2026 约分后再与 1/2028 相加得 1。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">5.</span> <span class="tag-qiao">巧算 · 立方提公因式+平方差约分</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>分子 = 2026×(2026²−1) = 2026×(2026−1)(2026+1) = 2026×2025×2027，与分母完全相等，商恒为 1！</div>
+          <div class="ana-pit"><strong>易错点：</strong>巅峰变形：a³−a = a(a²−1) = (a−1)a(a+1)（连续三个自然数之积）！</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">6.</span> <span class="tag-qiao">巧算 · 分小百三态统一提公因数</span>　<strong>答案：10</strong></div>
+          <div class="ana-body"><strong>解析：</strong>125% = 5/4 = 1.25，提取 1.25 得 1.25 × (8.4 + 1.6 − 2) = 1.25 × 8 = 10。</div>
+          <div class="ana-pit"><strong>易错点：</strong>识别 125%、5/4、1.25 是同一个数，凑出 1.25×8=10。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">7.</span> <span class="tag-qiao">巧算 · 平方差连乘+收尾约分</span>　<strong>答案：1</strong></div>
+          <div class="ana-body"><strong>解析：</strong>前面平方差连乘 = (15+1)/(2×15) = 16/30 = 8/15；再乘 15/8 恰好互为倒数，得 1！</div>
+          <div class="ana-pit"><strong>易错点：</strong>先求连乘部分 8/15，再与 15/8 约分得 1。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">8.</span> <span class="tag-chang">常规 · 三层繁分数化简</span>　<strong>答案：1又13/30（或 43/30）</strong></div>
+          <div class="ana-body"><strong>解析：</strong>自下而上：3+1/4=13/4 → 2+4/13=30/13 → 1+13/30 = 1又13/30（或 43/30）。</div>
+          <div class="ana-pit"><strong>易错点：</strong>由下至上步步取倒数，保持书写层次清晰。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">9.</span> <span class="tag-qiao">巧算 · 六位叠数借倍重组</span>　<strong>答案：999999000000</strong></div>
+          <div class="ana-body"><strong>解析：</strong>333333×666666 = 999999×222222；提取 999999 得 999999×(777778+222222) = 999999×1000000 = 999999000000。</div>
+          <div class="ana-pit"><strong>易错点：</strong>结果末尾是 6 个 0，数清位数不要少写 0。</div>
+        </div>
+        <div class="ana-item">
+          <div class="ana-top"><span class="ana-num">10.</span> <span class="tag-chang">常规 · 分配律与同级乘除收官</span>　<strong>答案：9</strong></div>
+          <div class="ana-body"><strong>解析：</strong>前半部用分配律：8+9 = 17；后半部 ÷3/4 与 ×3/4 抵消，2/3×12 = 8；17 − 8 = 9。</div>
+          <div class="ana-pit"><strong>易错点：</strong>先算乘法分配律得 17，后半部同级乘除依序约去 3/4 得 8。</div>
+        </div>
+        </div>
+      </div>
+  </div>
+  <div class="page-footer">
+    <span>小学六年级四则混合运算巅峰冲刺 100 题（练习 11–20）· 题目分析</span>
+    <span>题目分析 第 5 页（共 5 页）</span>
+  </div>
+</div>
+
+<script>
+  const PRINT_CLASSES = [
+    'print-exam-only',
+    'print-answer-only',
+    'print-analysis-only',
+    'print-answer-analysis'
+  ];
+  function printMode(mode) {
+    document.body.classList.remove(...PRINT_CLASSES);
+    document.querySelectorAll('.sheet.is-last-visible')
+      .forEach(el => el.classList.remove('is-last-visible'));
+    if (mode === 'exam') document.body.classList.add('print-exam-only');
+    if (mode === 'answer') document.body.classList.add('print-answer-only');
+    if (mode === 'analysis') document.body.classList.add('print-analysis-only');
+    if (mode === 'answer-analysis') document.body.classList.add('print-answer-analysis');
+    const visibleSheets = Array.from(document.querySelectorAll('.sheet'))
+      .filter(el => getComputedStyle(el).display !== 'none');
+    if (visibleSheets.length > 0) {
+      visibleSheets[visibleSheets.length - 1].classList.add('is-last-visible');
+    }
+    window.print();
+    setTimeout(() => {
+      document.body.classList.remove(...PRINT_CLASSES);
+      document.querySelectorAll('.sheet.is-last-visible')
+        .forEach(el => el.classList.remove('is-last-visible'));
+    }, 300);
+  }
+</script>
+</body>
+</html>
