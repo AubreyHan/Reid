@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>六年级四则运算巅峰巩固 · 第01天（对标练习12难度 · A4可打印版）</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 9mm 11mm 9mm 11mm;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: #1a1a1a;
+    background: #eef1f5;
+    margin: 0;
+    padding: 18px 0 40px 0;
+    font-size: 13px;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 顶部打印工具栏（打印时自动隐藏） */
+  .no-print-banner {
+    width: 210mm;
+    margin: 0 auto 14px auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #6e40c9;
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .banner-info { font-size: 12.2px; color: #334155; }
+  .banner-info strong { color: #0f172a; font-size: 13.8px; }
+  .banner-actions { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+  .btn {
+    border: none;
+    padding: 6px 11px;
+    font-size: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: inherit;
+  }
+  .btn-primary { background: #6e40c9; color: #fff; }
+  .btn-primary:hover { background: #5a32a3; }
+  .btn-secondary { background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; }
+  .btn-secondary:hover { background: #e2e8f0; }
+
+  /* A4 页面容器 */
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 16px auto;
+    background: #ffffff;
+    padding: 9mm 11mm 8mm 11mm;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  .sheet-content { flex: 1; }
+  .exam-flex { display: flex; flex-direction: column; }
+
+  .page-footer {
+    margin-top: auto;
+    padding-top: 5px;
+    border-top: 1px solid #94a3b8;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.5px;
+    color: #555;
+  }
+
+  /* ==================== 第一部分：空白试卷 ==================== */
+  .ex-header {
+    border-bottom: 2px solid #111;
+    padding-bottom: 6px;
+    margin-bottom: 7px;
+  }
+  .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .main-title { font-size: 16.5px; font-weight: 700; color: #111; }
+  .diff-tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    background: #f5f3ff;
+    color: #5b21b6;
+    border: 1px solid #c4b5fd;
+    white-space: nowrap;
+  }
+  .sub-meta {
+    font-size: 11.2px;
+    color: #475569;
+    margin-top: 3px;
+  }
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.2px;
+    color: #222;
+    margin-top: 6px;
+  }
+  .meta-line {
+    display: inline-block;
+    border-bottom: 1px solid #333;
+    min-width: 54px;
+    margin-left: 3px;
+    height: 14px;
+  }
+  .tips-box {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 3.5px solid #334155;
+    padding: 4.5px 10px;
+    font-size: 11.5px;
+    color: #222;
+    margin-bottom: 8px;
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px 12px;
+    flex-grow: 1;
+  }
+  .problem-box {
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 7px 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    height: 45.5mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .prob-header { display: flex; justify-content: flex-start; align-items: flex-start; }
+  .prob-expr {
+    font-size: 13px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.34;
+  }
+  .prob-expr.expr-compact { font-size: 11.8px; line-height: 1.3; }
+
+  .frac {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.88em;
+    padding: 0 1.5px;
+  }
+  .frac .top {
+    display: block;
+    border-bottom: 1px solid #111;
+    line-height: 1.08;
+    padding: 0 2px;
+  }
+  .frac .bot {
+    display: block;
+    line-height: 1.08;
+    padding: 0 2px;
+  }
+
+  .working-area {
+    flex-grow: 1;
+    margin: 3px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .draft-line { border-bottom: 1px dashed #cbd5e1; height: 10px; }
+  .ans-target {
+    align-self: flex-end;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #222;
+    padding-top: 2px;
+  }
+  .ans-underline {
+    display: inline-block;
+    border-bottom: 1.5px solid #111;
+    min-width: 82px;
+    text-align: center;
+    height: 13px;
+  }
+
+  /* ==================== 第二部分：参考答案与摸底表 ==================== */
+  .part-header {
+    text-align: center;
+    border-bottom: 2px solid #1e293b;
+    padding-bottom: 5px;
+    margin-bottom: 9px;
+  }
+  .part-header h2 { margin: 0; font-size: 16px; color: #0f172a; }
+  .part-header p { margin: 2px 0 0 0; font-size: 11px; color: #475569; }
+
+  .summary-box {
+    border: 1.5px solid #334155;
+    border-radius: 6px;
+    background: #f8fafc;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+  }
+  .summary-title {
+    font-size: 12.8px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 3px;
+  }
+  .sum-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px 8px;
+    font-size: 11.8px;
+    color: #111;
+  }
+  .sum-chip { white-space: nowrap; }
+
+  .rubric-box {
+    background: #fff;
+    border: 1px solid #94a3b8;
+    border-left: 3.5px solid #1e293b;
+    border-radius: 5px;
+    padding: 7px 11px;
+    font-size: 11.5px;
+    color: #1e293b;
+    margin-bottom: 10px;
+    line-height: 1.58;
+  }
+
+  .sec-h {
+    font-size: 12.8px;
+    font-weight: 700;
+    color: #0f172a;
+    border-left: 3.5px solid #6e40c9;
+    padding-left: 8px;
+    margin: 9px 0 6px 0;
+  }
+
+  .track-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.4px;
+    margin-bottom: 10px;
+  }
+  .track-table th, .track-table td {
+    border: 1px solid #64748b;
+    padding: 5.5px 6px;
+    text-align: center;
+  }
+  .track-table th { background: #f1f5f9; color: #0f172a; font-weight: 700; }
+  .track-table td.left { text-align: left; }
+
+  .next-tip {
+    background: #f8fafc;
+    border: 1px solid #94a3b8;
+    border-left: 3.5px solid #b45309;
+    border-radius: 5px;
+    padding: 7.5px 11px;
+    font-size: 11.4px;
+    color: #1e293b;
+    line-height: 1.58;
+  }
+
+  /* ==================== 第三部分：题目分析 ==================== */
+  .struct-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.2px;
+    margin-bottom: 9px;
+  }
+  .struct-table th, .struct-table td {
+    border: 1px solid #64748b;
+    padding: 4.5px 7px;
+    text-align: center;
+  }
+  .struct-table th { background: #f1f5f9; font-weight: 700; }
+  .struct-table td.left { text-align: left; }
+
+  .ana-card {
+    border: 1px solid #94a3b8;
+    border-left: 3.5px solid #334155;
+    border-radius: 5px;
+    padding: 7px 10px;
+    margin-bottom: 8px;
+    background: #fff;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .ana-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    border-bottom: 1px dashed #cbd5e1;
+    padding-bottom: 3px;
+    margin-bottom: 4px;
+  }
+  .ana-ans { font-weight: 700; color: #0f172a; }
+  .kp-badge {
+    display: inline-block;
+    background: #f1f5f9;
+    color: #0f172a;
+    border: 1px solid #94a3b8;
+    padding: 0 5px;
+    border-radius: 3px;
+    font-size: 10.2px;
+    font-weight: 700;
+    margin: 0 3px;
+  }
+  .tag-qiao {
+    display: inline-block;
+    background: #f5f3ff;
+    color: #5b21b6;
+    border: 1px solid #c4b5fd;
+    padding: 0 5px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 10.2px;
+  }
+  .tag-chang {
+    display: inline-block;
+    background: #eff6ff;
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
+    padding: 0 5px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 10.2px;
+  }
+  .ana-line {
+    font-size: 11.4px;
+    color: #1e293b;
+    line-height: 1.48;
+    margin-bottom: 2.5px;
+  }
+  .ana-pit {
+    font-size: 11.1px;
+    color: #7c2d12;
+    line-height: 1.45;
+    margin-bottom: 2.5px;
+  }
+  .ana-adv {
+    font-size: 11px;
+    color: #1e3a5f;
+    line-height: 1.45;
+  }
+
+  /* 分模块打印控制 */
+  body.print-exam-only .part-answer,
+  body.print-exam-only .part-analysis { display: none !important; }
+  body.print-answer-only .part-exam,
+  body.print-answer-only .part-analysis { display: none !important; }
+  body.print-analysis-only .part-exam,
+  body.print-analysis-only .part-answer { display: none !important; }
+  body.print-answer-analysis .part-exam { display: none !important; }
+
+  @media print {
+    body { background: #fff; padding: 0; margin: 0; }
+    .no-print, .no-print-banner { display: none !important; }
+    .sheet {
+      width: auto;
+      height: 277mm;
+      min-height: 277mm;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      page-break-after: always;
+      break-after: page;
+    }
+    .sheet:last-of-type,
+    .sheet.is-last-visible {
+      page-break-after: auto;
+      break-after: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="no-print-banner">
+  <div class="banner-info">
+    <strong>六年级四则运算巅峰巩固 · 第 01 天（10 题摸底巩固卷 · A4 可打印版）</strong><br>
+    对标原练习 12 巅峰难度 ｜ 一题一考点（K01–K10） ｜ 空白试卷（1页）/ 参考答案（1页）/ 题目分析（2页）
+  </div>
+  <div class="banner-actions">
+    <button class="btn btn-primary" onclick="printMode('all')">打印完整版</button>
+    <button class="btn btn-secondary" onclick="printMode('exam')">仅打印空白试卷</button>
+    <button class="btn btn-secondary" onclick="printMode('answer')">仅打印参考答案</button>
+    <button class="btn btn-secondary" onclick="printMode('analysis')">仅打印题目分析</button>
+    <button class="btn btn-secondary" onclick="printMode('answer-analysis')">仅打印答案与分析</button>
+  </div>
+</div>
+
+<!-- ==================== 第一部分：空白试卷（第 1 页） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content exam-flex">
+    <div>
+      <div class="ex-header">
+        <div class="title-row">
+          <div class="main-title">六年级四则混合运算巅峰巩固 · 第 01 天</div>
+          <div class="diff-tag">对标练习12难度：★★★★★★★</div>
+        </div>
+        <div class="sub-meta">衔接教材：人教版六上数学（分数乘法、分数除法、百分数与综合简算拓展）｜ 建议用时：20～25 分钟 ｜ 满分：100 分（每题 10 分）</div>
+        <div class="meta-row">
+          <div>姓名：<span class="meta-line"></span></div>
+          <div>班级：<span class="meta-line"></span></div>
+          <div>日期：<span class="meta-line"></span></div>
+          <div>用时：<span class="meta-line" style="min-width:44px;"></span> 分钟</div>
+          <div>得分：<span class="meta-line" style="min-width:44px;"></span> / 100</div>
+        </div>
+      </div>
+      <div class="tips-box"><strong>作答要求：</strong>仔细观察算式结构，能简算的必须写出关键变形步骤；不能简算的严格按四则混合运算顺序规范脱式计算（最终分数一律化为最简分数或带分数）。</div>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-box">
+        <div class="prob-header">
+          <div class="prob-expr">1. &nbsp;<span class="frac"><span class="top">1</span><span class="bot">2×5</span></span> + <span class="frac"><span class="top">1</span><span class="bot">5×8</span></span> + <span class="frac"><span class="top">1</span><span class="bot">8×11</span></span> + <span class="frac"><span class="top">1</span><span class="bot">11×14</span></span> + <span class="frac"><span class="top">1</span><span class="bot">14×17</span></span> + <span class="frac"><span class="top">1</span><span class="bot">17×20</span></span></div>
+        </div>
+        <div class="working-area">
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+        </div>
+        <div class="ans-target">答案：<span class="ans-underline"></span></div>
+      </div>
+
+      <div class="problem-box">
+        <div class="prob-header">
+          <div class="prob-expr">2. &nbsp;[5.2 − (1.75 + <span class="frac"><span class="top">3</span><span class="bot">8</span></span>) × 1.6] ÷ 60%</div>
+        </div>
+        <div class="working-area">
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+        </div>
+        <div class="ans-target">答案：<span class="ans-underline"></span></div>
+      </div>
+
+      <div class="problem-box">
+        <div class="prob-header">
+          <div class="prob-expr expr-compact">3. &nbsp;(0.12 + 0.23 + 0.34 + 0.45) × (0.23 + 0.34 + 0.45 + 0.5) − (0.12 + 0.23 + 0.34 + 0.45 + 0.5) × (0.23 + 0.34 + 0.45)</div>
+        </div>
+        <div class="working-area">
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+        </div>
+        <div class="ans-target">答案：<span class="ans-underline"></span></div>
+      </div>
+
+      <div class="problem-box">
+        <div class="prob-header">
+          <div class="prob-expr">4. &nbsp;<span class="frac"><span class="top">8</span><span class="bot">15</span></span> ÷ [(<span class="frac"><span class="top">7</span><span class="bot">12</span></span> − <span class="frac"><span class="top">1</span><span class="bot">4</span></span>) ÷ <span class="frac"><span class="top">5</span><span class="bot">6</span></span>] × <span class="frac"><span class="top">5</span><span class="bot">4</span></span></div>
+        </div>
+        <div class="working-area">
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+        </div>
+        <div class="ans-target">答案：<span class="ans-underline"></span></div>
+      </div>
+
+      <div class="problem-box">
+        <div class="prob-header">
+          <div class="prob-expr expr-compact">5. &nbsp;<span class="frac"><span class="top">1×2×4 + 2×4×8 + 3×6×12 + 4×8×16</span><span class="bot">1×3×4 + 2×6×8 + 3×9×12 + 4×12×16</span></span></div>
+        </div>
+        <div class="working-area">
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+        </div>
+        <div class="ans-target">答案：<span class="ans-underline"></span></div>
+      </div>
+
+      <div class="problem-box">
+        <div class="prob-header">
+          <div class="prob-expr">6. &nbsp;6.25 × 842 − <span class="frac"><span class="top">5</span><span class="bot">8</span></span> × 6820 + 16 × 37.5</div>
+        </div>
+        <div class="working-area">
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+        </div>
+        <div class="ans-target">答案：<span class="ans-underline"></span></div>
+      </div>
+
+      <div class="problem-box">
+        <div class="prob-header">
+          <div class="prob-expr">7. &nbsp;2 + 1 + <span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">4</span></span> + <span class="frac"><span class="top">1</span><span class="bot">8</span></span> + <span class="frac"><span class="top">1</span><span class="bot">16</span></span> + <span class="frac"><span class="top">1</span><span class="bot">32</span></span> + <span class="frac"><span class="top">1</span><span class="bot">64</span></span></div>
+        </div>
+        <div class="working-area">
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+        </div>
+        <div class="ans-target">答案：<span class="ans-underline"></span></div>
+      </div>
+
+      <div class="problem-box">
+        <div class="prob-header">
+          <div class="prob-expr">8. &nbsp;(4<span class="frac"><span class="top">3</span><span class="bot">4</span></span> − 2.35) ÷ [(<span class="frac"><span class="top">7</span><span class="bot">10</span></span> + <span class="frac"><span class="top">1</span><span class="bot">2</span></span>) × <span class="frac"><span class="top">5</span><span class="bot">4</span></span>]</div>
+        </div>
+        <div class="working-area">
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+        </div>
+        <div class="ans-target">答案：<span class="ans-underline"></span></div>
+      </div>
+
+      <div class="problem-box">
+        <div class="prob-header">
+          <div class="prob-expr expr-compact">9. &nbsp;2026 × 20272027 − 2027 × 20262026 + 20262026 ÷ 2026</div>
+        </div>
+        <div class="working-area">
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+        </div>
+        <div class="ans-target">答案：<span class="ans-underline"></span></div>
+      </div>
+
+      <div class="problem-box">
+        <div class="prob-header">
+          <div class="prob-expr">10. &nbsp;<span class="frac"><span class="top">3</span><span class="bot">7</span></span> × <span class="frac"><span class="top">7</span><span class="bot">9</span></span> ÷ <span class="frac"><span class="top">3</span><span class="bot">7</span></span> × <span class="frac"><span class="top">7</span><span class="bot">9</span></span> + <span class="frac"><span class="top">23</span><span class="bot">81</span></span></div>
+        </div>
+        <div class="working-area">
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+          <div class="draft-line"></div>
+        </div>
+        <div class="ans-target">答案：<span class="ans-underline"></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级四则混合运算巅峰巩固（每日10题·逐套进阶）· 第 01 天 · 空白试卷</span>
+    <span>空白试卷 第 1 页（共 1 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第二部分：参考答案与摸底记录（第 2 页） ==================== -->
+<div class="sheet part-answer">
+  <div class="sheet-content">
+    <div class="part-header">
+      <h2>参考答案、评分标准与知识点摸底记录表（第 01 天）</h2>
+      <p>供家长快速批阅打分，并勾选每题作答情况，作为「第 02 天定向巩固卷」精准命题依据</p>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">全卷 10 题参考答案速查</div>
+      <div class="sum-grid">
+        <div class="sum-chip"><strong>第 1 题：</strong>3/20 (0.15)</div>
+        <div class="sum-chip"><strong>第 2 题：</strong>3</div>
+        <div class="sum-chip"><strong>第 3 题：</strong>0.06 (3/50)</div>
+        <div class="sum-chip"><strong>第 4 题：</strong>1又2/3 (5/3)</div>
+        <div class="sum-chip"><strong>第 5 题：</strong>2/3</div>
+        <div class="sum-chip"><strong>第 6 题：</strong>1600</div>
+        <div class="sum-chip"><strong>第 7 题：</strong>3又63/64</div>
+        <div class="sum-chip"><strong>第 8 题：</strong>1又3/5 (1.6)</div>
+        <div class="sum-chip"><strong>第 9 题：</strong>10001</div>
+        <div class="sum-chip"><strong>第 10 题：</strong>8/9</div>
+      </div>
+    </div>
+
+    <div class="rubric-box">
+      <strong>评分标准与关键采分点（满分 100 分，每题 10 分）：</strong><br>
+      ① <strong>满分（10 分）：</strong>方法恰当、写出关键变形或规范递等式步骤（巧算题体现裂项/换元/提公因式/拆数等核心一步），且最终结果正确、分数化最简；<br>
+      ② <strong>硬算得分（8 分）：</strong>巧算题（第 1、3、5、6、7、9 题）未发现巧算技巧但硬算得出正确结果得 8 分，请勾选“会做但慢/硬算”，第 02 天继续巩固对应巧算模型；<br>
+      ③ <strong>细节扣分：</strong>最终结果未约成最简分数（如第 10 题写成 72/81）扣 1 分；思路与主变形正确，仅末尾加减算错或小数点错位酌情给 5～7 分。
+    </div>
+
+    <div class="sec-h">知识点逐题摸底记录表（K01–K10）</div>
+    <table class="track-table">
+      <tr>
+        <th style="width:6%;">题号</th>
+        <th style="width:9%;">编号</th>
+        <th style="width:27%;">考查核心知识点</th>
+        <th style="width:9%;">题型</th>
+        <th style="width:20%;">标准答案（含等价形式）</th>
+        <th style="width:29%;">答题状态（请勾选）</th>
+      </tr>
+      <tr>
+        <td><strong>1</strong></td>
+        <td><code>K01</code></td>
+        <td class="left">等差间隔 3 分数裂项相消</td>
+        <td><span class="tag-qiao">巧算</span></td>
+        <td><strong>3/20</strong>（或 0.15）</td>
+        <td>□ 对 &nbsp; □ 错 &nbsp; □ 慢/硬算</td>
+      </tr>
+      <tr>
+        <td><strong>2</strong></td>
+        <td><code>K02</code></td>
+        <td class="left">分小百混合中括号常规运算</td>
+        <td><span class="tag-chang">常规</span></td>
+        <td><strong>3</strong></td>
+        <td>□ 对 &nbsp; □ 错 &nbsp; □ 慢/硬算</td>
+      </tr>
+      <tr>
+        <td><strong>3</strong></td>
+        <td><code>K03</code></td>
+        <td class="left">小数串整体换元消去法</td>
+        <td><span class="tag-qiao">巧算</span></td>
+        <td><strong>0.06</strong>（或 3/50）</td>
+        <td>□ 对 &nbsp; □ 错 &nbsp; □ 慢/硬算</td>
+      </tr>
+      <tr>
+        <td><strong>4</strong></td>
+        <td><code>K04</code></td>
+        <td class="left">多层分数除法嵌套与交叉约分</td>
+        <td><span class="tag-chang">常规</span></td>
+        <td><strong>1又2/3</strong>（或 5/3）</td>
+        <td>□ 对 &nbsp; □ 错 &nbsp; □ 慢/硬算</td>
+      </tr>
+      <tr>
+        <td><strong>5</strong></td>
+        <td><code>K05</code></td>
+        <td class="left">提取立方公因式整体约分</td>
+        <td><span class="tag-qiao">巧算</span></td>
+        <td><strong>2/3</strong></td>
+        <td>□ 对 &nbsp; □ 错 &nbsp; □ 慢/硬算</td>
+      </tr>
+      <tr>
+        <td><strong>6</strong></td>
+        <td><code>K06</code></td>
+        <td class="left">积不变规律与二次提公因数</td>
+        <td><span class="tag-qiao">巧算</span></td>
+        <td><strong>1600</strong></td>
+        <td>□ 对 &nbsp; □ 错 &nbsp; □ 慢/硬算</td>
+      </tr>
+      <tr>
+        <td><strong>7</strong></td>
+        <td><code>K07</code></td>
+        <td class="left">等比折半借一还一巧算</td>
+        <td><span class="tag-qiao">巧算</span></td>
+        <td><strong>3又63/64</strong>（或 255/64）</td>
+        <td>□ 对 &nbsp; □ 错 &nbsp; □ 慢/硬算</td>
+      </tr>
+      <tr>
+        <td><strong>8</strong></td>
+        <td><code>K08</code></td>
+        <td class="left">带分数与小数中括号综合</td>
+        <td><span class="tag-chang">常规</span></td>
+        <td><strong>1又3/5</strong>（或 8/5、1.6）</td>
+        <td>□ 对 &nbsp; □ 错 &nbsp; □ 慢/硬算</td>
+      </tr>
+      <tr>
+        <td><strong>9</strong></td>
+        <td><code>K09</code></td>
+        <td class="left">四位重数位值分解巧算</td>
+        <td><span class="tag-qiao">巧算</span></td>
+        <td><strong>10001</strong></td>
+        <td>□ 对 &nbsp; □ 错 &nbsp; □ 慢/硬算</td>
+      </tr>
+      <tr>
+        <td><strong>10</strong></td>
+        <td><code>K10</code></td>
+        <td class="left">同级乘除防误约顺序陷阱</td>
+        <td><span class="tag-chang">常规</span></td>
+        <td><strong>8/9</strong></td>
+        <td>□ 对 &nbsp; □ 错 &nbsp; □ 慢/硬算</td>
+      </tr>
+    </table>
+
+    <div class="next-tip">
+      <strong>第 02 天动态出题反馈说明：</strong><br>
+      请将孩子本套的<strong>错题题号（及错因/写出的错误答案）</strong>与<strong>“虽然算对但用硬算/耗时偏久”的题号</strong>直接发给我。下一套（第 02 天）将立即按<strong>「薄弱点同源变式巩固（约 6 题）＋ 已过关点保鲜与进阶拓展（约 4 题）」</strong>动态组卷，确保 K01–K10 逐个彻底过关后再稳步拓展新题型！
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级四则混合运算巅峰巩固（每日10题·逐套进阶）· 第 01 天 · 参考答案</span>
+    <span>参考答案 第 1 页（共 1 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第三部分：题目分析 第 1 页（第 3 页） ==================== -->
+<div class="sheet part-analysis">
+  <div class="sheet-content">
+    <div class="part-header">
+      <h2>题目分析、算理精析与巩固建议（第 01 天 · 第 1～5 题）</h2>
+      <p>先看试卷结构细目，再逐题拆解算式特征、变形步骤、避坑提醒与举一反三要点</p>
+    </div>
+
+    <table class="struct-table">
+      <tr>
+        <th style="width:18%;">题型模块</th>
+        <th style="width:16%;">对应题号</th>
+        <th style="width:12%;">题量/分值</th>
+        <th style="width:28%;">衔接教材单元（人教版六上）</th>
+        <th style="width:26%;">能力考查目标</th>
+      </tr>
+      <tr>
+        <td><strong>高阶巧算模块</strong></td>
+        <td>1、3、5、6、7、9</td>
+        <td>6 题 / 60 分</td>
+        <td class="left">第二单元分数乘法简便运算拓展</td>
+        <td class="left">裂项、换元、提公因式、等比与位值变形</td>
+      </tr>
+      <tr>
+        <td><strong>规范混算模块</strong></td>
+        <td>2、4、8、10</td>
+        <td>4 题 / 40 分</td>
+        <td class="left">第二、三、五单元分小百混合运算</td>
+        <td class="left">多层括号顺序、互化约分与同级防错</td>
+      </tr>
+    </table>
+
+    <div class="ana-card">
+      <div class="ana-head">
+        <span><strong>第 1 题</strong> <span class="kp-badge">K01</span> <span class="tag-qiao">巧算 · 等差间隔 3 裂项相消</span></span>
+        <span class="ana-ans">答案：3/20（或 0.15）</span>
+      </div>
+      <div class="ana-line"><strong>解题思路：</strong>每项分母均为相邻差 3 的两数之积，套用“母积子差”裂项公式 1/[n(n+3)] = 1/3 × [1/n − 1/(n+3)]。提出 1/3 后中间项两两抵消：原式 = 1/3 × (1/2 − 1/5 + 1/5 − 1/8 + … + 1/17 − 1/20) = 1/3 × (1/2 − 1/20) = 1/3 × 9/20 = 3/20。</div>
+      <div class="ana-pit"><strong>易错提醒：</strong>① 分母两因数差为 3，括号外必须乘 1/3，极易漏乘；② 首项是 1/2 而非 1，切忌盲目套背“1 − 末项”。</div>
+      <div class="ana-adv"><strong>巩固建议：</strong>熟记通式 1/[n(n+d)] = (1/d)×[1/n − 1/(n+d)]，动手验证首项 1/(2×5) = 1/3×(1/2 − 1/5) 即可避免丢系数。</div>
+    </div>
+
+    <div class="ana-card">
+      <div class="ana-head">
+        <span><strong>第 2 题</strong> <span class="kp-badge">K02</span> <span class="tag-chang">常规 · 分小百混合中括号运算</span></span>
+        <span class="ana-ans">答案：3</span>
+      </div>
+      <div class="ana-line"><strong>解题思路：</strong>先算小括号：1.75 + 3/8 = 7/4 + 3/8 = 17/8（或 1.75 + 0.375 = 2.125）；再算中括号内乘法：17/8 × 1.6 = 17/8 × 8/5 = 17/5 = 3.4；中括号减法：5.2 − 3.4 = 1.8；最后 1.8 ÷ 60% = 1.8 ÷ 0.6 = 3。</div>
+      <div class="ana-pit"><strong>易错提醒：</strong>① 不可在中括号内先算 5.2 − (1.75+3/8)；② 1.6 化作 8/5 与 17/8 约分远快于小数竖式乘法，减少计算失误。</div>
+      <div class="ana-adv"><strong>巩固建议：</strong>背熟高频分小百互化表（3/8=0.375、1.75=7/4、1.6=8/5、60%=0.6=3/5），遇乘除优先化分数约分。</div>
+    </div>
+
+    <div class="ana-card">
+      <div class="ana-head">
+        <span><strong>第 3 题</strong> <span class="kp-badge">K03</span> <span class="tag-qiao">巧算 · 小数串整体换元消去法</span></span>
+        <span class="ana-ans">答案：0.06（或 3/50）</span>
+      </div>
+      <div class="ana-line"><strong>解题思路：</strong>观察四个括号共有的中间串，令 A = 0.23 + 0.34 + 0.45。原式化为 (0.12 + A)(A + 0.5) − (0.12 + A + 0.5)A = (0.12A + 0.06 + A² + 0.5A) − (0.12A + A² + 0.5A) = 0.06。</div>
+      <div class="ana-pit"><strong>易错提醒：</strong>① 切忌硬算四个括号和再做两位小数乘法；② 展开后只剩“左多出的首项 0.12 × 右多出的末项 0.5”，注意 0.12×0.5 = 0.06 而非 0.6。</div>
+      <div class="ana-adv"><strong>巩固建议：</strong>看到“两积之差且括号内高度重叠”立即设公共部分为 A，练习规范书写代数展开消项过程。</div>
+    </div>
+
+    <div class="ana-card">
+      <div class="ana-head">
+        <span><strong>第 4 题</strong> <span class="kp-badge">K04</span> <span class="tag-chang">常规 · 多层分数除法嵌套与约分</span></span>
+        <span class="ana-ans">答案：1又2/3（或 5/3）</span>
+      </div>
+      <div class="ana-line"><strong>解题思路：</strong>先算小括号：7/12 − 1/4 = 7/12 − 3/12 = 4/12 = 1/3；再算中括号：1/3 ÷ 5/6 = 1/3 × 6/5 = 2/5；最后括号外从左往右：8/15 ÷ 2/5 × 5/4 = 8/15 × 5/2 × 5/4 = 4/3 × 5/4 = 5/3（即 1又2/3）。</div>
+      <div class="ana-pit"><strong>易错提醒：</strong>① 括号外是“÷ 中括号 × 5/4”，切勿把中括号结果先和 5/4 相乘；② 除变乘倒数时只倒置除数本身。</div>
+      <div class="ana-adv"><strong>巩固建议：</strong>多层分数乘除混合时，统一将除法转为乘倒数后再一次性交叉约分，既快又不容易抄错分子分母。</div>
+    </div>
+
+    <div class="ana-card">
+      <div class="ana-head">
+        <span><strong>第 5 题</strong> <span class="kp-badge">K05</span> <span class="tag-qiao">巧算 · 提取立方公因式整体约分</span></span>
+        <span class="ana-ans">答案：2/3</span>
+      </div>
+      <div class="ana-line"><strong>解题思路：</strong>纵向对比每一项的三个因数，第 k 项都是首项各因数同时乘 k：分子 = (1×2×4)×(1³ + 2³ + 3³ + 4³)，分母 = (1×3×4)×(1³ + 2³ + 3³ + 4³)。分子分母整体约去 (1³ + 2³ + 3³ + 4³)，只剩 (1×2×4)/(1×3×4) = 8/12 = 2/3。</div>
+      <div class="ana-pit"><strong>易错提醒：</strong>① 每项三个因数同时放大 k 倍，提出来的是 k³ 而不是 k；② 切忌真的把每组乘积算出来相加，易算错大数。</div>
+      <div class="ana-adv"><strong>巩固建议：</strong>遇到长分子长分母的求和分式，先检查“各项与首项是否成等比例放大”，确认后即可直接取首项之比约分。</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级四则混合运算巅峰巩固（每日10题·逐套进阶）· 第 01 天 · 题目分析</span>
+    <span>题目分析 第 1 页（共 2 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第三部分：题目分析 第 2 页（第 4 页） ==================== -->
+<div class="sheet part-analysis">
+  <div class="sheet-content">
+    <div class="part-header">
+      <h2>题目分析、算理精析与巩固建议（第 01 天 · 第 6～10 题）</h2>
+      <p>重点攻克二次提公因数、等比首项识别、重数分解与同级顺序防误约</p>
+    </div>
+
+    <div class="ana-card">
+      <div class="ana-head">
+        <span><strong>第 6 题</strong> <span class="kp-badge">K06</span> <span class="tag-qiao">巧算 · 积不变规律与二次提公因数</span></span>
+        <span class="ana-ans">答案：1600</span>
+      </div>
+      <div class="ana-line"><strong>解题思路：</strong>第一步，识别 5/8 = 0.625，用积不变规律将 5/8 × 6820 改写为 6.25 × 682；前两项提取 6.25 得 6.25 × (842 − 682) = 6.25 × 160。第二步，再由积不变将 6.25 × 160 改写为 62.5 × 16，与第三项合并提取 16：16 × (62.5 + 37.5) = 16 × 100 = 1600。</div>
+      <div class="ana-pit"><strong>易错提醒：</strong>① 小数点移动必须“一扩十、一缩十”反向平衡（0.625 扩 10 倍，6820 缩 10 倍）；② 算完第一步 6.25×160 后要敏锐发现 62.5 与 37.5 凑百，进行第二次提取。</div>
+      <div class="ana-adv"><strong>巩固建议：</strong>凡见 1/8 系列（0.125、0.375、0.625、0.875）与大数乘加混合，先统一小数位数再观察能否连续两次提取公因数。</div>
+    </div>
+
+    <div class="ana-card">
+      <div class="ana-head">
+        <span><strong>第 7 题</strong> <span class="kp-badge">K07</span> <span class="tag-qiao">巧算 · 等比折半借一还一巧算</span></span>
+        <span class="ana-ans">答案：3又63/64（或 255/64）</span>
+      </div>
+      <div class="ana-line"><strong>解题思路：</strong>后一项恒为前一项的一半（公比 1/2）。向末项借一个 1/64：从右向左逐级相加合并，1/64 + 1/64 = 1/32 → … → 1/2 + 1/2 = 1 → 1 + 1 = 2 → 2 + 2 = 4；最后还掉借来的 1/64：4 − 1/64 = 3又63/64（或 255/64）。</div>
+      <div class="ana-pit"><strong>易错提醒：</strong>本题刻意把首项设为 2（不是 1/2 也不是 1），死背“1 − 1/64”或“2 − 1/64”都会错！通法永远是“首项 × 2 − 末项”。</div>
+      <div class="ana-adv"><strong>巩固建议：</strong>画“正方形/线段折半图”或亲手写一遍“借 1/64 再还 1/64”的合并链，彻底理解而非机械套公式。</div>
+    </div>
+
+    <div class="ana-card">
+      <div class="ana-head">
+        <span><strong>第 8 题</strong> <span class="kp-badge">K08</span> <span class="tag-chang">常规 · 带分数与小数中括号综合</span></span>
+        <span class="ana-ans">答案：1又3/5（或 8/5、1.6）</span>
+      </div>
+      <div class="ana-line"><strong>解题思路：</strong>前括号化小数最简捷：4又3/4 − 2.35 = 4.75 − 2.35 = 2.4 = 12/5；后半小括号通分：7/10 + 1/2 = 7/10 + 5/10 = 12/10 = 6/5；中括号乘法约分：6/5 × 5/4 = 3/2；最后 12/5 ÷ 3/2 = 12/5 × 2/3 = 8/5（即 1又3/5 或 1.6）。</div>
+      <div class="ana-pit"><strong>易错提醒：</strong>① 4又3/4 = 4.75，部分同学易误写成 4.34；② 2.4 化为假分数 12/5 后再做分数除法，比用小数除以 1.5 更不易错。</div>
+      <div class="ana-adv"><strong>巩固建议：</strong>养成“加减看是否好化有限小数、乘除优先统一化假分数约分”的灵活切换策略。</div>
+    </div>
+
+    <div class="ana-card">
+      <div class="ana-head">
+        <span><strong>第 9 题</strong> <span class="kp-badge">K09</span> <span class="tag-qiao">巧算 · 四位重数位值分解巧算</span></span>
+        <span class="ana-ans">答案：10001</span>
+      </div>
+      <div class="ana-line"><strong>解题思路：</strong>利用四位重数分解规律 abcdabcd = abcd × 10001：原式 = 2026 × (2027 × 10001) − 2027 × (2026 × 10001) + (2026 × 10001) ÷ 2026 = 0 + 10001 = 10001。</div>
+      <div class="ana-pit"><strong>易错提醒：</strong>① 切勿一看到前面形如“a×bb − b×aa”就直接写答案 0，漏看了末尾“+ 20262026 ÷ 2026”；② 注意四位重数对应 10001（中间三个 0），不是 1001（那是三位重数）。</div>
+      <div class="ana-adv"><strong>巩固建议：</strong>对比牢记三组位值分解：abab = ab×101、abcabc = abc×1001、abcdabcd = abcd×10001，并注意观察整道算式全貌。</div>
+    </div>
+
+    <div class="ana-card">
+      <div class="ana-head">
+        <span><strong>第 10 题</strong> <span class="kp-badge">K10</span> <span class="tag-chang">常规 · 同级乘除防误约顺序陷阱</span></span>
+        <span class="ana-ans">答案：8/9</span>
+      </div>
+      <div class="ana-line"><strong>解题思路：</strong>前半部分无括号且全为同级乘除，必须从左往右算（或把 ÷ 3/7 改写为 × 7/3）：(3/7 × 7/9 × 7/3 × 7/9) + 23/81。3/7 与 7/3 互为倒数约成 1，剩 7/9 × 7/9 = 49/81；最后 49/81 + 23/81 = 72/81 = 8/9。</div>
+      <div class="ana-pit"><strong>易错提醒：</strong>① 经典高危陷阱：把前面看成“(3/7×7/9) ÷ (3/7×7/9) = 1”而误算成 1又23/81；② 算出 72/81 后忘记分子分母同除以 9 化为最简分数 8/9。</div>
+      <div class="ana-adv"><strong>巩固建议：</strong>凡遇连续乘除无括号，第一步直接把所有“÷ 分数”改成“× 倒数”，变成纯连乘后再约分，永不踩坑！</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级四则混合运算巅峰巩固（每日10题·逐套进阶）· 第 01 天 · 题目分析</span>
+    <span>题目分析 第 2 页（共 2 页）</span>
+  </div>
+</div>
+
+<script>
+  const PRINT_CLASSES = [
+    'print-exam-only',
+    'print-answer-only',
+    'print-analysis-only',
+    'print-answer-analysis'
+  ];
+  function printMode(mode) {
+    document.body.classList.remove(...PRINT_CLASSES);
+    document.querySelectorAll('.sheet.is-last-visible')
+      .forEach(el => el.classList.remove('is-last-visible'));
+    if (mode === 'exam') document.body.classList.add('print-exam-only');
+    if (mode === 'answer') document.body.classList.add('print-answer-only');
+    if (mode === 'analysis') document.body.classList.add('print-analysis-only');
+    if (mode === 'answer-analysis') document.body.classList.add('print-answer-analysis');
+    const visibleSheets = Array.from(document.querySelectorAll('.sheet'))
+      .filter(el => getComputedStyle(el).display !== 'none');
+    if (visibleSheets.length > 0) {
+      visibleSheets[visibleSheets.length - 1].classList.add('is-last-visible');
+    }
+    window.print();
+    setTimeout(() => {
+      document.body.classList.remove(...PRINT_CLASSES);
+      document.querySelectorAll('.sheet.is-last-visible')
+        .forEach(el => el.classList.remove('is-last-visible'));
+    }, 300);
+  }
+</script>
+</body>
+</html>
