@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>小学六年级数学上册第五单元《折扣与利率》易错点专项突破测试卷（A4可打印版）</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 13mm 12mm 13mm;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: "Songti SC", "STSong", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: #1a1a1a;
+    background: #eef1f5;
+    margin: 0;
+    padding: 18px 0 40px 0;
+    font-size: 12.2px;
+    line-height: 1.46;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 顶部打印工具栏（打印时自动隐藏） */
+  .no-print-banner {
+    width: 210mm;
+    margin: 0 auto 14px auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #1d4ed8;
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .banner-info { font-size: 12.3px; color: #334155; }
+  .banner-info strong { color: #0f172a; font-size: 13.8px; }
+  .banner-actions { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+  .btn {
+    border: none;
+    padding: 6px 11px;
+    font-size: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: inherit;
+  }
+  .btn-primary { background: #1d4ed8; color: #fff; }
+  .btn-primary:hover { background: #1e40af; }
+  .btn-secondary { background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; }
+  .btn-secondary:hover { background: #e2e8f0; }
+
+  /* A4 纸张容器 */
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 18px auto;
+    background: #ffffff;
+    padding: 12mm 13mm 11mm 13mm;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  .sheet-content { flex: 1; }
+  .page-footer {
+    margin-top: auto;
+    padding-top: 5px;
+    border-top: 1px solid #d4d4d8;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.6px;
+    color: #666;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  .q-item, .app-item, .ans-sec, .analysis-card, .data-table {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* 卷头样式 */
+  .exam-header { text-align: center; margin-bottom: 5px; }
+  .exam-title {
+    font-size: 17.5px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    margin: 0 0 2px 0;
+    color: #000;
+  }
+  .exam-subtitle {
+    font-size: 10.4px;
+    color: #444;
+    margin: 0 0 5px 0;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    white-space: nowrap;
+  }
+  .student-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .student-info .field-line {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 70px;
+    height: 13px;
+    vertical-align: bottom;
+  }
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 5px;
+    font-size: 11px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .score-table th, .score-table td {
+    border: 1px solid #333;
+    text-align: center;
+    padding: 2px 3px;
+  }
+  .score-table th { background: #f5f5f5; font-weight: 600; }
+  .score-table td { height: 18px; }
+
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #000;
+    margin: 5px 0 3px 0;
+    padding-bottom: 1.5px;
+    border-bottom: 1.2px solid #27272a;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .section-title .pts {
+    font-size: 11px;
+    font-weight: 400;
+    color: #333;
+    margin-left: 4px;
+  }
+  .sub-title {
+    font-size: 12.2px;
+    font-weight: 600;
+    margin: 5px 0 4px 0;
+    color: #111;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  /* 分数排版 */
+  .frac {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 2px;
+    line-height: 1.04;
+    font-size: 0.87em;
+    font-family: "Times New Roman", "Songti SC", serif;
+  }
+  .frac .num { border-bottom: 1px solid #1a1a1a; padding: 0 2px 1px 2px; text-align: center; }
+  .frac .den { padding: 1px 2px 0 2px; text-align: center; }
+
+  .blank {
+    display: inline-block;
+    border-bottom: 1px solid #222;
+    min-width: 40px;
+    text-align: center;
+    margin: 0 2px;
+    height: 13px;
+    vertical-align: baseline;
+  }
+  .blank-sm { min-width: 28px; }
+  .blank-lg { min-width: 68px; }
+  .q-num { font-weight: 600; margin-right: 2px; }
+
+  .q-list { margin: 0; padding: 0; list-style: none; }
+  .q-list > li { margin-bottom: 2px; text-align: justify; }
+
+  .judge-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.8px;
+  }
+  .judge-box { flex-shrink: 0; margin-left: 10px; white-space: nowrap; }
+
+  .choice-item { margin-bottom: 2.8px; }
+  .choice-stem { text-align: justify; }
+  .choice-opts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding-left: 16px;
+    margin-top: 0.5px;
+    font-size: 11.7px;
+  }
+  .choice-opts-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px 14px;
+    padding-left: 16px;
+    margin-top: 0.5px;
+    font-size: 11.7px;
+  }
+
+  /* 口算网格与计算框 */
+  .mental-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px 10px;
+    margin: 4px 0 7px 0;
+    font-size: 12px;
+  }
+  .mental-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 5px 7px;
+    background: #fafafa;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4px 0 7px 0;
+    font-size: 12px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .data-table th, .data-table td {
+    border: 1px solid #333;
+    text-align: center;
+    padding: 3.5px 6px;
+  }
+  .data-table th { background: #f4f4f5; font-weight: 600; }
+
+  .calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 14px;
+    row-gap: 7px;
+    margin: 4px 0 7px 0;
+  }
+  .calc-box {
+    border: 1px dashed #cbd5e1;
+    border-radius: 5px;
+    padding: 6px 9px;
+    min-height: 82px;
+  }
+  .calc-expr { font-size: 12.6px; }
+
+  .app-item {
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    padding: 8px 11px;
+    margin-bottom: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .app-stem { text-align: justify; line-height: 1.54; }
+  .app-ans-line {
+    font-size: 11.8px;
+    color: #555;
+    text-align: right;
+    padding-top: 4px;
+  }
+
+  /* 第二部分：参考答案样式 */
+  .part-header {
+    text-align: center;
+    border-bottom: 2px solid #1e293b;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+  }
+  .part-header h2 { margin: 0; font-size: 16px; color: #0f172a; }
+  .part-header p { margin: 2px 0 0 0; font-size: 10.8px; color: #475569; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; }
+
+  .summary-box {
+    border: 1.5px solid #1d4ed8;
+    border-radius: 6px;
+    background: #f8fbff;
+    padding: 7px 11px;
+    margin-bottom: 8px;
+    font-size: 11.2px;
+    line-height: 1.5;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .summary-title {
+    font-size: 12.3px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin: 0 0 4px 0;
+    border-bottom: 1px solid #bfdbfe;
+    padding-bottom: 2px;
+  }
+  .ans-sec {
+    margin-bottom: 6px;
+    font-size: 11px;
+    line-height: 1.46;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .ans-sec h3 {
+    font-size: 11.9px;
+    margin: 0 0 3px 0;
+    padding: 2px 7px;
+    background: #f1f5f9;
+    border-left: 3px solid #1d4ed8;
+    color: #0f172a;
+  }
+  .ans-p { margin: 2.2px 0; text-align: justify; }
+
+  /* 第三部分：题目分析样式 */
+  .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    font-size: 10.7px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .spec-table th, .spec-table td {
+    border: 1px solid #64748b;
+    padding: 3px 5px;
+    text-align: center;
+  }
+  .spec-table th { background: #eff6ff; color: #1e3a8a; font-weight: 600; }
+  .spec-table td.left { text-align: left; }
+
+  .analysis-card {
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid #0f766e;
+    border-radius: 4px;
+    padding: 5px 9px;
+    margin-bottom: 5.5px;
+    background: #ffffff;
+    font-size: 11px;
+    line-height: 1.45;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .analysis-card h4 {
+    margin: 0 0 2px 0;
+    font-size: 11.6px;
+    color: #0f172a;
+  }
+  .analysis-card p { margin: 2px 0; text-align: justify; }
+  .tag-k { color: #1d4ed8; font-weight: 600; }
+  .tag-e { color: #b91c1c; font-weight: 600; }
+  .tag-s { color: #0f766e; font-weight: 600; }
+  .badge-fix {
+    display: inline-block;
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    border-radius: 3px;
+    font-size: 9.7px;
+    padding: 0 4px;
+    margin-left: 4px;
+    font-weight: 600;
+  }
+
+  /* 分模块打印模式 */
+  body.print-exam-only .part-answer,
+  body.print-exam-only .part-analysis { display: none !important; }
+  body.print-answer-only .part-exam,
+  body.print-answer-only .part-analysis { display: none !important; }
+  body.print-analysis-only .part-exam,
+  body.print-analysis-only .part-answer { display: none !important; }
+  body.print-answer-analysis .part-exam { display: none !important; }
+
+  @media print {
+    body { background: #fff; padding: 0; margin: 0; }
+    .no-print, .no-print-banner { display: none !important; }
+    .sheet {
+      width: auto;
+      height: 270mm;
+      min-height: 270mm;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      page-break-after: always;
+      break-after: page;
+    }
+    .sheet:last-of-type,
+    .sheet.is-last-visible {
+      page-break-after: auto;
+      break-after: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="no-print-banner">
+  <div class="banner-info">
+    <strong>小学六年级数学上册第五单元《折扣与利率》易错点专项突破测试卷（A4可打印版）</strong><br>
+    紧扣教材 p.79–88 ｜ 重点专攻：利率存期/期数防漏、百分数拆项防错、低利率精算与回代验算 ｜ 60分钟 · 100分
+  </div>
+  <div class="banner-actions">
+    <button class="btn btn-primary" onclick="printMode('all')">打印完整版</button>
+    <button class="btn btn-secondary" onclick="printMode('exam')">仅打印空白试卷</button>
+    <button class="btn btn-secondary" onclick="printMode('answer')">仅打印参考答案</button>
+    <button class="btn btn-secondary" onclick="printMode('analysis')">仅打印题目分析</button>
+    <button class="btn btn-secondary" onclick="printMode('answer-analysis')">仅打印答案与分析</button>
+  </div>
+</div>
+
+<!-- ==================== 第一部分：空白试卷（第 1 页） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content">
+    <div class="exam-header">
+      <h1 class="exam-title">六年级数学上册第五单元《折扣与利率》易错点专项突破测试卷</h1>
+      <p class="exam-subtitle">教材范围：人教版六年级上册 第五单元（p.79–88 百分数的意义、折扣与利率） ｜ 易错定向强化 ｜ 时间：60分钟 · 满分：100分</p>
+      <div class="student-info">
+        <div>班级：<span class="field-line"></span></div>
+        <div>姓名：<span class="field-line"></span></div>
+        <div>用时：<span class="field-line" style="min-width:48px;"></span> 分钟</div>
+        <div>得分：<span class="field-line" style="min-width:56px;"></span></div>
+      </div>
+      <table class="score-table">
+        <tr>
+          <th style="width:12%;">题号</th>
+          <th>一（24分）</th>
+          <th>二（5分）</th>
+          <th>三（12分）</th>
+          <th>四（25分）</th>
+          <th>五（34分）</th>
+          <th style="width:14%;">总分（100分）</th>
+        </tr>
+        <tr>
+          <th>得分</th>
+          <td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 一、填空题 -->
+    <div class="section-title">一、填空题<span class="pts">（每空1分，共24分）</span></div>
+    <ol class="q-list">
+      <li><span class="q-num">1.</span>
+        张爷爷把 8000 元存入银行，存期 3 年，年利率是 2.75%。这里的本金是 <span class="blank"></span> 元，到期时可获得利息 <span class="blank blank-sm"></span> 元，到期一共可以取出 <span class="blank"></span> 元。
+      </li>
+      <li><span class="q-num">2.</span>
+        王阿姨把 12000 元存入银行，存期 <strong>6 个月</strong>（即 <span class="blank blank-sm"></span> 年），年利率为 1.30%，到期时可得利息 <span class="blank blank-sm"></span> 元。
+      </li>
+      <li><span class="q-num">3.</span>
+        李叔叔把一笔钱存 <strong>2 年</strong>定期（年利率 2.10%），到期共获得利息 630 元，李叔叔存入的本金是 <span class="blank"></span> 元；赵阿姨把 10000 元存 <strong>3 年</strong>定期，到期连本带息共取出 10720 元，这种存款的年利率是 <span class="blank blank-sm"></span>%。
+      </li>
+      <li><span class="q-num">4.</span>
+        在横线上填上合适的数使等式成立：24% ＝ 4 × <span class="blank blank-sm"></span>%；36% ＝ 0.4 × <span class="blank blank-sm"></span>（填小数）；16% × 25% ＝ <span class="blank blank-sm"></span>%。
+      </li>
+      <li><span class="q-num">5.</span>
+        直接填出结果：20400 × 1.5% ＝ <span class="blank blank-sm"></span>；5000 × 0.65% × 3 ＝ <span class="blank"></span>；40000 × 2.38% × 3 ＝ <span class="blank"></span>。
+      </li>
+      <li><span class="q-num">6.</span>
+        一件冲锋衣原价 480 元，现打七五折出售，现价是 <span class="blank blank-sm"></span> 元；一双跑鞋打八五折后售价 255 元，原价是 <span class="blank blank-sm"></span> 元；一台空气炸锅打八折出售比原价便宜了 76 元，它的原价是 <span class="blank blank-sm"></span> 元。
+      </li>
+      <li><span class="q-num">7.</span>
+        某品牌书包先打八折，再用会员卡享折上九五折，最终相当于按原价打 <span class="blank blank-sm"></span> 折出售；某牛奶开展“买四送一”促销活动，这相当于打 <span class="blank blank-sm"></span> 折出售。
+      </li>
+      <li><span class="q-num">8.</span>
+        把 0.25% 化成最简分数是 <span class="blank"></span>；把 137.5% 化成最简分数是 <span class="blank"></span>；某车间计划生产 250 台机器，实际生产了 280 台，该车间的计划完成率是 <span class="blank blank-sm"></span>%。
+      </li>
+      <li><span class="q-num">9.</span>
+        在农业和商业中，“三成五”改写成百分数是 <span class="blank blank-sm"></span>%；在 0.777、<span class="frac"><span class="num">7</span><span class="den">9</span></span>、七八折、77.8% 这四个数中，最大的数是 <span class="blank"></span>，最小的数是 <span class="blank"></span>。
+      </li>
+    </ol>
+
+    <!-- 二、判断题 -->
+    <div class="section-title">二、判断题<span class="pts">（对的画“√”，错的画“×”。每题1分，共5分）</span></div>
+    <ol class="q-list judge-list">
+      <li><span><span class="q-num">1.</span> 简算 12.5 × 24% × 2.5 时，可以把 24% 拆成 8% × 3% 来计算。</span><span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span></li>
+      <li><span><span class="q-num">2.</span> 把 5000 元存入银行，存三年定期，年利率 2.75%，到期可获得利息 5000 × 2.75% ＝ 137.5 元。</span><span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span></li>
+      <li><span><span class="q-num">3.</span> 信用卡账单 6000 元分 6 期还款，每期分期利率 0.60%，一共要付的手续费是 6000 × 0.60% × 6 ＝ 216 元。</span><span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span></li>
+      <li><span><span class="q-num">4.</span> 计算 30200 × 1.5% 时，因为 1.5% ＝ 0.015，所以可以先消去两个 0，转化为 302 × 1.5 ＝ 453。</span><span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span></li>
+      <li><span><span class="q-num">5.</span> 同款商品标价相同，“先打八折再减 50 元”比“先减 50 元再打八折”多省 10 元。</span><span class="judge-box">（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）</span></li>
+    </ol>
+
+    <!-- 三、选择题 -->
+    <div class="section-title">三、选择题<span class="pts">（把正确答案的序号填在括号里。每题2分，共12分）</span></div>
+
+    <div class="choice-item">
+      <div class="choice-stem"><span class="q-num">1.</span> 下面计算 25 × 36% × 1.25 的四种变形中，<strong>错误</strong>的是（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。</div>
+      <div class="choice-opts-2">
+        <div>A. (25 × 4%) × (9% × 1.25)</div>
+        <div>B. (25 × 0.4) × (0.9 × 1.25)</div>
+        <div>C. (25 × 4%) × (9 × 1.25)</div>
+        <div>D. 25 × (36 ÷ 100) × 1.25</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem"><span class="q-num">2.</span> 妈妈把 15000 元存入银行，存期 <strong>3 个月</strong>，年利率是 1.10%。到期时一共能取出的钱数（本息和）列式正确的是（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。</div>
+      <div class="choice-opts-2">
+        <div>A. 15000 ＋ 15000 × 1.10% × 3</div>
+        <div>B. 15000 × (1 ＋ 1.10%)</div>
+        <div>C. 15000 × (1 ＋ 1.10% × <span class="frac"><span class="num">3</span><span class="den">12</span></span>)</div>
+        <div>D. 15000 × 1.10% × <span class="frac"><span class="num">3</span><span class="den">12</span></span></div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem"><span class="q-num">3.</span> 爸爸把 10000 元先存一年定期（年利率 1.50%），到期后连本带息再转存一年定期（年利率仍为 1.50%）。计算<strong>第二年的利息</strong>，列式正确的是（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。</div>
+      <div class="choice-opts-2">
+        <div>A. 10000 × 1.50%</div>
+        <div>B. 10000 × 1.50% × 2</div>
+        <div>C. 10000 × (1 ＋ 1.50%) × 1.50%</div>
+        <div>D. 10000 × (1 ＋ 1.50%) × 1.50% × 2</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem"><span class="q-num">4.</span> 某信用卡账单金额为 10000 元，分 <strong>12 期</strong>还款，每期分期利率是 0.60%。这 12 期<strong>平均每期手续费</strong>和<strong>总手续费</strong>分别是（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。</div>
+      <div class="choice-opts">
+        <div>A. 60 元，60 元</div>
+        <div>B. 60 元，720 元</div>
+        <div>C. 600 元，7200 元</div>
+        <div>D. 5 元，60 元</div>
+      </div>
+    </div>
+
+    <div class="choice-item">
+      <div class="choice-stem"><span class="q-num">5.</span> 某品牌行李箱标价 450 元。甲店“每满 200 元减 60 元”，乙店“打七五折”，丙店“每满 100 元减 28 元”。在（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）买最划算。</div>
+      <div class="choice-opts">
+        <div>A. 甲店</div>
+        <div>B. 乙店</div>
+        <div>C. 丙店</div>
+        <div>D. 一样划算</div>
+      </div>
+    </div>
+
+    <div class="choice-item" style="margin-bottom:0;">
+      <div class="choice-stem"><span class="q-num">6.</span> 把 0.856、<span class="frac"><span class="num">6</span><span class="den">7</span></span>、八六折、85.7% 按<strong>从小到大</strong>排列，排在<strong>第三位</strong>的数是（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。</div>
+      <div class="choice-opts">
+        <div>A. 0.856</div>
+        <div>B. <span class="frac"><span class="num">6</span><span class="den">7</span></span></div>
+        <div>C. 八六折</div>
+        <div>D. 85.7%</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册第五单元《折扣与利率》易错点专项突破测试卷 · 空白试卷</span>
+    <span>第 1 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第一部分：空白试卷（第 2 页） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content">
+    <!-- 四、计算专项强化 -->
+    <div class="section-title" style="margin-top:0;">四、计算专项强化<span class="pts">（共25分）</span></div>
+
+    <div class="sub-title">1. 直接写出得数。（每题1分，共8分）</div>
+    <div class="mental-grid">
+      <div class="mental-item">（1）10400 × 1.5% ＝</div>
+      <div class="mental-item">（2）20500 × 2.4% ＝</div>
+      <div class="mental-item">（3）8000 × 0.65% ＝</div>
+      <div class="mental-item">（4）6000 × 2.1% × 2 ＝</div>
+      <div class="mental-item">（5）1200 － 45 ＝</div>
+      <div class="mental-item">（6）20% × 35% ＝</div>
+      <div class="mental-item">（7）48 ÷ 120% ＝</div>
+      <div class="mental-item">（8）3000 × (1 ＋ 1.5%) ＝</div>
+    </div>
+
+    <div class="sub-title">2. 脱式计算，能简算的要简算。（每题3分，共12分）</div>
+    <div class="calc-grid">
+      <div class="calc-box">
+        <div class="calc-expr">（1）12.5 × 48% × 2.5</div>
+      </div>
+      <div class="calc-box">
+        <div class="calc-expr">（2）2.5 × 64% × 12.5</div>
+      </div>
+      <div class="calc-box">
+        <div class="calc-expr">（3）6.4 × 37.5% ＋ 3.6 × <span class="frac"><span class="num">3</span><span class="den">8</span></span> － 0.375 × 2</div>
+      </div>
+      <div class="calc-box">
+        <div class="calc-expr">（4）20400 × 1.5% ＋ 20400 × 2.5% × 2</div>
+      </div>
+    </div>
+
+    <div class="sub-title">3. 解方程。（每题2.5分，共5分）</div>
+    <div class="calc-grid" style="margin-bottom:6px;">
+      <div class="calc-box" style="min-height:76px;">
+        <div class="calc-expr">（1）<i>x</i> × (1 ＋ 2.75% × 2) ＝ 10550</div>
+      </div>
+      <div class="calc-box" style="min-height:76px;">
+        <div class="calc-expr">（2）25<i>x</i> ＋ 10 × (80 － <i>x</i>) ＝ 1250</div>
+      </div>
+    </div>
+
+    <!-- 五、解决问题与综合应用 -->
+    <div class="section-title" style="margin-top:6px;">五、解决问题与综合应用<span class="pts">（第1～3题每题6分，第4～5题每题8分，共34分）</span></div>
+
+    <div class="app-item" style="min-height:208px;">
+      <div class="app-stem">
+        <span class="q-num">1.</span> 王阿姨有 <strong>30000 元</strong>存款，计划存 2 年，银行给出两种方式：（6分）<br>
+        ・方式一：直接存二年定期，年利率为 2.10%；<br>
+        ・方式二：先存一年定期（年利率 1.50%），第一年到期后把<strong>本金和利息合在一起</strong>再转存一年定期（年利率仍为 1.50%）。<br>
+        （1）方式一两年到期后可得利息多少元？连本带息一共取出多少元？（2分）<br>
+        （2）方式二第一年到期后本息合计多少元？第二年到期后连本带息一共能取出多少元？（请写出第二年利息的计算过程）（3分）<br>
+        （3）两种方式到期后的总收益相差多少元？（1分）
+      </div>
+      <div class="app-ans-line">答：（1）利息 <span class="blank blank-sm"></span> 元，共取 <span class="blank"></span> 元；（2）共取 <span class="blank"></span> 元；（3）相差 <span class="blank"></span> 元。</div>
+    </div>
+
+    <div class="app-item" style="min-height:212px; margin-bottom:0;">
+      <div class="app-stem">
+        <span class="q-num">2.</span> 张叔叔买了一台标价 <strong>12000 元</strong>的电脑，商城活动打<strong>八五折</strong>。张叔叔对<strong>折后实付金额</strong>申请信用卡分期还款，每期分期利率见下表：（6分）
+        <table class="data-table" style="margin:4px 0;">
+          <tr>
+            <th style="width:28%;">分期数</th>
+            <th style="width:24%;">3 期</th>
+            <th style="width:24%;">6 期</th>
+            <th style="width:24%;">12 期</th>
+          </tr>
+          <tr>
+            <th>每期分期利率</th>
+            <td>0.65%</td>
+            <td>0.60%</td>
+            <td>0.60%</td>
+          </tr>
+        </table>
+        （1）这台电脑打八五折后，需要分期的本金总额是多少元？（2分）<br>
+        （2）如果分别选择 <strong>3 期</strong>和 <strong>12 期</strong>还款，一共要付的手续费各是多少元？分 12 期比分 3 期总共多付多少元手续费？（4分）
+      </div>
+      <div class="app-ans-line">答：（1）<span class="blank"></span> 元；（2）3期 <span class="blank"></span> 元，12期 <span class="blank"></span> 元，多付 <span class="blank"></span> 元。</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册第五单元《折扣与利率》易错点专项突破测试卷 · 空白试卷</span>
+    <span>第 2 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第一部分：空白试卷（第 3 页） ==================== -->
+<div class="sheet part-exam">
+  <div class="sheet-content">
+    <div class="app-item" style="min-height:224px;">
+      <div class="app-stem">
+        <span class="q-num">3.</span> 李奶奶准备把一笔养老钱存 <strong>3 年</strong>。她了解到：三年期国债的年利率是 2.95%，银行三年定期存款的年利率是 2.75%。（6分）<br>
+        （1）如果李奶奶存 <strong>50000 元</strong>，3 年后买三年期国债比存银行三年定期多得多少元利息？（3分）<br>
+        （2）如果陈爷爷存了这种银行三年定期（年利率 2.75%），3 年到期后一共获得利息 <strong>1650 元</strong>，陈爷爷当时存入的本金是多少元？（3分）
+      </div>
+      <div class="app-ans-line">答：（1）多得利息 <span class="blank blank-sm"></span> 元；（2）存入的本金是 <span class="blank"></span> 元。</div>
+    </div>
+
+    <div class="app-item" style="min-height:282px;">
+      <div class="app-stem">
+        <span class="q-num">4.</span> “双十一”期间，某家电城推出两种优惠活动（不可同时使用）：<br>
+        ・<strong>活动 A</strong>：全场每满 500 元减 80 元； &nbsp;&nbsp;&nbsp;&nbsp; ・<strong>活动 B</strong>：全场统一打八五折。（8分）<br>
+        （1）妈妈看中了一台标价 <strong>1800 元</strong>的吸尘器，选哪种活动更省钱？能省多少钱？（3分）<br>
+        （2）爸爸想买一台标价 <strong>2400 元</strong>的咖啡机，单买这台咖啡机选哪种活动更省钱？如果爸爸顺便再买一个标价 <strong>120 元</strong>的研磨杯凑在一起结账，使用活动 A 实际一共付多少钱？此时选活动 A 还是活动 B 更划算？（5分）
+      </div>
+      <div class="app-ans-line">答：（1）选活动 <span class="blank blank-sm"></span>，省 <span class="blank blank-sm"></span> 元；（2）单买选活动 <span class="blank blank-sm"></span>；凑单后活动A付 <span class="blank"></span> 元，选活动 <span class="blank blank-sm"></span> 更划算。</div>
+    </div>
+
+    <div class="app-item" style="min-height:356px; margin-bottom:0;">
+      <div class="app-stem">
+        <span class="q-num">5.</span> 某商场周年庆计划发放 <strong>1500 张</strong>优惠礼券，总补贴预算为 <strong>12000 元</strong>，要求<strong>总中奖率恰好为 60%</strong>。奖项设置如下：一等奖每张 100 元（固定发 <strong>60 张</strong>），二等奖每张 20 元，三等奖每张 5 元。（8分）<br>
+        （1）本次活动一共有多少张中奖礼券？一等奖占发放总数的中奖率是多少？（2分）<br>
+        （2）按上述预算和中奖率，二等奖和三等奖各应设置多少张？<strong>请写出关键计算过程，并把最终结果代入原题进行验算（验算总张数与总金额）。</strong>（4分）<br>
+        （3）如果商场决定将<strong>总补贴预算增加 600 元（变为 12600 元）</strong>，发放总数、总中奖率（60%）和一等奖张数（60 张）都不变，那么二等奖应该增加多少张？（2分）
+      </div>
+      <div class="app-ans-line">答：（1）<span class="blank blank-sm"></span> 张，<span class="blank blank-sm"></span>%；（2）二等奖 <span class="blank blank-sm"></span> 张，三等奖 <span class="blank blank-sm"></span> 张；（3）增加 <span class="blank blank-sm"></span> 张。</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册第五单元《折扣与利率》易错点专项突破测试卷 · 空白试卷</span>
+    <span>第 3 页（共 3 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第二部分：参考答案（第 4 页，独立起页） ==================== -->
+<div class="sheet part-answer">
+  <div class="sheet-content">
+    <div class="part-header">
+      <h2>参考答案与评分标准</h2>
+      <p>小学六年级数学上册第五单元《折扣与利率》易错点专项突破测试卷 ｜ 先总体核对答案，再按步骤判分</p>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">全卷参考答案总览（快速批阅用）</div>
+      <div><strong>一、填空题（24分）：</strong>
+        <strong>1.</strong> 8000；660；8660 &nbsp;
+        <strong>2.</strong> 0.5（或 <span class="frac"><span class="num">1</span><span class="den">2</span></span>）；78 &nbsp;
+        <strong>3.</strong> 15000；2.4 &nbsp;
+        <strong>4.</strong> 6；0.9；4 &nbsp;
+        <strong>5.</strong> 306；97.5；2856 &nbsp;
+        <strong>6.</strong> 360；300；380 &nbsp;
+        <strong>7.</strong> 七六；八 &nbsp;
+        <strong>8.</strong> <span class="frac"><span class="num">1</span><span class="den">400</span></span>；<span class="frac"><span class="num">11</span><span class="den">8</span></span>（或 1<span class="frac"><span class="num">3</span><span class="den">8</span></span>）；112 &nbsp;
+        <strong>9.</strong> 35；七八折；0.777
+      </div>
+      <div><strong>二、判断题（5分）：</strong>
+        <strong>1.</strong> × &nbsp;&nbsp; <strong>2.</strong> × &nbsp;&nbsp; <strong>3.</strong> √ &nbsp;&nbsp; <strong>4.</strong> √ &nbsp;&nbsp; <strong>5.</strong> √
+      </div>
+      <div><strong>三、选择题（12分）：</strong>
+        <strong>1.</strong> A &nbsp;&nbsp; <strong>2.</strong> C &nbsp;&nbsp; <strong>3.</strong> C &nbsp;&nbsp; <strong>4.</strong> B &nbsp;&nbsp; <strong>5.</strong> A &nbsp;&nbsp; <strong>6.</strong> B
+      </div>
+      <div><strong>四、计算专项强化（25分）：</strong>
+        <strong>1.</strong>（1）156（2）492（3）52（4）252（5）1155（6）0.07（或7%）（7）40（8）3045<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong>2.</strong>（1）15 &nbsp;（2）20 &nbsp;（3）3 &nbsp;（4）1326 &nbsp;&nbsp;&nbsp;&nbsp;
+        <strong>3.</strong>（1）<i>x</i>＝10000 &nbsp;（2）<i>x</i>＝30
+      </div>
+      <div><strong>五、解决问题（34分）：</strong>
+        <strong>1.</strong>（1）利息1260元，共取31260元；（2）第一年30450元，第二年共取30906.75元；（3）相差353.25元 &nbsp;
+        <strong>2.</strong>（1）10200元；（2）3期198.9元，12期734.4元，多付535.5元 &nbsp;
+        <strong>3.</strong>（1）300元；（2）20000元 &nbsp;
+        <strong>4.</strong>（1）活动B更省钱，省30元；（2）单买选活动B；凑单后活动A付2120元，选活动A更划算 &nbsp;
+        <strong>5.</strong>（1）900张，4%；（2）二等奖120张，三等奖720张（含验算）；（3）增加40张
+      </div>
+    </div>
+
+    <div class="ans-sec">
+      <h3>一～三、客观题评分标准（共41分）</h3>
+      <p class="ans-p">・填空题每空 1 分（第 8 题未化最简分数扣 0.5 分）；判断题每题 1 分；选择题每题 2 分。</p>
+    </div>
+
+    <div class="ans-sec">
+      <h3>四、计算专项强化详细解答与评分（共25分）</h3>
+      <p class="ans-p"><strong>1.（8分）</strong>每题 1 分。特别核查：(4) 6000×2.1%×2＝126×2＝252（别漏乘2）；(6) 20%×35%＝0.2×0.35＝0.07（或 7%）。</p>
+      <p class="ans-p"><strong>2.（12分，每题3分）</strong>（1）12.5×0.48×2.5 ＝ (12.5×0.8)×(0.6×2.5) ＝ 10×1.5 ＝ 15；（2）2.5×0.64×12.5 ＝ (2.5×0.8)×(0.8×12.5) ＝ 2×10 ＝ 20；（3）0.375×(6.4＋3.6－2) ＝ 0.375×8 ＝ 3；（4）20400×(1.5%＋5%) ＝ 20400×6.5% ＝ 204×6.5 ＝ 1326（或分算 306＋1020＝1326）。（步骤 2 分，结果 1 分）</p>
+      <p class="ans-p"><strong>3.（5分，每题2.5分）</strong>（1）1.055<i>x</i>＝10550 ⇒ <i>x</i>＝10000；（2）25<i>x</i>＋800－10<i>x</i>＝1250 ⇒ 15<i>x</i>＝450 ⇒ <i>x</i>＝30。（漏写“解”扣 0.5 分）</p>
+    </div>
+
+    <div class="ans-sec">
+      <h3>五、解决问题分步参考答案与评分标准（共34分）</h3>
+      <p class="ans-p"><strong>1.（6分）</strong>（1）方式一利息：30000×2.10%×2 ＝ 1260（元）（1分），连本带息：30000＋1260 ＝ 31260（元）（1分）。（2）方式二第一年末：30000×(1＋1.50%) ＝ 30450（元）（1分）；第二年利息：30450×1.50% ＝ 304.5×1.5 ＝ 456.75（元）（1分）；第二年末本息：30450＋456.75 ＝ 30906.75（元）（1分）。（3）相差：31260－30906.75 ＝ 353.25（元）（1分）。</p>
+      <p class="ans-p"><strong>2.（6分）</strong>（1）分期本金：12000×85% ＝ 10200（元）（2分）。（2）分 3 期总手续费：10200×0.65%×3 ＝ 66.3×3 ＝ 198.9（元）（1.5分）；分 12 期总手续费：10200×0.60%×12 ＝ 61.2×12 ＝ 734.4（元）（1.5分）；多付：734.4－198.9 ＝ 535.5（元）（1分）。</p>
+      <p class="ans-p"><strong>3.（6分）</strong>（1）多得利息：50000×(2.95%－2.75%)×3 ＝ 50000×0.2%×3 ＝ 300（元）（或分别算 4425－4125＝300 元）（3分）。（2）本金：1650÷(2.75%×3) ＝ 1650÷0.0825 ＝ 20000（元）（3分）。</p>
+      <p class="ans-p"><strong>4.（8分）</strong>（1）活动 A：1800 含 3 个 500，1800－3×80 ＝ 1560（元）；活动 B：1800×85% ＝ 1530（元）；1530＜1560，选活动 B 更省钱，省 1560－1530＝30（元）（3分）。（2）单买 2400 元：A 付 2400－4×80＝2080（元），B 付 2400×85%＝2040（元），选活动 B 更省钱（2分）。凑单后标价 2400＋120＝2520（元）：活动 A 含 5 个 500，实付 2520－5×80 ＝ 2120（元）（1.5分）；活动 B 实付 2520×85% ＝ 2142（元）；2120＜2142，此时选活动 A 更划算（1.5分）。</p>
+      <p class="ans-p"><strong>5.（8分）</strong>（1）总中奖张数：1500×60% ＝ 900（张）（1分）；一等奖中奖率：60÷1500×100% ＝ 4%（1分）。（2）二、三等奖合计 900－60＝840（张），合计金额 12000－60×100＝6000（元）（1分）；假设全为三等奖：840×5＝4200（元），差 6000－4200＝1800（元），二等奖 1800÷(20－5)＝120（张），三等奖 840－120＝720（张）（2分）；<strong>验算</strong>：总张数 60＋120＋720＝900（张），总金额 60×100＋120×20＋720×5＝6000＋2400＋3600＝12000（元），完全吻合（1分，漏写验算扣1分）。（3）每把 1 张三等奖升级为二等奖多花 20－5＝15（元），预算增加 600 元可增加二等奖 600÷15 ＝ 40（张）（2分）。</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册第五单元《折扣与利率》易错点专项突破测试卷 · 参考答案</span>
+    <span>参考答案 第 1 页（共 1 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第三部分：题目分析（第 5 页，独立起页） ==================== -->
+<div class="sheet part-analysis">
+  <div class="sheet-content">
+    <div class="part-header">
+      <h2>题目分析与易错清零指南（第 1 页）</h2>
+      <p>人教版六上第五单元（p.79–88）｜ 专攻“利率漏乘期数 · 百分数拆项 · 低利率精算 · 收尾验算”</p>
+    </div>
+
+    <table class="spec-table">
+      <tr>
+        <th style="width:20%;">专项突破模块</th>
+        <th style="width:28%;">对应上次错因</th>
+        <th style="width:24%;">本卷分布题号</th>
+        <th style="width:10%;">分值</th>
+        <th style="width:18%;">过关标准</th>
+      </tr>
+      <tr>
+        <td><strong>利率三要素防漏期数</strong></td>
+        <td class="left">一7、五2(1)、五3 连续漏乘 2年/6期</td>
+        <td>一1/2/3、二2/3、三2/3/4、四1(4)、四3(1)、五1/2/3</td>
+        <td>41分</td>
+        <td class="left">先圈时间词，本×率×期全对</td>
+      </tr>
+      <tr>
+        <td><strong>百分数拆数防双 %</strong></td>
+        <td class="left">四3(1) 把 32% 拆成 8%×4%</td>
+        <td>一4、二1、三1、四1(6)、四2(1)(2)</td>
+        <td>13分</td>
+        <td class="left">先化小数再拆，绝不多带 %</td>
+      </tr>
+      <tr>
+        <td><strong>低利率精算与验算</strong></td>
+        <td class="left">五2(2) 20300×1.5%算错；五5 1080−40算错</td>
+        <td>一5、二4、四1(1)(2)(3)(5)(8)、四2(4)、五1(2)/5</td>
+        <td>20分</td>
+        <td class="left">消两 0 精算＋结果回代验算</td>
+      </tr>
+      <tr>
+        <td><strong>折扣凑单与比价</strong></td>
+        <td class="left">教材 p.85/87 核心应用巩固</td>
+        <td>一6/7、二5、三5、五4</td>
+        <td>17分</td>
+        <td class="left">满减门槛判断＋折上折准确</td>
+      </tr>
+      <tr>
+        <td><strong>第1课旧错回头看</strong></td>
+        <td class="left">完成率、最简分数、比大小防反弹</td>
+        <td>一8/9、三6、四1(7)、四2(3)</td>
+        <td>9分</td>
+        <td class="left">旧错零反弹</td>
+      </tr>
+    </table>
+
+    <div class="analysis-card">
+      <h4>一、填空题重点剖析（第 1～5、8、9 题）<span class="badge-fix">专治漏乘期数 / 拆双%</span></h4>
+      <p><span class="tag-k">【第1～3题·利率三要素铁律】</span>每做一道利率题，动笔前先用笔圈出<strong>“存期 / 期数”</strong>：第 1 题 3 年必乘 3；第 2 题 6 个月必须先换算成 <strong>0.5 年</strong>（千万别乘 6！）；第 3 题逆向求本金必须除以 <strong>(2.10% × 2)</strong>，求年利率必须用总利息 720 元除以 10000 后再<strong>除以 3 年</strong>！</p>
+      <p><span class="tag-e">【第4题·彻底打破 32%＝8%×4% 的错觉】</span>记住：<strong>每个百分号都是“÷100”</strong>。所以 24%＝4×6%（只能有一个 %）；16%×25%＝0.16×0.25＝0.04＝<strong>4%</strong>，绝不是 400%！</p>
+      <p><span class="tag-s">【第5题·低利率消两0速算法】</span>遇到几万或几千乘 1.5%、0.65%、2.38% 时，<strong>先划掉本金末尾的两个 0，同时去掉百分号</strong>！例如 20400×1.5% ＝ 204×1.5 ＝ 204＋102 ＝ 306；5000×0.65%×3 ＝ 50×0.65×3 ＝ 32.5×3 ＝ 97.5，又快又准！</p>
+      <p><span class="tag-k">【第8/9题·旧错回头看】</span>0.25%＝25/10000＝<strong>1/400</strong>（必约到最简）；137.5%＝1375/1000＝11/8；比大小统一化 4 位小数：七八折(0.7800) ＞ 77.8%(0.7780) ＞ 7/9(0.7777…) ＞ 0.7770。</p>
+    </div>
+
+    <div class="analysis-card">
+      <h4>二、判断题与选择题重点剖析（二1/2/3/4，三1/2/3/4/6）<span class="badge-fix">专治概念混淆</span></h4>
+      <p><span class="tag-e">【二1与三1·拆数辨析】</span>25×36%×1.25 中，把 36% 化成 0.36＝0.4×0.9（选 B）或只给一个数带百分号 4%×9（选 C）都完全正确；只有 <strong>A（4%×9%）</strong> 多写了一个 %，把原数缩小了 100 倍！</p>
+      <p><span class="tag-k">【三2/3/4·利率三大陷阱一次过】</span>① 三2：存 3 个月是 <strong>3/12 年</strong>，且题目问的是“连本带息（本息和）”，必须加回本金 15000；② 三3：复利第二年的本金已经变成 <strong>10000×(1＋1.50%)</strong>，且第二年存期只有 1 年，不要再乘 2；③ 三4：每期手续费＝10000×0.60%＝60 元（注意 0.60%＝0.006 不是 0.06），12 期总手续费必须再乘 12 得 720 元！</p>
+      <p><span class="tag-s">【三6·循环小数比大小】</span>0.8560 ＜ 85.7%(0.8570) ＜ 6/7(0.8571…) ＜ 八六折(0.8600)，排在第三位的是 <strong>6/7</strong>。</p>
+    </div>
+
+    <div class="analysis-card" style="margin-bottom:0;">
+      <h4>四、计算专项强化剖析（第 1、2、3 题）<span class="badge-fix">专治简算拆项与精算</span></h4>
+      <p><span class="tag-s">【第2题(1)(2)·先化小数再拆！】</span>遇到 12.5×48%×2.5 与 2.5×64%×12.5，严格执行两步法：<strong>第一步先把百分数写成小数</strong>（48%→0.48，64%→0.64），<strong>第二步再拆给 12.5 和 2.5 凑整</strong>（0.48＝0.8×0.6；0.64＝0.8×0.8），这样永远不会多带一个 %！</p>
+      <p><span class="tag-e">【第2题(4)·隐形乘法分配律】</span>20400×1.5%＋20400×2.5%×2，先算出 2.5%×2＝5%，再提取公因数 20400 得 20400×6.5%＝204×6.5＝1326，同时巩固了“别漏乘 2”和“消两 0 法”。</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册第五单元《折扣与利率》易错点专项突破测试卷 · 题目分析</span>
+    <span>题目分析 第 1 页（共 2 页）</span>
+  </div>
+</div>
+
+<!-- ==================== 第三部分：题目分析（第 6 页） ==================== -->
+<div class="sheet part-analysis">
+  <div class="sheet-content">
+    <div class="part-header">
+      <h2>题目分析与易错清零指南（第 2 页）</h2>
+      <p>第五大题逐题拆解 ＋ 利率/凑单/验算高分闭环策略</p>
+    </div>
+
+    <div class="analysis-card">
+      <h4>五、第 1 题：二年定期 vs 一年期转存复利（6分）<span class="badge-fix">专治原五2</span></h4>
+      <p><span class="tag-k">【考查知识点】</span>单利公式（必乘存期 2 年）与复利分年计算（第二年本金含第一年利息）。</p>
+      <p><span class="tag-s">【精算技巧】</span>① 方式一：圈出“2 年”，利息＝30000×2.10%×2＝300×2.1×2＝1260 元；② 方式二第二年算 <strong>30450×1.50%</strong> 时，用“消两 0 拆分法”：30450 缩小 100 倍是 <strong>304.5</strong>，再乘 1.5 ＝ 304.5 ＋ 304.5 的一半(152.25) ＝ <strong>456.75 元</strong>！</p>
+      <p><span class="tag-e">【易错点】</span>切忌把 1.5% 当成 5% 来乘，也切忌漏掉小数点后两位导致与 31260 相减错位（减法时写成 31260.00 － 30906.75 ＝ 353.25）。</p>
+    </div>
+
+    <div class="analysis-card">
+      <h4>五、第 2 题：折扣 ＋ 信用卡 3 期 / 12 期对比（6分）<span class="badge-fix">专治原五3</span></h4>
+      <p><span class="tag-k">【考查知识点】</span>先打折确定分期本金，再分别计算不同期数的总手续费并求差。</p>
+      <p><span class="tag-s">【解题思路】</span>① 分期本金 12000×85%＝10200 元；② 3 期：每期手续费 10200×0.65%＝102×0.65＝66.3 元，<strong>乘 3 期</strong>得 198.9 元；③ 12 期：每期手续费 10200×0.60%＝102×0.6＝61.2 元，<strong>乘 12 期</strong>得 734.4 元；④ 差值 734.4－198.9＝535.5 元。</p>
+      <p><span class="tag-e">【易错点】</span>读表要看清“每期分期利率”四个字——它只是<strong>1 期</strong>的费率，求总手续费必须乘期数（3 期乘 3，12 期乘 12）！</p>
+    </div>
+
+    <div class="analysis-card">
+      <h4>五、第 3 题：国债与定期利率差 ＋ 已知利息反求本金（6分）<span class="badge-fix">专治原一7</span></h4>
+      <p><span class="tag-k">【考查知识点】</span>同本金同存期比利息差的简便算法；逆向求本金（本金＝利息÷利率÷存期）。</p>
+      <p><span class="tag-s">【解题思路】</span>(1) 巧算：每年利率差 2.95%－2.75%＝0.2%，3 年总利率差 0.6%，多得利息 50000×0.6%＝300 元；(2) 反求本金：先算 3 年总利率 2.75%×3＝8.25%＝0.0825，本金＝1650÷0.0825＝20000 元（也可先算每年利息 1650÷3＝550 元，再算 550÷2.75%＝20000 元，数字更小不易算错！）。</p>
+      <p><span class="tag-e">【易错点】</span>第 (2) 问最容易忘记除以 3 年，直接算 1650÷2.75%＝60000 元（扩大了 3 倍）！用“先除以存期算年利息，再除以年利率算本金”两步法最防错。</p>
+    </div>
+
+    <div class="analysis-card">
+      <h4>五、第 4 题：“双十一”满减门槛与凑单决策（8分）</h4>
+      <p><span class="tag-k">【考查知识点】</span>“每满 500 减 80”的阶梯门槛效应与“八五折”对比。</p>
+      <p><span class="tag-s">【解题思路】</span>(1) 1800 元满 3 个 500，A 付 1560 元，B 付 1530 元，B 省 30 元；(2) 单买 2400 元只满 4 个 500（离第 5 个 500 只差 100 元！），A 付 2080 元，B 付 2040 元，B 更省；凑单 120 元后标价 2520 元跨过 2500 元门槛，A 立刻多减一个 80 元（共减 400 元），实付 2120 元，反超 B 的 2142 元！</p>
+      <p><span class="tag-e">【易错点】</span>凑单后计算活动 B 也要按新总价 <strong>2520 元</strong>打八五折，不能拿 2040＋120 去算。</p>
+    </div>
+
+    <div class="analysis-card" style="border-left-color:#b91c1c; background:#fffafa; margin-bottom:0;">
+      <h4>五、第 5 题：双约束预算分配 ＋ 强制回代验算（8分）<span class="badge-fix">专治原五5收尾减错</span></h4>
+      <p><span class="tag-k">【考查知识点】</span>固定项剥离 → 鸡兔同笼/列方程求解 → 强制回代验算 → 差价增量推理。</p>
+      <p><span class="tag-s">【解题思路】</span>(1) 1500×60%＝900 张，60÷1500＝4%；(2) 剥离一等奖后剩 840 张、6000 元，假设全是 5 元得 4200 元，二等奖＝(6000－4200)÷(20－5)＝120 张，三等奖＝840－120＝720 张；(3) <strong>增量秒杀</strong>：总张数不变，预算多 600 元，每把 1 张三等奖换 1 张二等奖多花 15 元，故二等奖增加 600÷15＝<strong>40 张</strong>！</p>
+      <p><span class="tag-e">【必杀防错习惯·5秒回代验算】</span>上次算出 1080 和 40 后心算减成 1020，本质是缺少收尾校验。本题强制写出两行验算：① 张数 60＋120＋720＝900 张；② 金额 6000＋2400＋3600＝12000 元。只要这两行都对上，计算失误率直接归零！</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>六年级数学上册第五单元《折扣与利率》易错点专项突破测试卷 · 题目分析</span>
+    <span>题目分析 第 2 页（共 2 页）</span>
+  </div>
+</div>
+
+<script>
+  const PRINT_CLASSES = [
+    'print-exam-only',
+    'print-answer-only',
+    'print-analysis-only',
+    'print-answer-analysis'
+  ];
+  function printMode(mode) {
+    document.body.classList.remove(...PRINT_CLASSES);
+    document.querySelectorAll('.sheet.is-last-visible')
+      .forEach(el => el.classList.remove('is-last-visible'));
+
+    if (mode === 'exam') document.body.classList.add('print-exam-only');
+    if (mode === 'answer') document.body.classList.add('print-answer-only');
+    if (mode === 'analysis') document.body.classList.add('print-analysis-only');
+    if (mode === 'answer-analysis') document.body.classList.add('print-answer-analysis');
+
+    const visibleSheets = Array.from(document.querySelectorAll('.sheet'))
+      .filter(el => getComputedStyle(el).display !== 'none');
+    if (visibleSheets.length > 0) {
+      visibleSheets[visibleSheets.length - 1].classList.add('is-last-visible');
+    }
+
+    window.print();
+    setTimeout(() => {
+      document.body.classList.remove(...PRINT_CLASSES);
+      document.querySelectorAll('.sheet.is-last-visible')
+        .forEach(el => el.classList.remove('is-last-visible'));
+    }, 300);
+  }
+</script>
+</body>
+</html>
