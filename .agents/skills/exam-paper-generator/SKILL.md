@@ -1,11 +1,12 @@
 ---
 name: exam-paper-generator
 description: >-
-  Use this skill when creating, organizing, formatting, or exporting exam papers,
-  unit tests, mid-term/final tests, or special practice test papers (试卷、单元测试卷、
-  阶段测试卷、专项卷、听力测试卷) in this project. Enforces subject-based directory layout
-  under 试卷/, three-part structure (空白试卷、参考答案、题目分析), co-located per-exam
-  folders for exams with .mp3 audio or companion assets, and A4 printable PDF output.
+  Use this skill when creating, organizing, formatting, exporting, or cleaning up
+  exam papers, unit tests, mid-term/final tests, or special practice test papers
+  (试卷、单元测试卷、阶段测试卷、专项卷、听力测试卷) in this project. Enforces
+  subject-based directory layout under 试卷/, three-part structure (空白试卷、参考答案、
+  题目分析), co-located per-exam folders for exams with .mp3 audio or companion
+  assets, A4 printable PDF output, and automatic deletion of exams older than 10 days.
 ---
 
 # 试卷生成与归档规范
@@ -109,7 +110,22 @@ description: >-
    - 如用户要求将三部分分别导出为独立 PDF，可按需生成 `<试卷名>_空白试卷.pdf`、`<试卷名>_参考答案.pdf`、`<试卷名>_题目分析.pdf`。
    - 确认 PDF 渲染和分页无误后，删除临时 HTML 文件，确保 `试卷/` 目录中仅保留最终 `.pdf`（及对应 `.mp3` 音频）。
 
-## 5. 交付前校验清单
+## 5. 过期试卷自动清理（10 天保留期）
+
+`试卷/` 目录中的试卷保留期为 **10 天**，超过 10 天（按文件或独立试卷目录内最新文件的修改时间计算）的试卷自动删除：
+
+1. **触发时机**：每次生成新试卷、归档试卷或整理 `试卷/` 目录时，自动执行清理脚本 [cleanup_expired.sh](./scripts/cleanup_expired.sh)：
+   ```bash
+   bash .agents/skills/exam-paper-generator/scripts/cleanup_expired.sh
+   ```
+   （如需先预览不删除，可附加 `--dry-run` 参数。）
+2. **清理范围与安全边界**：
+   - **常规试卷**：超过 10 天的试卷 `.pdf` 文件直接删除。
+   - **含音频/配套资源的独立试卷目录**：以目录内最新文件修改时间为准，整体超过 10 天时连同目录内的 `.pdf` 与 `.mp3` 等配套文件一并整目录删除。
+   - **保留科目目录**：仅删除 `试卷/<科目>/` 下的过期试卷条目，始终保留 `试卷/` 及各科目子目录本身。
+3. **反馈记录**：若本次清理删除了过期试卷，应在回复中简明列出被删除的试卷清单。
+
+## 6. 交付前校验清单
 
 生成完成后逐项核对，确认无误再交付：
 
@@ -118,3 +134,4 @@ description: >-
 - [ ] **分值与答案准确**：所有小题分值累加等于大题分值，大题分值累加等于卷面总分；所有参考答案已复算核验。
 - [ ] **PDF 打印版面整洁**：PDF 已成功导出，无多余空白页、无文字重叠或跨页截断、黑白打印清晰可辨。
 - [ ] **音频格式与命名一致（如适用）**：所有音频文件均已统一为 `.mp3` 格式（无残留中间音频文件），且与试卷中标注的音频文件名完全一致。
+- [ ] **过期试卷已自动清理**：已执行 [cleanup_expired.sh](./scripts/cleanup_expired.sh)，超过 10 天的历史试卷已清理完毕。
